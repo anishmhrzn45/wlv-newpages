@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react";
-import logo from "@/assets/webliveview-logo-white.png";
+import logo from "@/assets/webliveview-logo-transparent.png";
 
 const Footer = () => {
   return (
@@ -42,7 +42,8 @@ const Footer = () => {
                 <img 
                   src={logo} 
                   alt="WebLiveView - Video Shopping Made Easy" 
-                  className="w-[180px] sm:w-[200px] h-auto object-contain"
+                  className="w-[180px] sm:w-[200px] h-auto object-contain mix-blend-normal"
+                  style={{ backgroundColor: 'transparent' }}
                 />
               </div>
               
