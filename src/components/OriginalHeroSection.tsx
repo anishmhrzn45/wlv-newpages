@@ -34,10 +34,10 @@ const OriginalHeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4">
-              <Button size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation">
+              <Button size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation bg-secondary hover:bg-secondary/90 text-white rounded-full">
                 Start Free Trial
               </Button>
-              <Button variant="outline" size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation">
+              <Button variant="outline" size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
                 <Play className="mr-2 h-4 w-4" />
                 Book a Demo
               </Button>
