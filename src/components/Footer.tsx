@@ -1,0 +1,76 @@
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+
+const Footer = () => {
+  return (
+    <footer className="bg-brand-navy text-white">
+      {/* Main CTA Section */}
+      <div className="border-b border-white/10">
+        <div className="container py-16 md:py-24">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl mb-6">
+              Your Virtual Showroom.{" "}
+              <span className="bg-gradient-to-r from-secondary to-brand-pink bg-clip-text text-transparent">
+                Ready in Minutes.
+              </span>
+            </h2>
+            <p className="text-xl text-white/80 mb-8">
+              Join hundreds of retailers already using WebLiveView to increase conversions and build customer relationships.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button size="lg" variant="secondary" className="min-w-[200px]">
+                Start Free Trial
+              </Button>
+              <Button size="lg" variant="outline" className="min-w-[200px] border-white text-white hover:bg-white hover:text-brand-navy">
+                Book Demo
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Links */}
+      <div className="container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo & Description */}
+          <div className="md:col-span-2">
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-secondary to-brand-pink"></div>
+              <span className="text-xl font-bold">WebLiveView</span>
+            </div>
+            <p className="text-white/70 mb-6 max-w-md">
+              The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.
+            </p>
+            <div className="text-sm text-white/60">
+              <p>© 2024 WebLiveView. All rights reserved.</p>
+            </div>
+          </div>
+
+          {/* Product Links */}
+          <div>
+            <h3 className="font-semibold mb-4">Product</h3>
+            <ul className="space-y-2 text-sm text-white/70">
+              <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
+              <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">API</a></li>
+            </ul>
+          </div>
+
+          {/* Company Links */}
+          <div>
+            <h3 className="font-semibold mb-4">Company</h3>
+            <ul className="space-y-2 text-sm text-white/70">
+              <li><a href="#" className="hover:text-white transition-colors">About</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
