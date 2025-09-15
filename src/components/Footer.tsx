@@ -108,8 +108,6 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-white/70">
               <li><a href="#features" className="hover:text-white transition-colors touch-manipulation py-1 block">Features</a></li>
               <li><a href="#pricing" className="hover:text-white transition-colors touch-manipulation py-1 block">Pricing</a></li>
-              <li><a href="#" className="hover:text-white transition-colors touch-manipulation py-1 block">Integrations</a></li>
-              <li><a href="#" className="hover:text-white transition-colors touch-manipulation py-1 block">API</a></li>
             </ul>
           </div>
 
@@ -119,8 +117,8 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-white/70">
               <li><a href="#" className="hover:text-white transition-colors touch-manipulation py-1 block">About</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors touch-manipulation py-1 block">Contact</a></li>
-              <li><a href="#" className="hover:text-white transition-colors touch-manipulation py-1 block">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors touch-manipulation py-1 block">Terms of Service</a></li>
+              <li><a href="/privacy-policy" className="hover:text-white transition-colors touch-manipulation py-1 block">Privacy Policy</a></li>
+              <li><a href="/terms-of-service" className="hover:text-white transition-colors touch-manipulation py-1 block">Terms of Service</a></li>
             </ul>
           </div>
         </div>
