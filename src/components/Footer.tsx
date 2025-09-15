@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Phone, MapPin } from "lucide-react";
-import logo from "@/assets/webliveview-logo.png";
+import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react";
+import logo from "@/assets/webliveview-logo-white.png";
 
 const Footer = () => {
   return (
@@ -70,6 +70,28 @@ const Footer = () => {
                       <div>Dublin 4, D04 W7K5</div>
                       <div>Ireland</div>
                     </div>
+                  </div>
+                  
+                  {/* Social Media Icons */}
+                  <div className="flex items-center space-x-4 mt-4 sm:justify-start justify-center">
+                    <a 
+                      href="https://www.linkedin.com/company/webliveview" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-brand-pink transition-colors duration-200"
+                      aria-label="Follow WebLiveView on LinkedIn"
+                    >
+                      <Linkedin className="h-6 w-6" />
+                    </a>
+                    <a 
+                      href="https://www.facebook.com/webliveview" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-brand-pink transition-colors duration-200"
+                      aria-label="Follow WebLiveView on Facebook"
+                    >
+                      <Facebook className="h-6 w-6" />
+                    </a>
                   </div>
                 </div>
               </div>
