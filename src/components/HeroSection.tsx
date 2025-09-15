@@ -15,7 +15,7 @@ const HeroSection = () => {
               <img 
                 src={webLiveViewLogo} 
                 alt="WebLiveView Logo"
-                className="w-[250px] h-[67px] sm:w-[300px] sm:h-[80px] md:w-[350px] md:h-[93px] lg:w-[400px] lg:h-[106px] object-contain mx-auto lg:mx-0"
+                className="w-[300px] h-[80px] sm:w-[400px] sm:h-[107px] md:w-[500px] md:h-[133px] lg:w-[600px] lg:h-[160px] object-contain mx-auto lg:mx-0"
               />
             </div>
             
