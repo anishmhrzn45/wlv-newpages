@@ -1,57 +1,47 @@
-import { CheckCircle } from "lucide-react";
+import { Home, ShoppingCart, Shield } from "lucide-react";
 
-const benefits = [
-  "No more showroom-only sales",
-  "No back-and-forth emails", 
-  "No apps or downloads",
-  "Just instant, face-to-face video support — right on your website",
-  "More trust, faster decisions, and higher conversion rates"
+const features = [
+  {
+    icon: Home,
+    title: "Skip the Showroom",
+    description: "No more weekend trips — let your customers explore products face-to-face from home."
+  },
+  {
+    icon: ShoppingCart,
+    title: "Sell Smarter", 
+    description: "Use video calls to answer questions, reduce returns, and close more high-value orders."
+  },
+  {
+    icon: Shield,
+    title: "Increase Trust",
+    description: "Build confidence and reduce friction with live, human interaction — no app downloads needed."
+  }
 ];
 
 const WhyWebLiveView = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-r from-brand-light/50 to-background">
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div>
-            <h2 className="text-3xl font-bold text-brand-navy md:text-4xl lg:text-5xl mb-6">
-              Why Retailers Choose WebLiveView
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Customers want personal help — without showroom visits or long waits.
-            </p>
-            
-            <div className="space-y-3 pl-0">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
-                  <span className="text-foreground leading-relaxed">{benefit}</span>
+    <section className="py-16 bg-white text-brand-navy">
+      <div className="max-w-5xl mx-auto px-6 text-center space-y-6">
+        <h2 className="text-3xl md:text-4xl font-bold">Why Choose WebLiveView</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6 text-left">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-start">
+                <div className="w-14 h-14 mb-5 bg-brand-light/20 rounded-lg flex items-center justify-center">
+                  <IconComponent className="w-8 h-8 text-brand-navy" />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-6">
-            <div className="text-center p-6 rounded-2xl bg-white shadow-soft">
-              <div className="text-3xl font-bold text-brand-navy mb-2">+30%</div>
-              <div className="text-sm text-muted-foreground">Average Conversion Increase</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-white shadow-soft">
-              <div className="text-3xl font-bold text-brand-navy mb-2">20%</div>
-              <div className="text-sm text-muted-foreground">Fewer Abandoned Carts</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-white shadow-soft">
-              <div className="text-3xl font-bold text-brand-navy mb-2">85%</div>
-              <div className="text-sm text-muted-foreground">Customer Satisfaction</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-white shadow-soft">
-              <div className="text-3xl font-bold text-brand-navy mb-2">3x</div>
-              <div className="text-sm text-muted-foreground">Faster Purchase Decisions</div>
-            </div>
-          </div>
+                <h3 className="font-semibold text-lg mb-2 text-brand-navy">{feature.title}</h3>
+                <p className="text-muted-foreground text-sm">{feature.description}</p>
+              </div>
+            );
+          })}
         </div>
+        
+        <p className="text-lg font-medium text-brand-navy pt-6">
+          Fewer abandoned carts. Faster sales. Happier customers.
+        </p>
       </div>
     </section>
   );
