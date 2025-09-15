@@ -47,19 +47,21 @@ const PricingSection = () => {
       popular: true
     },
     {
-      name: "Scale",
-      description: "Full analytics and integrations",
+      name: "Scale – Power for Product Specialists",
+      description: "The full performance suite for teams running at scale",
       monthlyPrice: 499,
       yearlyPrice: 399,
       features: [
-        "Everything in Growth",
-        "Dedicated account manager",
-        "24/7 phone support",
-        "Custom integrations",
-        "Advanced security features",
-        "Multi-location support",
-        "API access",
-        "Training & onboarding"
+        "400 video chat hours",
+        "Unlimited live chat sessions",
+        "Unlimited users",
+        "Unlimited video and webchat",
+        "Admin dashboard and manager log",
+        "API and CRM integrations",
+        "Real-time reports (by store, team, or individual sales person)",
+        "Multi-agent routing and live queue",
+        "Dedicated onboarding and support",
+        "Optional AI Sales"
       ],
       cta: "Contact Sales",
       popular: false
