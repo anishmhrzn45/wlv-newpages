@@ -120,4 +120,21 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Mobile optimization */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Smooth scrolling for mobile */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better mobile tap targets */
+  @media (max-width: 768px) {
+    button, a, input, textarea {
+      min-height: 44px;
+    }
+  }
 }

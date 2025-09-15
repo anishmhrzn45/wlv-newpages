@@ -46,7 +46,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
+          className="md:hidden p-2 rounded-md hover:bg-accent transition-colors touch-manipulation"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -57,26 +57,42 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden border-t bg-background/95 backdrop-blur">
-          <div className="container py-4 space-y-4">
-            <nav className="flex flex-col space-y-4">
-              <a href="#product" className="text-sm font-medium text-foreground/80">
+          <div className="container py-6 space-y-6">
+            <nav className="flex flex-col space-y-6">
+              <a 
+                href="#product" 
+                className="text-base font-medium text-foreground/80 py-2 touch-manipulation"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Product
               </a>
-              <a href="#features" className="text-sm font-medium text-foreground/80">
+              <a 
+                href="#features" 
+                className="text-base font-medium text-foreground/80 py-2 touch-manipulation"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Features
               </a>
-              <a href="#pricing" className="text-sm font-medium text-foreground/80">
+              <a 
+                href="#pricing" 
+                className="text-base font-medium text-foreground/80 py-2 touch-manipulation"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Pricing
               </a>
-              <a href="#contact" className="text-sm font-medium text-foreground/80">
+              <a 
+                href="#contact" 
+                className="text-base font-medium text-foreground/80 py-2 touch-manipulation"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Contact
               </a>
             </nav>
-            <div className="flex flex-col space-y-2 pt-4">
-              <Button variant="free-trial" size="lg" className="w-full">
+            <div className="flex flex-col space-y-3 pt-4">
+              <Button variant="free-trial" size="xl" className="w-full h-12 touch-manipulation">
                 Start Free Trial
               </Button>
-              <Button variant="book-demo" size="lg" className="w-full">
+              <Button variant="book-demo" size="xl" className="w-full h-12 touch-manipulation">
                 Book a Demo
               </Button>
             </div>

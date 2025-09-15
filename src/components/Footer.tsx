@@ -8,22 +8,22 @@ const Footer = () => {
     <footer className="bg-brand-navy text-white">
       {/* Main CTA Section */}
       <div className="border-b border-white/10">
-        <div className="container py-16 md:py-24">
+        <div className="container py-12 sm:py-16 md:py-24 px-4 sm:px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               Your Virtual Showroom.{" "}
               <span className="bg-gradient-to-r from-secondary to-brand-pink bg-clip-text text-transparent">
                 Ready in Minutes.
               </span>
             </h2>
-            <p className="text-xl text-white/80 mb-8">
+            <p className="text-lg sm:text-xl text-white/80 mb-6 sm:mb-8 max-w-3xl mx-auto">
               WebLiveView installs easily on any website — no developers needed. Start converting more visitors into buyers today.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="xl" variant="free-trial" className="min-w-[200px]">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <Button size="xl" variant="free-trial" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation">
                 Start Free Trial
               </Button>
-              <Button size="xl" variant="book-demo" className="min-w-[200px]">
+              <Button size="xl" variant="book-demo" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation">
                 Book Demo
               </Button>
             </div>
@@ -32,30 +32,30 @@ const Footer = () => {
       </div>
 
       {/* Footer Links */}
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container py-8 sm:py-12 px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2">
             {/* Logo in white box */}
-            <div className="bg-white rounded-lg p-4 mb-4 inline-block">
+            <div className="bg-white rounded-lg p-3 sm:p-4 mb-4 inline-block">
               <img 
                 src={logo} 
                 alt="WebLiveView - Video Shopping Made Easy" 
-                className="w-[150px] h-[40px] md:w-[175px] md:h-[47px] lg:w-[200px] lg:h-[50px] object-contain"
+                className="w-[120px] h-[32px] sm:w-[150px] sm:h-[40px] md:w-[175px] md:h-[47px] lg:w-[200px] lg:h-[50px] object-contain"
               />
             </div>
-            <p className="text-white/70 mb-6 max-w-md">
+            <p className="text-white/70 mb-6 max-w-md text-sm sm:text-base">
               The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.
             </p>
             
             {/* Contact Information */}
             <div className="space-y-2 mb-6 text-sm text-white/70">
               <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-secondary" />
-                <span>info@webliveview.com</span>
+                <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
+                <span className="break-all">info@webliveview.com</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-secondary" />
+                <Phone className="h-4 w-4 text-secondary flex-shrink-0" />
                 <span>+353 1 4412618</span>
               </div>
               <div className="flex items-start space-x-2 mt-3">
@@ -77,23 +77,23 @@ const Footer = () => {
 
           {/* Product Links */}
           <div>
-            <h3 className="font-semibold mb-4">Product</h3>
+            <h3 className="font-semibold mb-4 text-base">Product</h3>
             <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">API</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors touch-manipulation py-1 block">Features</a></li>
+              <li><a href="#pricing" className="hover:text-white transition-colors touch-manipulation py-1 block">Pricing</a></li>
+              <li><a href="#" className="hover:text-white transition-colors touch-manipulation py-1 block">Integrations</a></li>
+              <li><a href="#" className="hover:text-white transition-colors touch-manipulation py-1 block">API</a></li>
             </ul>
           </div>
 
           {/* Company Links */}
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
+            <h3 className="font-semibold mb-4 text-base">Company</h3>
             <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-white transition-colors touch-manipulation py-1 block">About</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors touch-manipulation py-1 block">Contact</a></li>
+              <li><a href="#" className="hover:text-white transition-colors touch-manipulation py-1 block">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-white transition-colors touch-manipulation py-1 block">Terms of Service</a></li>
             </ul>
           </div>
         </div>
