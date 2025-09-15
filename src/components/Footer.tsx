@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import logo from "@/assets/webliveview-logo.png";
 
 const Footer = () => {
   return (
@@ -34,9 +35,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-secondary to-brand-pink"></div>
-              <span className="text-xl font-bold">WebLiveView</span>
+            <div className="flex items-center mb-4">
+              <img 
+                src={logo} 
+                alt="WebLiveView - Video Shopping Made Easy" 
+                className="h-8 w-auto filter brightness-0 invert"
+              />
             </div>
             <p className="text-white/70 mb-6 max-w-md">
               The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.

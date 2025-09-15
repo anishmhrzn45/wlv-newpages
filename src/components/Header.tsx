@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/webliveview-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,9 +10,12 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-secondary"></div>
-          <span className="text-xl font-bold text-brand-navy">WebLiveView</span>
+        <div className="flex items-center">
+          <img 
+            src={logo} 
+            alt="WebLiveView - Video Shopping Made Easy" 
+            className="h-8 w-auto"
+          />
         </div>
 
         {/* Desktop Navigation */}
