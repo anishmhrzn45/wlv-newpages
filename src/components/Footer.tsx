@@ -40,7 +40,7 @@ const Footer = () => {
               <img 
                 src={logo} 
                 alt="WebLiveView - Video Shopping Made Easy" 
-                className="h-8 w-auto filter brightness-0 invert"
+                className="w-[150px] h-[40px] md:w-[175px] md:h-[47px] lg:w-[200px] lg:h-[50px] object-contain filter brightness-0 invert"
               />
             </div>
             <p className="text-white/70 mb-6 max-w-md">
