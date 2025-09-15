@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react";
-import logo from "@/assets/webliveview-logo-white.png";
+import logo from "@/assets/webliveview-logo-white-on-navy.png";
 
 const Footer = () => {
   return (
@@ -38,11 +38,11 @@ const Footer = () => {
           <div className="sm:col-span-2">
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 mb-6">
               {/* Logo */}
-              <div className="flex-shrink-0 bg-brand-navy p-4 rounded-lg">
+              <div className="flex-shrink-0">
                 <img 
                   src={logo} 
                   alt="WebLiveView - Video Shopping Made Easy" 
-                  className="w-[180px] sm:w-[200px] h-auto object-contain bg-transparent"
+                  className="w-[180px] sm:w-[200px] h-auto object-contain"
                 />
               </div>
               
