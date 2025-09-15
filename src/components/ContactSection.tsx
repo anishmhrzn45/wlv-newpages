@@ -68,15 +68,21 @@ const ContactSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <Mail className="h-5 w-5 text-secondary" />
-                    <span className="text-foreground">hello@webliveview.com</span>
+                    <span className="text-foreground">info@webliveview.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone className="h-5 w-5 text-secondary" />
-                    <span className="text-foreground">+1 (555) 123-4567</span>
+                    <span className="text-foreground">+353 1 4412618</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-secondary" />
-                    <span className="text-foreground">San Francisco, CA</span>
+                  <div className="flex items-start space-x-3">
+                    <MapPin className="h-5 w-5 text-secondary mt-1" />
+                    <div className="text-foreground">
+                      <div>Webliveview Ltd</div>
+                      <div>13 Upper Baggot Street</div>
+                      <div>2nd Floor</div>
+                      <div>Dublin 4, D04 W7K5</div>
+                      <div>Ireland</div>
+                    </div>
                   </div>
                 </div>
               </div>

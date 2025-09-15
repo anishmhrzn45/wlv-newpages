@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/webliveview-logo.png";
 
 const Footer = () => {
@@ -45,8 +46,31 @@ const Footer = () => {
             <p className="text-white/70 mb-6 max-w-md">
               The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.
             </p>
+            
+            {/* Contact Information */}
+            <div className="space-y-2 mb-6 text-sm text-white/70">
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 text-secondary" />
+                <span>info@webliveview.com</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4 text-secondary" />
+                <span>+353 1 4412618</span>
+              </div>
+              <div className="flex items-start space-x-2 mt-3">
+                <MapPin className="h-4 w-4 text-secondary mt-0.5 flex-shrink-0" />
+                <div>
+                  <div>Webliveview Ltd</div>
+                  <div>13 Upper Baggot Street</div>
+                  <div>2nd Floor</div>
+                  <div>Dublin 4, D04 W7K5</div>
+                  <div>Ireland</div>
+                </div>
+              </div>
+            </div>
+            
             <div className="text-sm text-white/60">
-              <p>© 2024 WebLiveView. All rights reserved.</p>
+              <p>© 2024 WebLiveView Ltd. All rights reserved.</p>
             </div>
           </div>
 
