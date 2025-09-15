@@ -36,36 +36,41 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="sm:col-span-2">
-            {/* Logo in white box */}
-            <div className="bg-white rounded-lg p-3 sm:p-4 mb-4 inline-block">
-              <img 
-                src={logo} 
-                alt="WebLiveView - Video Shopping Made Easy" 
-                className="w-[120px] h-[32px] sm:w-[150px] sm:h-[40px] md:w-[175px] md:h-[47px] lg:w-[200px] lg:h-[50px] object-contain"
-              />
-            </div>
-            <p className="text-white/70 mb-6 max-w-md text-sm sm:text-base">
-              The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.
-            </p>
-            
-            {/* Contact Information */}
-            <div className="space-y-2 mb-6 text-sm text-white/70">
-              <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
-                <span className="break-all">info@webliveview.com</span>
+            <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 mb-6">
+              {/* Logo */}
+              <div className="flex-shrink-0">
+                <img 
+                  src={logo} 
+                  alt="WebLiveView - Video Shopping Made Easy" 
+                  className="w-[180px] sm:w-[200px] h-auto object-contain"
+                />
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-secondary flex-shrink-0" />
-                <span>+353 1 4412618</span>
-              </div>
-              <div className="flex items-start space-x-2 mt-3">
-                <MapPin className="h-4 w-4 text-secondary mt-0.5 flex-shrink-0" />
-                <div>
-                  <div>Webliveview Ltd</div>
-                  <div>13 Upper Baggot Street</div>
-                  <div>2nd Floor</div>
-                  <div>Dublin 4, D04 W7K5</div>
-                  <div>Ireland</div>
+              
+              {/* Contact Information */}
+              <div className="flex-1">
+                <p className="text-white/70 mb-4 max-w-md text-sm sm:text-base">
+                  The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.
+                </p>
+                
+                <div className="space-y-2 text-sm text-white/70">
+                  <div className="flex items-center space-x-2">
+                    <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
+                    <span className="break-all">info@webliveview.com</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Phone className="h-4 w-4 text-secondary flex-shrink-0" />
+                    <span>+353 1 4412618</span>
+                  </div>
+                  <div className="flex items-start space-x-2 mt-3">
+                    <MapPin className="h-4 w-4 text-secondary mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div>Webliveview Ltd</div>
+                      <div>13 Upper Baggot Street</div>
+                      <div>2nd Floor</div>
+                      <div>Dublin 4, D04 W7K5</div>
+                      <div>Ireland</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
