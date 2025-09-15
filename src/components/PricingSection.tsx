@@ -29,18 +29,19 @@ const PricingSection = () => {
     },
     {
       name: "Growth",
-      description: "For growing sales teams",
+      description: "Give your team the tools to engage, book, and convert at scale",
       monthlyPrice: 199,
       yearlyPrice: 159,
       features: [
-        "Unlimited video calls",
-        "Advanced CRM integration", 
-        "Priority support",
-        "HD video quality",
-        "Advanced analytics",
-        "Custom branding",
-        "Screen sharing",
-        "Recording capabilities"
+        "20 video chat hours",
+        "Unlimited live chat sessions",
+        "Unlimited users", 
+        "Up to 5 sales people",
+        "20 hours video per month",
+        "Webchat + calendar bookings",
+        "Weekly performance report",
+        "Team reporting (by store and sales person)",
+        "Custom branding per store"
       ],
       cta: "Start Free Trial",
       popular: true
