@@ -39,11 +39,11 @@ const Header = () => {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center space-x-3">
-          <Button className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-6">
-            Start Free Trial
+          <Button asChild className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-6">
+            <Link to="/pricing">Start Free Trial</Link>
           </Button>
-          <Button variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full px-6">
-            Book a Demo
+          <Button asChild variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full px-6">
+            <Link to="/contact">Book a Demo</Link>
           </Button>
         </div>
 
@@ -92,11 +92,11 @@ const Header = () => {
               </Link>
             </nav>
             <div className="flex flex-col space-y-3 pt-4">
-              <Button className="w-full h-12 touch-manipulation bg-secondary hover:bg-secondary/90 text-white rounded-full">
-                Start Free Trial
+              <Button asChild className="w-full h-12 touch-manipulation bg-secondary hover:bg-secondary/90 text-white rounded-full">
+                <Link to="/pricing" onClick={() => setIsMenuOpen(false)}>Start Free Trial</Link>
               </Button>
-              <Button variant="outline" className="w-full h-12 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
-                Book a Demo
+              <Button asChild variant="outline" className="w-full h-12 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
+                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Book a Demo</Link>
               </Button>
             </div>
           </div>
