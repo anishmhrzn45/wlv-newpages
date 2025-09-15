@@ -42,7 +42,7 @@ const Footer = () => {
                 <img 
                   src={logo} 
                   alt="WebLiveView - Video Shopping Made Easy" 
-                  className="w-[180px] sm:w-[200px] h-auto object-contain"
+                  className="w-[180px] sm:w-[200px] h-auto object-contain bg-transparent"
                 />
               </div>
               
