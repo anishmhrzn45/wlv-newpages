@@ -36,13 +36,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="sm:col-span-2">
-            <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6">
               {/* Logo */}
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 flex justify-center sm:justify-start">
                 <img 
                   src={logo} 
                   alt="WebLiveView - Video Shopping Made Easy" 
-                  className="w-[180px] sm:w-[200px] h-auto object-contain"
+                  className="w-[180px] sm:w-[200px] h-auto object-contain filter brightness-0 invert"
                 />
               </div>
               
@@ -75,7 +75,7 @@ const Footer = () => {
                   {/* Social Media Icons */}
                   <div className="flex items-center space-x-4 mt-4 sm:justify-start justify-center">
                     <a 
-                      href="https://www.linkedin.com/company/webliveview" 
+                      href="https://www.linkedin.com/company/9435525/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-white hover:text-brand-pink transition-colors duration-200"
