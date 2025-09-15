@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import webLiveViewLogo from "@/assets/webliveview-logo.png";
 
 const HeroSection = () => {
   return (
@@ -9,6 +10,15 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="order-2 lg:order-1">
+            {/* Logo */}
+            <div className="mb-8">
+              <img 
+                src={webLiveViewLogo} 
+                alt="WebLiveView Logo"
+                className="w-[300px] h-[80px] md:w-[350px] md:h-[93px] lg:w-[400px] lg:h-[106px] object-contain"
+              />
+            </div>
+            
             {/* Main Headline */}
             <h1 className="text-4xl font-bold tracking-tight text-brand-navy md:text-5xl lg:text-6xl">
               Turn Browsers Into{" "}
