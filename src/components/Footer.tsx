@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               Your Virtual Showroom.{" "}
-              <span className="bg-gradient-to-r from-secondary to-brand-pink bg-clip-text text-transparent">
+              <span className="text-secondary">
                 Ready in Minutes.
               </span>
             </h2>
