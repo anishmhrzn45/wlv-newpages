@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react";
-import logo from "@/assets/webliveview-logo-transparent.png";
 
 const Footer = () => {
   return (
@@ -34,66 +33,53 @@ const Footer = () => {
       {/* Footer Links */}
       <div className="container py-8 sm:py-12 px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo & Description */}
+          {/* Company Information */}
           <div className="sm:col-span-2">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6">
-              {/* Logo */}
-              <div className="flex-shrink-0 flex justify-center sm:justify-start">
-                <img 
-                  src={logo} 
-                  alt="WebLiveView - Video Shopping Made Easy" 
-                  className="w-[180px] sm:w-[200px] h-auto object-contain mix-blend-normal"
-                  style={{ backgroundColor: 'transparent' }}
-                />
-              </div>
+            <div className="mb-6">
+              <p className="text-white/70 mb-4 max-w-md text-sm sm:text-base">
+                The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.
+              </p>
               
-              {/* Contact Information */}
-              <div className="flex-1">
-                <p className="text-white/70 mb-4 max-w-md text-sm sm:text-base">
-                  The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.
-                </p>
+              <div className="space-y-2 text-sm text-white/70">
+                <div className="flex items-center space-x-2">
+                  <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
+                  <span className="break-all">info@webliveview.com</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-4 w-4 text-secondary flex-shrink-0" />
+                  <span>+353 1 4412618</span>
+                </div>
+                <div className="flex items-start space-x-2 mt-3">
+                  <MapPin className="h-4 w-4 text-secondary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div>Webliveview Ltd</div>
+                    <div>13 Upper Baggot Street</div>
+                    <div>2nd Floor</div>
+                    <div>Dublin 4, D04 W7K5</div>
+                    <div>Ireland</div>
+                  </div>
+                </div>
                 
-                <div className="space-y-2 text-sm text-white/70">
-                  <div className="flex items-center space-x-2">
-                    <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
-                    <span className="break-all">info@webliveview.com</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Phone className="h-4 w-4 text-secondary flex-shrink-0" />
-                    <span>+353 1 4412618</span>
-                  </div>
-                  <div className="flex items-start space-x-2 mt-3">
-                    <MapPin className="h-4 w-4 text-secondary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <div>Webliveview Ltd</div>
-                      <div>13 Upper Baggot Street</div>
-                      <div>2nd Floor</div>
-                      <div>Dublin 4, D04 W7K5</div>
-                      <div>Ireland</div>
-                    </div>
-                  </div>
-                  
-                  {/* Social Media Icons */}
-                  <div className="flex items-center space-x-4 mt-4 sm:justify-start justify-center">
-                    <a 
-                      href="https://www.linkedin.com/company/9435525/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-brand-pink transition-colors duration-200"
-                      aria-label="Follow WebLiveView on LinkedIn"
-                    >
-                      <Linkedin className="h-6 w-6" />
-                    </a>
-                    <a 
-                      href="https://www.facebook.com/webliveview" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-brand-pink transition-colors duration-200"
-                      aria-label="Follow WebLiveView on Facebook"
-                    >
-                      <Facebook className="h-6 w-6" />
-                    </a>
-                  </div>
+                {/* Social Media Icons */}
+                <div className="flex items-center space-x-4 mt-4 sm:justify-start justify-center">
+                  <a 
+                    href="https://www.linkedin.com/company/9435525/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-brand-pink transition-colors duration-200"
+                    aria-label="Follow WebLiveView on LinkedIn"
+                  >
+                    <Linkedin className="h-6 w-6" />
+                  </a>
+                  <a 
+                    href="https://www.facebook.com/webliveview" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-brand-pink transition-colors duration-200"
+                    aria-label="Follow WebLiveView on Facebook"
+                  >
+                    <Facebook className="h-6 w-6" />
+                  </a>
                 </div>
               </div>
             </div>
