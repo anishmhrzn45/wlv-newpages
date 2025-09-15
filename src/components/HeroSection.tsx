@@ -21,46 +21,44 @@ const HeroSection = () => {
             
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-navy leading-tight">
-              Turn Browsers Into{" "}
+              Your Sales Team, On-Demand —{" "}
               <span className="bg-gradient-to-r from-secondary to-brand-pink bg-clip-text text-transparent">
-                Buyers
-              </span>{" "}
-              with Live Video Shopping
+                Right From Your Website
+              </span>
             </h1>
 
             {/* Subheadline */}
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl leading-7 md:leading-8 text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-              WebLiveView helps kitchen, bathroom, furniture, and eCommerce brands boost online sales by bringing the 
-              showroom experience directly to the customer — through live video consultations and guided product demos.
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl leading-7 md:leading-8 text-foreground max-w-2xl mx-auto lg:mx-0">
+              Bring the in-store experience online with live video shopping, guided eCommerce selling, and real-time product support for furniture, kitchens, and retail brands.
             </p>
 
             {/* CTA Buttons */}
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4">
-              <Button size="xl" variant="free-trial" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation">
+              <Button size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation bg-secondary hover:bg-secondary/90 text-white rounded-full">
                 Start Free Trial
               </Button>
-              <Button variant="book-demo" size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation">
+              <Button variant="outline" size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
                 <Play className="mr-2 h-4 w-4" />
                 Book a Demo
               </Button>
             </div>
 
             {/* Trust Indicators */}
-            <div className="mt-8 sm:mt-10 flex flex-wrap items-start justify-center lg:justify-start gap-4">
-              <div className="flex items-start gap-2">
+            <div className="mt-8 sm:mt-10 flex flex-wrap items-start justify-center lg:justify-start gap-4 sm:gap-6">
+              <div className="flex items-center gap-2">
                 <div className="relative">
-                  <CreditCard className="h-4 w-4 text-foreground" />
-                  <div className="absolute inset-0 w-full h-0.5 bg-foreground rotate-45 top-1/2 -translate-y-1/2"></div>
+                  <CreditCard className="h-4 w-4 text-brand-gray" />
+                  <div className="absolute inset-0 w-full h-0.5 bg-brand-gray rotate-45 top-1/2 -translate-y-1/2"></div>
                 </div>
-                <span className="text-base font-medium text-foreground leading-tight">No setup fees</span>
+                <span className="text-sm sm:text-base font-medium text-brand-gray">No setup fees</span>
               </div>
-              <div className="flex items-start gap-2">
-                <Calendar className="h-4 w-4 text-foreground" />
-                <span className="text-base font-medium text-foreground leading-tight">14-day free trial</span>
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4 text-brand-gray" />
+                <span className="text-sm sm:text-base font-medium text-brand-gray">14-day free trial</span>
               </div>
-              <div className="flex items-start gap-2">
-                <X className="h-4 w-4 text-foreground rounded-full border border-foreground" />
-                <span className="text-base font-medium text-foreground leading-tight">Cancel anytime</span>
+              <div className="flex items-center gap-2">
+                <X className="h-4 w-4 text-brand-gray" />
+                <span className="text-sm sm:text-base font-medium text-brand-gray">Cancel anytime</span>
               </div>
             </div>
           </div>

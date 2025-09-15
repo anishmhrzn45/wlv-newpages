@@ -9,20 +9,17 @@ const PricingSection = () => {
 
   const plans = [
     {
-      name: "Starter Sales Super Stars",
-      description: "Built for Super Sale Stars - Perfect for small teams with big ambition",
+      name: "Starter",
+      description: "Perfect for small teams getting started with live video shopping",
       monthlyPrice: 49,
       yearlyPrice: 39,
       features: [
-        "3 video chat hours",
+        "3 video chat hours per month",
         "Unlimited live chat sessions", 
-        "Unlimited users",
-        "1–2 sales people",
-        "2 hours video per month",
-        "Unlimited webchat",
+        "Up to 2 sales people",
         "Basic performance reporting",
-        "Web & iOS access",
-        "Your logo, your brand"
+        "Web & mobile access",
+        "Custom branding"
       ],
       cta: "Start Free Trial",
       popular: false
@@ -33,35 +30,30 @@ const PricingSection = () => {
       monthlyPrice: 199,
       yearlyPrice: 159,
       features: [
-        "20 video chat hours",
+        "20 video chat hours per month",
         "Unlimited live chat sessions",
-        "Unlimited users", 
-        "Up to 5 sales people",
-        "20 hours video per month",
-        "Webchat + calendar bookings",
-        "Weekly performance report",
-        "Team reporting (by store and sales person)",
-        "Custom branding per store"
+        "Up to 5 sales people", 
+        "Advanced analytics & reporting",
+        "Calendar integrations",
+        "Team performance insights",
+        "Priority support"
       ],
       cta: "Start Free Trial",
       popular: true
     },
     {
-      name: "Scale – Power for Product Specialists",
-      description: "The full performance suite for teams running at scale",
+      name: "Scale",
+      description: "Enterprise-grade solution for large sales teams and multiple locations",
       monthlyPrice: 499,
       yearlyPrice: 399,
       features: [
-        "400 video chat hours",
-        "Unlimited live chat sessions",
-        "Unlimited users",
-        "Unlimited video and webchat",
-        "Admin dashboard and manager log",
-        "API and CRM integrations",
-        "Real-time reports (by store, team, or individual sales person)",
-        "Multi-agent routing and live queue",
-        "Dedicated onboarding and support",
-        "Optional AI Sales"
+        "Unlimited video chat hours",
+        "Unlimited users & locations",
+        "Advanced CRM integrations",
+        "Custom onboarding & training",
+        "Dedicated account manager",
+        "White-label options",
+        "Advanced security & compliance"
       ],
       cta: "Contact Sales",
       popular: false
@@ -75,7 +67,7 @@ const PricingSection = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy">
             Simple, Flexible Pricing for Every Team
           </h2>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-muted-foreground">
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-foreground">
             Start free. No credit card required. Plans from just €49/month.
           </p>
           
@@ -149,7 +141,7 @@ const PricingSection = () => {
 
               <CardFooter className="flex-shrink-0">
                 <Button 
-                  className="w-full h-12 touch-manipulation" 
+                  className={`w-full h-12 touch-manipulation ${plan.popular ? 'bg-secondary hover:bg-secondary/90 text-white' : 'border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white'} rounded-full`}
                   variant={plan.popular ? "default" : "outline"}
                   size="lg"
                 >
@@ -161,7 +153,7 @@ const PricingSection = () => {
         </div>
 
         <div className="text-center mt-8 sm:mt-12">
-          <p className="text-sm text-muted-foreground px-4">
+          <p className="text-sm text-foreground px-4">
             All plans include 14-day free trial • No setup fees • Cancel anytime
           </p>
         </div>

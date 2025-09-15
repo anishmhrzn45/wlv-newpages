@@ -9,16 +9,16 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 210 11% 15%;
+    --foreground: 0 0% 29%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 11% 15%;
+    --card-foreground: 0 0% 29%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 15%;
+    --popover-foreground: 0 0% 29%;
 
     /* Navy brand color for headings and primary elements */
-    --primary: 210 100% 20%;
+    --primary: 214 72% 14%;
     --primary-foreground: 0 0% 100%;
 
     /* Pink CTA color */
@@ -26,28 +26,31 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 13% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 0 0% 29%;
 
-    --accent: 220 13% 96%;
-    --accent-foreground: 210 11% 15%;
+    --accent: 217 56% 72%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 210 100% 20%;
+    --ring: 214 72% 14%;
 
     /* Custom brand colors */
-    --brand-navy: 210 100% 20%;
+    --brand-navy: 214 72% 14%;
+    --brand-navy-secondary: 214 47% 16%;
     --brand-pink: 339 89% 55%;
     --brand-light: 220 50% 98%;
-    --brand-gray: 215 25% 65%;
+    --brand-gray: 0 0% 29%;
+    --brand-accent-blue: 217 56% 72%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-navy)), hsl(210 100% 30%));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-navy)), hsl(var(--brand-navy-secondary)));
     --gradient-pink: linear-gradient(135deg, hsl(var(--brand-pink)), hsl(339 89% 65%));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--brand-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--brand-accent-blue)), hsl(217 56% 82%));
 
     /* Shadows */
     --shadow-soft: 0 4px 20px -8px hsl(var(--brand-navy) / 0.15);

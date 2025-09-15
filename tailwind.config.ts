@@ -53,9 +53,11 @@ export default {
         // Brand colors
         brand: {
           navy: "hsl(var(--brand-navy))",
+          "navy-secondary": "hsl(var(--brand-navy-secondary))",
           pink: "hsl(var(--brand-pink))",
           light: "hsl(var(--brand-light))",
           gray: "hsl(var(--brand-gray))",
+          "accent-blue": "hsl(var(--brand-accent-blue))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

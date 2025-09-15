@@ -20,26 +20,26 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#product" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
+          <a href="#product" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
             Product
           </a>
-          <a href="#features" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
+          <a href="#features" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
             Features
           </a>
-          <a href="#pricing" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
+          <a href="#pricing" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
             Pricing
           </a>
-          <a href="#contact" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
+          <a href="#contact" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
             Contact
           </a>
         </nav>
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center space-x-3">
-          <Button variant="free-trial" size="lg">
+          <Button className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-6">
             Start Free Trial
           </Button>
-          <Button variant="book-demo" size="lg">
+          <Button variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full px-6">
             Book a Demo
           </Button>
         </div>
@@ -61,38 +61,38 @@ const Header = () => {
             <nav className="flex flex-col space-y-6">
               <a 
                 href="#product" 
-                className="text-base font-medium text-foreground/80 py-2 touch-manipulation"
+                className="text-base font-medium text-brand-gray py-2 touch-manipulation"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Product
               </a>
               <a 
                 href="#features" 
-                className="text-base font-medium text-foreground/80 py-2 touch-manipulation"
+                className="text-base font-medium text-brand-gray py-2 touch-manipulation"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Features
               </a>
               <a 
                 href="#pricing" 
-                className="text-base font-medium text-foreground/80 py-2 touch-manipulation"
+                className="text-base font-medium text-brand-gray py-2 touch-manipulation"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Pricing
               </a>
               <a 
                 href="#contact" 
-                className="text-base font-medium text-foreground/80 py-2 touch-manipulation"
+                className="text-base font-medium text-brand-gray py-2 touch-manipulation"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </a>
             </nav>
             <div className="flex flex-col space-y-3 pt-4">
-              <Button variant="free-trial" size="xl" className="w-full h-12 touch-manipulation">
+              <Button className="w-full h-12 touch-manipulation bg-secondary hover:bg-secondary/90 text-white rounded-full">
                 Start Free Trial
               </Button>
-              <Button variant="book-demo" size="xl" className="w-full h-12 touch-manipulation">
+              <Button variant="outline" className="w-full h-12 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
                 Book a Demo
               </Button>
             </div>

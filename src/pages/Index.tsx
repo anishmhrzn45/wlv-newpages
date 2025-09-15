@@ -1,12 +1,13 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import VideoSection from "@/components/VideoSection";
-import WhyWebLiveView from "@/components/WhyWebLiveView";
-import HowItWorks from "@/components/HowItWorks";
 import FeaturesSection from "@/components/FeaturesSection";
+import HowItWorks from "@/components/HowItWorks";
 import UseCasesSection from "@/components/UseCasesSection";
-import PricingSection from "@/components/PricingSection";
+import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import PricingSection from "@/components/PricingSection";
+import CallToActionSection from "@/components/CallToActionSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -17,12 +18,13 @@ const Index = () => {
       <main>
         <HeroSection />
         <VideoSection />
-        <WhyWebLiveView />
-        <HowItWorks />
         <FeaturesSection />
+        <HowItWorks />
         <UseCasesSection />
-        <PricingSection />
+        <BenefitsSection />
         <TestimonialsSection />
+        <PricingSection />
+        <CallToActionSection />
         <ContactSection />
       </main>
       <Footer />

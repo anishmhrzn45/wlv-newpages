@@ -33,15 +33,15 @@ const VideoSection = () => {
 
           {/* Caption */}
           <div className="mt-6 text-center">
-            <p className="text-lg text-muted-foreground">
-              Watch how retailers use WebLiveView to convert online shoppers.
-            </p>
+          <p className="text-lg text-foreground">
+            Watch how retailers boost conversions with live video shopping
+          </p>
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="outline">
+              <Button variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
                 <Play className="mr-2 h-4 w-4" />
                 Watch Demo
               </Button>
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm text-foreground">
                 2 min overview • No sound required
               </span>
             </div>
