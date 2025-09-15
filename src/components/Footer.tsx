@@ -76,7 +76,7 @@ const Footer = () => {
             </div>
             
             <div className="text-sm text-white/60">
-              <p>© 2024 WebLiveView Ltd. All rights reserved.</p>
+              <p>© 2025 WebLiveView Ltd. All rights reserved.</p>
             </div>
           </div>
 
