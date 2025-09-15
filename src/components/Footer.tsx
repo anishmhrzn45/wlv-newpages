@@ -36,11 +36,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <div className="flex items-center mb-4">
+            {/* Logo in white box */}
+            <div className="bg-white rounded-lg p-4 mb-4 inline-block">
               <img 
                 src={logo} 
                 alt="WebLiveView - Video Shopping Made Easy" 
-                className="w-[150px] h-[40px] md:w-[175px] md:h-[47px] lg:w-[200px] lg:h-[50px] object-contain filter brightness-0 invert"
+                className="w-[150px] h-[40px] md:w-[175px] md:h-[47px] lg:w-[200px] lg:h-[50px] object-contain"
               />
             </div>
             <p className="text-white/70 mb-6 max-w-md">
