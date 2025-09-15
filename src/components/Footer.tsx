@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="sm:col-span-2">
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 mb-6">
               {/* Logo */}
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 bg-brand-navy p-4 rounded-lg">
                 <img 
                   src={logo} 
                   alt="WebLiveView - Video Shopping Made Easy" 
