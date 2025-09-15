@@ -89,8 +89,17 @@ All colors MUST be HSL.
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Keep pink color in dark mode */
+    --secondary: 339 89% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Add brand colors for dark mode */
+    --brand-navy: 214 72% 14%;
+    --brand-navy-secondary: 214 47% 16%;
+    --brand-pink: 339 89% 55%;
+    --brand-light: 222.2 84% 4.9%;
+    --brand-gray: 210 40% 98%;
+    --brand-accent-blue: 217 56% 72%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
