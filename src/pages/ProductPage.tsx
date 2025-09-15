@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import VideoSection from "@/components/VideoSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import WhoUsesSection from "@/components/WhoUsesSection";
 import PricingSection from "@/components/PricingSection";
 import CallToActionSection from "@/components/CallToActionSection";
 import Footer from "@/components/Footer";
@@ -16,6 +17,7 @@ const ProductPage = () => {
         <VideoSection />
         <FeaturesSection />
         <BenefitsSection />
+        <WhoUsesSection />
         <PricingSection />
         <CallToActionSection />
       </main>
