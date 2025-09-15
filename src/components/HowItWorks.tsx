@@ -3,21 +3,18 @@ import { MousePointer, Video, ShoppingBag } from "lucide-react";
 const steps = [
   {
     icon: MousePointer,
-    title: "Click",
-    subtitle: "Customers tap the video button",
-    description: "Customers can instantly start a video call right from your website."
+    title: "Tap",
+    description: "Customers tap the video button right on your website."
   },
   {
     icon: Video,
-    title: "Connect", 
-    subtitle: "Start a 1:1 video call with your sales team",
-    description: "Your sales experts connect instantly to provide personalized help and demonstrations."
+    title: "Talk",
+    description: "They connect instantly with your sales expert for personal advice."
   },
   {
     icon: ShoppingBag,
-    title: "Convert",
-    subtitle: "Demo products, answer questions, close sales",
-    description: "Guide customers through products and close deals with face-to-face trust building."
+    title: "Shop",
+    description: "Customers browse, ask questions, and buy with confidence."
   }
 ];
 
@@ -36,10 +33,12 @@ const HowItWorks = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step, index) => (
-            <div key={index} className="relative text-center">
-              {/* Step Number */}
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold">
-                {index + 1}
+            <div key={index} className="text-center">
+              {/* Large Step Number */}
+              <div className="mb-6">
+                <span className="text-5xl md:text-6xl font-bold text-brand-navy">
+                  {index + 1}
+                </span>
               </div>
               
               {/* Icon */}
@@ -47,21 +46,15 @@ const HowItWorks = () => {
                 <step.icon className="h-8 w-8" />
               </div>
 
-              {/* Content */}
-              <h3 className="text-2xl font-bold text-brand-navy mb-2">
+              {/* Step Title */}
+              <h3 className="text-xl font-bold text-brand-navy mb-4">
                 {step.title}
               </h3>
-              <p className="text-lg font-medium text-secondary mb-4">
-                {step.subtitle}
-              </p>
-              <p className="text-muted-foreground">
+              
+              {/* Description */}
+              <p className="text-foreground font-medium leading-relaxed max-w-xs mx-auto">
                 {step.description}
               </p>
-
-              {/* Connector Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-secondary/30 to-transparent transform translate-x-6 -translate-y-1/2"></div>
-              )}
             </div>
           ))}
         </div>
