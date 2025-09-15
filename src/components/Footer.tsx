@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react";
-import logo from "@/assets/webliveview-logo-white-on-navy.png";
+import logo from "@/assets/webliveview-logo-white.png";
 
 const Footer = () => {
   return (
