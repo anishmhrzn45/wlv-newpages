@@ -4,20 +4,20 @@ const steps = [
   {
     icon: MousePointer,
     title: "Click",
-    subtitle: "Customer clicks 'Video Chat' on your product page",
-    description: "Customers can instantly request a live video consultation while browsing your products online."
+    subtitle: "Customers tap the video button",
+    description: "Customers can instantly start a video call right from your website."
   },
   {
     icon: Video,
     title: "Connect", 
-    subtitle: "Expert joins within 30 seconds for live demo",
-    description: "Your product experts connect via HD video to provide personalized demonstrations and answer questions."
+    subtitle: "Start a 1:1 video call with your sales team",
+    description: "Your sales experts connect instantly to provide personalized help and demonstrations."
   },
   {
     icon: ShoppingBag,
     title: "Convert",
-    subtitle: "Guided purchase with confidence and trust",
-    description: "Customers make informed purchase decisions with expert guidance, leading to higher conversion rates."
+    subtitle: "Demo products, answer questions, close sales",
+    description: "Guide customers through products and close deals with face-to-face trust building."
   }
 ];
 
@@ -30,7 +30,7 @@ const HowItWorks = () => {
             How It Works
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Simple, effective, and proven to increase conversions in just three steps.
+            It's like FaceTime — but built for selling.
           </p>
         </div>
 

@@ -1,12 +1,11 @@
 import { CheckCircle } from "lucide-react";
 
 const benefits = [
-  "Bridge the gap between online browsing and in-store experience",
-  "Reduce abandoned carts by addressing concerns in real-time",
-  "Build trust through face-to-face product demonstrations", 
-  "Increase average order value with personalized recommendations",
-  "Convert more browsers into buyers with expert guidance",
-  "Provide exceptional customer service that builds loyalty"
+  "No more showroom-only sales",
+  "No back-and-forth emails", 
+  "No apps or downloads",
+  "Just instant, face-to-face video support — right on your website",
+  "More trust, faster decisions, and higher conversion rates"
 ];
 
 const WhyWebLiveView = () => {
@@ -17,12 +16,10 @@ const WhyWebLiveView = () => {
           {/* Content */}
           <div>
             <h2 className="text-3xl font-bold text-brand-navy md:text-4xl lg:text-5xl mb-6">
-              Why Choose WebLiveView?
+              Why Retailers Choose WebLiveView
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Online shopping for furniture, kitchens, and bathrooms is challenging. Customers need to see, 
-              touch, and understand products before making significant purchases. WebLiveView brings the 
-              showroom experience directly to their screen.
+              Customers want personal help — without showroom visits or long waits.
             </p>
             
             <div className="space-y-4">

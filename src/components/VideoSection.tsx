@@ -34,7 +34,7 @@ const VideoSection = () => {
           {/* Caption */}
           <div className="mt-6 text-center">
             <p className="text-lg text-muted-foreground">
-              Watch how retailers use WebLiveView to convert online shoppers
+              Watch how retailers use WebLiveView to convert online shoppers.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="outline">

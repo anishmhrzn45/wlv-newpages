@@ -1,35 +1,35 @@
-import { Video, Users, Calendar, BarChart3, MessageSquare, Shield } from "lucide-react";
+import { Video, Users, Calendar, BarChart3, MessageSquare, Smartphone } from "lucide-react";
 
 const features = [
   {
     icon: Video,
-    title: "Live Video Calls",
-    description: "Connect customers with product experts through HD video calls directly on your website."
+    title: "Live Video from Your Website",
+    description: "Embed video calls directly in your site - no third-party apps or downloads needed."
   },
   {
     icon: Users,
     title: "Guided Product Demos",
-    description: "Walk customers through products virtually, highlighting features and answering questions in real-time."
+    description: "Show products live on camera with interactive demonstrations and personalized recommendations."
   },
   {
     icon: Calendar,
-    title: "CRM & Calendar Sync",
-    description: "Integrate with your existing CRM and calendar systems for seamless appointment scheduling."
+    title: "CRM + Calendar Sync",
+    description: "Seamlessly integrate with your existing systems for streamlined sales operations."
   },
   {
     icon: MessageSquare,
     title: "Real-Time Support",
-    description: "Provide instant support during the shopping journey with live chat and video assistance."
+    description: "Answer questions instantly to reduce abandoned carts and build customer trust."
   },
   {
     icon: BarChart3,
     title: "Conversion Analytics",
-    description: "Track engagement metrics, conversion rates, and ROI from your video shopping sessions."
+    description: "Track calls, conversions, and ROI. See which products sell best during live sessions."
   },
   {
-    icon: Shield,
-    title: "Secure & Reliable",
-    description: "Enterprise-grade security with 99.9% uptime guaranteed for all your customer interactions."
+    icon: Smartphone,
+    title: "Mobile & Desktop Ready",
+    description: "Works perfectly on all devices with no downloads. iOS, Android, and desktop compatible."
   }
 ];
 
@@ -39,10 +39,10 @@ const FeaturesSection = () => {
       <div className="container">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl font-bold text-brand-navy md:text-4xl lg:text-5xl">
-            Everything You Need to Sell More Online
+            Key Features for High-Touch Selling
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Powerful features designed specifically for furniture, kitchen, bathroom, and eCommerce retailers.
+            Everything your sales team needs to sell from anywhere.
           </p>
         </div>
 

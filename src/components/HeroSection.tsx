@@ -20,8 +20,8 @@ const HeroSection = () => {
 
             {/* Subheadline */}
             <p className="mt-6 text-lg leading-8 text-muted-foreground md:text-xl">
-              WebLiveView helps kitchen, bathroom, furniture, and eCommerce brands sell more online 
-              through guided video consultations and virtual showrooms.
+              WebLiveView helps kitchen, bathroom, furniture, and eCommerce brands boost online sales by bringing the 
+              showroom experience directly to the customer — through live video consultations and guided product demos.
             </p>
 
             {/* CTA Buttons */}

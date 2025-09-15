@@ -15,7 +15,7 @@ const Footer = () => {
               </span>
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              Join hundreds of retailers already using WebLiveView to increase conversions and build customer relationships.
+              WebLiveView installs easily on any website — no developers needed. Start converting more visitors into buyers today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" variant="secondary" className="min-w-[200px]">

@@ -10,7 +10,7 @@ const PricingSection = () => {
   const plans = [
     {
       name: "Starter",
-      description: "Perfect for small businesses getting started",
+      description: "For solo sellers & small teams",
       monthlyPrice: 49,
       yearlyPrice: 39,
       features: [
@@ -24,10 +24,10 @@ const PricingSection = () => {
       popular: false
     },
     {
-      name: "Pro",
-      description: "Most popular for growing businesses",
-      monthlyPrice: 149,
-      yearlyPrice: 119,
+      name: "Growth",
+      description: "For growing sales teams",
+      monthlyPrice: 199,
+      yearlyPrice: 159,
       features: [
         "Unlimited video calls",
         "Advanced CRM integration", 
@@ -42,12 +42,12 @@ const PricingSection = () => {
       popular: true
     },
     {
-      name: "Enterprise",
-      description: "For large organizations with custom needs",
-      monthlyPrice: 399,
-      yearlyPrice: 319,
+      name: "Scale",
+      description: "Full analytics and integrations",
+      monthlyPrice: 499,
+      yearlyPrice: 399,
       features: [
-        "Everything in Pro",
+        "Everything in Growth",
         "Dedicated account manager",
         "24/7 phone support",
         "Custom integrations",
@@ -66,10 +66,10 @@ const PricingSection = () => {
       <div className="container">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl font-bold text-brand-navy md:text-4xl lg:text-5xl">
-            Simple, Transparent Pricing
+            Simple, Flexible Pricing for Every Team
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Choose the perfect plan for your business. All plans include a 14-day free trial.
+            Start free. No credit card required. Plans from just €49/month.
           </p>
           
           {/* Billing Toggle */}
@@ -120,7 +120,7 @@ const PricingSection = () => {
               <CardContent className="text-center">
                 <div className="mb-6">
                   <span className="text-4xl font-bold text-brand-navy">
-                    ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                    €{isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                   </span>
                   <span className="text-muted-foreground">/month</span>
                   {isYearly && (

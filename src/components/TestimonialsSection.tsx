@@ -23,18 +23,16 @@ const TestimonialsSection = () => {
             </div>
             
             <blockquote className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
-              "WebLiveView transformed our kitchen showroom business. We've seen a 35% increase in 
-              conversions and our customers love being able to get expert advice from home. The 
-              video quality is excellent and the integration was seamless."
+              "We closed two full kitchen redesigns in our first week using WebLiveView. It's a game-changer for retailers like us."
             </blockquote>
             
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center text-white font-semibold mr-4">
-                SM
+                EN
               </div>
               <div>
-                <div className="font-semibold text-foreground">Sarah Mitchell</div>
-                <div className="text-muted-foreground">Sales Manager, Premier Kitchen Design</div>
+                <div className="font-semibold text-foreground">Emily N.</div>
+                <div className="text-muted-foreground">Kitchen Showroom Manager</div>
               </div>
             </div>
           </div>

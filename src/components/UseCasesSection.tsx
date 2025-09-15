@@ -3,24 +3,24 @@ import { Sofa, ChefHat, Bath } from "lucide-react";
 const useCases = [
   {
     icon: Sofa,
-    title: "Furniture Stores",
-    description: "Help customers visualize furniture in their space with live consultations",
-    benefits: ["Show fabric textures and wood finishes", "Demonstrate assembly and care", "Suggest complementary pieces"],
-    stats: "Average order: $2,400"
+    title: "Furniture Retailers",
+    description: "Show fabrics, finishes, and product details live on camera",
+    benefits: ["Display fabric textures up close", "Show wood finishes and craftsmanship", "Help with room layout and sizing"],
+    stats: "One sofa = €2,500 ROI"
   },
   {
     icon: ChefHat, 
-    title: "Kitchen & Bath Showrooms",
-    description: "Guide customers through complex renovation decisions with expert advice",
-    benefits: ["Walk through design options", "Explain technical specifications", "Coordinate with contractors"],
-    stats: "Average project: $15,000"
+    title: "Kitchen & Bathroom Retailers",
+    description: "Guide customers through design options remotely",
+    benefits: ["Walk through material choices", "Explain layout possibilities", "Coordinate design elements"],
+    stats: "One kitchen = €12,000 ROI"
   },
   {
     icon: Bath,
-    title: "eCommerce Retailers",
-    description: "Reduce returns and increase customer confidence in online purchases",
-    benefits: ["Product demonstrations", "Size and fit guidance", "Real-time Q&A support"],
-    stats: "25% reduction in returns"
+    title: "Ecommerce Brands",
+    description: "Bring your best sales reps online to recover abandoned carts and boost AOV",
+    benefits: ["Live product demonstrations", "Recover abandoned carts", "Increase average order value"],
+    stats: "One bathroom = €7,000 ROI"
   }
 ];
 
@@ -30,10 +30,10 @@ const UseCasesSection = () => {
       <div className="container">
         <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl font-bold text-brand-navy md:text-4xl lg:text-5xl">
-            Built for Your Industry
+            Tailored for Kitchen, Bathroom & Furniture Sales
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Specialized features designed for furniture, kitchen, bathroom, and eCommerce retailers.
+            Purpose-built for high-value retail sales that need personal touch.
           </p>
         </div>
 
@@ -79,20 +79,20 @@ const UseCasesSection = () => {
         <div className="mt-20 text-center">
           <div className="mx-auto max-w-4xl rounded-2xl bg-gradient-to-r from-secondary/10 to-primary/10 p-8 md:p-12">
             <h3 className="text-2xl font-bold text-brand-navy mb-4">
-              Real ROI from Real Customers
+              Real ROI, Not Just Features
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
-                <div className="text-3xl font-bold text-secondary mb-2">+45%</div>
-                <div className="text-sm text-muted-foreground">Kitchen sales conversion</div>
+                <div className="text-3xl font-bold text-secondary mb-2">+30%</div>
+                <div className="text-sm text-muted-foreground">Lift in online conversion rate</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-secondary mb-2">$890K</div>
-                <div className="text-sm text-muted-foreground">Additional revenue in 6 months</div>
+                <div className="text-3xl font-bold text-secondary mb-2">20%</div>
+                <div className="text-sm text-muted-foreground">Fewer abandoned carts</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-secondary mb-2">15%</div>
-                <div className="text-sm text-muted-foreground">Increase in average order value</div>
+                <div className="text-3xl font-bold text-secondary mb-2">Higher</div>
+                <div className="text-sm text-muted-foreground">AOV through live upselling</div>
               </div>
             </div>
           </div>
