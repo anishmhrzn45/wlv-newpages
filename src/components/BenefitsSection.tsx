@@ -1,102 +1,47 @@
-import { CheckCircle, ShoppingCart, Sofa, BarChart3, Handshake, Video } from "lucide-react";
+import { Home, ShoppingCart, Shield } from "lucide-react";
 
-const benefits = [
+const features = [
   {
-    icon: Video,
-    title: "See It. Ask It. Buy It.",
-    description: "Turn Browsers Into Buyers",
-    detail: "Capture conversions when customers are in buying mode."
+    icon: Home,
+    title: "Skip the Showroom",
+    description: "No more weekend trips — let your customers explore products face-to-face from home."
   },
   {
-    icon: CheckCircle,
-    title: "Right Choice, First Time.",
-    description: "Cut Returns & Refunds",
-    detail: "Help shoppers choose right the first time."
+    icon: ShoppingCart,
+    title: "Sell Smarter", 
+    description: "Use video calls to answer questions, reduce returns, and close more high-value orders."
   },
   {
-    icon: Sofa,
-    title: "Big Purchases Made Simple.",
-    description: "Sell Big-Ticket Items With Confidence",
-    detail: "Furniture & kitchens showcased via live demos."
-  },
-  {
-    icon: BarChart3,
-    title: "Smarter Teams, Bigger Sales.",
-    description: "Supercharge Your Sales Team",
-    detail: "Equip staff with guided selling & reporting tools."
-  },
-  {
-    icon: Handshake,
-    title: "Trust That Brings Them Back.",
-    description: "Build Loyalty That Lasts",
-    detail: "Human connections that create repeat customers."
+    icon: Shield,
+    title: "Increase Trust",
+    description: "Build confidence and reduce friction with live, human interaction — no app downloads needed."
   }
-];
-
-const stats = [
-  { number: "3x", label: "Higher conversion rates" },
-  { number: "70%", label: "Of shoppers more confident after live demo" },
-  { number: "30%", label: "More deals closed by sales teams" }
 ];
 
 const BenefitsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-brand-light/30">
-      <div className="container">
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <h2 className="text-3xl font-bold text-brand-navy md:text-4xl lg:text-5xl">
-            Why Choose WebLiveView
-          </h2>
-          <p className="mt-4 text-lg text-foreground max-w-3xl mx-auto">
-            WebLiveView bridges the gap between online convenience and in-store expertise, 
-            delivering higher sales, happier customers, and measurable growth.
-          </p>
-        </div>
-
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="text-center group">
-              <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-medium text-brand-accent-blue group-hover:scale-110 transition-transform">
-                <benefit.icon className="h-8 w-8" />
-              </div>
-              <h3 className="text-lg font-bold text-brand-navy mb-2">
-                {benefit.title}
-              </h3>
-              <h4 className="text-base font-semibold text-secondary mb-2">
-                {benefit.description}
-              </h4>
-              <p className="text-sm text-foreground">
-                {benefit.detail}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Stats Section */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-large">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-brand-navy mb-2">
-              Proven Results
-            </h3>
-            <p className="text-foreground">
-              See the impact WebLiveView makes for retailers worldwide
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">
-                  {stat.number}
+    <section className="py-16 bg-white text-brand-navy">
+      <div className="max-w-5xl mx-auto px-6 text-center space-y-6">
+        <h2 className="text-3xl md:text-4xl font-bold">Why Choose WebLiveView?</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6 text-left">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm flex flex-col items-start">
+                <div className="w-14 h-14 mb-5 bg-brand-light/20 rounded-lg flex items-center justify-center">
+                  <IconComponent className="w-8 h-8 text-brand-navy" />
                 </div>
-                <p className="text-foreground font-medium">
-                  {stat.label}
-                </p>
+                <h3 className="font-semibold text-lg mb-2 text-brand-navy">{feature.title}</h3>
+                <p className="text-muted-foreground text-sm">{feature.description}</p>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
+        
+        <p className="text-lg font-medium text-brand-navy pt-6">
+          Fewer abandoned carts. Faster sales. Happier customers.
+        </p>
       </div>
     </section>
   );
