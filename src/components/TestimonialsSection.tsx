@@ -23,16 +23,16 @@ const TestimonialsSection = () => {
             </div>
             
             <blockquote className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
-              "We closed two full kitchen redesigns in our first week using WebLiveView. It's a game-changer for retailers like us."
+              "Customers love the one-to-one video service — especially for larger pieces like wardrobes and sofas where size and fabric matter. It's taken the guesswork out of online shopping. We're getting fewer returns and happier reviews."
             </blockquote>
             
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center text-white font-semibold mr-4">
-                EN
+                LK
               </div>
               <div>
-                <div className="font-semibold text-foreground">Emily N.</div>
-                <div className="text-muted-foreground">Kitchen Showroom Manager</div>
+                <div className="font-semibold text-foreground">Laura Keane</div>
+                <div className="text-muted-foreground">Head of eCommerce, Urban Living</div>
               </div>
             </div>
           </div>
@@ -46,12 +46,13 @@ const TestimonialsSection = () => {
                 ))}
               </div>
               <p className="text-foreground mb-4">
-                "Our furniture sales increased by 28% after implementing WebLiveView. 
-                Customers can now see our craftsmanship up close."
+                "Our showroom staff now take calls from the website during quiet times, giving 
+                online customers the same service as those walking in. WebLiveView was easy to 
+                train and rolled out fast. It's like adding an extra store without the overhead."
               </p>
               <div className="text-sm">
-                <div className="font-medium text-foreground">Mike Chen</div>
-                <div className="text-muted-foreground">Owner, Artisan Furniture Co.</div>
+                <div className="font-medium text-foreground">Kevin Byrne</div>
+                <div className="text-muted-foreground">Retail Director, Oak & Elm Furniture</div>
               </div>
             </div>
 
@@ -62,12 +63,14 @@ const TestimonialsSection = () => {
                 ))}
               </div>
               <p className="text-foreground mb-4">
-                "The return rate on our bathroom fixtures dropped by 40% since we started 
-                using WebLiveView for product demonstrations."
+                "WebLiveView helped us turn more browsers into buyers. Our team can now 
+                walk customers through sofas, paint and dining sets in real-time — just like in our 
+                store. Since adding video shopping, conversion rates have jumped by 22% and it's 
+                become one of our highest-performing sales channels."
               </p>
               <div className="text-sm">
-                <div className="font-medium text-foreground">Lisa Rodriguez</div>
-                <div className="text-muted-foreground">eCommerce Director, Bath Innovations</div>
+                <div className="font-medium text-foreground">John Murphy</div>
+                <div className="text-muted-foreground">Sales Manager, Comfort Interiors</div>
               </div>
             </div>
           </div>
