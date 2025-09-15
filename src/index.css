@@ -22,7 +22,7 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 100%;
 
     /* Pink CTA color */
-    --secondary: 322 100% 67%;
+    --secondary: 355 87% 66%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 13% 96%;
@@ -40,13 +40,13 @@ All colors MUST be HSL.
 
     /* Custom brand colors */
     --brand-navy: 210 100% 20%;
-    --brand-pink: 322 100% 67%;
+    --brand-pink: 355 87% 66%;
     --brand-light: 220 50% 98%;
     --brand-gray: 215 25% 65%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--brand-navy)), hsl(210 100% 30%));
-    --gradient-pink: linear-gradient(135deg, hsl(var(--brand-pink)), hsl(322 100% 75%));
+    --gradient-pink: linear-gradient(135deg, hsl(var(--brand-pink)), hsl(355 87% 75%));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--brand-light)));
 
     /* Shadows */
