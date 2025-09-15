@@ -20,10 +20,10 @@ const Footer = () => {
               WebLiveView installs easily on any website — no developers needed. Start converting more visitors into buyers today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" variant="secondary" className="min-w-[200px]">
+              <Button size="xl" variant="free-trial" className="min-w-[200px]">
                 Start Free Trial
               </Button>
-              <Button size="lg" variant="outline" className="min-w-[200px] border-white text-white hover:bg-white hover:text-brand-navy">
+              <Button size="xl" variant="book-demo" className="min-w-[200px]">
                 Book Demo
               </Button>
             </div>
