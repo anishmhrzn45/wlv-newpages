@@ -1,4 +1,4 @@
-import { Video, Users, Share2, Smartphone, Calendar, BarChart3 } from "lucide-react";
+import { Video, Users, Route, Smartphone, Calendar, BarChart3 } from "lucide-react";
 
 const features = [
   {
@@ -7,9 +7,9 @@ const features = [
     description: "Connect face-to-face with customers anywhere in the world. High-quality video calls that work seamlessly across all devices."
   },
   {
-    icon: Share2,
-    title: "Screen Sharing",
-    description: "Share your screen to showcase products, navigate websites together, or demonstrate software features in real-time."
+    icon: Route,
+    title: "Smart Call Routing",
+    description: "Automatically route incoming shopper calls to the right product expert, brand specialist, or team member — based on availability, category, or location."
   },
   {
     icon: Users,
