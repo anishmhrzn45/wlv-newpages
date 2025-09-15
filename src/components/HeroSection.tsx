@@ -36,7 +36,7 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
-              <Button size="lg" className="min-w-[200px]">
+              <Button size="lg" variant="secondary" className="min-w-[200px]">
                 Start Free Trial
               </Button>
               <Button variant="outline" size="lg" className="min-w-[200px]">

@@ -36,7 +36,7 @@ const Header = () => {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center space-x-3">
-          <Button variant="outline" size="sm">
+          <Button variant="secondary" size="sm">
             Start Free Trial
           </Button>
           <Button size="sm">
@@ -73,7 +73,7 @@ const Header = () => {
               </a>
             </nav>
             <div className="flex flex-col space-y-2 pt-4">
-              <Button variant="outline" size="sm">
+              <Button variant="secondary" size="sm">
                 Start Free Trial
               </Button>
               <Button size="sm">

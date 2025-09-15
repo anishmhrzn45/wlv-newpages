@@ -94,7 +94,7 @@ const ContactSection = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     No credit card required. Get started in less than 5 minutes.
                   </p>
-                  <Button className="w-full">Start Free Trial</Button>
+                  <Button variant="secondary" className="w-full">Start Free Trial</Button>
                 </Card>
 
                 <Card className="p-6 bg-gradient-to-br from-primary/10 to-transparent border-primary/20">
