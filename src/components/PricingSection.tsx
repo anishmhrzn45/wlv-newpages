@@ -9,16 +9,20 @@ const PricingSection = () => {
 
   const plans = [
     {
-      name: "Starter",
-      description: "For solo sellers & small teams",
+      name: "Starter Sales Super Stars",
+      description: "Built for Super Sale Stars - Perfect for small teams with big ambition",
       monthlyPrice: 49,
       yearlyPrice: 39,
       features: [
-        "Up to 50 video calls/month",
-        "Basic calendar integration",
-        "Email support",
-        "Standard video quality",
-        "Basic analytics"
+        "3 video chat hours",
+        "Unlimited live chat sessions", 
+        "Unlimited users",
+        "1–2 sales people",
+        "2 hours video per month",
+        "Unlimited webchat",
+        "Basic performance reporting",
+        "Web & iOS access",
+        "Your logo, your brand"
       ],
       cta: "Start Free Trial",
       popular: false
