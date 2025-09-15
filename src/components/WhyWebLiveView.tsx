@@ -22,11 +22,11 @@ const WhyWebLiveView = () => {
               Customers want personal help — without showroom visits or long waits.
             </p>
             
-            <div className="space-y-4">
+            <div className="space-y-3 pl-0">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-secondary mt-1 flex-shrink-0" />
-                  <span className="text-foreground">{benefit}</span>
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
+                  <span className="text-foreground leading-relaxed">{benefit}</span>
                 </div>
               ))}
             </div>

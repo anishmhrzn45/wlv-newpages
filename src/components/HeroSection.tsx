@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import { Play, CreditCard, Calendar, X } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 import webLiveViewLogo from "@/assets/webliveview-logo.png";
 
@@ -46,18 +46,21 @@ const HeroSection = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="mt-8 sm:mt-10 flex flex-col items-center lg:items-start space-y-3 sm:space-y-4 md:flex-row md:items-center md:space-y-0 md:space-x-6 lg:space-x-8">
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <span>No setup fees</span>
+            <div className="mt-8 sm:mt-10 flex flex-wrap items-start justify-center lg:justify-start gap-4">
+              <div className="flex items-start gap-2">
+                <div className="relative">
+                  <CreditCard className="h-4 w-4 text-foreground" />
+                  <div className="absolute inset-0 w-full h-0.5 bg-foreground rotate-45 top-1/2 -translate-y-1/2"></div>
+                </div>
+                <span className="text-base font-medium text-foreground leading-tight">No setup fees</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <span>14-day free trial</span>
+              <div className="flex items-start gap-2">
+                <Calendar className="h-4 w-4 text-foreground" />
+                <span className="text-base font-medium text-foreground leading-tight">14-day free trial</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <span>Cancel anytime</span>
+              <div className="flex items-start gap-2">
+                <X className="h-4 w-4 text-foreground rounded-full border border-foreground" />
+                <span className="text-base font-medium text-foreground leading-tight">Cancel anytime</span>
               </div>
             </div>
           </div>
