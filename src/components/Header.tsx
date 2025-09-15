@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/webliveview-logo.png";
 
 const Header = () => {
@@ -11,27 +12,29 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <img 
-            src={logo} 
-            alt="WebLiveView - Video Shopping Made Easy" 
-            className="h-8 w-auto"
-          />
+          <Link to="/">
+            <img 
+              src={logo} 
+              alt="WebLiveView - Video Shopping Made Easy" 
+              className="h-8 w-auto"
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#product" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
+          <Link to="/product" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
             Product
-          </a>
+          </Link>
           <a href="#features" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
             Features
           </a>
-          <a href="#pricing" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
+          <Link to="/pricing" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
             Pricing
-          </a>
-          <a href="#contact" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
+          </Link>
+          <Link to="/contact" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
             Contact
-          </a>
+          </Link>
         </nav>
 
         {/* Desktop CTAs */}
@@ -59,13 +62,13 @@ const Header = () => {
         <div className="md:hidden border-t bg-background/95 backdrop-blur">
           <div className="container py-6 space-y-6">
             <nav className="flex flex-col space-y-6">
-              <a 
-                href="#product" 
+              <Link 
+                to="/product" 
                 className="text-base font-medium text-brand-gray py-2 touch-manipulation"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Product
-              </a>
+              </Link>
               <a 
                 href="#features" 
                 className="text-base font-medium text-brand-gray py-2 touch-manipulation"
@@ -73,20 +76,20 @@ const Header = () => {
               >
                 Features
               </a>
-              <a 
-                href="#pricing" 
+              <Link 
+                to="/pricing" 
                 className="text-base font-medium text-brand-gray py-2 touch-manipulation"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Pricing
-              </a>
-              <a 
-                href="#contact" 
+              </Link>
+              <Link 
+                to="/contact" 
                 className="text-base font-medium text-brand-gray py-2 touch-manipulation"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
-              </a>
+              </Link>
             </nav>
             <div className="flex flex-col space-y-3 pt-4">
               <Button className="w-full h-12 touch-manipulation bg-secondary hover:bg-secondary/90 text-white rounded-full">
