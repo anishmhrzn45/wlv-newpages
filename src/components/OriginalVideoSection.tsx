@@ -1,6 +1,5 @@
-import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { WistiaPlayer } from "@wistia/wistia-player-react";
+import WistiaVideo from "./WistiaVideo";
 
 const OriginalVideoSection = () => {
   return (
@@ -19,12 +18,15 @@ const OriginalVideoSection = () => {
           
           {/* Video Container */}
           <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-            <div className="aspect-video w-full">
-              <WistiaPlayer 
-                mediaId="qnl49c0ilh" 
-                className="w-full h-full"
-              />
-            </div>
+            <WistiaVideo 
+              videoId="qnl49c0ilh"
+              className="rounded-2xl"
+              autoplay={false}
+              muted={true}
+              onReady={(video) => {
+                console.log('Home page video ready:', video);
+              }}
+            />
           </div>
 
           {/* Call to Action */}
