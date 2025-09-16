@@ -35,8 +35,10 @@ const OriginalVideoSection = () => {
                   Start Free Trial
                 </a>
               </Button>
-              <Button variant="outline" size="lg">
-                Book a Demo
+              <Button asChild variant="outline" size="lg">
+                <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
+                  Book a Demo
+                </a>
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-4">

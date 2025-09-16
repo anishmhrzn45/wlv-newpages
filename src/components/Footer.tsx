@@ -22,8 +22,10 @@ const Footer = () => {
               <Button size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation bg-secondary hover:bg-secondary/90 text-white rounded-full">
                 Start Free Trial
               </Button>
-              <Button size="xl" variant="book-demo" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation rounded-full">
-                Book Demo
+              <Button asChild size="xl" variant="book-demo" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation rounded-full">
+                <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
+                  Book Demo
+                </a>
               </Button>
             </div>
           </div>

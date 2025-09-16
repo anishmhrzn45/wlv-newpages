@@ -39,9 +39,11 @@ const OriginalHeroSection = () => {
                   Start Free Trial
                 </a>
               </Button>
-              <Button variant="outline" size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
-                <Play className="mr-2 h-4 w-4" />
-                Book a Demo
+              <Button asChild variant="outline" size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
+                <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
+                  <Play className="mr-2 h-4 w-4" />
+                  Book a Demo
+                </a>
               </Button>
             </div>
 

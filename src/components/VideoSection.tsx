@@ -35,8 +35,10 @@ const VideoSection = () => {
                   Start Free Trial
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">
-                Book a Demo
+              <Button asChild variant="outline" size="lg" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">
+                <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
+                  Book a Demo
+                </a>
               </Button>
             </div>
             <p className="text-sm text-foreground mt-4">
