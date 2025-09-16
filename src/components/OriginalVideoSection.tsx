@@ -30,8 +30,10 @@ const OriginalVideoSection = () => {
           {/* Call to Action */}
           <div className="mt-8 text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="free-trial" size="lg">
-                Start Free Trial
+              <Button asChild variant="free-trial" size="lg">
+                <a href="https://webliveview.com/company-registration-extended/index" target="_blank" rel="noopener noreferrer">
+                  Start Free Trial
+                </a>
               </Button>
               <Button variant="outline" size="lg">
                 Book a Demo
