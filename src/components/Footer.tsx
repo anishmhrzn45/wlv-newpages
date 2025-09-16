@@ -61,7 +61,7 @@ const Footer = () => {
                 </div>
                 
                 {/* Social Media Icons */}
-                <div className="flex items-center space-x-4 mt-4 sm:justify-start justify-center">
+                <div className="flex items-center space-x-4 mt-4 sm:justify-start justify-center sm:ml-6">
                   <a 
                     href="https://www.linkedin.com/company/9435525/" 
                     target="_blank" 
