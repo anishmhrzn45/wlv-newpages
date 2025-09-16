@@ -1,5 +1,6 @@
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { WistiaPlayer } from "@wistia/wistia-player-react";
 
 const OriginalVideoSection = () => {
   return (
@@ -17,13 +18,11 @@ const OriginalVideoSection = () => {
           </div>
           
           {/* Video Container */}
-          <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-black">
-            <div className="aspect-video w-full relative">
-              <div 
-                className="absolute inset-0 w-full h-full"
-                dangerouslySetInnerHTML={{
-                  __html: '<wistia-player media-id="qnl49c0ilh" class="w-full h-full" style="display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></wistia-player>'
-                }}
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+            <div className="aspect-video w-full">
+              <WistiaPlayer 
+                mediaId="qnl49c0ilh" 
+                className="w-full h-full"
               />
             </div>
           </div>
