@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import PricingSection from "@/components/PricingSection";
+import FAQ from "@/components/FAQ";
 import CallToActionSection from "@/components/CallToActionSection";
 import Footer from "@/components/Footer";
 
@@ -19,6 +20,7 @@ const PricingPage = () => {
           </div>
         </div>
         <PricingSection />
+        <FAQ />
         <CallToActionSection />
       </main>
       <Footer />
