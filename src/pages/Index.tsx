@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import IndustryUseCasesSection from "@/components/IndustryUseCasesSection";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
         <OriginalVideoSection />
         <OriginalFeaturesSection />
         <HowItWorks />
+        <IndustryUseCasesSection />
         <UseCasesSection />
         <TestimonialsSection />
         <PricingSection />
