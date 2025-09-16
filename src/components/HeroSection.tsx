@@ -33,10 +33,10 @@ const HeroSection = () => {
               <button className="btn-primary w-full sm:w-auto min-w-[200px] touch-manipulation">
                 Book a Live Demo
               </button>
-              <button className="btn-secondary w-full sm:w-auto min-w-[200px] touch-manipulation inline-flex items-center justify-center">
+              <a href="https://www.youtube.com/watch?v=EiaEVoGldGg" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto min-w-[200px] touch-manipulation inline-flex items-center justify-center">
                 <Play className="mr-2 h-4 w-4" />
                 See How It Works
-              </button>
+              </a>
             </div>
           </div>
 
