@@ -1,4 +1,4 @@
-import kitchenDemo from "@/assets/kitchen-demo.png";
+import kitchenDemo from "@/assets/kitchen-demo.jpg";
 import furnitureDemo from "@/assets/furniture-demo.png";
 import electronicsDemo from "@/assets/electronics-demo.png";
 
