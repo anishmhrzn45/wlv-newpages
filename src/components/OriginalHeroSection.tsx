@@ -28,7 +28,7 @@ const OriginalHeroSection = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl leading-7 md:leading-8 text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl leading-7 md:leading-8 text-foreground max-w-2xl mx-auto lg:mx-0">
               Connect with customers through live video, share your screen, and close deals in real-time. Perfect for high-value sales that need a personal touch.
             </p>
 
