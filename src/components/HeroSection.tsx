@@ -43,13 +43,11 @@ const HeroSection = () => {
           {/* Product Screens */}
           <div className="order-1 lg:order-2">
             <div className="relative max-w-lg mx-auto lg:max-w-none flex justify-center">
-              <div className="hero-phones">
-                <img 
-                  src={productScreens} 
-                  alt="WebLiveView product showing 3 iPhone screens for Login, Live Call, and Dashboard features"
-                  className="w-full h-auto phone center"
-                />
-              </div>
+              <img 
+                src={productScreens} 
+                alt="WebLiveView product showing 3 iPhone screens for Login, Live Call, and Dashboard features"
+                className="w-full max-w-[600px] h-auto object-contain"
+              />
             </div>
           </div>
         </div>
