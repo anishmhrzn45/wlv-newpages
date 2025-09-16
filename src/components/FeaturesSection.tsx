@@ -2,7 +2,7 @@ import featuresImage from "@/assets/webliveview-features.png";
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-16 md:py-24 bg-background">
+    <section id="features" className="py-16 md:py-24 bg-background scroll-mt-20">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
