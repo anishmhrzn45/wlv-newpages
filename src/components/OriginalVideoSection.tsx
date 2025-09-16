@@ -6,45 +6,38 @@ const OriginalVideoSection = () => {
     <section id="video" className="py-16 md:py-24 bg-muted/30">
       <div className="container">
         <div className="mx-auto max-w-4xl">
+          {/* Section Header */}
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Watch WebLiveView in Action
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              See how kitchen retailers are selling more online — no showrooms required.
+            </p>
+          </div>
+          
           {/* Video Container */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 shadow-2xl">
-            <div className="aspect-video bg-gradient-to-br from-background/50 to-background/30 flex items-center justify-center">
-              {/* Video Thumbnail/Placeholder */}
-              <div className="relative group cursor-pointer">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 shadow-lg transition-transform group-hover:scale-110 backdrop-blur-sm">
-                  <Play className="h-8 w-8 text-primary ml-1" fill="currentColor" />
-                </div>
-                <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping"></div>
-              </div>
-              
-              {/* Overlay Content */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-background/20 to-transparent">
-                <div className="text-center text-foreground">
-                  <h3 className="text-xl font-semibold mb-2 drop-shadow-lg">
-                    See WebLiveView in Action
-                  </h3>
-                  <p className="text-sm opacity-90 drop-shadow">
-                    Watch how businesses increase sales with live video chat
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+            <div 
+              dangerouslySetInnerHTML={{
+                __html: '<wistia-player media-id="qnl49c0ilh" aspect="1.7777777777777777" class="w-full"></wistia-player>'
+              }}
+            />
           </div>
 
-          {/* Caption */}
-          <div className="mt-6 text-center">
-            <p className="text-lg text-muted-foreground">
-              Watch how businesses are using WebLiveView to increase sales and improve customer experience
-            </p>
-            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="outline">
-                <Play className="mr-2 h-4 w-4" />
-                Watch Demo
+          {/* Call to Action */}
+          <div className="mt-8 text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button variant="free-trial" size="lg">
+                Start Free Trial
               </Button>
-              <span className="text-sm text-muted-foreground">
-                3 min overview • No sound required
-              </span>
+              <Button variant="outline" size="lg">
+                Book a Demo
+              </Button>
             </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              55 seconds • Real customer demo
+            </p>
           </div>
         </div>
       </div>
