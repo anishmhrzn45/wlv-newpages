@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import productScreens from "@/assets/webliveview-product-screens.png";
 import webLiveViewLogo from "@/assets/webliveview-logo.png";
@@ -31,24 +30,26 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4">
-              <Button size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation bg-brand-pink hover:bg-brand-pink/90 text-white rounded-xl">
+              <button className="btn-primary w-full sm:w-auto min-w-[200px] touch-manipulation">
                 Book a Live Demo
-              </Button>
-              <Button variant="outline" size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-xl">
+              </button>
+              <button className="btn-secondary w-full sm:w-auto min-w-[200px] touch-manipulation inline-flex items-center justify-center">
                 <Play className="mr-2 h-4 w-4" />
                 See How It Works
-              </Button>
+              </button>
             </div>
           </div>
 
           {/* Product Screens */}
           <div className="order-1 lg:order-2">
-            <div className="relative max-w-lg mx-auto lg:max-w-none">
-              <img 
-                src={productScreens} 
-                alt="WebLiveView product showing 3 iPhone screens for Login, Live Call, and Dashboard features"
-                className="w-full h-auto"
-              />
+            <div className="relative max-w-lg mx-auto lg:max-w-none flex justify-center">
+              <div className="hero-phones">
+                <img 
+                  src={productScreens} 
+                  alt="WebLiveView product showing 3 iPhone screens for Login, Live Call, and Dashboard features"
+                  className="w-full h-auto phone center"
+                />
+              </div>
             </div>
           </div>
         </div>

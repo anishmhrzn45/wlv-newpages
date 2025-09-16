@@ -150,4 +150,86 @@ All colors MUST be HSL.
       min-height: 44px;
     }
   }
+
+  /* Hero phones styling */
+  .hero-phones {
+    display: flex; 
+    gap: 20px; 
+    align-items: end; 
+    justify-content: center;
+    width: clamp(520px, 45vw, 780px);
+  }
+  .hero-phones .phone.center { 
+    height: clamp(420px, 28vw, 560px); 
+  }
+  .hero-phones .phone.side { 
+    height: clamp(300px, 22vw, 440px); 
+  }
+
+  /* Button styles */
+  .btn-primary {
+    background: hsl(214 72% 14%); 
+    color: #fff; 
+    border-radius: 12px; 
+    padding: 12px 18px; 
+    font-weight: 600;
+    transition: filter 0.2s ease;
+  }
+  .btn-primary:hover { 
+    filter: brightness(1.08); 
+  }
+  .btn-secondary {
+    background: #fff; 
+    color: hsl(214 72% 14%); 
+    border: 2px solid hsl(214 72% 14%);
+    border-radius: 12px; 
+    padding: 10px 16px; 
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+  .btn-secondary:hover {
+    background: hsl(214 72% 14%);
+    color: #fff;
+  }
+
+  /* Footer styling */
+  footer { 
+    background: hsl(214 72% 14%); 
+    color: #fff; 
+  }
+  footer a { 
+    color: #fff; 
+    opacity: 0.9; 
+    transition: opacity 0.2s ease;
+  }
+  footer a:hover { 
+    opacity: 1; 
+    text-decoration: underline; 
+  }
+
+  @media (max-width: 900px) {
+    .hero-phones { 
+      width: 88vw; 
+    }
+    .hero-phones .phone.center { 
+      height: 420px; 
+    }
+    .hero-phones .phone.side { 
+      height: 320px; 
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-phones { 
+      flex-direction: column; 
+      align-items: center; 
+      gap: 16px; 
+    }
+    .hero-phones .phone.center { 
+      height: 360px; 
+    }
+    .hero-phones .phone.side { 
+      height: 300px; 
+    }
+  }
 }
