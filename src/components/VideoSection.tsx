@@ -6,45 +6,38 @@ const VideoSection = () => {
     <section className="py-16 md:py-24 bg-brand-light/50">
       <div className="container">
         <div className="mx-auto max-w-4xl">
+          {/* Section Header */}
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+              See WebLiveView in Action
+            </h2>
+            <p className="text-lg text-foreground">
+              Watch how retailers boost conversions with live video shopping
+            </p>
+          </div>
+          
           {/* Video Container */}
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-navy/5 to-secondary/5 shadow-large">
-            <div className="aspect-video bg-gradient-to-br from-brand-navy/10 to-secondary/10 flex items-center justify-center">
-              {/* Video Thumbnail/Placeholder */}
-              <div className="relative group cursor-pointer">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-medium transition-transform group-hover:scale-110">
-                  <Play className="h-8 w-8 text-brand-navy ml-1" fill="currentColor" />
-                </div>
-                <div className="absolute inset-0 rounded-full bg-secondary/20 animate-ping"></div>
-              </div>
-              
-              {/* Overlay Content */}
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-brand-navy/20 to-transparent">
-                <div className="text-center text-white">
-                  <h3 className="text-xl font-semibold mb-2 drop-shadow-lg">
-                    See WebLiveView in Action
-                  </h3>
-                  <p className="text-sm opacity-90 drop-shadow">
-                    Watch how retailers boost conversions with live video shopping
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="relative overflow-hidden rounded-2xl shadow-large">
+            <div 
+              dangerouslySetInnerHTML={{
+                __html: '<wistia-player media-id="ob1oqmqgye" aspect="1.7777777777777777" class="w-full"></wistia-player>'
+              }}
+            />
           </div>
 
-          {/* Caption */}
-          <div className="mt-6 text-center">
-          <p className="text-lg text-foreground">
-            Watch how retailers boost conversions with live video shopping
-          </p>
-            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
-                <Play className="mr-2 h-4 w-4" />
-                Watch Demo
+          {/* Call to Action */}
+          <div className="mt-8 text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button variant="free-trial" size="lg">
+                Start Free Trial
               </Button>
-              <span className="text-sm text-foreground">
-                2 min overview • No sound required
-              </span>
+              <Button variant="outline" size="lg" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">
+                Book a Demo
+              </Button>
             </div>
+            <p className="text-sm text-foreground mt-4">
+              1 minute • Product overview
+            </p>
           </div>
         </div>
       </div>
