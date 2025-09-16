@@ -29,6 +29,9 @@ const Header = () => {
           <a href="#features" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
             Features
           </a>
+          <Link to="/about" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
+            About
+          </Link>
           <Link to="/pricing" className="text-sm font-medium text-brand-gray hover:text-brand-navy transition-colors">
             Pricing
           </Link>
@@ -78,6 +81,13 @@ const Header = () => {
               >
                 Features
               </a>
+              <Link 
+                to="/about" 
+                className="text-base font-medium text-brand-gray py-2 touch-manipulation"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
               <Link 
                 to="/pricing" 
                 className="text-base font-medium text-brand-gray py-2 touch-manipulation"
