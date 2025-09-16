@@ -20,7 +20,7 @@ const OriginalHeroSection = () => {
             </div>
             
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-navy leading-tight">
               Transform Your Website Into a{" "}
               <span className="text-secondary">
                 Live Showroom
