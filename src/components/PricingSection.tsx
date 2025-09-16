@@ -140,13 +140,29 @@ const PricingSection = () => {
               </CardContent>
 
               <CardFooter className="flex-shrink-0">
-                <Button 
-                  className={`w-full h-12 touch-manipulation ${plan.popular ? 'bg-secondary hover:bg-secondary/90 text-white' : 'border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white'} rounded-full`}
-                  variant={plan.popular ? "default" : "outline"}
-                  size="lg"
-                >
-                  {plan.cta}
-                </Button>
+                {plan.cta === "Contact Sales" ? (
+                  <Button 
+                    asChild
+                    className={`w-full h-12 touch-manipulation ${plan.popular ? 'bg-secondary hover:bg-secondary/90 text-white' : 'border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white'} rounded-full`}
+                    variant={plan.popular ? "default" : "outline"}
+                    size="lg"
+                  >
+                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
+                      {plan.cta}
+                    </a>
+                  </Button>
+                ) : (
+                  <Button 
+                    asChild
+                    className={`w-full h-12 touch-manipulation ${plan.popular ? 'bg-secondary hover:bg-secondary/90 text-white' : 'border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white'} rounded-full`}
+                    variant={plan.popular ? "default" : "outline"}
+                    size="lg"
+                  >
+                    <a href="https://webliveview.com/company-registration-extended/index" target="_blank" rel="noopener noreferrer">
+                      {plan.cta}
+                    </a>
+                  </Button>
+                )}
               </CardFooter>
             </Card>
           ))}
