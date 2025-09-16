@@ -18,11 +18,13 @@ const VideoSection = () => {
           
           {/* Video Container */}
           <div className="relative overflow-hidden rounded-2xl shadow-large">
-            <div 
-              dangerouslySetInnerHTML={{
-                __html: '<wistia-player media-id="ob1oqmqgye" aspect="1.7777777777777777" class="w-full"></wistia-player>'
-              }}
-            />
+            <div className="aspect-video w-full">
+              <div 
+                dangerouslySetInnerHTML={{
+                  __html: '<wistia-player media-id="ob1oqmqgye" aspect="1.7777777777777777" class="w-full h-full" style="display: block; width: 100%; height: 100%;"></wistia-player>'
+                }}
+              />
+            </div>
           </div>
 
           {/* Call to Action */}
