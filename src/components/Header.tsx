@@ -43,7 +43,9 @@ const Header = () => {
             <Link to="/pricing">Start Free Trial</Link>
           </Button>
           <Button asChild variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full px-6">
-            <Link to="/contact">Book a Demo</Link>
+            <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
+              Book a Demo
+            </a>
           </Button>
         </div>
 
@@ -96,7 +98,9 @@ const Header = () => {
                 <Link to="/pricing" onClick={() => setIsMenuOpen(false)}>Start Free Trial</Link>
               </Button>
               <Button asChild variant="outline" className="w-full h-12 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Book a Demo</Link>
+                <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
+                  Book a Demo
+                </a>
               </Button>
             </div>
           </div>

@@ -95,7 +95,11 @@ const ContactSection = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     No credit card required. Get started in less than 5 minutes.
                   </p>
-                  <Button variant="free-trial" size="lg" className="w-full h-12 touch-manipulation">Start Free Trial</Button>
+                  <Button asChild variant="free-trial" size="lg" className="w-full h-12 touch-manipulation">
+                    <a href="https://webliveview.com/company-registration-extended/index" target="_blank" rel="noopener noreferrer">
+                      Start Free Trial
+                    </a>
+                  </Button>
                 </Card>
 
                 <Card className="p-4 sm:p-6 bg-gradient-to-br from-primary/10 to-transparent border-primary/20">
@@ -103,7 +107,11 @@ const ContactSection = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     See WebLiveView in action with a personalized demonstration.
                   </p>
-                  <Button variant="book-demo" size="lg" className="w-full h-12 touch-manipulation">Book Demo</Button>
+                  <Button asChild variant="book-demo" size="lg" className="w-full h-12 touch-manipulation">
+                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
+                      Book Demo
+                    </a>
+                  </Button>
                 </Card>
               </div>
             </div>

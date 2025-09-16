@@ -15,11 +15,14 @@ const CallToActionSection = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
+              asChild
               size="xl" 
               className="bg-white text-brand-navy hover:bg-white/90 rounded-full px-8 py-4 text-lg font-semibold min-w-[200px]"
             >
-              Book Your Free Demo Now
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
+                Book Your Free Demo Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
             <Button 
               variant="outline" 
