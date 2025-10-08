@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import OriginalHeroSection from "@/components/OriginalHeroSection";
 import OriginalVideoSection from "@/components/OriginalVideoSection";
 import OriginalFeaturesSection from "@/components/OriginalFeaturesSection";
@@ -13,7 +13,7 @@ import IndustryUseCasesSection from "@/components/IndustryUseCasesSection";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Navbar />
       <main>
         <OriginalHeroSection />
         <OriginalVideoSection />
