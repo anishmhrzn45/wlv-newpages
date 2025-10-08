@@ -4,6 +4,7 @@ import { Check, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import { AuthModal } from "@/components/AuthModal";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 
@@ -18,6 +19,7 @@ const SignUpPage = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   const generatePassword = () => {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
@@ -108,6 +110,14 @@ const SignUpPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-brand-light to-background">
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        onSuccess={() => {
+          setIsAuthModalOpen(false);
+          navigate("/");
+        }}
+      />
       {/* Back to Home Link */}
       <div className="absolute top-6 left-6 z-10">
         <Link 
@@ -165,9 +175,12 @@ const SignUpPage = () => {
                 <h2 className="text-3xl font-bold text-brand-navy">Start your free trial</h2>
                 <p className="text-sm text-muted-foreground">
                   Already have an account?{" "}
-                  <Link to="/" className="text-brand-pink hover:underline font-medium">
+                  <button 
+                    onClick={() => setIsAuthModalOpen(true)}
+                    className="text-brand-pink hover:underline font-medium cursor-pointer"
+                  >
                     Login
-                  </Link>
+                  </button>
                 </p>
               </div>
 
