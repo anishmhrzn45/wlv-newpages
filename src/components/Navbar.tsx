@@ -61,7 +61,7 @@ const Navbar = () => {
             <img 
               src={logo} 
               alt="WebLiveView" 
-              className="h-12 md:h-20 w-auto"
+              className="h-30 md:h-50 w-auto"
             />
           </Link>
 
