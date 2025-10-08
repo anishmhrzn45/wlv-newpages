@@ -43,7 +43,7 @@ const Header = () => {
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center space-x-3">
           <Button asChild className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-6">
-            <Link to="/pricing">Start Free Trial</Link>
+            <Link to="/signup">Start Free Trial</Link>
           </Button>
           <Button asChild variant="outline" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full px-6">
             <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
@@ -105,7 +105,7 @@ const Header = () => {
             </nav>
             <div className="flex flex-col space-y-3 pt-4">
               <Button asChild className="w-full h-12 touch-manipulation bg-secondary hover:bg-secondary/90 text-white rounded-full">
-                <Link to="/pricing" onClick={() => setIsMenuOpen(false)}>Start Free Trial</Link>
+                <Link to="/signup" onClick={() => setIsMenuOpen(false)}>Start Free Trial</Link>
               </Button>
               <Button asChild variant="outline" className="w-full h-12 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
                 <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">

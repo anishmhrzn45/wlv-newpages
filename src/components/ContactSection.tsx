@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const ContactSection = () => {
@@ -96,9 +97,9 @@ const ContactSection = () => {
                     No credit card required. Get started in less than 5 minutes.
                   </p>
                   <Button asChild variant="free-trial" size="lg" className="w-full h-12 touch-manipulation">
-                    <a href="https://webliveview.com/company-registration-extended/index" target="_blank" rel="noopener noreferrer">
+                    <Link to="/signup">
                       Start Free Trial
-                    </a>
+                    </Link>
                   </Button>
                 </Card>
 

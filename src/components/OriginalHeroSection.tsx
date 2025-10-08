@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, CreditCard, Calendar, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-image.jpg";
 import webLiveViewLogo from "@/assets/webliveview-logo.png";
 
@@ -35,9 +36,9 @@ const OriginalHeroSection = () => {
             {/* CTA Buttons */}
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4">
               <Button asChild size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation bg-secondary hover:bg-secondary/90 text-white rounded-full">
-                <a href="https://webliveview.com/company-registration-extended/index" target="_blank" rel="noopener noreferrer">
+                <Link to="/signup">
                   Start Free Trial
-                </a>
+                </Link>
               </Button>
               <Button asChild variant="outline" size="xl" className="w-full sm:w-auto min-w-[200px] h-12 sm:h-14 touch-manipulation border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white rounded-full">
                 <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">

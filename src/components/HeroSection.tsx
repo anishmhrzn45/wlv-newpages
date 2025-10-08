@@ -1,4 +1,5 @@
 import { Play } from "lucide-react";
+import { Link } from "react-router-dom";
 import productScreens from "@/assets/webliveview-product-screens.png";
 import webLiveViewLogo from "@/assets/webliveview-logo.png";
 
@@ -30,9 +31,9 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4">
-              <a href="https://webliveview.com/company-registration-extended/index" target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto min-w-[200px] touch-manipulation">
+              <Link to="/signup" className="btn-primary w-full sm:w-auto min-w-[200px] touch-manipulation">
                 Start Free Trial
-              </a>
+              </Link>
               <a href="https://www.youtube.com/watch?v=EiaEVoGldGg" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto min-w-[200px] touch-manipulation inline-flex items-center justify-center">
                 <Play className="mr-2 h-4 w-4" />
                 See How It Works

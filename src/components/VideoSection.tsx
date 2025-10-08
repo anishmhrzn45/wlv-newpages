@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import WistiaVideo from "./WistiaVideo";
 
 const VideoSection = () => {
@@ -33,9 +34,9 @@ const VideoSection = () => {
           <div className="mt-8 text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild variant="free-trial" size="lg">
-                <a href="https://webliveview.com/company-registration-extended/index" target="_blank" rel="noopener noreferrer">
+                <Link to="/signup">
                   Start Free Trial
-                </a>
+                </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white">
                 <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">

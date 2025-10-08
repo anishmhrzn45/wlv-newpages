@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const PricingSection = () => {
@@ -158,9 +159,9 @@ const PricingSection = () => {
                     variant={plan.popular ? "default" : "outline"}
                     size="lg"
                   >
-                    <a href="https://webliveview.com/company-registration-extended/index" target="_blank" rel="noopener noreferrer">
+                    <Link to="/signup">
                       {plan.cta}
-                    </a>
+                    </Link>
                   </Button>
                 )}
               </CardFooter>
