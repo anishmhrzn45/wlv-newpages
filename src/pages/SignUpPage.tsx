@@ -7,6 +7,13 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { AuthModal } from "@/components/AuthModal";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import electronicsDemo from "@/assets/electronics-demo.png";
+import furnitureDemo from "@/assets/furniture-demo.png";
+import kitchenDemo from "@/assets/kitchen-demo.png";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -160,10 +167,33 @@ const SignUpPage = () => {
               ))}
             </div>
 
-            {/* Optional: Add image/mockup here if available */}
+            {/* Product Preview Carousel */}
             <div className="hidden lg:block pt-8 space-y-4">
-              <div className="w-full h-64 rounded-2xl bg-gradient-to-br from-brand-accent-blue/20 to-brand-pink/20 flex items-center justify-center">
-                <p className="text-muted-foreground">Product Preview</p>
+              <div className="w-full max-w-[600px] h-[254px] mx-auto">
+                <Swiper
+                  modules={[Autoplay, Pagination]}
+                  loop={true}
+                  autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  className="h-full rounded-xl overflow-hidden shadow-md"
+                >
+                  <SwiperSlide className="flex items-center justify-center bg-[#f5f6ff]">
+                    <img src={electronicsDemo} alt="Electronics Preview" className="h-full object-contain" />
+                  </SwiperSlide>
+                  
+                  <SwiperSlide className="flex items-center justify-center bg-[#fce5f0]">
+                    <img src={furnitureDemo} alt="Furniture Preview" className="h-full object-contain" />
+                  </SwiperSlide>
+                  
+                  <SwiperSlide className="flex items-center justify-center bg-white">
+                    <img src={kitchenDemo} alt="Kitchen Preview" className="h-full object-contain" />
+                  </SwiperSlide>
+                </Swiper>
               </div>
               <div className="space-y-2 text-center">
                 <p className="text-foreground">
