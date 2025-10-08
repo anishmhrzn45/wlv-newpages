@@ -140,12 +140,12 @@ const SignUpPage = () => {
           
           {/* Left Side - Marketing Content */}
           <div className="space-y-8 text-center lg:text-left">
-            <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-navy leading-tight">
+            <div className="text-center lg:text-left">
+              <h1 className="text-brand-navy text-3xl lg:text-4xl font-extrabold leading-tight">
                 Increase your sales using our video shopping software
               </h1>
-              <p className="text-lg lg:text-xl text-muted-foreground">
-                Try it today at no cost for the first 14 days.
+              <p className="text-muted-foreground text-base lg:text-lg mt-2">
+                Try it today at <span className="text-brand-pink font-medium">no cost for the first 14 days</span>.
               </p>
             </div>
 
