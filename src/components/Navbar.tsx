@@ -108,6 +108,7 @@ const Navbar = () => {
                 <Button 
                   asChild
                   size="lg"
+                  className="rounded-full"
                 >
                   <Link to="/signup">Start Free Trial</Link>
                 </Button>
@@ -183,7 +184,7 @@ const Navbar = () => {
                     <Button 
                       asChild
                       size="lg"
-                      className="w-full"
+                      className="w-full rounded-full"
                     >
                       <Link to="/signup" onClick={() => setIsMobileMenuOpen(false)}>
                         Start Free Trial
