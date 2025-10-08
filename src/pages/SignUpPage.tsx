@@ -167,6 +167,29 @@ const SignUpPage = () => {
               ))}
             </div>
 
+            {/* Why Sign Up Section */}
+            <div className="space-y-4 pt-4">
+              <h2 className="text-2xl lg:text-3xl font-bold text-brand-navy">
+                Why sign up for WebLiveView?
+              </h2>
+              <div className="space-y-3">
+                {[
+                  "Talk to customers face-to-face with crystal-clear video",
+                  "Add live shopping to your site in minutes — no code needed",
+                  "Let customers book sales calls right from your page",
+                  "Instantly route chats to the right brand rep",
+                  "Save time with smart replies — video, images, and more",
+                ].map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-3 justify-center lg:justify-start">
+                    <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center mt-0.5">
+                      <Check className="w-5 h-5 text-green-600" />
+                    </div>
+                    <span className="text-foreground text-left">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Product Preview Carousel */}
             <div className="hidden lg:block pt-8 space-y-4">
               <div className="w-full max-w-[600px] h-[254px] mx-auto">
