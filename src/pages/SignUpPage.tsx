@@ -138,7 +138,7 @@ const SignUpPage = () => {
                 Increase your sales using our video shopping software
               </h1>
               <p className="text-lg lg:text-xl text-muted-foreground">
-                Try it today at no cost for the first 30 days.
+                Try it today at no cost for the first 14 days.
               </p>
             </div>
 
