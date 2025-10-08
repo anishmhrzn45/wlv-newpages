@@ -1,11 +1,32 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogOut } from "lucide-react";
+import { AuthModal } from "@/components/AuthModal";
+import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/webliveview-logo-new.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [user, setUser] = useState<any>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check current session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    // Listen for auth changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   const navigationLinks = [
     { href: "/product", label: "Product" },
@@ -19,7 +40,17 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate("/");
+  };
+
   return (
+    <>
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+      />
     <nav 
       className="sticky top-0 z-50 w-full bg-white border-b border-gray-200"
       aria-label="Main navigation"
@@ -48,14 +79,41 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Button 
-              asChild
-              className="bg-brand-pink text-white font-semibold px-6 py-2 rounded-lg hover:scale-105 hover:opacity-90 transition-all duration-200"
-            >
-              <a href="/book-demo">Book a Demo</a>
-            </Button>
+          {/* Desktop Auth Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            {user ? (
+              <div className="flex items-center gap-4">
+                <span className="text-sm text-brand-navy">
+                  {user.email}
+                </span>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={handleLogout}
+                  className="gap-2"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Logout
+                </Button>
+              </div>
+            ) : (
+              <>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => setIsAuthModalOpen(true)}
+                  className="rounded-full border-2 border-[#b4b7f0] text-[#b4b7f0] hover:bg-[#b4b7f0] hover:text-white transition-all"
+                >
+                  Login
+                </Button>
+                <Button 
+                  asChild
+                  className="bg-brand-pink text-white font-semibold px-6 py-2 rounded-lg hover:scale-105 hover:opacity-90 transition-all duration-200"
+                >
+                  <a href="/book-demo">Book a Demo</a>
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,21 +149,55 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 px-4">
-                <Button 
-                  asChild
-                  className="w-full bg-brand-pink text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity duration-200"
-                >
-                  <a href="/book-demo" onClick={() => setIsMobileMenuOpen(false)}>
-                    Book a Demo
-                  </a>
-                </Button>
+              <div className="pt-4 px-4 space-y-3">
+                {user ? (
+                  <>
+                    <div className="py-2 text-sm text-brand-navy border-t">
+                      {user.email}
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="w-full gap-2"
+                      onClick={() => {
+                        handleLogout();
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      <LogOut className="w-4 h-4" />
+                      Logout
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="w-full rounded-full border-2 border-[#b4b7f0] text-[#b4b7f0] hover:bg-[#b4b7f0] hover:text-white"
+                      onClick={() => {
+                        setIsAuthModalOpen(true);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      Login
+                    </Button>
+                    <Button 
+                      asChild
+                      className="w-full bg-brand-pink text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity duration-200"
+                    >
+                      <a href="/book-demo" onClick={() => setIsMobileMenuOpen(false)}>
+                        Book a Demo
+                      </a>
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
           </div>
         )}
       </div>
     </nav>
+    </>
   );
 };
 
