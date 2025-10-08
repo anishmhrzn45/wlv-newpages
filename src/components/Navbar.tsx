@@ -108,7 +108,7 @@ const Navbar = () => {
                 <Button 
                   asChild
                   size="lg"
-                  className="rounded-full"
+                  className="rounded-full bg-brand-pink hover:bg-brand-pink/90 text-white"
                 >
                   <Link to="/signup">Start Free Trial</Link>
                 </Button>
@@ -184,7 +184,7 @@ const Navbar = () => {
                     <Button 
                       asChild
                       size="lg"
-                      className="w-full rounded-full"
+                      className="w-full rounded-full bg-brand-pink hover:bg-brand-pink/90 text-white"
                     >
                       <Link to="/signup" onClick={() => setIsMobileMenuOpen(false)}>
                         Start Free Trial
