@@ -149,24 +149,6 @@ const SignUpPage = () => {
               </p>
             </div>
 
-            {/* Features List */}
-            <div className="space-y-4">
-              {[
-                "High-quality real-time video and audio",
-                "Embedded website widget and web video app",
-                "Sales calendar and appointment system",
-                "Intelligent customer chat routing",
-                "Automated messages, video, and image replies",
-              ].map((feature, index) => (
-                <div key={index} className="flex items-start gap-3 justify-center lg:justify-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-brand-pink to-brand-accent-blue flex items-center justify-center mt-0.5">
-                    <Check className="w-4 h-4 text-white" />
-                  </div>
-                  <span className="text-foreground text-left">{feature}</span>
-                </div>
-              ))}
-            </div>
-
             {/* Why Sign Up Section */}
             <div className="space-y-4 pt-4">
               <h2 className="text-2xl lg:text-3xl font-bold text-brand-navy">
