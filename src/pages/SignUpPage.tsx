@@ -161,9 +161,17 @@ const SignUpPage = () => {
             </div>
 
             {/* Optional: Add image/mockup here if available */}
-            <div className="hidden lg:block pt-8">
+            <div className="hidden lg:block pt-8 space-y-4">
               <div className="w-full h-64 rounded-2xl bg-gradient-to-br from-brand-accent-blue/20 to-brand-pink/20 flex items-center justify-center">
                 <p className="text-muted-foreground">Product Preview</p>
+              </div>
+              <div className="space-y-2 text-center">
+                <p className="text-foreground">
+                  Complete few steps: specify your business details, customize your widget and add your teammates
+                </p>
+                <p className="text-sm text-muted-foreground font-medium">
+                  No credit card required for free trial period
+                </p>
               </div>
             </div>
           </div>
