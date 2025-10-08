@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { ShoppingBag, Home, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import useCasesHero from "@/assets/use-cases-hero.png";
 
 const useCases = [
   {
@@ -59,9 +60,14 @@ const UseCasesPage = () => {
               <h1 className="text-4xl font-bold text-brand-navy md:text-5xl lg:text-6xl mb-6">
                 See How Retailers Use WebLiveView to Sell Smarter
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground">
+              <p className="text-lg md:text-xl text-muted-foreground mb-8">
                 From furniture showrooms to ecommerce teams, retailers use WebLiveView to turn browsers into buyers through real-time video calls, guided selling, and interactive product demos.
               </p>
+              <img 
+                src={useCasesHero} 
+                alt="Live demo showing WebLiveView in action with showroom consultant and customer in video call"
+                className="rounded-xl shadow-medium mx-auto max-w-4xl w-full"
+              />
             </div>
           </div>
         </section>
