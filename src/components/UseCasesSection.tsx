@@ -29,7 +29,7 @@ const useCases = [
     buyerPersona: ["eCommerce Manager", "Digital Sales Lead", "Head of CX"],
     goalsChallenges: "Reduce cart abandonment and increase conversions with real human guidance.",
     howTheyUse: "Instant video chat from product pages, guided recommendations, and live upselling.",
-    results: "+20–40% conversion uplift · 2–3× longer session times · 25% fewer support tickets",
+    results: "+10–30% conversion uplift · 2–3× longer session times · 25% fewer support tickets",
     ctaLabel: "Book a Demo for Ecommerce Teams",
     ctaLink: "https://calendly.com/barry-mc-kenna/new-meeting"
   },
