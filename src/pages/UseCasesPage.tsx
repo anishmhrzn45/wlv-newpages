@@ -117,7 +117,7 @@ const UseCasesPage = () => {
                     </div>
 
                     {/* CTA */}
-                    <Button asChild className="w-full">
+                    <Button asChild className="w-full whitespace-normal h-auto py-3">
                       <a href={useCase.ctaLink} target="_blank" rel="noopener noreferrer">
                         {useCase.ctaLabel}
                       </a>
