@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ShoppingBag, Home, Briefcase } from "lucide-react";
+import { Sofa, ChefHat, ShoppingCart, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import useCasesHero from "@/assets/use-cases-hero.png";
@@ -8,7 +8,7 @@ import useCasesHero from "@/assets/use-cases-hero.png";
 const useCases = [
   {
     title: "Furniture Retailers",
-    icon: ShoppingBag,
+    icon: Sofa,
     buyerPersona: ["Showroom Manager", "Store Owner", "Sales Consultant"],
     goalsChallenges: "Customers need to see textures and finishes before buying—static photos aren't enough.",
     howTheyUse: "One-to-one live shopping calls, fabric walkthroughs, co-browsing and real-time Q&A.",
@@ -18,7 +18,7 @@ const useCases = [
   },
   {
     title: "Kitchen & Bathroom Brands",
-    icon: Home,
+    icon: ChefHat,
     buyerPersona: ["Kitchen Designer", "Showroom Director", "Brand Manager"],
     goalsChallenges: "Complex purchases need trust and visual confirmation before a customer commits.",
     howTheyUse: "Live design consultations, product tours, and interactive Q&A from the showroom.",
@@ -28,7 +28,7 @@ const useCases = [
   },
   {
     title: "Ecommerce Teams",
-    icon: ShoppingBag,
+    icon: ShoppingCart,
     buyerPersona: ["eCommerce Manager", "Digital Sales Lead", "Head of CX"],
     goalsChallenges: "Reduce cart abandonment and increase conversions with real human guidance.",
     howTheyUse: "Instant video chat from product pages, guided recommendations, and live upselling.",
@@ -38,7 +38,7 @@ const useCases = [
   },
   {
     title: "Sales Teams & B2B Lead Generation",
-    icon: Briefcase,
+    icon: Users,
     buyerPersona: ["Sales Director", "Account Executive", "Marketing Manager"],
     goalsChallenges: "Qualify leads faster and host visual demos without endless scheduling.",
     howTheyUse: "Add 'Talk to Sales' video widgets, deliver product walkthroughs, and track call metrics.",
@@ -81,16 +81,16 @@ const UseCasesPage = () => {
                   <div className="rounded-2xl border bg-card p-8 h-full transition-all hover:shadow-medium hover:border-secondary/20 flex flex-col">
                     {/* Icon & Title */}
                     <div className="flex items-start gap-4 mb-6">
-                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary group-hover:bg-secondary/20 transition-colors flex-shrink-0">
-                        <useCase.icon className="h-6 w-6" />
+                      <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink/20 to-secondary/20 text-brand-pink group-hover:from-brand-pink/30 group-hover:to-secondary/30 transition-all flex-shrink-0">
+                        <useCase.icon className="h-7 w-7" />
                       </div>
                       <div>
-                        <h2 className="text-2xl font-semibold text-card-foreground mb-2">
+                        <h2 className="text-2xl font-semibold text-card-foreground mb-3">
                           {useCase.title}
                         </h2>
                         <div className="flex flex-wrap gap-2">
                           {useCase.buyerPersona.map((persona, i) => (
-                            <span key={i} className="text-xs px-2 py-1 rounded-full bg-secondary/10 text-secondary">
+                            <span key={i} className="text-xs font-medium px-3 py-1.5 rounded-full bg-gradient-to-r from-brand-pink/10 to-secondary/10 text-foreground border border-brand-pink/20">
                               {persona}
                             </span>
                           ))}
