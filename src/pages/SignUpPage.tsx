@@ -222,6 +222,17 @@ const SignUpPage = () => {
                 </p>
               </div>
 
+              {/* Manager Tip */}
+              <div className="px-4 py-3 bg-[#f5f6ff] border border-[#b4b7f0] rounded-xl text-sm text-gray-700 shadow-sm">
+                <div className="flex items-start gap-2">
+                  <span className="text-[#b4b7f0] text-lg">💡</span>
+                  <p>
+                    <span className="font-semibold text-[#4b4f6b]">Manager Tip:</span>
+                    {" "}Get started in just 5 minutes with our 5-step setup. You can update your info anytime in account settings.
+                  </p>
+                </div>
+              </div>
+
               <form onSubmit={handleSignup} className="space-y-4">
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-2">
