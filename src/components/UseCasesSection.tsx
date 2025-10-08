@@ -9,7 +9,7 @@ const useCases = [
     buyerPersona: ["Showroom Manager", "Store Owner", "Sales Consultant"],
     goalsChallenges: "Customers need to see textures and finishes before buying—static photos aren't enough.",
     howTheyUse: "One-to-one live shopping calls, fabric walkthroughs, co-browsing and real-time Q&A.",
-    results: "+35–60% higher conversion rates · +25% higher order values · Fewer returns",
+    results: "+15–25% higher conversion rates · +25% higher order values · Fewer returns",
     ctaLabel: "Book a Demo for Furniture Retailers",
     ctaLink: "https://calendly.com/barry-mc-kenna/new-meeting"
   },
