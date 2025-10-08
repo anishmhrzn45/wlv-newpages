@@ -108,9 +108,9 @@ const Navbar = () => {
                 </Button>
                 <Button 
                   asChild
-                  className="bg-brand-pink text-white font-semibold px-6 py-2 rounded-lg hover:scale-105 hover:opacity-90 transition-all duration-200"
+                  className="bg-gradient-to-r from-brand-pink to-secondary text-white font-semibold px-6 py-2 rounded-lg hover:scale-105 hover:opacity-90 transition-all duration-200 shadow-medium"
                 >
-                  <a href="/book-demo">Book a Demo</a>
+                  <Link to="/signup">Start Free Trial</Link>
                 </Button>
               </>
             )}
@@ -183,11 +183,11 @@ const Navbar = () => {
                     </Button>
                     <Button 
                       asChild
-                      className="w-full bg-brand-pink text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity duration-200"
+                      className="w-full bg-gradient-to-r from-brand-pink to-secondary text-white font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity duration-200 shadow-medium"
                     >
-                      <a href="/book-demo" onClick={() => setIsMobileMenuOpen(false)}>
-                        Book a Demo
-                      </a>
+                      <Link to="/signup" onClick={() => setIsMobileMenuOpen(false)}>
+                        Start Free Trial
+                      </Link>
                     </Button>
                   </>
                 )}
