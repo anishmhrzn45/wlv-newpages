@@ -11,7 +11,7 @@ const useCases = [
     howTheyUse: "One-to-one live shopping calls, fabric walkthroughs, co-browsing and real-time Q&A.",
     results: "+35–60% higher conversion rates · +25% higher order values · Fewer returns",
     ctaLabel: "Book a Demo for Furniture Retailers",
-    ctaLink: "/book-demo?vertical=furniture"
+    ctaLink: "https://calendly.com/barry-mc-kenna/new-meeting"
   },
   {
     title: "Kitchen & Bathroom Brands",
@@ -21,7 +21,7 @@ const useCases = [
     howTheyUse: "Live design consultations, product tours, and interactive Q&A from the showroom.",
     results: "+40% faster buying decisions · +30% more consultations booked · Higher premium order close rates",
     ctaLabel: "Book a Demo for Kitchen & Bathroom Brands",
-    ctaLink: "/book-demo?vertical=kitchen-bath"
+    ctaLink: "https://calendly.com/barry-mc-kenna/new-meeting"
   },
   {
     title: "Ecommerce Teams",
@@ -31,7 +31,7 @@ const useCases = [
     howTheyUse: "Instant video chat from product pages, guided recommendations, and live upselling.",
     results: "+20–40% conversion uplift · 2–3× longer session times · 25% fewer support tickets",
     ctaLabel: "Book a Demo for Ecommerce Teams",
-    ctaLink: "/book-demo?vertical=ecommerce"
+    ctaLink: "https://calendly.com/barry-mc-kenna/new-meeting"
   },
   {
     title: "Sales Teams & B2B Lead Generation",
@@ -41,7 +41,7 @@ const useCases = [
     howTheyUse: "Add 'Talk to Sales' video widgets, deliver product walkthroughs, and track call metrics.",
     results: "50% shorter sales cycles · +35% more lead-to-meeting conversions · Improved close rates",
     ctaLabel: "Book a Demo for Sales Teams",
-    ctaLink: "/book-demo?vertical=sales"
+    ctaLink: "https://calendly.com/barry-mc-kenna/new-meeting"
   }
 ];
 
@@ -101,9 +101,9 @@ const UseCasesSection = () => {
 
                 {/* CTA */}
                 <Button asChild className="w-full">
-                  <Link to={useCase.ctaLink}>
+                  <a href={useCase.ctaLink} target="_blank" rel="noopener noreferrer">
                     {useCase.ctaLabel}
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>
@@ -120,9 +120,9 @@ const UseCasesSection = () => {
               Empower your teams to sell smarter — not harder. WebLiveView transforms your website into a live retail experience where human connection meets digital convenience.
             </p>
             <Button asChild size="lg">
-              <Link to="/book-demo">
+              <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer">
                 Book a Demo
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
