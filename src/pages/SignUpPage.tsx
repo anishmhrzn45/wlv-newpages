@@ -322,12 +322,12 @@ const SignUpPage = () => {
                   Generate Strong Password
                 </Button>
 
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-2">
                   <Checkbox
                     id="terms"
                     checked={termsAccepted}
                     onCheckedChange={(checked) => setTermsAccepted(checked as boolean)}
-                    className="mt-1"
+                    className="mt-0.5"
                   />
                   <label htmlFor="terms" className="text-sm text-muted-foreground cursor-pointer">
                     I accept the{" "}
