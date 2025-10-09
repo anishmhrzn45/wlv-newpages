@@ -79,7 +79,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Auth Buttons */}
-          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0 ml-6">
             {user ? (
               <div className="flex items-center gap-4">
                 <span className="text-sm text-brand-navy">
