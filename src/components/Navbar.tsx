@@ -57,7 +57,7 @@ const Navbar = () => {
       <div className="max-w-[1200px] mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
+          <Link to="/" className="flex items-center flex-shrink-0">
             <img 
               src={logo} 
               alt="WebLiveView" 
@@ -71,7 +71,7 @@ const Navbar = () => {
               <Link
                 key={link.label}
                 to={link.href}
-                className="text-brand-navy font-medium hover:text-brand-pink transition-colors duration-200"
+                className="text-brand-navy font-medium hover:text-brand-pink transition-colors duration-200 flex items-center"
               >
                 {link.label}
               </Link>
@@ -79,7 +79,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Auth Buttons */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             {user ? (
               <div className="flex items-center gap-4">
                 <span className="text-sm text-brand-navy">
