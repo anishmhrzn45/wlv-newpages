@@ -142,13 +142,57 @@ All colors MUST be HSL.
   /* Smooth scrolling for mobile */
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Better mobile tap targets */
-  @media (max-width: 768px) {
-    button, a, input, textarea {
+  @media (max-width: 767px) {
+    button, a, input, textarea, select {
       min-height: 44px;
+      touch-action: manipulation;
     }
+  }
+
+  /* Responsive typography */
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+
+  /* Responsive containers */
+  .container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Fluid spacing */
+  .section-spacing {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
+
+  /* Responsive images */
+  img, video {
+    @apply max-w-full h-auto;
+  }
+
+  /* Prevent horizontal overflow */
+  * {
+    @apply max-w-full;
+  }
+
+  body {
+    @apply overflow-x-hidden;
   }
 
   /* Hero phones styling */
@@ -173,10 +217,11 @@ All colors MUST be HSL.
     border-radius: 12px; 
     padding: 12px 18px; 
     font-weight: 600;
-    transition: filter 0.2s ease;
+    transition: all 0.2s ease-in-out;
   }
   .btn-primary:hover { 
-    filter: brightness(1.08); 
+    filter: brightness(1.08);
+    transform: translateY(-1px);
   }
   .btn-secondary {
     background: #fff; 
@@ -185,11 +230,27 @@ All colors MUST be HSL.
     border-radius: 12px; 
     padding: 10px 16px; 
     font-weight: 600;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-in-out;
   }
   .btn-secondary:hover {
     background: hsl(214 72% 14%);
     color: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* Responsive button sizing */
+  @media (max-width: 767px) {
+    .btn-primary, .btn-secondary {
+      padding: 14px 20px;
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .btn-primary, .btn-secondary {
+      padding: 13px 19px;
+      font-size: 15px;
+    }
   }
 
   /* Footer styling */

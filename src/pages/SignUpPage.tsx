@@ -135,23 +135,23 @@ const SignUpPage = () => {
         </Link>
       </div>
 
-      <div className="container mx-auto px-4 py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-7xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 lg:py-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-20 items-center max-w-7xl mx-auto">
           
           {/* Left Side - Marketing Content */}
-          <div className="space-y-8 text-center lg:text-left">
+          <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
             <div className="text-center lg:text-left">
-              <h1 className="text-brand-navy text-3xl lg:text-4xl font-extrabold leading-tight">
+              <h1 className="text-brand-navy text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight">
                 Increase your sales using our video shopping software
               </h1>
-              <p className="text-muted-foreground text-base lg:text-lg mt-2">
+              <p className="text-muted-foreground text-base sm:text-lg lg:text-xl mt-3 lg:mt-4">
                 Try it today at <span className="text-brand-pink font-medium">no cost for the first 14 days</span>.
               </p>
             </div>
 
             {/* Why Sign Up Section */}
-            <div className="space-y-4 pt-4">
-              <h2 className="text-2xl lg:text-3xl font-bold text-brand-navy">
+            <div className="space-y-4 pt-2 lg:pt-4">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-brand-navy">
                 Why sign up for WebLiveView?
               </h2>
               <div className="space-y-3">
@@ -163,18 +163,18 @@ const SignUpPage = () => {
                   "Save time with smart replies — video, images, and more",
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start gap-3 justify-center lg:justify-start">
-                    <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center mt-0.5">
-                      <Check className="w-5 h-5 text-green-600" />
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                     </div>
-                    <span className="text-foreground text-left">{benefit}</span>
+                    <span className="text-foreground text-left text-sm sm:text-base">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Product Preview Carousel */}
-            <div className="hidden lg:block pt-8 space-y-4">
-              <div className="w-full max-w-[600px] h-[254px] mx-auto">
+            <div className="hidden lg:block pt-6 lg:pt-8 space-y-4">
+              <div className="w-full max-w-[600px] h-[220px] md:h-[254px] mx-auto">
                 <Swiper
                   modules={[Autoplay, Pagination]}
                   loop={true}
@@ -201,10 +201,10 @@ const SignUpPage = () => {
                 </Swiper>
               </div>
               <div className="space-y-2 text-center">
-                <p className="text-foreground">
+                <p className="text-foreground text-sm lg:text-base">
                   Complete few steps: specify your business details, customize your widget and add your teammates
                 </p>
-                <p className="text-sm text-muted-foreground font-medium">
+                <p className="text-xs lg:text-sm text-muted-foreground font-medium">
                   No credit card required for free trial period
                 </p>
               </div>
@@ -213,10 +213,10 @@ const SignUpPage = () => {
 
           {/* Right Side - Sign Up Form */}
           <div className="w-full max-w-md mx-auto lg:mx-0">
-            <div className="bg-white rounded-2xl shadow-large p-8 space-y-6">
+            <div className="bg-white rounded-2xl shadow-large p-6 sm:p-8 space-y-5 sm:space-y-6">
               <div className="space-y-2 text-center">
-                <h2 className="text-3xl font-bold text-brand-navy">Start your free trial</h2>
-                <p className="text-sm text-muted-foreground">
+                <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy">Start your free trial</h2>
+                <p className="text-xs sm:text-sm text-muted-foreground">
                   Already have an account?{" "}
                   <button 
                     onClick={() => setIsAuthModalOpen(true)}
@@ -228,9 +228,9 @@ const SignUpPage = () => {
               </div>
 
               {/* Manager Tip */}
-              <div className="px-4 py-3 bg-[#f5f6ff] border border-[#b4b7f0] rounded-xl text-sm text-gray-700 shadow-sm">
+              <div className="px-3 sm:px-4 py-3 bg-[#f5f6ff] border border-[#b4b7f0] rounded-xl text-xs sm:text-sm text-gray-700 shadow-sm">
                 <div className="flex items-start gap-2">
-                  <span className="text-[#b4b7f0] text-lg">💡</span>
+                  <span className="text-[#b4b7f0] text-base sm:text-lg">💡</span>
                   <p>
                     <span className="font-semibold text-[#4b4f6b]">Manager Tip:</span>
                     {" "}Get started in just 5 minutes with our 5-step setup. You can update your info anytime in account settings.
@@ -327,9 +327,9 @@ const SignUpPage = () => {
                     id="terms"
                     checked={termsAccepted}
                     onCheckedChange={(checked) => setTermsAccepted(checked as boolean)}
-                    className="mt-[3px] flex-shrink-0"
+                    className="mt-0.5 flex-shrink-0"
                   />
-                  <label htmlFor="terms" className="text-sm text-muted-foreground cursor-pointer leading-[1.4]">
+                  <label htmlFor="terms" className="text-sm text-muted-foreground cursor-pointer leading-[1.5] flex-1">
                     I accept the{" "}
                     <Link to="/terms-of-service" className="text-brand-pink hover:underline">
                       Terms & Conditions
