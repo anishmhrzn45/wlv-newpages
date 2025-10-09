@@ -322,14 +322,14 @@ const SignUpPage = () => {
                   Generate Strong Password
                 </Button>
 
-                <div className="flex items-start gap-2">
+                <div className="flex items-start gap-2.5">
                   <Checkbox
                     id="terms"
                     checked={termsAccepted}
                     onCheckedChange={(checked) => setTermsAccepted(checked as boolean)}
-                    className="mt-0.5"
+                    className="mt-[3px] flex-shrink-0"
                   />
-                  <label htmlFor="terms" className="text-sm text-muted-foreground cursor-pointer">
+                  <label htmlFor="terms" className="text-sm text-muted-foreground cursor-pointer leading-[1.4]">
                     I accept the{" "}
                     <Link to="/terms-of-service" className="text-brand-pink hover:underline">
                       Terms & Conditions
