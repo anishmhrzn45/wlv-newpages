@@ -86,6 +86,36 @@ const Footer = () => {
                     <Facebook className="h-6 w-6" />
                   </a>
                 </div>
+                
+                {/* App Store Badges */}
+                <div className="mt-6 flex flex-wrap gap-4 items-center sm:justify-start justify-center sm:ml-6">
+                  <a 
+                    href="https://play.google.com/store/apps/details?id=your.app.id" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="Get it on Google Play"
+                  >
+                    <img 
+                      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                      alt="Get it on Google Play" 
+                      className="h-10 hover:opacity-90 transition-opacity duration-200"
+                      loading="lazy"
+                    />
+                  </a>
+                  <a 
+                    href="https://apps.apple.com/app/id000000000" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="Download on the App Store"
+                  >
+                    <img 
+                      src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" 
+                      alt="Download on the App Store" 
+                      className="h-10 hover:opacity-90 transition-opacity duration-200"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
             
