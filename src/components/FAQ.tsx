@@ -36,27 +36,29 @@ const FAQ = () => {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-brand-navy mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto">
-            Get answers to the most common questions about our video shopping platform.
-          </p>
+        <div className="bg-[#f9f9ff] rounded-xl py-12 px-6 shadow-sm">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#1e1b4b] mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+              Get answers to the most common questions about our video shopping platform.
+            </p>
+          </div>
+          
+          <Accordion type="single" collapsible className="w-full space-y-6">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="border-gray-200">
+                <AccordionTrigger className="text-left text-lg md:text-xl font-semibold text-[#1e1b4b] hover:underline cursor-pointer">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-base md:text-lg text-gray-600 leading-relaxed mt-2">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
-        
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-brand-navy font-semibold">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-foreground">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
       </div>
     </section>
   );
