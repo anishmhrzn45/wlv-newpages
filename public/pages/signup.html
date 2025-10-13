@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Start Your Free Trial | WebLiveView</title>
+    <meta name="description" content="Start your free 14-day trial of WebLiveView. No credit card required.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .signup-container {
+            max-width: 500px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px rgba(15, 40, 71, 0.15);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--brand-navy);
+        }
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius-sm);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        .benefits-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        .benefits-list li:before {
+            content: "✓";
+            color: #10B981;
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+        .tip-box {
+            background: #EEF2FF;
+            border: 1px solid var(--brand-accent-blue);
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html">
+                    <img src="../webliveview-logo.png" alt="WebLiveView Logo" class="logo">
+                </a>
+                <nav class="nav">
+                    <a href="index.html">← Back to Home</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Signup Section -->
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <!-- Left Side - Benefits -->
+                <div>
+                    <h1>Increase your sales using our video shopping software</h1>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                        Try it today at <span class="text-pink">no cost for the first 14 days</span>.
+                    </p>
+
+                    <h3>Why sign up for WebLiveView?</h3>
+                    <ul class="benefits-list">
+                        <li>Talk to customers face-to-face with crystal-clear video</li>
+                        <li>Add live shopping to your site in minutes — no code needed</li>
+                        <li>Let customers book sales calls right from your page</li>
+                        <li>Instantly route chats to the right brand rep</li>
+                        <li>Save time with smart replies — video, images, and more</li>
+                    </ul>
+
+                    <div class="feature-card">
+                        <h4>What you get:</h4>
+                        <p>✅ 14-day free trial<br>
+                        ✅ No credit card required<br>
+                        ✅ Full feature access<br>
+                        ✅ Expert onboarding support</p>
+                    </div>
+                </div>
+
+                <!-- Right Side - Signup Form -->
+                <div class="signup-container">
+                    <h2 class="text-center">Start your free trial</h2>
+                    <p class="text-center" style="margin-bottom: 2rem;">
+                        Already have an account? <a href="index.html">Login</a>
+                    </p>
+
+                    <div class="tip-box">
+                        <strong>💡 Manager Tip:</strong> Get started in just 5 minutes with our 5-step setup. You can update your info anytime in account settings.
+                    </div>
+
+                    <form>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <input type="text" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <input type="text" placeholder="Last Name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" placeholder="Confirm Password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="display: flex; align-items: start; font-weight: normal;">
+                                <input type="checkbox" required style="width: auto; margin-right: 0.5rem; margin-top: 0.25rem;">
+                                <span style="font-size: 0.9rem;">I accept the <a href="terms-of-service.html">Terms & Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+                            Let's Go!
+                        </button>
+
+                        <div style="text-align: center; margin: 1.5rem 0; color: var(--gray-medium); font-size: 0.9rem;">
+                            or sign up with
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem;">
+                            <button type="button" class="btn btn-secondary" style="padding: 0.75rem;">Google</button>
+                            <button type="button" class="btn btn-secondary" style="padding: 0.75rem;">LinkedIn</button>
+                            <button type="button" class="btn btn-secondary" style="padding: 0.75rem;">Facebook</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>WebLiveView</h4>
+                    <p>Transform your website into a live showroom. Connect with customers in real-time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="product.html">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="use-cases.html">Use Cases</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>WebLiveView Ltd | 13 Upper Baggot Street, 2nd Floor, Dublin 4, D04 W7K5, Ireland</p>
+                <p>info@webliveview.com | +353 1 441 2618</p>
+                <p>&copy; 2025 WebLiveView Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Welcome to WebLiveView! Your trial has started.');
+        });
+    </script>
+</body>
+</html>

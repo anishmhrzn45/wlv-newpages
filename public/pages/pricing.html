@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - WebLiveView</title>
+    <meta name="description" content="Simple, flexible pricing for every team. Start free with WebLiveView's live video shopping platform.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(15, 40, 71, 0.1);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .pricing-card.popular {
+            border-color: var(--brand-pink);
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(15, 40, 71, 0.15);
+        }
+        .pricing-badge {
+            background: var(--brand-pink);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+            margin: 1rem 0;
+        }
+        .price-period {
+            font-size: 1rem;
+            color: var(--brand-gray);
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        .features-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-light);
+            display: flex;
+            align-items: center;
+        }
+        .features-list li:before {
+            content: "✓";
+            color: var(--brand-pink);
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html">
+                    <img src="../webliveview-logo.png" alt="WebLiveView Logo" class="logo">
+                </a>
+                <nav class="nav">
+                    <a href="product.html">Product</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1>Simple, Flexible Pricing for Every Team</h1>
+            <p style="font-size: 1.2rem;">Start free. No credit card required. Plans from just €49/month.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="section">
+        <div class="container">
+            <div class="features-grid">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <p>Perfect for small teams getting started</p>
+                    <div class="price">€49<span class="price-period">/month</span></div>
+                    <ul class="features-list">
+                        <li>3 video chat hours per month</li>
+                        <li>Unlimited live chat sessions</li>
+                        <li>Up to 2 sales people</li>
+                        <li>Basic performance reporting</li>
+                        <li>Web & mobile access</li>
+                        <li>Custom branding</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-secondary" style="width: 100%;">Start Free Trial</a>
+                </div>
+
+                <!-- Growth Plan (Popular) -->
+                <div class="pricing-card popular">
+                    <span class="pricing-badge">Most Popular</span>
+                    <h3>Growth</h3>
+                    <p>Give your team the tools to scale</p>
+                    <div class="price">€199<span class="price-period">/month</span></div>
+                    <ul class="features-list">
+                        <li>20 video chat hours per month</li>
+                        <li>Unlimited live chat sessions</li>
+                        <li>Up to 5 sales people</li>
+                        <li>Advanced analytics & reporting</li>
+                        <li>Calendar integrations</li>
+                        <li>Team performance insights</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Start Free Trial</a>
+                </div>
+
+                <!-- Scale Plan -->
+                <div class="pricing-card">
+                    <h3>Scale</h3>
+                    <p>Enterprise-grade for large teams</p>
+                    <div class="price">€499<span class="price-period">/month</span></div>
+                    <ul class="features-list">
+                        <li>Unlimited video chat hours</li>
+                        <li>Unlimited users & locations</li>
+                        <li>Advanced CRM integrations</li>
+                        <li>Custom onboarding & training</li>
+                        <li>Dedicated account manager</li>
+                        <li>White-label options</li>
+                        <li>Advanced security & compliance</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
+                </div>
+            </div>
+
+            <p class="text-center mt-lg" style="color: var(--brand-gray);">
+                All plans include 14-day free trial • No setup fees • Cancel anytime
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-light">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="text-center mb-lg">Frequently Asked Questions</h2>
+            
+            <div class="feature-card mb-lg">
+                <h4>Do I need a credit card for the free trial?</h4>
+                <p>No! Start your 14-day free trial with no credit card required. We'll only ask for payment details if you decide to continue after the trial.</p>
+            </div>
+
+            <div class="feature-card mb-lg">
+                <h4>Can I change plans at any time?</h4>
+                <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate the billing accordingly.</p>
+            </div>
+
+            <div class="feature-card mb-lg">
+                <h4>What happens when I exceed my video hours?</h4>
+                <p>We'll notify you when you're approaching your limit. You can upgrade your plan or purchase additional hours as needed.</p>
+            </div>
+
+            <div class="feature-card mb-lg">
+                <h4>Is training included?</h4>
+                <p>All plans include access to our knowledge base and video tutorials. Scale plan customers receive dedicated onboarding and training sessions.</p>
+            </div>
+
+            <div class="feature-card mb-lg">
+                <h4>What kind of support do you offer?</h4>
+                <p>All customers get email support. Growth plan includes priority support, and Scale plan includes a dedicated account manager.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container text-center">
+            <h2>Ready to Transform Your Sales?</h2>
+            <p class="mb-lg">Start your free 14-day trial today. No credit card required.</p>
+            <div class="hero-buttons" style="justify-content: center;">
+                <a href="signup.html" class="btn btn-primary btn-large">Start Free Trial</a>
+                <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn btn-secondary btn-large">Book Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>WebLiveView</h4>
+                    <p>Transform your website into a live showroom. Connect with customers in real-time.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="product.html">Features</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="use-cases.html">Use Cases</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>WebLiveView Ltd | 13 Upper Baggot Street, 2nd Floor, Dublin 4, D04 W7K5, Ireland</p>
+                <p>info@webliveview.com | +353 1 441 2618</p>
+                <p>&copy; 2025 WebLiveView Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
