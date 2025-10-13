@@ -212,8 +212,8 @@ All colors MUST be HSL.
 
   /* Button styles */
   .btn-primary {
-    background: hsl(339 89% 55%); 
-    color: #fff; 
+    background: hsl(var(--secondary)); 
+    color: hsl(var(--secondary-foreground)); 
     border-radius: 12px; 
     padding: 12px 18px; 
     font-weight: 600;
@@ -224,17 +224,17 @@ All colors MUST be HSL.
     transform: translateY(-1px);
   }
   .btn-secondary {
-    background: #fff; 
-    color: hsl(214 72% 14%); 
-    border: 2px solid hsl(214 72% 14%);
+    background: hsl(var(--background)); 
+    color: hsl(var(--primary)); 
+    border: 2px solid hsl(var(--primary));
     border-radius: 12px; 
     padding: 10px 16px; 
     font-weight: 600;
     transition: all 0.2s ease-in-out;
   }
   .btn-secondary:hover {
-    background: hsl(214 72% 14%);
-    color: #fff;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
     transform: translateY(-1px);
   }
 
@@ -255,11 +255,11 @@ All colors MUST be HSL.
 
   /* Footer styling */
   footer { 
-    background: hsl(214 72% 14%); 
-    color: #fff; 
+    background: hsl(var(--primary)); 
+    color: hsl(var(--primary-foreground)); 
   }
   footer a { 
-    color: #fff; 
+    color: hsl(var(--primary-foreground)); 
     opacity: 0.9; 
     transition: opacity 0.2s ease;
   }

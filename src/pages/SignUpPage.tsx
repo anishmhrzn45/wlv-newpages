@@ -141,17 +141,17 @@ const SignUpPage = () => {
           {/* Left Side - Marketing Content */}
           <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
             <div className="text-center lg:text-left">
-              <h1 className="text-brand-navy text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight">
+              <h1 className="text-primary text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight">
                 Increase your sales using our video shopping software
               </h1>
               <p className="text-muted-foreground text-base sm:text-lg lg:text-xl mt-3 lg:mt-4">
-                Try it today at <span className="text-brand-pink font-medium">no cost for the first 14 days</span>.
+                Try it today at <span className="text-secondary font-medium">no cost for the first 14 days</span>.
               </p>
             </div>
 
             {/* Why Sign Up Section */}
             <div className="space-y-4 pt-2 lg:pt-4">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-brand-navy">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary">
                 Why sign up for WebLiveView?
               </h2>
               <div className="space-y-3">
@@ -187,15 +187,15 @@ const SignUpPage = () => {
                   }}
                   className="h-full rounded-xl overflow-hidden shadow-md"
                 >
-                  <SwiperSlide className="flex items-center justify-center bg-[#f5f6ff]">
+                  <SwiperSlide className="flex items-center justify-center bg-muted">
                     <img src={electronicsDemo} alt="Electronics Preview" className="h-full object-contain" />
                   </SwiperSlide>
                   
-                  <SwiperSlide className="flex items-center justify-center bg-[#fce5f0]">
+                  <SwiperSlide className="flex items-center justify-center bg-brand-light">
                     <img src={furnitureDemo} alt="Furniture Preview" className="h-full object-contain" />
                   </SwiperSlide>
                   
-                  <SwiperSlide className="flex items-center justify-center bg-white">
+                  <SwiperSlide className="flex items-center justify-center bg-background">
                     <img src={kitchenDemo} alt="Kitchen Preview" className="h-full object-contain" />
                   </SwiperSlide>
                 </Swiper>
@@ -213,14 +213,14 @@ const SignUpPage = () => {
 
           {/* Right Side - Sign Up Form */}
           <div className="w-full max-w-md mx-auto lg:mx-0">
-            <div className="bg-white rounded-2xl shadow-large p-6 sm:p-8 space-y-5 sm:space-y-6">
+            <div className="bg-card rounded-2xl shadow-large p-6 sm:p-8 space-y-5 sm:space-y-6">
               <div className="space-y-2 text-center">
-                <h2 className="text-2xl sm:text-3xl font-bold text-brand-navy">Start your free trial</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-primary">Start your free trial</h2>
                 <p className="text-xs sm:text-sm text-muted-foreground">
                   Already have an account?{" "}
                   <button 
                     onClick={() => setIsAuthModalOpen(true)}
-                    className="text-brand-pink hover:underline font-medium cursor-pointer"
+                    className="text-secondary hover:underline font-medium cursor-pointer"
                   >
                     Login
                   </button>
@@ -228,11 +228,11 @@ const SignUpPage = () => {
               </div>
 
               {/* Manager Tip */}
-              <div className="px-3 sm:px-4 py-3 bg-[#f5f6ff] border border-[#b4b7f0] rounded-xl text-xs sm:text-sm text-gray-700 shadow-sm">
+              <div className="px-3 sm:px-4 py-3 bg-muted border border-accent rounded-xl text-xs sm:text-sm text-foreground shadow-sm">
                 <div className="flex items-start gap-2">
-                  <span className="text-[#b4b7f0] text-base sm:text-lg">💡</span>
+                  <span className="text-accent text-base sm:text-lg">💡</span>
                   <p>
-                    <span className="font-semibold text-[#4b4f6b]">Manager Tip:</span>
+                    <span className="font-semibold text-primary">Manager Tip:</span>
                     {" "}Get started in just 5 minutes with our 5-step setup. You can update your info anytime in account settings.
                   </p>
                 </div>
@@ -331,11 +331,11 @@ const SignUpPage = () => {
                   />
                   <label htmlFor="terms" className="text-sm text-muted-foreground cursor-pointer leading-[1.5] flex-1">
                     I accept the{" "}
-                    <Link to="/terms-of-service" className="text-brand-pink hover:underline">
+                  <Link to="/terms-of-service" className="text-secondary hover:underline">
                       Terms & Conditions
                     </Link>{" "}
                     and{" "}
-                    <Link to="/privacy-policy" className="text-brand-pink hover:underline">
+                    <Link to="/privacy-policy" className="text-secondary hover:underline">
                       Privacy Policy
                     </Link>
                   </label>
@@ -344,7 +344,7 @@ const SignUpPage = () => {
                 <Button
                   type="submit"
                   disabled={loading || !termsAccepted}
-                  className="w-full bg-gradient-to-r from-brand-pink to-secondary hover:opacity-90 text-white rounded-lg py-6 text-lg font-semibold shadow-medium"
+                  className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-lg py-6 text-lg font-semibold shadow-medium"
                 >
                   {loading ? "Creating Account..." : "Let's Go!"}
                 </Button>
@@ -354,7 +354,7 @@ const SignUpPage = () => {
                     <span className="w-full border-t border-border" />
                   </div>
                   <div className="relative flex justify-center text-xs uppercase">
-                    <span className="bg-white px-2 text-muted-foreground">or sign up with</span>
+                    <span className="bg-background px-2 text-muted-foreground">or sign up with</span>
                   </div>
                 </div>
 

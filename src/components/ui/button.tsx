@@ -15,8 +15,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:shadow-md",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        "free-trial": "bg-[#F12768] text-white hover:bg-[#F12768]/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5",
-        "book-demo": "bg-brand-navy text-white hover:bg-brand-navy/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5",
+        "free-trial": "bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5",
+        "book-demo": "bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5",
       },
       size: {
         default: "h-10 px-4 py-2 text-sm md:text-base",
