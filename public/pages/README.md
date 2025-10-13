@@ -1,15 +1,22 @@
 # WebLiveView Static HTML Pages
 
-This folder contains static HTML and CSS versions of the WebLiveView pages for export, sharing, or static hosting purposes.
+This folder contains fully optimized, static HTML and CSS versions of all WebLiveView pages, ready for export, sharing, or static hosting.
 
-## Files Included
+## 📦 Files Included
 
-- **styles.css** - Global stylesheet with brand colors, typography, and components
-- **index.html** - Home page
+### Pages
+- **index.html** - Home page with hero, features, and CTAs
 - **about.html** - About Us page
-- **pricing.html** - Pricing plans page
-- **contact.html** - Contact page
-- **signup.html** - Sign up page
+- **pricing.html** - Pricing plans and FAQ
+- **contact.html** - Contact page with form
+- **signup.html** - Sign up / Free trial page
+- **use-cases.html** - Industry-specific use cases
+- **privacy-policy.html** - Privacy policy
+- **terms-of-service.html** - Terms of service
+- **company-register.html** - Company registration form
+
+### Stylesheets
+- **styles.css** - TailwindCSS + custom brand styles
 
 ## Brand Colors
 
