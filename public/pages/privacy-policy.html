@@ -6,8 +6,217 @@
   <meta name="description" content="WebLiveView Privacy Policy. Learn how we collect, use, and protect your personal information.">
   <meta name="robots" content="index, follow">
   <title>Privacy Policy - WebLiveView</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: hsl(220, 30%, 98%);
+      color: hsl(220, 25%, 20%);
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: hsl(220, 45%, 15%);
+      border-bottom: 1px solid hsl(220, 40%, 25%);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav a {
+      color: hsl(0, 0%, 100%);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: hsl(330, 85%, 65%);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.75rem;
+      background: linear-gradient(135deg, hsl(330, 85%, 65%), hsl(330, 85%, 55%));
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px hsla(330, 85%, 65%, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px hsla(330, 85%, 65%, 0.4);
+    }
+
+    /* Main Content Styles */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: hsl(220, 45%, 15%);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: hsl(220, 45%, 15%);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: hsl(220, 35%, 25%);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: hsl(220, 20%, 35%);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .last-updated {
+      color: hsl(220, 20%, 45%);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    section {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      color: hsl(220, 20%, 35%);
+      margin-bottom: 0.5rem;
+      line-height: 1.8;
+    }
+
+    strong {
+      color: hsl(220, 45%, 15%);
+      font-weight: 600;
+    }
+
+    .contact-box {
+      background: hsl(220, 30%, 98%);
+      border-left: 4px solid hsl(330, 85%, 65%);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .contact-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box a {
+      color: hsl(330, 85%, 65%);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: hsl(220, 45%, 15%);
+      color: hsl(0, 0%, 100%);
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    .footer-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-content p {
+      color: hsl(220, 20%, 70%);
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 1.5rem;
+      }
+
+      main {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
   
   <!-- Service Worker Registration -->
   <script>
@@ -18,151 +227,144 @@
       }
   </script>
 </head>
-<body class="antialiased">
+<body>
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 md:h-20">
-        <a href="index.html" class="flex items-center">
-          <img src="webliveview-logo-white.png" alt="WebLiveView Logo" class="h-10 md:h-12 w-auto">
-        </a>
-        <nav class="hidden md:flex items-center gap-6 lg:gap-8">
-          <a href="index.html" class="text-sm lg:text-base font-medium text-gray-700 hover:text-pink-600 transition-colors">Home</a>
-          <a href="signup.html" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-pink-600 rounded-lg hover:bg-pink-700 transition-all">
-            Start Free Trial
-          </a>
-        </nav>
-      </div>
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo">
+        <img src="webliveview-logo-white.png" alt="WebLiveView Logo">
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product.html">Product</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html" class="btn-primary">Start Free Trial</a>
+      </nav>
     </div>
   </header>
 
-  <main class="py-12 md:py-20 bg-white">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
-      
-      <div class="prose prose-lg max-w-none">
-        <p class="text-gray-600 mb-6"><strong>Last Updated:</strong> January 2025</p>
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="last-updated"><strong>Last Updated:</strong> January 2025</p>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
-          <p class="text-gray-600 leading-relaxed">
-            WebLiveView ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our video shopping platform.
-          </p>
-        </section>
+    <section>
+      <h2>1. Introduction</h2>
+      <p>
+        WebLiveView ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our video shopping platform.
+      </p>
+    </section>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">2. Information We Collect</h2>
-          <h3 class="text-xl font-semibold text-gray-800 mb-3">Personal Information</h3>
-          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-4">
-            <li>Name, email address, and phone number</li>
-            <li>Company information (for business accounts)</li>
-            <li>Billing and payment information</li>
-            <li>Account credentials</li>
-          </ul>
+    <section>
+      <h2>2. Information We Collect</h2>
+      <h3>Personal Information</h3>
+      <ul>
+        <li>Name, email address, and phone number</li>
+        <li>Company information (for business accounts)</li>
+        <li>Billing and payment information</li>
+        <li>Account credentials</li>
+      </ul>
 
-          <h3 class="text-xl font-semibold text-gray-800 mb-3">Usage Information</h3>
-          <ul class="list-disc list-inside text-gray-600 space-y-2">
-            <li>Video call metadata (duration, participants, timestamps)</li>
-            <li>Device information and IP addresses</li>
-            <li>Browsing behavior and interaction data</li>
-            <li>Cookies and similar tracking technologies</li>
-          </ul>
-        </section>
+      <h3>Usage Information</h3>
+      <ul>
+        <li>Video call metadata (duration, participants, timestamps)</li>
+        <li>Device information and IP addresses</li>
+        <li>Browsing behavior and interaction data</li>
+        <li>Cookies and similar tracking technologies</li>
+      </ul>
+    </section>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">3. How We Use Your Information</h2>
-          <ul class="list-disc list-inside text-gray-600 space-y-2">
-            <li>Provide and maintain our services</li>
-            <li>Process transactions and send notifications</li>
-            <li>Improve and personalize user experience</li>
-            <li>Analyze usage patterns and optimize performance</li>
-            <li>Communicate updates, offers, and support</li>
-            <li>Prevent fraud and ensure security</li>
-          </ul>
-        </section>
+    <section>
+      <h2>3. How We Use Your Information</h2>
+      <ul>
+        <li>Provide and maintain our services</li>
+        <li>Process transactions and send notifications</li>
+        <li>Improve and personalize user experience</li>
+        <li>Analyze usage patterns and optimize performance</li>
+        <li>Communicate updates, offers, and support</li>
+        <li>Prevent fraud and ensure security</li>
+      </ul>
+    </section>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Data Sharing and Disclosure</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            We do not sell your personal information. We may share data with:
-          </p>
-          <ul class="list-disc list-inside text-gray-600 space-y-2">
-            <li><strong>Service Providers:</strong> Third-party vendors who assist in operations</li>
-            <li><strong>Business Transfers:</strong> In case of merger, acquisition, or sale</li>
-            <li><strong>Legal Requirements:</strong> When required by law or to protect rights</li>
-            <li><strong>With Your Consent:</strong> When you explicitly agree to sharing</li>
-          </ul>
-        </section>
+    <section>
+      <h2>4. Data Sharing and Disclosure</h2>
+      <p>
+        We do not sell your personal information. We may share data with:
+      </p>
+      <ul>
+        <li><strong>Service Providers:</strong> Third-party vendors who assist in operations</li>
+        <li><strong>Business Transfers:</strong> In case of merger, acquisition, or sale</li>
+        <li><strong>Legal Requirements:</strong> When required by law or to protect rights</li>
+        <li><strong>With Your Consent:</strong> When you explicitly agree to sharing</li>
+      </ul>
+    </section>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">5. Data Security</h2>
-          <p class="text-gray-600 leading-relaxed">
-            We implement industry-standard security measures including encryption, secure servers, and regular security audits. However, no method of transmission over the internet is 100% secure.
-          </p>
-        </section>
+    <section>
+      <h2>5. Data Security</h2>
+      <p>
+        We implement industry-standard security measures including encryption, secure servers, and regular security audits. However, no method of transmission over the internet is 100% secure.
+      </p>
+    </section>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">6. Your Rights</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">You have the right to:</p>
-          <ul class="list-disc list-inside text-gray-600 space-y-2">
-            <li>Access your personal data</li>
-            <li>Correct inaccurate information</li>
-            <li>Request deletion of your data</li>
-            <li>Object to data processing</li>
-            <li>Data portability</li>
-            <li>Withdraw consent</li>
-          </ul>
-        </section>
+    <section>
+      <h2>6. Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access your personal data</li>
+        <li>Correct inaccurate information</li>
+        <li>Request deletion of your data</li>
+        <li>Object to data processing</li>
+        <li>Data portability</li>
+        <li>Withdraw consent</li>
+      </ul>
+    </section>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Cookies and Tracking</h2>
-          <p class="text-gray-600 leading-relaxed">
-            We use cookies and similar technologies to enhance your experience, analyze traffic, and personalize content. You can control cookie preferences through your browser settings.
-          </p>
-        </section>
+    <section>
+      <h2>7. Cookies and Tracking</h2>
+      <p>
+        We use cookies and similar technologies to enhance your experience, analyze traffic, and personalize content. You can control cookie preferences through your browser settings.
+      </p>
+    </section>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Children's Privacy</h2>
-          <p class="text-gray-600 leading-relaxed">
-            Our service is not intended for users under 18 years of age. We do not knowingly collect information from children.
-          </p>
-        </section>
+    <section>
+      <h2>8. Children's Privacy</h2>
+      <p>
+        Our service is not intended for users under 18 years of age. We do not knowingly collect information from children.
+      </p>
+    </section>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">9. International Data Transfers</h2>
-          <p class="text-gray-600 leading-relaxed">
-            Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place.
-          </p>
-        </section>
+    <section>
+      <h2>9. International Data Transfers</h2>
+      <p>
+        Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place.
+      </p>
+    </section>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">10. Changes to This Policy</h2>
-          <p class="text-gray-600 leading-relaxed">
-            We may update this Privacy Policy periodically. We will notify you of significant changes via email or through our platform.
-          </p>
-        </section>
+    <section>
+      <h2>10. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy periodically. We will notify you of significant changes via email or through our platform.
+      </p>
+    </section>
 
-        <section class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">11. Contact Us</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            If you have questions about this Privacy Policy, please contact us:
-          </p>
-          <div class="bg-gray-50 rounded-lg p-6">
-            <p class="text-gray-800 font-medium mb-2">WebLiveView Privacy Team</p>
-            <p class="text-gray-600">Email: <a href="mailto:privacy@webliveview.com" class="text-pink-600 hover:underline">privacy@webliveview.com</a></p>
-            <p class="text-gray-600">Phone: <a href="tel:+441234567890" class="text-pink-600 hover:underline">+44 (0) 123 456 7890</a></p>
-          </div>
-        </section>
+    <section>
+      <h2>11. Contact Us</h2>
+      <p>
+        If you have questions about this Privacy Policy, please contact us:
+      </p>
+      <div class="contact-box">
+        <p><strong>WebLiveView Privacy Team</strong></p>
+        <p>Email: <a href="mailto:privacy@webliveview.com">privacy@webliveview.com</a></p>
+        <p>Phone: <a href="tel:+441234567890">+44 (0) 123 456 7890</a></p>
       </div>
-    </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center text-sm text-gray-400">
-        <p>&copy; 2025 WebLiveView. All rights reserved.</p>
-      </div>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 WebLiveView. All rights reserved.</p>
     </div>
   </footer>
 </body>
