@@ -82,6 +82,232 @@
         }
     </style>
     
+    <style>
+        :root {
+            --brand-navy: #1e1b4b;
+            --brand-pink: #ef476f;
+            --brand-light: #f8fafc;
+            --secondary: #06d6a0;
+            --foreground: #334155;
+            --muted-foreground: #64748b;
+            --border: #e2e8f0;
+            --radius-sm: 0.5rem;
+        }
+
+        /* Header Override */
+        .header {
+            background: var(--brand-navy);
+            border-bottom: none;
+        }
+        .header .logo {
+            height: 48px;
+            width: auto;
+        }
+        .header .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+        .header .nav a:hover {
+            color: var(--brand-pink);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--brand-navy) 0%, #2d2960 100%);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            color: white;
+        }
+        .page-header h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .page-header p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        /* Contact Form Card */
+        .form-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(15, 40, 71, 0.1);
+        }
+        .form-card h3 {
+            font-size: 1.5rem;
+            color: var(--brand-navy);
+            margin-bottom: 1.5rem;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--brand-navy);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(6, 214, 160, 0.1);
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: none;
+        }
+
+        /* Contact Info Section */
+        .contact-info-section h3 {
+            font-size: 1.25rem;
+            color: var(--brand-navy);
+            margin-bottom: 1.5rem;
+        }
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .contact-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--secondary);
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+        .contact-item span,
+        .contact-item a {
+            color: var(--foreground);
+            text-decoration: none;
+        }
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+        .contact-address {
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        /* CTA Cards */
+        .cta-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .cta-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 4px rgba(15, 40, 71, 0.08);
+        }
+        .cta-card.trial {
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.1) 0%, transparent 100%);
+            border: 1px solid rgba(6, 214, 160, 0.2);
+        }
+        .cta-card.demo {
+            background: linear-gradient(135deg, rgba(239, 71, 111, 0.1) 0%, transparent 100%);
+            border: 1px solid rgba(239, 71, 111, 0.2);
+        }
+        .cta-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--brand-navy);
+            margin-bottom: 0.5rem;
+        }
+        .cta-card p {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            margin-bottom: 1rem;
+        }
+        .cta-card .btn {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn-submit {
+            background: var(--secondary);
+            color: white;
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-submit:hover {
+            background: #05c090;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(6, 214, 160, 0.3);
+        }
+        .btn-trial {
+            background: var(--secondary);
+            color: white;
+        }
+        .btn-trial:hover {
+            background: #05c090;
+        }
+        .btn-demo {
+            background: var(--brand-pink);
+            color: white;
+        }
+        .btn-demo:hover {
+            background: #d93d61;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .page-header {
+                padding: 6rem 0 3rem;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            .page-header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    
     <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
@@ -110,96 +336,95 @@
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container text-center">
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
             <h1>Get in Touch</h1>
-            <p style="font-size: 1.2rem;">Ready to transform your sales process? We're here to help.</p>
+            <p>Ready to transform your sales process? We're here to help.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="section">
-        <div class="container" style="max-width: 1000px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
-                <!-- Contact Info -->
-                <div>
-                    <h2>Contact Information</h2>
-                    <p class="mb-lg">Have questions? Get in touch with our team.</p>
+        <div class="container" style="max-width: 1200px;">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; color: var(--brand-navy); margin-bottom: 1rem;">Ready to Get Started?</h2>
+                <p style="font-size: 1.125rem; color: var(--muted-foreground);">Contact us today and start converting more customers with live video shopping.</p>
+            </div>
 
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">📧</div>
-                            <div>
-                                <h4>Email</h4>
-                                <a href="mailto:info@webliveview.com">info@webliveview.com</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div>
-                                <h4>Phone</h4>
-                                <a href="tel:+35314412618">+353 1 441 2618</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div>
-                                <h4>Address</h4>
-                                <p>WebLiveView Ltd<br>
-                                13 Upper Baggot Street, 2nd Floor<br>
-                                Dublin 4, D04 W7K5<br>
-                                Ireland</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="feature-card">
-                        <h4>Book a Demo</h4>
-                        <p>See WebLiveView in action with a personalized demo from our team.</p>
-                        <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn btn-primary" style="width: 100%;">Schedule Demo</a>
-                    </div>
-                </div>
-
+            <div class="contact-grid">
                 <!-- Contact Form -->
-                <div>
-                    <h2>Send us a Message</h2>
+                <div class="form-card">
+                    <h3>Send us a message</h3>
                     <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@company.com" required>
                         </div>
 
                         <div class="form-group">
                             <label for="company">Company</label>
-                            <input type="text" id="company" name="company">
+                            <input type="text" id="company" name="company" placeholder="Your Company Name">
                         </div>
 
                         <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject</option>
-                                <option value="sales">Sales Inquiry</option>
-                                <option value="support">Support</option>
-                                <option value="partnership">Partnership</option>
-                                <option value="other">Other</option>
-                            </select>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your business and how we can help..." rows="5" required></textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="btn-submit">Send Message</button>
                     </form>
+                </div>
+
+                <!-- Contact Info & CTA -->
+                <div class="contact-info-section">
+                    <h3>Get in touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <a href="mailto:info@webliveview.com">info@webliveview.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>+353 1 4412618</span>
+                        </div>
+                        <div class="contact-item" style="align-items: flex-start;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div class="contact-address">
+                                <div>Webliveview Ltd</div>
+                                <div>13 Upper Baggot Street</div>
+                                <div>2nd Floor</div>
+                                <div>Dublin 4, D04 W7K5</div>
+                                <div>Ireland</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Cards -->
+                    <div class="cta-cards">
+                        <div class="cta-card trial">
+                            <h4>Start Your Free Trial</h4>
+                            <p>No credit card required. Get started in less than 5 minutes.</p>
+                            <a href="signup.html" class="btn btn-primary btn-trial">Start Free Trial</a>
+                        </div>
+
+                        <div class="cta-card demo">
+                            <h4>Book a Personal Demo</h4>
+                            <p>See WebLiveView in action with a personalized demonstration.</p>
+                            <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn btn-primary btn-demo">Book Demo</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
