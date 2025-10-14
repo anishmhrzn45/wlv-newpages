@@ -8,6 +8,15 @@
   <title>Terms of Service - WebLiveView</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css">
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Service Worker Registration -->
+  <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js')
+              .then(() => console.log('Service Worker registered'))
+              .catch(err => console.error('Service Worker error:', err));
+      }
+  </script>
 </head>
 <body class="antialiased">
   <!-- Header -->
