@@ -1,229 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Video Shopping for Kitchen, Furniture & Bathroom Retailers | WebLiveView</title>
-    <meta name="description" content="Convert more customers online with live video calls, virtual consultations, and real-time shopping support for kitchen, bathroom, and furniture retailers.">
-    <meta name="keywords" content="virtual kitchen showroom, live video shopping, guided product demos, ecommerce conversion, furniture sales software, bathroom product demo, video consultation platform">
-    <link rel="canonical" href="https://webliveview.com">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="../assets/webliveview-logo.png" type="image/png">
-    
-    <!-- Preconnect for fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Critical CSS - inline for fast first paint -->
-    <style>
-        html { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-        body { margin: 0; padding: 0; background: #fff; color: #1e1b4b; line-height: 1.6; }
-        h1, h2, h3, h4, h5, h6 { font-weight: 700; color: #1e1b4b; margin-bottom: 1rem; }
-        .btn-primary { background-color: #ef476f; color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; font-weight: 600; transition: all 0.3s; }
-        .btn-primary:hover { background-color: #d63659; transform: translateY(-2px); }
-        .header { background: #1e1b4b; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-    </style>
-    
-    <!-- Preload CSS -->
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(() => console.log('Service Worker registered'))
-                .catch(err => console.error('Service Worker error:', err));
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Transform your website into a live showroom with WebLiveView. Live video shopping platform for retailers with video chat, screen sharing, and co-browsing.">
+  <meta name="keywords" content="live video shopping, video chat for retail, online sales platform, live shopping, video commerce">
+  <meta name="robots" content="index, follow">
+  <title>WebLiveView - Transform Your Website Into a Live Showroom</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="hero-image.jpg" type="image/jpeg">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Preload critical assets -->
+  <link rel="preload" href="webliveview-logo-new.png" as="image">
+  <link rel="preload" href="hero-image.jpg" as="image">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" as="style">
+  
+  <!-- Critical inline CSS for above-the-fold content -->
+  <style>
+    :root {
+      --brand-navy: hsl(214, 72%, 14%);
+      --brand-pink: hsl(339, 89%, 55%);
+      --brand-light: hsl(220, 50%, 98%);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Poppins', -apple-system, sans-serif; 
+      background: #fff; 
+      color: hsl(0, 0%, 29%);
+      -webkit-font-smoothing: antialiased;
+    }
+    header { 
+      background: #fff; 
+      border-bottom: 1px solid hsl(220, 13%, 91%); 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+    .hero {
+      text-align: center;
+      padding: 5rem 1.5rem;
+      background: linear-gradient(135deg, var(--brand-navy) 0%, hsl(214, 47%, 16%) 100%);
+      color: #fff;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--brand-pink);
+      color: #fff;
+    }
+  </style>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main stylesheet (loads after critical CSS) -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(() => console.log('Service Worker registered'))
+          .catch(err => console.error('Service Worker error:', err));
+      });
+    }
+  </script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="index.html">
-                    <img src="webliveview-logo-white.png" alt="WebLiveView Logo" class="logo">
-                </a>
-                <nav class="nav">
-                    <a href="product.html">Product</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html">
+          <img src="webliveview-logo-new.png" alt="WebLiveView - Live Video Shopping Platform" class="logo">
+        </a>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="index.html#product">Product</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
+      </div>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Transform Your Website Into a <span class="text-pink">Live Showroom</span></h1>
-                    <p>Connect with customers through live video, share your screen, and close deals in real-time. Perfect for high-value sales that need a personal touch.</p>
-                    <div class="hero-buttons">
-                        <a href="signup.html" class="btn btn-primary btn-large">Start Free Trial</a>
-                        <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn btn-secondary btn-large">Book a Demo</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="hero-image.jpg" alt="Live video shopping demonstration">
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Transform Your Website Into a Live Showroom</h1>
+      <p class="hero-subtitle">Connect with customers instantly through live video chat. Show products, answer questions, and close sales in real-time.</p>
+      <div class="hero-buttons">
+        <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
+        <a href="https://calendly.com/barry-mc-kenna/new-meeting" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+      </div>
+      <div class="trust-indicators">
+        <span>✓ No setup fees</span>
+        <span>✓ 14-day free trial</span>
+        <span>✓ Cancel anytime</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- How It Works Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>How WebLiveView Works</h2>
-                <p>Get up and running in minutes with our simple 3-step process</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">1</div>
-                    <h3>Add to Your Site</h3>
-                    <p>Install our widget with a simple code snippet. No technical expertise required.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">2</div>
-                    <h3>Connect Your Team</h3>
-                    <p>Sales reps log in via mobile or desktop app. They're instantly ready to help customers.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">3</div>
-                    <h3>Start Converting</h3>
-                    <p>Customers click to video call. Your team demonstrates products live and closes deals.</p>
-                </div>
-            </div>
+  <!-- Video Section -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <h2>See WebLiveView in Action</h2>
+        <p>Watch how retailers boost conversions with live video shopping</p>
+      </div>
+      <div class="video-container" style="max-width: 800px; margin: 0 auto;">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: var(--shadow-large);">
+          <iframe 
+            src="https://fast.wistia.net/embed/iframe/ob1oqmqgye?videoFoam=true" 
+            allowfullscreen 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+            title="WebLiveView Product Demo"
+          ></iframe>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Features Section -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Everything Your Sales Team Needs</h2>
-                <p>Powerful features designed for high-value retail sales</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📹</div>
-                    <h3>Live Video Chat</h3>
-                    <p>Crystal-clear HD video calls directly from your website. Show products, answer questions, build trust.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🖥️</div>
-                    <h3>Screen Sharing</h3>
-                    <p>Share catalogs, configurators, or design tools. Guide customers through complex decisions.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile-First Design</h3>
-                    <p>Sales reps work from anywhere. Customers connect from any device.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Performance Analytics</h3>
-                    <p>Track calls, conversions, and team performance. Optimize your sales process.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Custom Branding</h3>
-                    <p>Match your brand colors and style. Seamless integration with your website.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Secure & Reliable</h3>
-                    <p>Enterprise-grade security and 99.9% uptime. Your data stays protected.</p>
-                </div>
-            </div>
+  <!-- How It Works Section -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Get started in three simple steps</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">1️⃣</div>
+          <h3>Visitor Requests Help</h3>
+          <p>Customer clicks the chat widget on your website</p>
         </div>
-    </section>
+        <div class="feature-card">
+          <div class="feature-icon">2️⃣</div>
+          <h3>Connect via Video</h3>
+          <p>Your sales team receives instant notification and joins</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">3️⃣</div>
+          <h3>Close the Sale</h3>
+          <p>Guide customers with video, screen share, and co-browsing</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Industry Use Cases -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Built for High-Value Retail</h2>
-                <p>Trusted by retailers across multiple industries</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">🛋️</span>
-                    <h3>Furniture Retailers</h3>
-                    <p>Show fabric samples, explain construction, help customers visualize pieces in their homes.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🏠</span>
-                    <h3>Kitchen & Bathroom</h3>
-                    <p>Walk through design options, discuss materials, provide instant quotes.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">💻</span>
-                    <h3>Electronics</h3>
-                    <p>Demonstrate features, compare models, answer technical questions live.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🚗</span>
-                    <h3>Motor Retail</h3>
-                    <p>Virtual showroom tours, detailed vehicle walkarounds, instant test drive booking.</p>
-                </div>
-            </div>
+  <!-- Features Section -->
+  <section class="section section-white" id="product">
+    <div class="container">
+      <div class="section-header">
+        <h2>Powerful Features for Modern Retail</h2>
+        <p>Everything you need to convert online visitors into customers</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📹</div>
+          <h3>Live Video Chat</h3>
+          <p>Face-to-face interactions that build trust and drive conversions</p>
         </div>
-    </section>
+        <div class="feature-card">
+          <div class="feature-icon">🖥️</div>
+          <h3>Screen Sharing</h3>
+          <p>Show products, demonstrate features, and guide purchases</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Co-browsing</h3>
+          <p>Navigate your site together and help customers find what they need</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Analytics & Reporting</h3>
+          <p>Track performance, measure ROI, and optimize your strategy</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile Optimized</h3>
+          <p>Works seamlessly on desktop, tablet, and mobile devices</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Custom Branding</h3>
+          <p>Match your brand with customizable colors and logos</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- CTA Section -->
-    <section class="section section-light">
-        <div class="container text-center">
-            <h2>Your Virtual Showroom. Ready in Minutes.</h2>
-            <p class="mb-lg">Start converting more visitors into buyers today.</p>
-            <div class="hero-buttons" style="justify-content: center;">
-                <a href="signup.html" class="btn btn-primary btn-large">Start Free Trial</a>
-                <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn btn-secondary btn-large">Book Demo</a>
-            </div>
+  <!-- Industry Use Cases Section -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Perfect for Every Retail Sector</h2>
+        <p>See how businesses like yours are succeeding</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <img src="furniture-demo.png" alt="Furniture retail live video shopping" loading="lazy">
+          <h3>Furniture & Home Decor</h3>
+          <p>Showcase products in detail, discuss customization options, and help customers visualize items in their space</p>
         </div>
-    </section>
+        <div class="feature-card">
+          <img src="kitchen-demo.png" alt="Kitchen and bathroom retail video consultations" loading="lazy">
+          <h3>Kitchens & Bathrooms</h3>
+          <p>Provide expert consultations, show material samples, and guide customers through design choices</p>
+        </div>
+        <div class="feature-card">
+          <img src="electronics-demo.png" alt="Electronics retail live product demos" loading="lazy">
+          <h3>Electronics & Tech</h3>
+          <p>Demonstrate features, answer technical questions, and compare products side-by-side</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>WebLiveView</h4>
-                    <p>Transform your website into a live showroom. Connect with customers in real-time.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Product</h4>
-                    <a href="product.html">Features</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="use-cases.html">Use Cases</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>WebLiveView Ltd | 13 Upper Baggot Street, 2nd Floor, Dublin 4, D04 W7K5, Ireland</p>
-                <p>info@webliveview.com | +353 1 441 2618</p>
-                <p>&copy; 2025 WebLiveView Ltd. All rights reserved.</p>
-            </div>
+  <!-- CTA Section -->
+  <section class="section section-white">
+    <div class="container" style="text-align: center;">
+      <h2 style="margin-bottom: 20px; color: var(--brand-navy);">Ready to Transform Your Online Sales?</h2>
+      <p style="font-size: 18px; margin-bottom: 32px; color: var(--foreground);">Start your 14-day free trial today. No credit card required.</p>
+      <div class="hero-buttons">
+        <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
+        <a href="https://calendly.com/barry-mc-kenna/new-meeting" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" style="color: var(--brand-navy); border-color: var(--brand-navy);">Book a Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>WebLiveView</h4>
+          <p>Transform your website into a live showroom</p>
         </div>
-    </footer>
+        <div class="footer-section">
+          <h4>Product</h4>
+          <a href="index.html#product">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="use-cases.html">Use Cases</a>
+        </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="company-register.html">Company Registration</a>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:hello@webliveview.com">hello@webliveview.com</a></p>
+          <p>Phone: <a href="tel:+441234567890">+44 (0) 123 456 7890</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 WebLiveView. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Wistia embed script (async) -->
+  <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
 </body>
 </html>

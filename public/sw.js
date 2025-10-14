@@ -1,4 +1,4 @@
-const CACHE_NAME = 'webliveview-v1';
+const CACHE_NAME = 'webliveview-v2';
 const ASSETS = [
   '/pages/index.html',
   '/pages/about.html',
@@ -10,9 +10,12 @@ const ASSETS = [
   '/pages/terms-of-service.html',
   '/pages/company-register.html',
   '/pages/styles.css',
-  '/assets/webliveview-logo.png',
-  '/assets/webliveview-logo-white.png',
-  '/assets/webliveview-logo-transparent.png',
+  '/pages/webliveview-logo-new.png',
+  '/pages/webliveview-logo-white.png',
+  '/pages/hero-image.jpg',
+  '/pages/furniture-demo.png',
+  '/pages/kitchen-demo.png',
+  '/pages/electronics-demo.png',
   'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap'
 ];
 
