@@ -1,47 +1,311 @@
-/* WebLiveView Static Pages - TailwindCSS + Custom Styles */
+/* WebLiveView Static Pages - Complete Styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@layer base {
-  :root {
-    /* Brand Colors - HSL values */
-    --brand-navy: 210 65% 18%;
-    --brand-pink: 341 90% 53%;
-    --brand-light: 210 20% 98%;
-    --brand-gray: 0 0% 29%;
-    --brand-accent-blue: 210 48% 66%;
-    
-    /* Design tokens */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 29%;
-    --primary: 341 90% 53%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 65% 18%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 210 20% 98%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 210 48% 66%;
-    --accent-foreground: 210 65% 18%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 29%;
-    --border: 210 20% 90%;
-    --radius: 0.75rem;
-  }
+:root {
+  /* Brand Colors */
+  --brand-navy: hsl(210, 65%, 18%);
+  --brand-pink: hsl(341, 90%, 53%);
+  --brand-light: hsl(210, 20%, 98%);
+  --brand-gray: hsl(0, 0%, 29%);
+  --brand-accent-blue: hsl(210, 48%, 66%);
+  --gray-light: hsl(210, 20%, 90%);
+  --radius: 0.75rem;
+  --radius-sm: 0.5rem;
 }
 
-@layer base {
-  * {
-    @apply border-border;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: white;
+  color: var(--brand-gray);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-light {
+  background: var(--brand-light);
+}
+
+/* Header */
+.header {
+  background: var(--brand-navy);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--brand-pink);
+}
+
+/* Hero */
+.hero {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--brand-navy) 0%, hsl(210, 65%, 25%) 100%);
+  color: white;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.text-pink {
+  color: var(--brand-pink);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+  background: var(--brand-pink);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: hsl(341, 90%, 45%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 71, 111, 0.3);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--brand-navy);
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px rgba(30, 27, 75, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(30, 27, 75, 0.15);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3, .feature-card h4 {
+  color: var(--brand-navy);
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--brand-gray);
+  line-height: 1.6;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--brand-gray);
+}
+
+/* Footer */
+.footer {
+  background: var(--brand-navy);
+  color: white;
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.footer-section a {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: var(--brand-pink);
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-lg {
+  margin-bottom: 2rem;
+}
+
+.mt-lg {
+  margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
   }
   
-  body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-secondary;
+  .features-grid {
+    grid-template-columns: 1fr;
   }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
 }
