@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Start Your Free Trial | WebLiveView</title>
-    <meta name="description" content="Start your free 14-day trial of WebLiveView. No credit card required.">
+    <title>Register Your Company - WebLiveView</title>
+    <meta name="description" content="Join hundreds of retailers transforming their customer experience with live video consultations.">
     
     <!-- Favicon -->
-    <link rel="icon" href="../assets/webliveview-logo.png" type="image/png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <!-- Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +15,15 @@
     
     <!-- Critical CSS -->
     <style>
+        :root {
+            --brand-navy: hsl(214, 72%, 14%);
+            --brand-pink: hsl(339, 89%, 55%);
+            --brand-light: hsl(220, 50%, 98%);
+            --brand-gray: hsl(0, 0%, 29%);
+        }
         html { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-        body { margin: 0; padding: 0; background: #f9f9ff; color: #1e1b4b; line-height: 1.6; }
-        h1, h2, h3, h4 { font-weight: 700; color: #1e1b4b; margin-bottom: 1rem; }
-        .btn-primary { background-color: #ef476f; color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; border: none; cursor: pointer; }
+        body { margin: 0; padding: 0; background: var(--brand-light); color: var(--brand-gray); line-height: 1.6; }
+        h1, h2, h3, h4 { font-weight: 700; color: var(--brand-navy); margin-bottom: 1rem; }
     </style>
     
     <!-- Preload CSS -->
@@ -29,40 +34,105 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        .signup-container {
-            max-width: 500px;
-            margin: 3rem auto;
+        .registration-form {
+            max-width: 650px;
+            margin: 2rem auto;
             background: white;
             padding: 3rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 15px rgba(15, 40, 71, 0.15);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(15, 40, 71, 0.15);
+        }
+        .form-section {
+            margin-bottom: 3rem;
+        }
+        .form-section h2 {
+            font-size: 1.75rem;
+            color: var(--brand-navy);
+            margin-bottom: 1.5rem;
         }
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--brand-navy);
+            font-size: 0.95rem;
         }
-        .form-group input {
+        .form-group input, .form-group select {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--radius-sm);
+            border: 1px solid hsl(220, 13%, 91%);
+            border-radius: 8px;
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--brand-pink);
+        }
+        .required::after {
+            content: "*";
+            color: var(--brand-pink);
+            margin-left: 4px;
+        }
+        .plan-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .plan-option {
+            border: 2px solid hsl(220, 13%, 91%);
+            border-radius: 12px;
+            padding: 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: flex-start;
+        }
+        .plan-option:hover {
+            border-color: var(--brand-pink);
+        }
+        .plan-option input[type="radio"] {
+            margin-top: 0.25rem;
+            margin-right: 1rem;
+            width: auto;
+        }
+        .plan-option.selected {
+            border-color: var(--brand-pink);
+            background: hsl(339, 89%, 98%);
+        }
+        .plan-details h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.1rem;
+        }
+        .plan-details p {
+            margin: 0.25rem 0;
+            font-size: 0.9rem;
+            color: var(--brand-gray);
+        }
+        .plan-price {
+            font-weight: 600;
+            color: var(--brand-navy);
+            margin-top: 0.5rem;
+        }
+        .benefits-section {
+            background: var(--brand-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
         }
         .benefits-list {
             list-style: none;
             padding: 0;
-            margin: 2rem 0;
+            margin: 1.5rem 0 0 0;
         }
         .benefits-list li {
-            padding: 0.5rem 0;
+            padding: 0.75rem 0;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
         }
         .benefits-list li:before {
             content: "✓";
@@ -70,13 +140,44 @@
             font-weight: bold;
             margin-right: 0.75rem;
             font-size: 1.2rem;
+            line-height: 1.5;
         }
-        .tip-box {
-            background: #EEF2FF;
-            border: 1px solid var(--brand-accent-blue);
-            border-radius: var(--radius-sm);
-            padding: 1rem;
-            margin-bottom: 1.5rem;
+        .checkbox-group {
+            display: flex;
+            align-items: start;
+            margin: 1.5rem 0;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        .btn-submit {
+            width: 100%;
+            background: var(--brand-navy);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Poppins', sans-serif;
+        }
+        .btn-submit:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+        .sign-in-link {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .registration-form {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
         }
     </style>
     
@@ -91,144 +192,218 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
+    <header style="background: white; border-bottom: 1px solid hsl(220, 13%, 91%); padding: 1rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
                 <a href="index.html">
-                    <img src="webliveview-logo-white.png" alt="WebLiveView Logo" class="logo">
+                    <img src="webliveview-logo-new.png" alt="WebLiveView Logo" style="height: 48px; width: auto;">
                 </a>
-                <nav class="nav">
-                    <a href="index.html">← Back to Home</a>
+                <nav>
+                    <a href="index.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500; margin-right: 1.5rem;">Home</a>
+                    <a href="pricing.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Pricing</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Signup Section -->
-    <section class="section">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
-                <!-- Left Side - Benefits -->
-                <div>
-                    <h1>Increase your sales using our video shopping software</h1>
-                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-                        Try it today at <span class="text-pink">no cost for the first 14 days</span>.
-                    </p>
-
-                    <h3>Why sign up for WebLiveView?</h3>
-                    <ul class="benefits-list">
-                        <li>Talk to customers face-to-face with crystal-clear video</li>
-                        <li>Add live shopping to your site in minutes — no code needed</li>
-                        <li>Let customers book sales calls right from your page</li>
-                        <li>Instantly route chats to the right brand rep</li>
-                        <li>Save time with smart replies — video, images, and more</li>
-                    </ul>
-
-                    <div class="feature-card">
-                        <h4>What you get:</h4>
-                        <p>✅ 14-day free trial<br>
-                        ✅ No credit card required<br>
-                        ✅ Full feature access<br>
-                        ✅ Expert onboarding support</p>
-                    </div>
-                </div>
-
-                <!-- Right Side - Signup Form -->
-                <div class="signup-container">
-                    <h2 class="text-center">Start your free trial</h2>
-                    <p class="text-center" style="margin-bottom: 2rem;">
-                        Already have an account? <a href="index.html">Login</a>
-                    </p>
-
-                    <div class="tip-box">
-                        <strong>💡 Manager Tip:</strong> Get started in just 5 minutes with our 5-step setup. You can update your info anytime in account settings.
-                    </div>
-
-                    <form>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <input type="text" placeholder="First Name" required>
-                            </div>
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <input type="text" placeholder="Last Name" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" placeholder="Email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="password" placeholder="Password" required>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="password" placeholder="Confirm Password" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label style="display: flex; align-items: start; font-weight: normal;">
-                                <input type="checkbox" required style="width: auto; margin-right: 0.5rem; margin-top: 0.25rem;">
-                                <span style="font-size: 0.9rem;">I accept the <a href="terms-of-service.html">Terms & Conditions</a> and <a href="privacy-policy.html">Privacy Policy</a></span>
-                            </label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
-                            Let's Go!
-                        </button>
-
-                        <div style="text-align: center; margin: 1.5rem 0; color: var(--gray-medium); font-size: 0.9rem;">
-                            or sign up with
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem;">
-                            <button type="button" class="btn btn-secondary" style="padding: 0.75rem;">Google</button>
-                            <button type="button" class="btn btn-secondary" style="padding: 0.75rem;">LinkedIn</button>
-                            <button type="button" class="btn btn-secondary" style="padding: 0.75rem;">Facebook</button>
-                        </div>
-                    </form>
-                </div>
+    <!-- Registration Section -->
+    <section style="padding: 3rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="font-size: clamp(2rem, 5vw, 2.5rem); color: var(--brand-navy); margin-bottom: 0.75rem;">Register Your Company</h1>
+                <p style="font-size: 1.1rem; color: var(--brand-gray);">Join hundreds of retailers transforming their customer experience with live video consultations.</p>
             </div>
+
+            <form class="registration-form">
+                <!-- Company Information -->
+                <div class="form-section">
+                    <h2>Company Information</h2>
+                    
+                    <div class="form-group">
+                        <label class="required">Company Name</label>
+                        <input type="text" placeholder="Your Company Ltd" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required">Industry</label>
+                        <select required>
+                            <option value="">Select Industry</option>
+                            <option value="furniture">Furniture & Home Decor</option>
+                            <option value="fashion">Fashion & Apparel</option>
+                            <option value="electronics">Electronics & Technology</option>
+                            <option value="automotive">Automotive</option>
+                            <option value="jewelry">Jewelry & Accessories</option>
+                            <option value="sports">Sports & Fitness</option>
+                            <option value="beauty">Beauty & Cosmetics</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required">Company Size</label>
+                        <select required>
+                            <option value="">Select Size</option>
+                            <option value="1-10">1-10 employees</option>
+                            <option value="11-50">11-50 employees</option>
+                            <option value="51-200">51-200 employees</option>
+                            <option value="201-500">201-500 employees</option>
+                            <option value="501+">501+ employees</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Website URL</label>
+                        <input type="url" placeholder="https://yourcompany.com">
+                    </div>
+                </div>
+
+                <!-- Primary Contact -->
+                <div class="form-section">
+                    <h2>Primary Contact</h2>
+                    
+                    <div class="form-group">
+                        <label class="required">First Name</label>
+                        <input type="text" placeholder="John" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required">Last Name</label>
+                        <input type="text" placeholder="Smith" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required">Email Address</label>
+                        <input type="email" placeholder="john.smith@company.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required">Phone Number</label>
+                        <input type="tel" placeholder="+44 123 456 7890" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required">Job Title</label>
+                        <input type="text" placeholder="Sales Manager" required>
+                    </div>
+                </div>
+
+                <!-- Select Your Plan -->
+                <div class="form-section">
+                    <h2>Select Your Plan</h2>
+                    
+                    <div class="plan-options">
+                        <label class="plan-option">
+                            <input type="radio" name="plan" value="starter" required>
+                            <div class="plan-details">
+                                <h4>Starter</h4>
+                                <p>Perfect for small teams</p>
+                                <div class="plan-price">£99/mo</div>
+                            </div>
+                        </label>
+                        
+                        <label class="plan-option selected">
+                            <input type="radio" name="plan" value="professional" checked required>
+                            <div class="plan-details">
+                                <h4>Professional <span style="background: var(--brand-pink); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem;">Popular</span></h4>
+                                <p>Best for growing businesses</p>
+                                <div class="plan-price">£249/mo</div>
+                            </div>
+                        </label>
+                        
+                        <label class="plan-option">
+                            <input type="radio" name="plan" value="enterprise" required>
+                            <div class="plan-details">
+                                <h4>Enterprise</h4>
+                                <p>Custom solutions for large teams</p>
+                                <div class="plan-price">Custom</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" style="font-size: 0.95rem;">
+                        I agree to the <a href="terms-of-service.html" style="color: var(--brand-pink); text-decoration: none;">Terms of Service</a> and <a href="privacy-policy.html" style="color: var(--brand-pink); text-decoration: none;">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">Complete Registration</button>
+
+                <!-- Sign In Link -->
+                <div class="sign-in-link">
+                    Already have an account? <a href="index.html" style="color: var(--brand-pink); text-decoration: none; font-weight: 500;">Sign in</a>
+                </div>
+
+                <!-- What You'll Get -->
+                <div class="benefits-section">
+                    <h3 style="margin-top: 0;">What You'll Get</h3>
+                    <ul class="benefits-list">
+                        <li>
+                            <div>
+                                <strong>14-Day Free Trial</strong><br>
+                                <span style="color: var(--brand-gray); font-size: 0.9rem;">No credit card required</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Dedicated Support</strong><br>
+                                <span style="color: var(--brand-gray); font-size: 0.9rem;">Priority onboarding assistance</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Full Feature Access</strong><br>
+                                <span style="color: var(--brand-gray); font-size: 0.9rem;">All features during trial</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Training Resources</strong><br>
+                                <span style="color: var(--brand-gray); font-size: 0.9rem;">Video tutorials & guides</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>Cancel Anytime</strong><br>
+                                <span style="color: var(--brand-gray); font-size: 0.9rem;">No long-term commitment</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid hsl(220, 13%, 91%); font-size: 0.9rem; color: var(--brand-gray);">
+                        Need help choosing? <a href="contact.html" style="color: var(--brand-pink); text-decoration: none;">Talk to our team →</a>
+                    </div>
+                </div>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>WebLiveView</h4>
-                    <p>Transform your website into a live showroom. Connect with customers in real-time.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Product</h4>
-                    <a href="product.html">Features</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="use-cases.html">Use Cases</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>WebLiveView Ltd | 13 Upper Baggot Street, 2nd Floor, Dublin 4, D04 W7K5, Ireland</p>
-                <p>info@webliveview.com | +353 1 441 2618</p>
-                <p>&copy; 2025 WebLiveView Ltd. All rights reserved.</p>
-            </div>
+    <footer style="background: var(--brand-navy); color: white; padding: 2rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; text-align: center;">
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">&copy; 2025 WebLiveView. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        // Plan selection visual feedback
+        const planOptions = document.querySelectorAll('.plan-option');
+        planOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                planOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Welcome to WebLiveView! Your trial has started.');
+            const formData = new FormData(this);
+            const company = formData.get('plan');
+            alert(`Registration submitted! Welcome to WebLiveView.\n\nYour ${company} plan trial will begin shortly.`);
         });
     </script>
 </body>
