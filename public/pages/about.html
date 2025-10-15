@@ -19,16 +19,34 @@
         body { margin: 0; padding: 0; background: #fff; color: #1e1b4b; line-height: 1.6; }
         h1, h2, h3, h4, h5, h6 { font-weight: 700; color: #1e1b4b; margin-bottom: 1rem; }
         .btn-primary { background-color: #ef476f; color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; font-weight: 600; }
-        .header { background: #1e1b4b; padding: 1rem 0; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav { display: none !important; }
+            footer > div > div[style*="grid-template-columns: 2fr 1fr 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            footer [style*="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center"] {
+                flex-direction: column !important;
+            }
+            footer [style*="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center"] a {
+                width: 100% !important;
+                min-width: auto !important;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            footer > div > div[style*="grid-template-columns: 2fr 1fr 1fr 1fr"] {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
     </style>
     
     <!-- Preload CSS -->
     <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
-    
-    <!-- Auth Modal Styles -->
-    <link rel="stylesheet" href="auth-modal.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -44,28 +62,28 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
+    <header style="background: hsl(214, 72%, 14%); padding: 1rem 0; border-bottom: none;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
                 <a href="index.html">
-                    <img src="webliveview-logo-white.png" alt="WebLiveView Logo" class="logo">
+                    <img src="webliveview-logo-white.png" alt="WebLiveView Logo" style="height: 48px; width: auto;">
                 </a>
-                <nav class="nav">
-                    <a href="product.html">Product</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                    <button onclick="openAuthModal('signup')" class="btn btn-primary" style="cursor: pointer;">Start Free Trial</button>
+                <nav style="display: flex; align-items: center; gap: 2rem;">
+                    <a href="product.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.2s;">Product</a>
+                    <a href="pricing.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.2s;">Pricing</a>
+                    <a href="about.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.2s;">About Us</a>
+                    <a href="contact.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.2s;">Contact</a>
+                    <a href="signup.html" style="background: hsl(339, 89%, 55%); color: white; padding: 10px 24px; border-radius: 9999px; text-decoration: none; font-weight: 600; transition: all 0.2s;">Start Free Trial</a>
                 </nav>
             </div>
         </div>
     </header>
 
     <!-- Hero -->
-    <section class="hero">
-        <div class="container text-center">
-            <h1>About WebLiveView</h1>
-            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">From Showroom to Screen</p>
+    <section style="background: linear-gradient(135deg, hsl(214, 72%, 14%) 0%, hsl(214, 47%, 16%) 100%); padding: 8rem 0 4rem; text-align: center; color: white;">
+        <div class="container">
+            <h1 style="color: white; font-size: 3rem; margin-bottom: 1rem;">About WebLiveView</h1>
+            <p style="font-size: 1.25rem; color: rgba(255,255,255,0.9); max-width: 800px; margin: 0 auto;">From Showroom to Screen</p>
         </div>
     </section>
 
@@ -149,39 +167,64 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>WebLiveView</h4>
-                    <p>Transform your website into a live showroom. Connect with customers in real-time.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Product</h4>
-                    <a href="product.html">Features</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="use-cases.html">Use Cases</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
+    <footer style="background: hsl(214, 72%, 14%); color: white; padding: 4rem 0 2rem;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <!-- CTA Section -->
+            <div style="text-align: center; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.125rem; margin-bottom: 2rem;">Start your free trial or book a personalized demo.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                    <a href="signup.html" style="background: hsl(339, 89%, 55%); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; min-width: 160px; text-align: center;">Start Free Trial</a>
+                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" style="background: white; color: hsl(214, 72%, 14%); padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; min-width: 160px; text-align: center;">Book Demo</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>WebLiveView Ltd | 13 Upper Baggot Street, 2nd Floor, Dublin 4, D04 W7K5, Ireland</p>
-                <p>info@webliveview.com | +353 1 441 2618</p>
-                <p>&copy; 2025 WebLiveView Ltd. All rights reserved.</p>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <h4 style="color: white; font-size: 1.25rem; margin-bottom: 1rem;">WebLiveView</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; line-height: 1.6;">Transform your website into a live showroom. Connect with customers in real-time through interactive video shopping.</p>
+                    <div style="margin-bottom: 0.75rem;">
+                        <a href="mailto:info@webliveview.com" style="color: rgba(255,255,255,0.8); text-decoration: none;">info@webliveview.com</a>
+                    </div>
+                    <div style="margin-bottom: 0.75rem;">
+                        <span style="color: rgba(255,255,255,0.8);">+353 1 441 2618</span>
+                    </div>
+                    <div style="color: rgba(255,255,255,0.7); line-height: 1.6;">
+                        <div>13 Upper Baggot Street, 2nd Floor</div>
+                        <div>Dublin 4, D04 W7K5, Ireland</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Product</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="product.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Features</a>
+                        <a href="pricing.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Pricing</a>
+                        <a href="use-cases.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Use Cases</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Company</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">About</a>
+                        <a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Legal</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="privacy-policy.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Privacy Policy</a>
+                        <a href="terms-of-service.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.875rem;">&copy; 2025 WebLiveView Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
-    <!-- Auth Modal Script -->
-    <script src="auth-modal.js"></script>
 </body>
 </html>
