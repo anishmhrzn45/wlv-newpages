@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover how WebLiveView transforms online shopping across industries with live video consultations. See real-world use cases and success stories.">
+  <meta name="keywords" content="video shopping, live consultation, e-commerce, online retail, virtual showroom">
+  <title>Use Cases - WebLiveView | Live Video Shopping Solutions</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Service Worker Registration -->
+  <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js')
+              .then(() => console.log('Service Worker registered'))
+              .catch(err => console.error('Service Worker error:', err));
+      }
+  </script>
+</head>
+<body class="antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 md:h-20">
+        <a href="index.html" class="flex items-center">
+          <img src="webliveview-logo-white.png" alt="WebLiveView Logo" class="h-10 md:h-12 w-auto">
+        </a>
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8" role="navigation" aria-label="Main navigation">
+          <a href="index.html" class="text-sm lg:text-base font-medium text-gray-700 hover:text-pink-600 transition-colors">Home</a>
+          <a href="use-cases.html" class="text-sm lg:text-base font-medium text-pink-600 transition-colors">Use Cases</a>
+          <a href="pricing.html" class="text-sm lg:text-base font-medium text-gray-700 hover:text-pink-600 transition-colors">Pricing</a>
+          <a href="about.html" class="text-sm lg:text-base font-medium text-gray-700 hover:text-pink-600 transition-colors">About</a>
+          <a href="contact.html" class="text-sm lg:text-base font-medium text-gray-700 hover:text-pink-600 transition-colors">Contact</a>
+          <a href="signup.html" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-pink-600 rounded-lg hover:bg-pink-700 transition-all hover:-translate-y-0.5 shadow-md hover:shadow-lg">
+            Start Free Trial
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-12 md:py-20 bg-gradient-to-br from-white to-gray-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6">
+            Real-World <span class="text-pink-600">Use Cases</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            See how businesses across industries are using WebLiveView to transform their online sales with live video consultations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Use Cases -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Furniture Retail -->
+          <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-3xl" aria-hidden="true">🛋️</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Furniture Retail</h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Help customers visualize furniture in their space with live video consultations. Show textures, dimensions, and styling options in real-time.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Virtual room walkthroughs</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Material & fabric inspection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Custom design consultation</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Electronics -->
+          <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-3xl" aria-hidden="true">📱</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Electronics</h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Demonstrate product features, compare models, and answer technical questions live. Build confidence in high-ticket purchases.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Live product demonstrations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Technical Q&A sessions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Feature comparisons</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Fashion & Apparel -->
+          <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-3xl" aria-hidden="true">👗</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Fashion & Apparel</h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Offer personal styling sessions, show clothing details, and help customers find their perfect fit through live video consultations.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Personal styling sessions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Fabric & fit inspection</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Virtual try-on assistance</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Home & Kitchen -->
+          <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-3xl" aria-hidden="true">🍳</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Home & Kitchen</h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Show appliance features, demonstrate cookware quality, and help customers choose the right products for their needs.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Appliance demonstrations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Quality inspections</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Usage tutorials</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Jewelry & Luxury -->
+          <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-3xl" aria-hidden="true">💎</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Jewelry & Luxury</h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Provide white-glove service for high-value purchases. Show intricate details, certifications, and craftsmanship up close.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Close-up detail viewing</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Certificate verification</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Personal consultation</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Automotive -->
+          <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 border border-gray-100">
+            <div class="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center mb-4">
+              <span class="text-3xl" aria-hidden="true">🚗</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">Automotive</h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Offer virtual test drives, showcase vehicle features, and answer questions in real-time. Perfect for remote car buying.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Virtual vehicle tours</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Feature demonstrations</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-pink-600 mr-2">✓</span>
+                <span>Condition inspections</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-20 bg-gradient-to-br from-pink-600 to-purple-700">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Ready to Transform Your Industry?
+        </h2>
+        <p class="text-lg md:text-xl text-pink-100 mb-8 max-w-2xl mx-auto">
+          Join hundreds of businesses using WebLiveView to deliver exceptional customer experiences.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="signup.html" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-pink-600 bg-white rounded-lg hover:bg-gray-50 transition-all hover:-translate-y-0.5 shadow-lg hover:shadow-xl">
+            Start Free Trial
+          </a>
+          <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-transparent border-2 border-white rounded-lg hover:bg-white hover:text-pink-600 transition-all">
+            Contact Sales
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="font-bold text-lg mb-4">WebLiveView</h4>
+          <p class="text-gray-400 text-sm">Transform online shopping with live video consultations.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-4">Product</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+            <li><a href="pricing.html" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-4">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-4">Legal</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+        <p>&copy; 2025 WebLiveView. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

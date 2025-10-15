@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WebLiveView Terms of Service. Read our terms and conditions for using the video shopping platform.">
+  <meta name="robots" content="index, follow">
+  <title>Terms of Service - WebLiveView</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: hsl(220, 30%, 98%);
+      color: hsl(220, 25%, 20%);
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: hsl(220, 45%, 15%);
+      border-bottom: 1px solid hsl(220, 40%, 25%);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav a {
+      color: hsl(0, 0%, 100%);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: hsl(330, 85%, 65%);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.75rem;
+      background: linear-gradient(135deg, hsl(330, 85%, 65%), hsl(330, 85%, 55%));
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px hsla(330, 85%, 65%, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px hsla(330, 85%, 65%, 0.4);
+    }
+
+    /* Main Content Styles */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: hsl(220, 45%, 15%);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: hsl(220, 45%, 15%);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: hsl(220, 35%, 25%);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: hsl(220, 20%, 35%);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .effective-date {
+      color: hsl(220, 20%, 45%);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    section {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      color: hsl(220, 20%, 35%);
+      margin-bottom: 0.5rem;
+      line-height: 1.8;
+    }
+
+    strong {
+      color: hsl(220, 45%, 15%);
+      font-weight: 600;
+    }
+
+    .contact-box {
+      background: hsl(220, 30%, 98%);
+      border-left: 4px solid hsl(330, 85%, 65%);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .contact-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box a {
+      color: hsl(330, 85%, 65%);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: hsl(220, 45%, 15%);
+      color: hsl(0, 0%, 100%);
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    .footer-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-content p {
+      color: hsl(220, 20%, 70%);
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        padding: 1.5rem;
+      }
+
+      main {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+  
+  <!-- Service Worker Registration -->
+  <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js')
+              .then(() => console.log('Service Worker registered'))
+              .catch(err => console.error('Service Worker error:', err));
+      }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo">
+        <img src="webliveview-logo-white.png" alt="WebLiveView Logo">
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product.html">Product</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html" class="btn-primary">Start Free Trial</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Terms of Service</h1>
+    <p class="effective-date"><strong>Effective Date:</strong> January 2025</p>
+
+    <section>
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        By accessing or using WebLiveView's platform, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, you may not use our service.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Service Description</h2>
+      <p>
+        WebLiveView provides a video consultation platform that enables retailers to conduct live video shopping sessions with customers. Our service includes video calling, screen sharing, product demonstrations, and integrated e-commerce features.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Account Registration</h2>
+      <ul>
+        <li>You must provide accurate, complete, and current information</li>
+        <li>You are responsible for maintaining account security</li>
+        <li>You must be at least 18 years old to create an account</li>
+        <li>One person or legal entity per account</li>
+        <li>You must notify us immediately of any unauthorized access</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Acceptable Use Policy</h2>
+      <p>You agree NOT to:</p>
+      <ul>
+        <li>Use the service for illegal purposes</li>
+        <li>Transmit harmful or offensive content</li>
+        <li>Attempt to gain unauthorized access to our systems</li>
+        <li>Interfere with or disrupt the service</li>
+        <li>Resell or redistribute the service without permission</li>
+        <li>Use automated systems to access the platform</li>
+        <li>Violate intellectual property rights</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Subscription and Payment</h2>
+      <h3>Billing</h3>
+      <ul>
+        <li>Subscription fees are billed in advance on a monthly or annual basis</li>
+        <li>Payments are processed through secure third-party providers</li>
+        <li>All fees are non-refundable unless otherwise stated</li>
+        <li>Prices are subject to change with 30 days notice</li>
+      </ul>
+
+      <h3>Free Trial</h3>
+      <p>
+        Free trials are available for new customers. No credit card required during trial. Trial converts to paid subscription unless cancelled before trial end.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. Cancellation and Termination</h2>
+      <ul>
+        <li>You may cancel your subscription at any time</li>
+        <li>Cancellation takes effect at the end of the current billing period</li>
+        <li>We reserve the right to suspend or terminate accounts that violate these terms</li>
+        <li>Upon termination, your access to the service will cease immediately</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7. Intellectual Property</h2>
+      <p>
+        All content, features, and functionality of WebLiveView are owned by us and protected by international copyright, trademark, and other intellectual property laws.
+      </p>
+      <p>
+        You retain ownership of content you upload but grant us a license to use, store, and display it as necessary to provide the service.
+      </p>
+    </section>
+
+    <section>
+      <h2>8. Privacy and Data Protection</h2>
+      <p>
+        Your use of the service is also governed by our <a href="privacy-policy.html">Privacy Policy</a>. We comply with GDPR and other applicable data protection regulations.
+      </p>
+    </section>
+
+    <section>
+      <h2>9. Service Availability</h2>
+      <p>
+        We strive for 99.9% uptime but do not guarantee uninterrupted service. We may perform maintenance, updates, or suspend service temporarily. We are not liable for downtime or service interruptions.
+      </p>
+    </section>
+
+    <section>
+      <h2>10. Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by law, WebLiveView shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use the service.
+      </p>
+    </section>
+
+    <section>
+      <h2>11. Indemnification</h2>
+      <p>
+        You agree to indemnify and hold harmless WebLiveView from any claims, damages, or expenses arising from your use of the service or violation of these terms.
+      </p>
+    </section>
+
+    <section>
+      <h2>12. Dispute Resolution</h2>
+      <p>
+        These terms shall be governed by the laws of England and Wales. Any disputes shall be resolved through binding arbitration or in the courts of England and Wales.
+      </p>
+    </section>
+
+    <section>
+      <h2>13. Changes to Terms</h2>
+      <p>
+        We reserve the right to modify these terms at any time. We will notify users of material changes via email or platform notification. Continued use after changes constitutes acceptance.
+      </p>
+    </section>
+
+    <section>
+      <h2>14. Contact Information</h2>
+      <div class="contact-box">
+        <p><strong>WebLiveView Legal Department</strong></p>
+        <p>Email: <a href="mailto:legal@webliveview.com">legal@webliveview.com</a></p>
+        <p>Phone: <a href="tel:+441234567890">+44 (0) 123 456 7890</a></p>
+        <p>Address: 123 Tech Street, London, UK</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 WebLiveView. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
