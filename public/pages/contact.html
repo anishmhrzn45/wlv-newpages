@@ -179,8 +179,8 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(6, 214, 160, 0.1);
+            border-color: var(--brand-pink);
+            box-shadow: 0 0 0 3px rgba(239, 71, 111, 0.1);
         }
         .form-group textarea {
             min-height: 120px;
@@ -204,7 +204,7 @@
         .contact-item svg {
             width: 20px;
             height: 20px;
-            color: var(--secondary);
+            color: var(--brand-pink);
             margin-right: 0.75rem;
             flex-shrink: 0;
         }
@@ -214,7 +214,7 @@
             text-decoration: none;
         }
         .contact-item a:hover {
-            color: var(--secondary);
+            color: var(--brand-pink);
         }
         .contact-address {
             color: var(--foreground);
@@ -234,8 +234,8 @@
             box-shadow: 0 2px 4px rgba(15, 40, 71, 0.08);
         }
         .cta-card.trial {
-            background: linear-gradient(135deg, rgba(6, 214, 160, 0.1) 0%, transparent 100%);
-            border: 1px solid rgba(6, 214, 160, 0.2);
+            background: linear-gradient(135deg, rgba(239, 71, 111, 0.1) 0%, transparent 100%);
+            border: 1px solid rgba(239, 71, 111, 0.2);
         }
         .cta-card.demo {
             background: linear-gradient(135deg, rgba(239, 71, 111, 0.1) 0%, transparent 100%);
@@ -258,7 +258,7 @@
 
         /* Buttons */
         .btn-submit {
-            background: var(--secondary);
+            background: var(--brand-pink);
             color: white;
             width: 100%;
             padding: 0.75rem 1.5rem;
@@ -271,16 +271,16 @@
             transition: all 0.3s ease;
         }
         .btn-submit:hover {
-            background: #05c090;
+            background: #d93d61;
             transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(6, 214, 160, 0.3);
+            box-shadow: 0 4px 8px rgba(239, 71, 111, 0.3);
         }
         .btn-trial {
-            background: var(--secondary);
+            background: var(--brand-pink);
             color: white;
         }
         .btn-trial:hover {
-            background: #05c090;
+            background: #d93d61;
         }
         .btn-demo {
             background: var(--brand-pink);
@@ -292,6 +292,9 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -307,6 +310,24 @@
             }
             .page-header p {
                 font-size: 1rem;
+            }
+            footer > div > div[style*="grid-template-columns: 2fr 1fr 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            footer [style*="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center"] {
+                flex-direction: column !important;
+            }
+            footer [style*="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center"] button,
+            footer [style*="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center"] a {
+                width: 100% !important;
+                min-width: auto !important;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            footer > div > div[style*="grid-template-columns: 2fr 1fr 1fr 1fr"] {
+                grid-template-columns: 1fr 1fr !important;
             }
         }
     </style>
@@ -339,13 +360,15 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <div class="page-header">
+        <h1>Get in Touch</h1>
+        <p>Ready to transform your sales process? We're here to help.</p>
+    </div>
+
     <!-- Contact Section -->
     <section class="section">
-        <div class="container" style="max-width: 1200px;">
-            <div class="text-center" style="margin-bottom: 3rem;">
-                <h2 style="font-size: 2.5rem; color: var(--brand-navy); margin-bottom: 1rem;">Ready to Get Started?</h2>
-                <p style="font-size: 1.125rem; color: var(--muted-foreground);">Contact us today and start converting more customers with live video shopping.</p>
-            </div>
+        <div class="container" style="max-width: 1200px; padding: 4rem 1rem;">
 
             <div class="contact-grid">
                 <!-- Contact Form -->
@@ -426,34 +449,62 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>WebLiveView</h4>
-                    <p>Transform your website into a live showroom. Connect with customers in real-time.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Product</h4>
-                    <a href="product.html">Features</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="use-cases.html">Use Cases</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
+    <footer style="background: hsl(214, 72%, 14%); color: white; padding: 4rem 0 2rem;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <!-- CTA Section -->
+            <div style="text-align: center; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.125rem; margin-bottom: 2rem;">Start your free trial or book a personalized demo.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                    <button onclick="openAuthModal('signup')" style="background: hsl(339, 89%, 55%); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; min-width: 160px;">Start Free Trial</button>
+                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" style="background: white; color: hsl(214, 72%, 14%); padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; min-width: 160px; text-align: center;">Book Demo</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>WebLiveView Ltd | 13 Upper Baggot Street, 2nd Floor, Dublin 4, D04 W7K5, Ireland</p>
-                <p>info@webliveview.com | +353 1 441 2618</p>
-                <p>&copy; 2025 WebLiveView Ltd. All rights reserved.</p>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <h4 style="color: white; font-size: 1.25rem; margin-bottom: 1rem;">WebLiveView</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; line-height: 1.6;">Transform your website into a live showroom. Connect with customers in real-time through interactive video shopping.</p>
+                    <div style="margin-bottom: 0.75rem;">
+                        <a href="mailto:info@webliveview.com" style="color: rgba(255,255,255,0.8); text-decoration: none;">info@webliveview.com</a>
+                    </div>
+                    <div style="margin-bottom: 0.75rem;">
+                        <span style="color: rgba(255,255,255,0.8);">+353 1 441 2618</span>
+                    </div>
+                    <div style="color: rgba(255,255,255,0.7); line-height: 1.6;">
+                        <div>13 Upper Baggot Street, 2nd Floor</div>
+                        <div>Dublin 4, D04 W7K5, Ireland</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Product</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="product.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Features</a>
+                        <a href="pricing.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Pricing</a>
+                        <a href="use-cases.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Use Cases</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Company</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">About</a>
+                        <a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Legal</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="privacy-policy.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Privacy Policy</a>
+                        <a href="terms-of-service.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.875rem;">&copy; 2025 WebLiveView Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
