@@ -364,9 +364,82 @@
             color: var(--brand-gray);
         }
         
+        /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             nav {
                 display: none;
+            }
+            
+            .page-header {
+                padding: 2rem 1rem 1.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .header-content {
+                padding: 1rem;
+            }
+            
+            .logo img {
+                height: 36px;
+            }
+            
+            .pricing-grid {
+                padding: 0 1rem;
+                gap: 1.5rem;
+            }
+            
+            .pricing-card {
+                padding: 1.5rem;
+            }
+            
+            /* Footer responsive fixes */
+            footer > div > div[style*="grid-template-columns: 2fr 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            
+            footer [style*="max-width: 1200px"] {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            footer [style*="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center"] {
+                flex-direction: column !important;
+            }
+            
+            footer [style*="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center"] a,
+            footer [style*="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center"] button {
+                width: 100% !important;
+                min-width: auto !important;
+            }
+            
+            section[style*="background: hsl(339, 89%, 55%)"] {
+                padding: 3rem 1rem !important;
+            }
+            
+            section[style*="background: hsl(339, 89%, 55%)"] div[style*="display: flex; flex-wrap: wrap"] {
+                flex-direction: column !important;
+            }
+            
+            section[style*="background: hsl(339, 89%, 55%)"] div[style*="display: flex; flex-wrap: wrap"] a,
+            section[style*="background: hsl(339, 89%, 55%)"] div[style*="display: flex; flex-wrap: wrap"] button {
+                width: 100% !important;
+                min-width: auto !important;
+            }
+        }
+        
+        /* Tablet Responsive Styles */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            footer > div > div[style*="grid-template-columns: 2fr 1fr 1fr"] {
+                grid-template-columns: 1fr 1fr !important;
             }
         }
     </style>
@@ -399,7 +472,7 @@
 
     <!-- Hero Section -->
     <div class="page-header">
-        <h1>Team</h1>
+        <h1>Simple, Flexible Pricing for Every Team</h1>
         <p>Start free. No credit card required. Plans from just €49/month.</p>
     </div>
     
