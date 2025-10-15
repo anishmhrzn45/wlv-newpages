@@ -94,11 +94,13 @@
   <!-- Header -->
   <header>
     <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
+      <div class="header-content" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
         <a href="index.html">
-          <img src="webliveview-logo-new.png" alt="WebLiveView - Live Video Shopping Platform" style="height: 48px; width: auto;">
+          <img src="webliveview-logo-new.png" alt="WebLiveView - Live Video Shopping Platform" class="logo" style="height: 48px; width: auto;">
         </a>
-        <nav style="display: flex; gap: 2rem; align-items: center;">
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav" style="display: flex; gap: 2rem; align-items: center;">
           <a href="product.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Product</a>
           <a href="pricing.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Pricing</a>
           <a href="about.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">About Us</a>
@@ -106,7 +108,24 @@
           <button onclick="openAuthModal('login')" style="padding: 0.65rem 1.5rem; border-radius: 9999px; font-size: 0.95rem; cursor: pointer; background: hsl(214, 72%, 14%); color: white; border: 2px solid hsl(214, 72%, 14%); font-weight: 500; transition: all 0.2s ease; font-family: 'Poppins', sans-serif;">Login</button>
           <button onclick="openAuthModal('signup')" class="btn-primary" style="padding: 0.65rem 1.5rem; border-radius: 9999px; font-size: 0.95rem; cursor: pointer;">Start Free Trial</button>
         </nav>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <a href="product.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Product</a>
+      <a href="pricing.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Pricing</a>
+      <a href="about.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">About Us</a>
+      <a href="contact.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Contact</a>
+      <button onclick="openAuthModal('login')" class="btn-secondary" style="margin-top: 1rem; cursor: pointer; font-family: 'Poppins', sans-serif;">Login</button>
+      <button onclick="openAuthModal('signup')" class="btn-primary" style="cursor: pointer; font-family: 'Poppins', sans-serif;">Start Free Trial</button>
     </div>
   </header>
 
@@ -958,5 +977,8 @@
   
   <!-- Auth Modal Script -->
   <script src="auth-modal.js"></script>
+  
+  <!-- Mobile Menu Script -->
+  <script src="mobile-menu.js"></script>
 </body>
 </html>
