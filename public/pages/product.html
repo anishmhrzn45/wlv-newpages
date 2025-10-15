@@ -32,8 +32,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   
-  <!-- Auth Modal Styles -->
-  <link rel="stylesheet" href="auth-modal.css">
+  <style>
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      [style*="grid-template-columns: 1fr 1fr"],
+      [style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .nav { display: none !important; }
+      .mobile-menu-toggle { display: flex !important; }
+      
+      h1 { font-size: 1.75rem !important; }
+      h2 { font-size: 1.5rem !important; }
+      h3 { font-size: 1.25rem !important; }
+      
+      section { padding: 2rem 0 !important; }
+      
+      .hero-buttons { 
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .hero-buttons a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1024px) {
+      [style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      
+      [style*="grid-template-columns: 1fr 1fr"] {
+        gap: 2rem !important;
+      }
+    }
+  </style>
   
   <script>
     if ('serviceWorker' in navigator) {
@@ -51,14 +87,33 @@
         <a href="index.html">
           <img src="webliveview-logo-new.png" alt="WebLiveView" style="height: 48px; width: auto;">
         </a>
-        <nav style="display: flex; gap: 2rem; align-items: center;">
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav" style="display: flex; gap: 2rem; align-items: center;">
           <a href="product.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 600;">Product</a>
           <a href="pricing.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Pricing</a>
           <a href="about.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">About Us</a>
           <a href="contact.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Contact</a>
-          <button onclick="openAuthModal('login')" style="padding: 0.65rem 1.5rem; border: 2px solid hsl(214, 72%, 14%); color: white; border-radius: 8px; background: hsl(214, 72%, 14%); font-weight: 500; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 1rem; transition: all 0.2s ease;">Login</button>
-          <button onclick="openAuthModal('signup')" style="padding: 0.65rem 1.5rem; background: var(--brand-pink); color: white; border-radius: 8px; border: none; font-weight: 500; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 1rem;">Start Free Trial</button>
+          <a href="signup.html" style="padding: 0.65rem 1.5rem; border: 2px solid hsl(214, 72%, 14%); color: white; border-radius: 8px; background: hsl(214, 72%, 14%); font-weight: 500; text-decoration: none; font-family: 'Poppins', sans-serif; font-size: 1rem; transition: all 0.2s ease;">Login</a>
+          <a href="signup.html" style="padding: 0.65rem 1.5rem; background: var(--brand-pink); color: white; border-radius: 8px; border: none; font-weight: 500; text-decoration: none; font-family: 'Poppins', sans-serif; font-size: 1rem;">Start Free Trial</a>
         </nav>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="product.html">Product</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html" style="background: var(--brand-navy); color: white; border-radius: 8px;">Login</a>
+        <a href="signup.html" style="background: var(--brand-pink); color: white; border-radius: 8px;">Start Free Trial</a>
       </div>
     </div>
   </header>
@@ -386,7 +441,27 @@
     </div>
   </footer>
   
-  <!-- Auth Modal Script -->
-  <script src="auth-modal.js"></script>
+  <script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      menu.classList.toggle('active');
+      toggle.classList.toggle('active');
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      const isClickInsideMenu = menu.contains(event.target);
+      const isClickOnToggle = toggle.contains(event.target);
+      
+      if (!isClickInsideMenu && !isClickOnToggle && menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        toggle.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
