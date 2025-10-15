@@ -27,6 +27,9 @@
     <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
     
+    <!-- Auth Modal Styles -->
+    <link rel="stylesheet" href="auth-modal.css">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -52,7 +55,7 @@
                     <a href="pricing.html">Pricing</a>
                     <a href="about.html">About Us</a>
                     <a href="contact.html">Contact</a>
-                    <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
+                    <button onclick="openAuthModal('signup')" class="btn btn-primary" style="cursor: pointer;">Start Free Trial</button>
                 </nav>
             </div>
         </div>
@@ -177,5 +180,8 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Auth Modal Script -->
+    <script src="auth-modal.js"></script>
 </body>
 </html>

@@ -76,6 +76,9 @@
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="styles.css">
   
+  <!-- Auth Modal Styles -->
+  <link rel="stylesheet" href="auth-modal.css">
+  
   <!-- Service Worker Registration -->
   <script>
     if ('serviceWorker' in navigator) {
@@ -100,8 +103,8 @@
           <a href="pricing.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Pricing</a>
           <a href="about.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">About Us</a>
           <a href="contact.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Contact</a>
-          <a href="signup.html" class="btn-outline" style="padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.95rem;">Login</a>
-          <a href="signup.html" class="btn-primary" style="padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.95rem;">Start Free Trial</a>
+          <button onclick="openAuthModal('login')" class="btn-outline" style="padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.95rem; cursor: pointer;">Login</button>
+          <button onclick="openAuthModal('signup')" class="btn-primary" style="padding: 0.65rem 1.5rem; border-radius: 8px; font-size: 0.95rem; cursor: pointer;">Start Free Trial</button>
         </nav>
       </div>
     </div>
@@ -443,5 +446,8 @@
 
   <!-- Wistia embed script -->
   <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+  
+  <!-- Auth Modal Script -->
+  <script src="auth-modal.js"></script>
 </body>
 </html>
