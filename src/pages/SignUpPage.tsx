@@ -139,22 +139,22 @@ const SignUpPage = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-20 items-center max-w-7xl mx-auto">
           
           {/* Left Side - Marketing Content */}
-          <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
-            <div className="text-center lg:text-left">
-              <h1 className="text-primary text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight">
+          <div className="space-y-6 lg:space-y-8">
+            <div className="text-center lg:text-left px-2">
+              <h1 className="text-primary text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight mx-auto lg:mx-0">
                 Increase your sales using our video shopping software
               </h1>
-              <p className="text-muted-foreground text-base sm:text-lg lg:text-xl mt-3 lg:mt-4">
+              <p className="text-muted-foreground text-base sm:text-lg lg:text-xl mt-3 lg:mt-4 mx-auto lg:mx-0">
                 Try it today at <span className="text-secondary font-medium">no cost for the first 14 days</span>.
               </p>
             </div>
 
             {/* Why Sign Up Section */}
-            <div className="space-y-4 pt-2 lg:pt-4">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary">
+            <div className="space-y-4 pt-2 lg:pt-4 px-2">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary text-center lg:text-left">
                 Why sign up for WebLiveView?
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-3 max-w-md mx-auto lg:mx-0">
                 {[
                   "Talk to customers face-to-face with crystal-clear video",
                   "Add live shopping to your site in minutes — no code needed",
@@ -162,18 +162,18 @@ const SignUpPage = () => {
                   "Instantly route chats to the right brand rep",
                   "Save time with smart replies — video, images, and more",
                 ].map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-3 justify-center lg:justify-start">
+                  <div key={index} className="flex items-start gap-3 text-left">
                     <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center mt-0.5">
                       <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                     </div>
-                    <span className="text-foreground text-left text-sm sm:text-base">{benefit}</span>
+                    <span className="text-foreground text-sm sm:text-base">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Product Preview Carousel */}
-            <div className="block pt-6 lg:pt-8 space-y-4">
+            <div className="block pt-6 lg:pt-8 space-y-4 px-2">
               <div className="w-full max-w-[600px] h-[220px] md:h-[254px] mx-auto">
                 <Swiper
                   modules={[Autoplay, Pagination]}
