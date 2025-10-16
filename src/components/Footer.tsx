@@ -37,9 +37,9 @@ const Footer = () => {
 
       {/* Footer Links */}
       <div className="container py-8 sm:py-12 px-4 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-2xl mx-auto">
           {/* Company Information */}
-          <div className="sm:col-span-2">
+          <div>
             <div className="mb-6">
               <p className="text-muted-foreground mb-4 max-w-md text-sm sm:text-base">
                 The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.
@@ -122,26 +122,6 @@ const Footer = () => {
             <div className="text-sm text-muted-foreground">
               <p>© 2025 WebLiveView Ltd. All rights reserved.</p>
             </div>
-          </div>
-
-          {/* Product Links */}
-          <div>
-            <h3 className="font-semibold mb-4 text-base text-brand-navy">Product</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#features" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">Features</a></li>
-              <li><a href="#pricing" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">Pricing</a></li>
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div>
-            <h3 className="font-semibold mb-4 text-base text-brand-navy">Company</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="/about" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">About</a></li>
-              <li><a href="#contact" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">Contact</a></li>
-              <li><a href="/privacy-policy" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">Privacy Policy</a></li>
-              <li><a href="/terms-of-service" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">Terms of Service</a></li>
-            </ul>
           </div>
         </div>
       </div>
