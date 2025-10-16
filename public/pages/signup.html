@@ -187,32 +187,41 @@
             opacity: 1 !important;
             width: 100%;
             max-width: 100%;
+            min-height: 300px;
+            background: #f0f0f0;
+            padding: 1rem;
+            border-radius: 12px;
         }
         
         .swiper {
-            width: 100%;
-            height: 250px;
+            width: 100% !important;
+            height: 250px !important;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             display: block !important;
+            background: white;
         }
         
         .swiper-wrapper {
             display: flex !important;
+            height: 100% !important;
         }
         
         .swiper-slide {
-            display: flex;
+            display: flex !important;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            width: 100% !important;
+            height: 100% !important;
         }
         
         .swiper-slide img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            display: block !important;
         }
         
         .carousel-info {
@@ -475,21 +484,29 @@
             .marketing-content {
                 display: block !important;
                 visibility: visible !important;
+                order: 1;
+            }
+            
+            .form-container {
+                order: 2;
             }
             
             .carousel-container {
                 display: block !important;
                 visibility: visible !important;
                 opacity: 1 !important;
-                margin: 2rem auto;
+                margin: 2rem auto !important;
                 max-width: 100%;
-                width: 100%;
+                width: 100% !important;
+                min-height: 280px !important;
+                background: #f0f0f0 !important;
+                padding: 1rem !important;
             }
             
             .swiper {
                 height: 220px !important;
                 display: block !important;
-                width: 100%;
+                width: 100% !important;
             }
         }
         
@@ -506,20 +523,28 @@
                 display: block !important;
                 visibility: visible !important;
                 padding: 0 0.5rem;
+                order: 1;
+            }
+            
+            .form-container {
+                order: 2;
             }
             
             .carousel-container {
                 display: block !important;
                 visibility: visible !important;
                 opacity: 1 !important;
-                margin: 1.5rem 0;
-                width: 100%;
+                margin: 1.5rem 0 !important;
+                width: 100% !important;
+                min-height: 260px !important;
+                background: #f0f0f0 !important;
+                padding: 1rem !important;
             }
             
             .swiper {
                 height: 200px !important;
                 display: block !important;
-                width: 100%;
+                width: 100% !important;
             }
             
             .carousel-info p {
