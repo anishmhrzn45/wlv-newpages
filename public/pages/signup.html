@@ -182,9 +182,11 @@
         
         .carousel-container {
             margin: 2rem 0;
-            display: block;
-            visibility: visible;
-            opacity: 1;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            width: 100%;
+            max-width: 100%;
         }
         
         .swiper {
@@ -193,12 +195,18 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block !important;
+        }
+        
+        .swiper-wrapper {
+            display: flex !important;
         }
         
         .swiper-slide {
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
         
         .swiper-slide img {
@@ -464,17 +472,24 @@
                 display: none;
             }
             
+            .marketing-content {
+                display: block !important;
+                visibility: visible !important;
+            }
+            
             .carousel-container {
                 display: block !important;
                 visibility: visible !important;
                 opacity: 1 !important;
                 margin: 2rem auto;
                 max-width: 100%;
+                width: 100%;
             }
             
             .swiper {
-                height: 200px;
-                display: block;
+                height: 220px !important;
+                display: block !important;
+                width: 100%;
             }
         }
         
@@ -487,16 +502,24 @@
                 padding: 0 1rem;
             }
             
+            .marketing-content {
+                display: block !important;
+                visibility: visible !important;
+                padding: 0 0.5rem;
+            }
+            
             .carousel-container {
                 display: block !important;
                 visibility: visible !important;
                 opacity: 1 !important;
-                margin: 1.5rem auto;
+                margin: 1.5rem 0;
+                width: 100%;
             }
             
             .swiper {
-                height: 180px;
-                display: block;
+                height: 200px !important;
+                display: block !important;
+                width: 100%;
             }
             
             .carousel-info p {
