@@ -5,18 +5,18 @@ import { Mail, Phone, MapPin, Linkedin, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-navy text-white">
+    <footer className="bg-background border-t border-border text-foreground">
       {/* Main CTA Section */}
-      <div className="border-b border-white/10">
+      <div className="border-b border-border">
         <div className="container py-12 sm:py-16 md:py-24 px-4 sm:px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-brand-navy">
               Your Virtual Showroom.{" "}
               <span className="text-secondary">
                 Ready in Minutes.
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-white/80 mb-6 sm:mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto">
               Start converting more visitors into buyers today with live video shopping that works.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
@@ -41,11 +41,11 @@ const Footer = () => {
           {/* Company Information */}
           <div className="sm:col-span-2">
             <div className="mb-6">
-              <p className="text-white/70 mb-4 max-w-md text-sm sm:text-base">
+              <p className="text-muted-foreground mb-4 max-w-md text-sm sm:text-base">
                 The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.
               </p>
               
-              <div className="space-y-2 text-sm text-white/70">
+              <div className="space-y-2 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
                   <span className="break-all">info@webliveview.com</span>
@@ -71,7 +71,7 @@ const Footer = () => {
                     href="https://www.linkedin.com/company/9435525/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white hover:text-brand-pink transition-colors duration-200"
+                    className="text-brand-navy hover:text-brand-pink transition-colors duration-200"
                     aria-label="Follow WebLiveView on LinkedIn"
                   >
                     <Linkedin className="h-6 w-6" />
@@ -80,7 +80,7 @@ const Footer = () => {
                     href="https://www.facebook.com/webliveview" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white hover:text-brand-pink transition-colors duration-200"
+                    className="text-brand-navy hover:text-brand-pink transition-colors duration-200"
                     aria-label="Follow WebLiveView on Facebook"
                   >
                     <Facebook className="h-6 w-6" />
@@ -119,28 +119,28 @@ const Footer = () => {
               </div>
             </div>
             
-            <div className="text-sm text-white/60">
+            <div className="text-sm text-muted-foreground">
               <p>© 2025 WebLiveView Ltd. All rights reserved.</p>
             </div>
           </div>
 
           {/* Product Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-base">Product</h3>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="#features" className="hover:text-white transition-colors touch-manipulation py-1 block">Features</a></li>
-              <li><a href="#pricing" className="hover:text-white transition-colors touch-manipulation py-1 block">Pricing</a></li>
+            <h3 className="font-semibold mb-4 text-base text-brand-navy">Product</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#features" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">Features</a></li>
+              <li><a href="#pricing" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">Pricing</a></li>
             </ul>
           </div>
 
           {/* Company Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-base">Company</h3>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="/about" className="hover:text-white transition-colors touch-manipulation py-1 block">About</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors touch-manipulation py-1 block">Contact</a></li>
-              <li><a href="/privacy-policy" className="hover:text-white transition-colors touch-manipulation py-1 block">Privacy Policy</a></li>
-              <li><a href="/terms-of-service" className="hover:text-white transition-colors touch-manipulation py-1 block">Terms of Service</a></li>
+            <h3 className="font-semibold mb-4 text-base text-brand-navy">Company</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="/about" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">About</a></li>
+              <li><a href="#contact" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">Contact</a></li>
+              <li><a href="/privacy-policy" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">Privacy Policy</a></li>
+              <li><a href="/terms-of-service" className="hover:text-brand-navy transition-colors touch-manipulation py-1 block">Terms of Service</a></li>
             </ul>
           </div>
         </div>

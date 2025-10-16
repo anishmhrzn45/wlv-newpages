@@ -114,6 +114,45 @@
         .header .nav a:hover {
             color: var(--brand-pink);
         }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--brand-navy);
+            padding: 1rem;
+            z-index: 50;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+        .mobile-menu a,
+        .mobile-menu button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            color: white;
+            text-decoration: none;
+            border: none;
+            background: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .mobile-menu a:hover,
+        .mobile-menu button:hover {
+            background: rgba(255,255,255,0.1);
+        }
 
         /* Page Header */
         .page-header {
@@ -291,8 +330,11 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            nav {
+            .header .nav {
                 display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
             }
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -355,7 +397,22 @@
                     <a href="contact.html">Contact</a>
                     <button onclick="openAuthModal('signup')" class="btn btn-primary" style="cursor: pointer; border: none; font-family: 'Poppins', sans-serif;">Start Free Trial</button>
                 </nav>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
             </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="product.html">Product</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <button onclick="openAuthModal('signup')" style="background: #ef476f; color: white; margin-top: 0.5rem;">Start Free Trial</button>
         </div>
     </header>
 
@@ -448,62 +505,67 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background: hsl(214, 72%, 14%); color: white; padding: 4rem 0 2rem;">
+    <footer style="background: white; color: #1e1b4b; padding: 4rem 0 2rem; border-top: 1px solid #e2e8f0;">
         <div class="container" style="max-width: 1200px; margin: 0 auto;">
             <!-- CTA Section -->
-            <div style="text-align: center; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
-                <p style="color: rgba(255,255,255,0.8); font-size: 1.125rem; margin-bottom: 2rem;">Start your free trial or book a personalized demo.</p>
+            <div style="text-align: center; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid #e2e8f0;">
+                <h2 style="color: #1e1b4b; font-size: 2rem; margin-bottom: 1rem;">Ready to Get Started?</h2>
+                <p style="color: #64748b; font-size: 1.125rem; margin-bottom: 2rem;">Start your free trial or book a personalized demo.</p>
                 <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
                     <button onclick="openAuthModal('signup')" style="background: hsl(339, 89%, 55%); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; min-width: 160px;">Start Free Trial</button>
-                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" style="background: white; color: hsl(214, 72%, 14%); padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; min-width: 160px; text-align: center;">Book Demo</a>
+                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" style="background: #1e1b4b; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; min-width: 160px; text-align: center;">Book Demo</a>
                 </div>
             </div>
 
             <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
                 <div>
-                    <h4 style="color: white; font-size: 1.25rem; margin-bottom: 1rem;">WebLiveView</h4>
-                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; line-height: 1.6;">Transform your website into a live showroom. Connect with customers in real-time through interactive video shopping.</p>
-                    <div style="margin-bottom: 0.75rem;">
-                        <a href="mailto:info@webliveview.com" style="color: rgba(255,255,255,0.8); text-decoration: none;">info@webliveview.com</a>
+                    <h4 style="color: #1e1b4b; font-size: 1.25rem; margin-bottom: 1rem;">WebLiveView</h4>
+                    <p style="color: #64748b; margin-bottom: 1.5rem; line-height: 1.6;">Transform your website into a live showroom. Connect with customers in real-time through interactive video shopping.</p>
+                    <div style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef476f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <a href="mailto:info@webliveview.com" style="color: #334155; text-decoration: none;">info@webliveview.com</a>
                     </div>
-                    <div style="margin-bottom: 0.75rem;">
-                        <span style="color: rgba(255,255,255,0.8);">+353 1 441 2618</span>
+                    <div style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef476f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span style="color: #334155;">+353 1 441 2618</span>
                     </div>
-                    <div style="color: rgba(255,255,255,0.7); line-height: 1.6;">
-                        <div>13 Upper Baggot Street, 2nd Floor</div>
-                        <div>Dublin 4, D04 W7K5, Ireland</div>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Product</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="product.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Features</a>
-                        <a href="pricing.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Pricing</a>
-                        <a href="use-cases.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Use Cases</a>
+                    <div style="color: #64748b; line-height: 1.6; display: flex; gap: 0.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef476f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px; flex-shrink: 0;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div>
+                            <div>13 Upper Baggot Street, 2nd Floor</div>
+                            <div>Dublin 4, D04 W7K5, Ireland</div>
+                        </div>
                     </div>
                 </div>
 
                 <div>
-                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Company</h4>
+                    <h4 style="color: #1e1b4b; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Product</h4>
                     <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">About</a>
-                        <a href="contact.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a>
+                        <a href="product.html" style="color: #64748b; text-decoration: none;">Features</a>
+                        <a href="pricing.html" style="color: #64748b; text-decoration: none;">Pricing</a>
+                        <a href="use-cases.html" style="color: #64748b; text-decoration: none;">Use Cases</a>
                     </div>
                 </div>
 
                 <div>
-                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Legal</h4>
+                    <h4 style="color: #1e1b4b; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Company</h4>
                     <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                        <a href="privacy-policy.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Privacy Policy</a>
-                        <a href="terms-of-service.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Terms of Service</a>
+                        <a href="about.html" style="color: #64748b; text-decoration: none;">About</a>
+                        <a href="contact.html" style="color: #64748b; text-decoration: none;">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 style="color: #1e1b4b; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Legal</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="privacy-policy.html" style="color: #64748b; text-decoration: none;">Privacy Policy</a>
+                        <a href="terms-of-service.html" style="color: #64748b; text-decoration: none;">Terms of Service</a>
                     </div>
                 </div>
             </div>
 
-            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="color: rgba(255,255,255,0.6); font-size: 0.875rem;">&copy; 2025 WebLiveView Ltd. All rights reserved.</p>
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid #e2e8f0;">
+                <p style="color: #64748b; font-size: 0.875rem;">&copy; 2025 WebLiveView Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -515,6 +577,12 @@
             alert('Thank you for your message! We\'ll get back to you soon.');
             this.reset();
         });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
     </script>
     
     <!-- Auth Modal Script -->
