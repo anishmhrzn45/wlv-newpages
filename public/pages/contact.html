@@ -98,27 +98,39 @@
 
         /* Header Override */
         .header {
-            background: var(--brand-navy);
-            border-bottom: none;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
         .header .logo {
             height: 48px;
             width: auto;
         }
         .header .nav a {
-            color: white;
+            color: var(--brand-gray);
             text-decoration: none;
             font-weight: 500;
             padding: 0.5rem 1rem;
         }
         .header .nav a:hover {
-            color: var(--brand-pink);
+            color: var(--brand-navy);
+        }
+        .header .btn-primary {
+            background: var(--brand-pink);
+            color: white;
+        }
+        .header .btn-secondary {
+            background: transparent;
+            color: var(--brand-navy);
+            border: 1px solid var(--brand-navy);
         }
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--brand-navy);
             cursor: pointer;
             padding: 0.5rem;
         }
@@ -128,9 +140,11 @@
             top: 72px;
             left: 0;
             right: 0;
-            background: var(--brand-navy);
+            background: white;
             padding: 1rem;
             z-index: 50;
+            border-top: 1px solid var(--border);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .mobile-menu.active {
             display: block;
@@ -141,7 +155,7 @@
             width: 100%;
             text-align: left;
             padding: 0.75rem 1rem;
-            color: white;
+            color: var(--brand-gray);
             text-decoration: none;
             border: none;
             background: none;
@@ -151,7 +165,21 @@
         }
         .mobile-menu a:hover,
         .mobile-menu button:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(30, 27, 75, 0.05);
+            color: var(--brand-navy);
+        }
+        .mobile-menu button.btn-primary {
+            background: var(--brand-pink);
+            color: white;
+            border-radius: 9999px;
+            margin-top: 0.5rem;
+        }
+        .mobile-menu button.btn-secondary {
+            background: transparent;
+            color: var(--brand-navy);
+            border: 1px solid var(--brand-navy);
+            border-radius: 9999px;
+            margin-top: 0.5rem;
         }
 
         /* Page Header */
@@ -388,14 +416,15 @@
         <div class="container">
             <div class="header-content">
                 <a href="index.html">
-                    <img src="webliveview-logo-white.png" alt="WebLiveView Logo" class="logo">
+                    <img src="webliveview-logo-new.png" alt="WebLiveView Logo" class="logo">
                 </a>
                 <nav class="nav">
                     <a href="product.html">Product</a>
                     <a href="pricing.html">Pricing</a>
-                    <a href="about.html">About Us</a>
+                    <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <button onclick="openAuthModal('signup')" class="btn btn-primary" style="cursor: pointer; border: none; font-family: 'Poppins', sans-serif;">Start Free Trial</button>
+                    <button onclick="openAuthModal('signup')" class="btn btn-primary" style="cursor: pointer; border: none; font-family: 'Poppins', sans-serif; border-radius: 9999px;">Start Free Trial</button>
+                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn btn-secondary" style="cursor: pointer; font-family: 'Poppins', sans-serif; text-decoration: none; display: inline-block; border-radius: 9999px; padding: 10px 24px;">Book a Demo</a>
                 </nav>
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -410,9 +439,10 @@
         <div class="mobile-menu" id="mobileMenu">
             <a href="product.html">Product</a>
             <a href="pricing.html">Pricing</a>
-            <a href="about.html">About Us</a>
+            <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <button onclick="openAuthModal('signup')" style="background: #ef476f; color: white; margin-top: 0.5rem;">Start Free Trial</button>
+            <button onclick="openAuthModal('signup')" class="btn-primary">Start Free Trial</button>
+            <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn-secondary" style="display: block; text-align: center; padding: 12px 24px;">Book a Demo</a>
         </div>
     </header>
 
