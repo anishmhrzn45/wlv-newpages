@@ -20,10 +20,20 @@
         h1, h2, h3, h4, h5, h6 { font-weight: 700; color: #1e1b4b; margin-bottom: 1rem; }
         .btn-primary { background-color: #ef476f; color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; font-weight: 600; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        :root {
+            --brand-navy: hsl(214, 72%, 14%);
+            --brand-pink: hsl(339, 89%, 55%);
+        }
         
         /* Responsive styles */
         @media (max-width: 768px) {
-            nav { display: none !important; }
+            .nav { display: none !important; }
+            .mobile-menu-toggle { display: flex !important; }
+            
+            .container { padding: 0 1rem !important; }
+            
+            header .container { padding: 0 1rem !important; }
+            
             footer > div > div[style*="grid-template-columns: 2fr 1fr 1fr 1fr"] {
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
@@ -44,9 +54,8 @@
         }
     </style>
     
-    <!-- Preload CSS -->
-    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -68,14 +77,30 @@
                 <a href="index.html">
                     <img src="webliveview-logo-white.png" alt="WebLiveView Logo" style="height: 48px; width: auto;">
                 </a>
-                <nav style="display: flex; align-items: center; gap: 2rem;">
+                <nav class="nav" style="display: flex; align-items: center; gap: 2rem;">
                     <a href="product.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.2s;">Product</a>
                     <a href="pricing.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.2s;">Pricing</a>
                     <a href="about.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.2s;">About Us</a>
                     <a href="contact.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.2s;">Contact</a>
                     <a href="signup.html" style="background: hsl(339, 89%, 55%); color: white; padding: 10px 24px; border-radius: 9999px; text-decoration: none; font-weight: 600; transition: all 0.2s;">Start Free Trial</a>
                 </nav>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="product.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Product</a>
+            <a href="pricing.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Pricing</a>
+            <a href="about.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">About Us</a>
+            <a href="contact.html" style="color: var(--brand-navy); text-decoration: none; font-weight: 500;">Contact</a>
+            <a href="signup.html" class="btn-primary" style="margin-top: 1rem; background: hsl(339, 89%, 55%); color: white; padding: 12px 24px; border-radius: 9999px; text-decoration: none; font-weight: 600; display: block; text-align: center;">Start Free Trial</a>
         </div>
     </header>
 
@@ -226,5 +251,8 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Mobile Menu Script -->
+    <script src="mobile-menu.js"></script>
 </body>
 </html>
