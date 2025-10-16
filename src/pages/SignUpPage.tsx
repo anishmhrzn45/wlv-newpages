@@ -173,7 +173,7 @@ const SignUpPage = () => {
             </div>
 
             {/* Product Preview Carousel */}
-            <div className="hidden lg:block pt-6 lg:pt-8 space-y-4">
+            <div className="block pt-6 lg:pt-8 space-y-4">
               <div className="w-full max-w-[600px] h-[220px] md:h-[254px] mx-auto">
                 <Swiper
                   modules={[Autoplay, Pagination]}
