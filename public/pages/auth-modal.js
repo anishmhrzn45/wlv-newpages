@@ -25,7 +25,7 @@ class AuthModal {
               <label for="loginPassword">Password</label>
               <div class="password-input-wrapper">
                 <input type="password" id="loginPassword" placeholder="••••••••" required>
-                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('loginPassword')">
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('loginPassword')" aria-label="Toggle password visibility">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
@@ -94,7 +94,7 @@ class AuthModal {
               <label for="signupPassword">Password</label>
               <div class="password-input-wrapper">
                 <input type="password" id="signupPassword" placeholder="••••••••" required>
-                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('signupPassword')">
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('signupPassword')" aria-label="Toggle password visibility">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
@@ -107,7 +107,7 @@ class AuthModal {
               <label for="signupConfirmPassword">Confirm Password</label>
               <div class="password-input-wrapper">
                 <input type="password" id="signupConfirmPassword" placeholder="••••••••" required>
-                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('signupConfirmPassword')">
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('signupConfirmPassword')" aria-label="Toggle password visibility">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
@@ -236,65 +236,163 @@ function togglePasswordVisibility(inputId) {
 function generateStrongPassword() {
   const length = 16;
   const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
-  let password = '';
-  for (let i = 0; i < length; i++) {
-    password += charset.charAt(Math.floor(Math.random() * charset.length));
-  }
+  
+  // Use cryptographically secure random generation
+  const array = new Uint8Array(length);
+  window.crypto.getRandomValues(array);
+  const password = Array.from(array, byte => charset[byte % charset.length]).join('');
   
   document.getElementById('signupPassword').value = password;
   document.getElementById('signupConfirmPassword').value = password;
   document.getElementById('signupPassword').type = 'text';
   document.getElementById('signupConfirmPassword').type = 'text';
   
-  alert('Strong password generated! Make sure to save it securely.');
+  showToast('Strong password generated! Make sure to save it securely.', 'success');
 }
 
 function handleLogin() {
-  const email = document.getElementById('loginEmail').value;
+  const email = document.getElementById('loginEmail').value.trim();
   const password = document.getElementById('loginPassword').value;
   
+  // Validate inputs
   if (!email || !password) {
-    alert('Please fill in all fields');
+    showToast('Please fill in all fields', 'error');
+    return;
+  }
+  
+  // Email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showToast('Please enter a valid email address', 'error');
     return;
   }
   
   // This is a placeholder - in production, you would integrate with your authentication system
-  alert('Login functionality will be connected to your authentication system.\n\nEmail: ' + email);
+  showToast('Login functionality will be connected to your authentication system.', 'info');
   // closeAuthModal();
 }
 
 function handleSignup() {
-  const firstName = document.getElementById('signupFirstName').value;
-  const lastName = document.getElementById('signupLastName').value;
-  const email = document.getElementById('signupEmail').value;
+  const firstName = document.getElementById('signupFirstName').value.trim();
+  const lastName = document.getElementById('signupLastName').value.trim();
+  const email = document.getElementById('signupEmail').value.trim();
   const password = document.getElementById('signupPassword').value;
   const confirmPassword = document.getElementById('signupConfirmPassword').value;
   const termsAccepted = document.getElementById('termsCheckbox').checked;
   
+  // Validate all fields filled
   if (!firstName || !lastName || !email || !password || !confirmPassword) {
-    alert('Please fill in all fields');
+    showToast('Please fill in all fields', 'error');
     return;
   }
   
-  if (!termsAccepted) {
-    alert('Please accept the Terms & Conditions');
+  // Name validation (letters, spaces, hyphens only)
+  const nameRegex = /^[a-zA-Z\s-]{1,50}$/;
+  if (!nameRegex.test(firstName) || !nameRegex.test(lastName)) {
+    showToast('Names can only contain letters, spaces, and hyphens', 'error');
+    return;
+  }
+  
+  // Email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showToast('Please enter a valid email address', 'error');
+    return;
+  }
+  
+  if (email.length > 255) {
+    showToast('Email must be less than 255 characters', 'error');
+    return;
+  }
+  
+  // Password validation
+  if (password.length < 8) {
+    showToast('Password must be at least 8 characters long', 'error');
     return;
   }
   
   if (password !== confirmPassword) {
-    alert('Passwords do not match');
+    showToast('Passwords do not match', 'error');
+    return;
+  }
+  
+  if (!termsAccepted) {
+    showToast('Please accept the Terms & Conditions', 'error');
     return;
   }
   
   // This is a placeholder - in production, you would integrate with your authentication system
-  alert('Sign up functionality will be connected to your authentication system.\n\nName: ' + firstName + ' ' + lastName + '\nEmail: ' + email);
+  showToast('Sign up functionality will be connected to your authentication system.', 'info');
   // closeAuthModal();
 }
 
 function handleSocialLogin(provider) {
   // This is a placeholder - in production, you would integrate with OAuth providers
-  alert('Social login with ' + provider + ' will be connected to your authentication system.');
+  const providerName = provider.charAt(0).toUpperCase() + provider.slice(1);
+  showToast(`${providerName} login will be connected to your authentication system.`, 'info');
 }
+
+// Toast notification system
+function showToast(message, type = 'info') {
+  const toast = document.createElement('div');
+  toast.className = `auth-toast auth-toast-${type}`;
+  toast.textContent = message;
+  
+  const colors = {
+    success: '#06d6a0',
+    error: '#ef476f',
+    info: '#1e1b4b'
+  };
+  
+  toast.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: ${colors[type] || colors.info};
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    max-width: 350px;
+    animation: slideIn 0.3s ease-out;
+  `;
+  
+  document.body.appendChild(toast);
+  
+  setTimeout(() => {
+    toast.style.animation = 'slideOut 0.3s ease-in';
+    setTimeout(() => toast.remove(), 300);
+  }, 4000);
+}
+
+// Add toast animations
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes slideIn {
+    from {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(style);
 
 // Initialize modal when DOM is loaded
 if (document.readyState === 'loading') {

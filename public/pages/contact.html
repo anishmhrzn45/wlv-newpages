@@ -30,64 +30,12 @@
     <!-- Auth Modal Styles -->
     <link rel="stylesheet" href="auth-modal.css">
     
-    <style>
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--brand-navy);
-        }
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--radius-sm);
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-        }
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(15, 40, 71, 0.1);
-            margin-bottom: 2rem;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--brand-pink);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            font-size: 1.2rem;
-        }
-    </style>
     
     <style>
         :root {
             --brand-navy: #1e1b4b;
             --brand-pink: #ef476f;
+            --brand-pink-hover: hsl(339, 75%, 50%);
             --brand-light: #f8fafc;
             --secondary: #06d6a0;
             --foreground: #334155;
@@ -337,7 +285,7 @@
             transition: all 0.3s ease;
         }
         .btn-submit:hover {
-            background: #d93d61;
+            background: var(--brand-pink-hover, hsl(339, 75%, 50%));
             transform: translateY(-1px);
             box-shadow: 0 4px 8px rgba(239, 71, 111, 0.3);
         }
@@ -346,14 +294,14 @@
             color: white;
         }
         .btn-trial:hover {
-            background: #d93d61;
+            background: var(--brand-pink-hover, hsl(339, 75%, 50%));
         }
         .btn-demo {
             background: var(--brand-pink);
             color: white;
         }
         .btn-demo:hover {
-            background: #d93d61;
+            background: var(--brand-pink-hover, hsl(339, 75%, 50%));
         }
 
         /* Responsive */
@@ -424,7 +372,7 @@
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
                     <button onclick="openAuthModal('signup')" class="btn btn-primary" style="cursor: pointer; border: none; font-family: 'Poppins', sans-serif; border-radius: 9999px;">Start Free Trial</button>
-                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn btn-secondary" style="cursor: pointer; font-family: 'Poppins', sans-serif; text-decoration: none; display: inline-block; border-radius: 9999px; padding: 10px 24px;">Book a Demo</a>
+                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="cursor: pointer; font-family: 'Poppins', sans-serif; text-decoration: none; display: inline-block; border-radius: 9999px; padding: 10px 24px;">Book a Demo</a>
                 </nav>
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -442,7 +390,7 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
             <button onclick="openAuthModal('signup')" class="btn-primary">Start Free Trial</button>
-            <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn-secondary" style="display: block; text-align: center; padding: 12px 24px;">Book a Demo</a>
+            <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="display: block; text-align: center; padding: 12px 24px;">Book a Demo</a>
         </div>
     </header>
 
@@ -457,7 +405,7 @@
             </p>
             <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center;">
                 <button onclick="openAuthModal('signup')" style="background: var(--secondary); color: white; padding: 12px 32px; border-radius: 9999px; font-weight: 600; border: none; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 1rem; height: 48px;">Start Free Trial</button>
-                <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" style="background: transparent; color: white; padding: 12px 32px; border-radius: 9999px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; border: 2px solid white; font-family: 'Poppins', sans-serif; font-size: 1rem; height: 48px;">Book Demo</a>
+                <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer" style="background: transparent; color: white; padding: 12px 32px; border-radius: 9999px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; border: 2px solid white; font-family: 'Poppins', sans-serif; font-size: 1rem; height: 48px;">Book Demo</a>
             </div>
         </div>
     </section>

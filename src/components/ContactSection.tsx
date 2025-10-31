@@ -66,7 +66,7 @@ const ContactSection = () => {
             <div className="space-y-6 sm:space-y-8">
               {/* Contact Details */}
               <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-brand-navy mb-4 sm:mb-6">Get in touch</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-brand-navy mb-4 sm:mb-6">Get Started Today</h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <Mail className="h-5 w-5 text-secondary flex-shrink-0" />
