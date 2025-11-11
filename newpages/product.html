@@ -1,1671 +1,1293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WebLiveView Product - Everything your sales team needs to connect with customers through live video shopping. Features include video chat, smart routing, scheduling, and analytics.">
-  <meta name="keywords" content="live video shopping, product features, video chat platform, sales tools, customer engagement">
-  <title>Product - WebLiveView | Live Video Shopping Platform</title>
-  
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <style>
-    :root {
-      --brand-navy: hsl(214, 72%, 14%);
-      --brand-pink: hsl(339, 89%, 55%);
-      --brand-light: hsl(220, 50%, 98%);
-      --brand-gray: hsl(0, 0%, 29%);
-      --border-color: hsl(220, 13%, 91%);
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #fff;
-      color: var(--brand-gray);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-    
-    /* Header Styles */
-    header {
-      background: #fff;
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(15, 40, 71, 0.08);
-    }
-    
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-    }
-    
-    .logo img {
-      height: 48px;
-      width: auto;
-    }
-    
-    .nav {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-    
-    .nav a {
-      color: var(--brand-navy);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    
-    .nav a:hover {
-      color: var(--brand-pink);
-    }
-    
-    .btn-login {
-      padding: 0.65rem 1.5rem;
-      border: 2px solid var(--brand-navy);
-      color: white;
-      border-radius: 8px;
-      background: var(--brand-navy);
-      font-weight: 500;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-    
-    .btn-login:hover {
-      background: transparent;
-      color: var(--brand-navy);
-    }
-    
-    .btn-trial {
-      padding: 0.65rem 1.5rem;
-      background: var(--brand-pink);
-      color: white;
-      border-radius: 8px;
-      font-weight: 500;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-    
-    .btn-trial:hover {
-      background: hsl(339, 89%, 45%);
-    }
-    
-    /* Mobile Menu Toggle */
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-    }
-    
-    .mobile-menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: var(--brand-navy);
-      transition: all 0.3s;
-      border-radius: 2px;
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(8px, 8px);
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-    }
-    
-    /* Mobile Menu */
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 1.5rem 0;
-      background: white;
-      border-top: 1px solid var(--border-color);
-    }
-    
-    .mobile-menu.active {
-      display: flex;
-    }
-    
-    .mobile-menu a {
-      color: var(--brand-navy);
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      transition: background 0.2s;
-    }
-    
-    .mobile-menu a:hover {
-      background: var(--brand-light);
-    }
-    
-    /* Hero Section */
-    .hero-section {
-      padding: 5rem 0;
-      background: linear-gradient(135deg, var(--brand-light), white);
-    }
-    
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    
-    .hero-content h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: var(--brand-navy);
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-    
-    .hero-content h1 .highlight {
-      color: var(--brand-pink);
-    }
-    
-    .hero-content p {
-      font-size: 1.2rem;
-      color: var(--brand-gray);
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-    }
-    
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-    }
-    
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 2rem;
-      background: var(--brand-pink);
-      color: white;
-      border-radius: 9999px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .btn-primary:hover {
-      background: hsl(339, 89%, 45%);
-      transform: translateY(-2px);
-    }
-    
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 2rem;
-      background: transparent;
-      color: var(--brand-navy);
-      border: 2px solid var(--brand-navy);
-      border-radius: 9999px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-    
-    .btn-secondary:hover {
-      background: var(--brand-navy);
-      color: white;
-      transform: translateY(-2px);
-    }
-    
-    .hero-image img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-    }
-    
-    /* Section Styles */
-    section {
-      padding: 5rem 0;
-    }
-    
-    .section-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    
-    .section-header h2 {
-      font-size: 2.75rem;
-      font-weight: 700;
-      color: var(--brand-navy);
-      margin-bottom: 1rem;
-    }
-    
-    .section-header p {
-      font-size: 1.15rem;
-      color: var(--brand-gray);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    /* Video Section */
-    .video-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(15, 40, 71, 0.2);
-    }
-    
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    
-    /* Features Grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-    }
-    
-    .feature-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(15, 40, 71, 0.08);
-    }
-    
-    .feature-icon {
-      width: 56px;
-      height: 56px;
-      background: var(--brand-light);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-    
-    .feature-icon.pink-bg {
-      background: hsl(339, 89%, 95%);
-    }
-    
-    .feature-card h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--brand-navy);
-      margin-bottom: 0.75rem;
-    }
-    
-    .feature-card p {
-      color: var(--brand-gray);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-    
-    /* Pricing Section */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    
-    .pricing-card {
-      background: white;
-      border: 2px solid var(--border-color);
-      border-radius: 16px;
-      padding: 2rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .pricing-card.popular {
-      border-color: var(--brand-pink);
-      box-shadow: 0 20px 60px rgba(15, 40, 71, 0.15);
-      transform: scale(1.05);
-    }
-    
-    .pricing-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--brand-pink);
-      color: white;
-      padding: 0.35rem 1rem;
-      border-radius: 9999px;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-    
-    .pricing-header {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    
-    .pricing-header h3 {
-      font-size: 1.5rem;
-      color: var(--brand-navy);
-      margin-bottom: 0.5rem;
-    }
-    
-    .pricing-header p {
-      font-size: 0.9rem;
-      color: var(--brand-gray);
-      line-height: 1.5;
-    }
-    
-    .pricing-price {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    
-    .pricing-price .amount {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--brand-navy);
-    }
-    
-    .pricing-price .period {
-      color: var(--brand-gray);
-      font-size: 1rem;
-    }
-    
-    .pricing-price .billed {
-      display: block;
-      font-size: 0.875rem;
-      color: var(--brand-pink);
-      margin-top: 0.5rem;
-    }
-    
-    .pricing-features {
-      list-style: none;
-      margin-bottom: 2rem;
-      flex-grow: 1;
-    }
-    
-    .pricing-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-    
-    .pricing-features li i {
-      color: var(--brand-pink);
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    
-    .pricing-cta {
-      width: 100%;
-    }
-    
-    .billing-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    
-    .toggle-switch {
-      position: relative;
-      width: 48px;
-      height: 28px;
-      background: var(--border-color);
-      border-radius: 9999px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    
-    .toggle-switch.active {
-      background: var(--brand-pink);
-    }
-    
-    .toggle-switch-handle {
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 24px;
-      height: 24px;
-      background: white;
-      border-radius: 50%;
-      transition: transform 0.3s;
-    }
-    
-    .toggle-switch.active .toggle-switch-handle {
-      transform: translateX(20px);
-    }
-    
-    .toggle-label {
-      font-size: 0.9rem;
-      color: var(--brand-gray);
-    }
-    
-    .toggle-label.active {
-      color: var(--brand-navy);
-      font-weight: 600;
-    }
-    
-    .save-badge {
-      background: var(--brand-pink);
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-    
-    /* CTA Section */
-    .cta-section {
-      background: linear-gradient(135deg, var(--brand-pink), hsl(339, 89%, 45%));
-      color: white;
-      text-align: center;
-    }
-    
-    .cta-section h2 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
-    
-    .cta-section p {
-      font-size: 1.25rem;
-      margin-bottom: 2.5rem;
-      opacity: 0.95;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .btn-white {
-      background: white;
-      color: var(--brand-navy);
-      padding: 1rem 2rem;
-      border-radius: 9999px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.2s;
-      border: 2px solid white;
-    }
-    
-    .btn-white:hover {
-      background: transparent;
-      color: white;
-      transform: translateY(-2px);
-    }
-    
-    .btn-outline-white {
-      background: transparent;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 9999px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      border: 2px solid white;
-      transition: all 0.2s;
-    }
-    
-    .btn-outline-white:hover {
-      background: white;
-      color: var(--brand-navy);
-      transform: translateY(-2px);
-    }
-    
-    .cta-note {
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-    
-    /* Footer */
-    footer {
-      background: var(--brand-navy);
-      color: white;
-      padding: 3rem 0 2rem;
-    }
-    
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-    
-    .footer-section h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    
-    .footer-section ul {
-      list-style: none;
-    }
-    
-    .footer-section ul li {
-      margin-bottom: 0.75rem;
-    }
-    
-    .footer-section a {
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    
-    .footer-section a:hover {
-      color: white;
-    }
-    
-    .footer-contact {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    
-    .footer-contact i {
-      color: var(--brand-pink);
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .social-links a {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      transition: all 0.2s;
-    }
-    
-    .social-links a:hover {
-      background: var(--brand-pink);
-      transform: translateY(-2px);
-    }
-    
-    .footer-bottom {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.9rem;
-    }
-    
-    /* Auth Modal Styles */
-    .auth-modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(4px);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      animation: fadeIn 0.3s ease;
-    }
-    
-    .auth-modal-overlay.active {
-      display: flex;
-    }
-    
-    .auth-modal {
-      background: white;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 480px;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      animation: slideUp 0.3s ease;
-    }
-    
-    .auth-modal-header {
-      padding: 2rem 2rem 1rem;
-      border-bottom: 1px solid var(--border-color);
-      position: relative;
-    }
-    
-    .auth-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--brand-gray);
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: all 0.2s;
-    }
-    
-    .auth-close:hover {
-      background: var(--brand-light);
-    }
-    
-    .auth-tabs {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    
-    .auth-tab {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      background: none;
-      border: none;
-      color: var(--brand-gray);
-      font-weight: 500;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s;
-    }
-    
-    .auth-tab.active {
-      color: var(--brand-navy);
-      border-bottom-color: var(--brand-pink);
-    }
-    
-    .auth-modal-content {
-      padding: 2rem;
-    }
-    
-    .auth-form {
-      display: none;
-    }
-    
-    .auth-form.active {
-      display: block;
-    }
-    
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: var(--brand-navy);
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-    
-    .form-group input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 2px solid var(--border-color);
-      border-radius: 8px;
-      font-family: inherit;
-      font-size: 1rem;
-      transition: all 0.2s;
-    }
-    
-    .form-group input:focus {
-      outline: none;
-      border-color: var(--brand-pink);
-    }
-    
-    .password-field {
-      position: relative;
-    }
-    
-    .password-toggle {
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--brand-gray);
-    }
-    
-    .auth-submit {
-      width: 100%;
-      padding: 0.875rem 1.5rem;
-      background: var(--brand-pink);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    
-    .auth-submit:hover {
-      background: hsl(339, 89%, 45%);
-    }
-    
-    .auth-divider {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin: 1.5rem 0;
-      color: var(--brand-gray);
-      font-size: 0.9rem;
-    }
-    
-    .auth-divider::before,
-    .auth-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border-color);
-    }
-    
-    .social-auth {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    
-    .social-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 0.75rem 1rem;
-      border: 2px solid var(--border-color);
-      border-radius: 8px;
-      background: white;
-      color: var(--brand-navy);
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    
-    .social-btn:hover {
-      border-color: var(--brand-navy);
-      background: var(--brand-light);
-    }
-    
-    .checkbox-group {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    .checkbox-group input {
-      margin-top: 0.25rem;
-      cursor: pointer;
-    }
-    
-    .checkbox-group label {
-      font-size: 0.875rem;
-      color: var(--brand-gray);
-      line-height: 1.5;
-    }
-    
-    .checkbox-group a {
-      color: var(--brand-pink);
-      text-decoration: none;
-    }
-    
-    .checkbox-group a:hover {
-      text-decoration: underline;
-    }
-    
-    .forgot-password {
-      text-align: right;
-      margin-top: 0.5rem;
-    }
-    
-    .forgot-password a {
-      color: var(--brand-pink);
-      text-decoration: none;
-      font-size: 0.875rem;
-    }
-    
-    .forgot-password a:hover {
-      text-decoration: underline;
-    }
-    
-    .generate-password-btn {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      background: var(--brand-light);
-      color: var(--brand-navy);
-      border: 2px solid var(--border-color);
-      border-radius: 8px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-    }
-    
-    .generate-password-btn:hover {
-      border-color: var(--brand-navy);
-      background: white;
-    }
-    
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-    
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    /* Responsive Styles */
-    @media (max-width: 1024px) {
-      .features-grid,
-      .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .pricing-card.popular {
-        transform: scale(1);
-      }
-      
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .nav {
-        display: none;
-      }
-      
-      .mobile-menu-toggle {
-        display: flex;
-      }
-      
-      .hero-grid,
-      .features-grid,
-      .pricing-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .hero-content h1 {
-        font-size: 2rem;
-      }
-      
-      .hero-content p {
-        font-size: 1rem;
-      }
-      
-      .hero-buttons {
-        flex-direction: column;
-      }
-      
-      .hero-buttons a {
-        width: 100%;
-        text-align: center;
-      }
-      
-      .section-header h2 {
-        font-size: 2rem;
-      }
-      
-      .cta-section h2 {
-        font-size: 2rem;
-      }
-      
-      .cta-buttons {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      
-      section {
-        padding: 3rem 0;
-      }
-      
-      .container {
-        padding: 0 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - WebLiveView Live Video Shopping Platform</title>
+    <meta name="description" content="Discover how WebLiveView's live video shopping platform helps you connect with customers, demonstrate products in real-time, and close more sales.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="WebLiveView Product - Live Video Shopping Platform">
+    <meta property="og:description" content="Everything your sales team needs in one app. From first login to live customer calls, WebLiveView keeps your team connected and in control.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://webliveview.com/product">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Wistia Script -->
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Custom Design System Variables */
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 0 0% 29%;
+            --card: 0 0% 100%;
+            --card-foreground: 0 0% 29%;
+            --primary: 214 72% 14%;
+            --primary-foreground: 0 0% 100%;
+            --secondary: 339 89% 55%;
+            --secondary-foreground: 0 0% 100%;
+            --muted: 220 13% 96%;
+            --muted-foreground: 0 0% 29%;
+            --accent: 217 56% 72%;
+            --border: 220 13% 91%;
+            --brand-navy: 214 72% 14%;
+            --brand-pink: 339 89% 55%;
+            --brand-light: 220 50% 98%;
+        }
+        
+        /* Tailwind Config Extension */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+        
+        .text-brand-navy { color: hsl(var(--brand-navy)); }
+        .bg-brand-navy { background-color: hsl(var(--brand-navy)); }
+        .text-secondary { color: hsl(var(--secondary)); }
+        .bg-secondary { background-color: hsl(var(--secondary)); }
+        .text-brand-pink { color: hsl(var(--brand-pink)); }
+        .bg-brand-pink { background-color: hsl(var(--brand-pink)); }
+        .bg-brand-light { background-color: hsl(var(--brand-light)); }
+        .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+        .bg-muted { background-color: hsl(var(--muted)); }
+        .border-secondary { border-color: hsl(var(--secondary)); }
+        .border-brand-navy { border-color: hsl(var(--brand-navy)); }
+        
+        .shadow-soft { box-shadow: 0 4px 20px -8px hsl(var(--brand-navy) / 0.15); }
+        .shadow-medium { box-shadow: 0 8px 30px -12px hsl(var(--brand-navy) / 0.25); }
+        .shadow-large { box-shadow: 0 20px 60px -12px hsl(var(--brand-navy) / 0.35); }
+        
+        .btn-primary {
+            background: hsl(var(--secondary));
+            color: hsl(var(--secondary-foreground));
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            min-width: 200px;
+        }
+        .btn-primary:hover { opacity: 0.9; }
+        
+        .btn-outline {
+            background: transparent;
+            color: hsl(var(--brand-navy));
+            border: 2px solid hsl(var(--brand-navy));
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            min-width: 200px;
+        }
+        .btn-outline:hover {
+            background: hsl(var(--brand-navy));
+            color: white;
+        }
+        
+        .nav-link {
+            color: hsl(var(--brand-navy));
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: hsl(var(--brand-pink)); }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid hsl(var(--border));
+            padding: 1rem;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .mobile-menu.active { display: flex; }
+        
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+        @media (min-width: 769px) {
+            .mobile-menu-btn { display: none; }
+        }
+        
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <a href="index.html" class="logo">
-          <img src="webliveview-logo-new.png" alt="WebLiveView">
-        </a>
-        
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        
-        <!-- Desktop Navigation -->
-        <nav class="nav">
-          <a href="product.html">Product</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="about.html">About Us</a>
-          <a href="contact.html">Contact</a>
-          <button class="btn-login" onclick="openAuthModal('login')">Login</button>
-          <a href="signup.html" class="btn-trial">Start Free Trial</a>
-        </nav>
-      </div>
-      
-      <!-- Mobile Menu -->
-      <div class="mobile-menu" id="mobileMenu">
-        <a href="product.html">Product</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <button class="btn-login" onclick="openAuthModal('login')" style="width: 100%; text-align: center;">Login</button>
-        <a href="signup.html" style="background: var(--brand-pink); color: white; text-align: center;">Start Free Trial</a>
-      </div>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <h1>Your Sales Team, <span class="highlight">On-Demand</span></h1>
-          <p>Bring the in-store experience online with live video shopping, guided selling, and real-time product support — all inside one simple app.</p>
-          <div class="hero-buttons">
-            <a href="signup.html" class="btn-primary">Start Free Trial</a>
-            <a href="https://www.youtube.com/watch?v=EiaEVoGldGg" class="btn-secondary" target="_blank" rel="noopener noreferrer">
-              <i data-lucide="play" style="width: 20px; height: 20px;"></i>
-              See How It Works
-            </a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="webliveview-product-screens.png" alt="WebLiveView product showing 3 iPhone screens for Login, Live Call, and Dashboard features">
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full bg-white border-b" style="border-color: hsl(var(--border));">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="/" class="flex items-center">
+                    <img src="../src/assets/webliveview-logo-new.png" alt="WebLiveView" class="h-10 sm:h-12 md:h-14 w-auto">
+                </a>
 
-  <!-- Video Section -->
-  <section style="background: white;">
-    <div class="container">
-      <div class="section-header">
-        <h2>See WebLiveView in Action</h2>
-        <p>Watch how retailers boost conversions with live video shopping</p>
-      </div>
-      <div class="video-container">
-        <div class="video-wrapper">
-          <iframe 
-            src="https://fast.wistia.net/embed/iframe/ob1oqmqgye?videoFoam=true" 
-            allowfullscreen 
-            title="WebLiveView Product Demo"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="/product" class="nav-link">Product</a>
+                    <a href="/pricing" class="nav-link">Pricing</a>
+                    <a href="/about" class="nav-link">About Us</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </div>
 
-  <!-- Features Section -->
-  <section style="background: var(--brand-light);">
-    <div class="container">
-      <div class="section-header">
-        <h2>Everything your sales team needs — in one app</h2>
-        <p>From first login to live customer calls, WebLiveView keeps your team connected and in control.</p>
-      </div>
-      <div style="text-align: center;">
-        <img src="webliveview-features.png" alt="WebLiveView product features section showing 3 iPhone screens for Login, Live Call, and Dashboard, each with descriptive text" style="width: 100%; max-width: 1100px; height: auto;">
-      </div>
-    </div>
-  </section>
+                <!-- Desktop Auth Buttons -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button class="btn-outline" style="border-color: #b4b7f0; color: #b4b7f0;" onmouseover="this.style.backgroundColor='#b4b7f0'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#b4b7f0'">Login</button>
+                    <a href="/signup" class="btn-primary">Start Free Trial</a>
+                </div>
 
-  <!-- Benefits Section -->
-  <section style="background: white;">
-    <div class="container" style="max-width: 1000px;">
-      <div class="section-header">
-        <h2>Why Choose WebLiveView?</h2>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i data-lucide="home" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
-          </div>
-          <h3>Skip the Showroom</h3>
-          <p>No more weekend trips — let your customers explore products face-to-face from home.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i data-lucide="shopping-cart" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
-          </div>
-          <h3>Sell Smarter</h3>
-          <p>Use video calls to answer questions, reduce returns, and close more high-value orders.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i data-lucide="shield" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
-          </div>
-          <h3>Increase Trust</h3>
-          <p>Build confidence and reduce friction with live, human interaction — no app downloads needed.</p>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 3rem;">
-        <p style="font-size: 1.2rem; font-weight: 600; color: var(--brand-navy);">Fewer abandoned carts. Faster sales. Happier customers.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Who Uses Section -->
-  <section style="background: var(--brand-light);">
-    <div class="container" style="max-width: 1000px;">
-      <div class="section-header">
-        <h2>Who Uses WebLiveView?</h2>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon pink-bg">
-            <i data-lucide="sofa" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
-          </div>
-          <h3>Furniture Retailers</h3>
-          <p>Demo sofas, show materials, and answer questions live from your showroom team.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon pink-bg">
-            <i data-lucide="chef-hat" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
-          </div>
-          <h3>Kitchen & Bathroom Brands</h3>
-          <p>Help customers design their dream spaces without stepping foot in store.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon pink-bg">
-            <i data-lucide="shopping-cart" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
-          </div>
-          <h3>Ecommerce Sales Teams</h3>
-          <p>Recover carts, assist in real time, and boost revenue with guided selling tools.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why WebLiveView Section -->
-  <section style="background: white;">
-    <div class="container" style="max-width: 1000px;">
-      <div class="section-header">
-        <h2>Why Choose WebLiveView</h2>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i data-lucide="home" style="color: var(--brand-navy); width: 32px; height: 32px;"></i>
-          </div>
-          <h3>Skip the Showroom</h3>
-          <p>No more weekend trips — let your customers explore products face-to-face from home.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i data-lucide="shopping-cart" style="color: var(--brand-navy); width: 32px; height: 32px;"></i>
-          </div>
-          <h3>Sell Smarter</h3>
-          <p>Use video calls to answer questions, reduce returns, and close more high-value orders.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i data-lucide="shield" style="color: var(--brand-navy); width: 32px; height: 32px;"></i>
-          </div>
-          <h3>Increase Trust</h3>
-          <p>Build confidence and reduce friction with live, human interaction — no app downloads needed.</p>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 3rem;">
-        <p style="font-size: 1.2rem; font-weight: 600; color: var(--brand-navy);">Fewer abandoned carts. Faster sales. Happier customers.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Section -->
-  <section style="background: var(--brand-light);">
-    <div class="container">
-      <div class="section-header">
-        <h2>Simple, Flexible Pricing for Every Team</h2>
-        <p>Start free. No credit card required. Plans from just €49/month.</p>
-      </div>
-      
-      <!-- Billing Toggle -->
-      <div class="billing-toggle">
-        <span class="toggle-label" id="monthlyLabel">Monthly</span>
-        <div class="toggle-switch" id="billingToggle" onclick="toggleBilling()">
-          <div class="toggle-switch-handle"></div>
-        </div>
-        <span class="toggle-label" id="yearlyLabel">Yearly</span>
-        <span class="save-badge" id="saveBadge" style="display: none;">Save 20%</span>
-      </div>
-      
-      <div class="pricing-grid">
-        <!-- Starter Plan -->
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <h3>Starter</h3>
-            <p>Perfect for small teams getting started with live video shopping</p>
-          </div>
-          <div class="pricing-price">
-            <span class="amount">€<span id="starter-price">49</span></span>
-            <span class="period">/month</span>
-            <span class="billed" id="starter-billed" style="display: none;">Billed annually</span>
-          </div>
-          <ul class="pricing-features">
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>3 video chat hours per month</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Unlimited live chat sessions</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Up to 2 sales people</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Basic performance reporting</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Web & mobile access</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Custom branding</span></li>
-          </ul>
-          <a href="signup.html" class="btn-secondary pricing-cta">Start Free Trial</a>
-        </div>
-        
-        <!-- Growth Plan -->
-        <div class="pricing-card popular">
-          <div class="pricing-badge">Most Popular</div>
-          <div class="pricing-header">
-            <h3>Growth</h3>
-            <p>Give your team the tools to engage, book, and convert at scale</p>
-          </div>
-          <div class="pricing-price">
-            <span class="amount">€<span id="growth-price">199</span></span>
-            <span class="period">/month</span>
-            <span class="billed" id="growth-billed" style="display: none;">Billed annually</span>
-          </div>
-          <ul class="pricing-features">
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>20 video chat hours per month</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Unlimited live chat sessions</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Up to 5 sales people</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Advanced analytics & reporting</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Calendar integrations</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Team performance insights</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Priority support</span></li>
-          </ul>
-          <a href="signup.html" class="btn-primary pricing-cta">Start Free Trial</a>
-        </div>
-        
-        <!-- Scale Plan -->
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <h3>Scale</h3>
-            <p>Enterprise-grade solution for large sales teams and multiple locations</p>
-          </div>
-          <div class="pricing-price">
-            <span class="amount">€<span id="scale-price">499</span></span>
-            <span class="period">/month</span>
-            <span class="billed" id="scale-billed" style="display: none;">Billed annually</span>
-          </div>
-          <ul class="pricing-features">
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Unlimited video chat hours</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Unlimited users & locations</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Advanced CRM integrations</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Custom onboarding & training</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Dedicated account manager</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>White-label options</span></li>
-            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Advanced security & compliance</span></li>
-          </ul>
-          <a href="https://calendly.com/barry-mc-kenna/new-meeting" class="btn-secondary pricing-cta" target="_blank" rel="noopener noreferrer">Contact Sales</a>
-        </div>
-      </div>
-      
-      <div style="text-align: center; margin-top: 3rem;">
-        <p style="font-size: 0.95rem; color: var(--brand-gray);">All plans include 14-day free trial • No setup fees • Cancel anytime</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready to Transform Your Online Sales?</h2>
-      <p>Don't let potential customers click away — turn conversations into conversions today.</p>
-      <div class="cta-buttons">
-        <a href="https://calendly.com/barry-mc-kenna/new-meeting" class="btn-white" target="_blank" rel="noopener noreferrer">
-          Book Your Free Demo Now
-          <i data-lucide="arrow-right" style="width: 20px; height: 20px;"></i>
-        </a>
-        <a href="https://www.youtube.com/watch?v=EiaEVoGldGg" class="btn-outline-white" target="_blank" rel="noopener noreferrer">
-          <i data-lucide="play" style="width: 20px; height: 20px;"></i>
-          Watch Demo
-        </a>
-      </div>
-      <p class="cta-note">No setup fees • 14-day free trial • Cancel anytime</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Company Info -->
-        <div class="footer-section">
-          <h4>WebLiveView</h4>
-          <div class="footer-contact">
-            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
-            <span>hello@webliveview.com</span>
-          </div>
-          <div class="footer-contact">
-            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
-            <span>+353 86 069 0519</span>
-          </div>
-          <div class="footer-contact">
-            <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
-            <span>Galway, Ireland</span>
-          </div>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/company/webliveview" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
-            </a>
-            <a href="https://www.facebook.com/webliveview" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <i data-lucide="facebook" style="width: 20px; height: 20px;"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Product Links -->
-        <div class="footer-section">
-          <h4>Product</h4>
-          <ul>
-            <li><a href="product.html">Features</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="use-cases.html">Use Cases</a></li>
-          </ul>
-        </div>
-        
-        <!-- Company Links -->
-        <div class="footer-section">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2025 WebLiveView. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Auth Modal -->
-  <div class="auth-modal-overlay" id="authModal">
-    <div class="auth-modal">
-      <div class="auth-modal-header">
-        <button class="auth-close" onclick="closeAuthModal()" aria-label="Close modal">×</button>
-        <div class="auth-tabs">
-          <button class="auth-tab active" onclick="switchAuthTab('login')">Login</button>
-          <button class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</button>
-        </div>
-      </div>
-      
-      <div class="auth-modal-content">
-        <!-- Login Form -->
-        <form class="auth-form active" id="loginForm" onsubmit="handleLogin(event)">
-          <div class="form-group">
-            <label for="loginEmail">Email</label>
-            <input type="email" id="loginEmail" required>
-          </div>
-          <div class="form-group">
-            <label for="loginPassword">Password</label>
-            <div class="password-field">
-              <input type="password" id="loginPassword" required>
-              <button type="button" class="password-toggle" onclick="togglePasswordVisibility('loginPassword')">
-                <i data-lucide="eye" style="width: 20px; height: 20px;"></i>
-              </button>
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn md:hidden p-2" onclick="toggleMobileMenu()">
+                    <i id="menu-icon" data-lucide="menu" width="24" height="24"></i>
+                </button>
             </div>
-            <div class="forgot-password">
-              <a href="#" onclick="alert('Password reset functionality would be implemented here'); return false;">Forgot password?</a>
-            </div>
-          </div>
-          <button type="submit" class="auth-submit">Login</button>
-          
-          <div class="auth-divider">or continue with</div>
-          
-          <div class="social-auth">
-            <button type="button" class="social-btn" onclick="handleSocialLogin('google')">
-              <i data-lucide="chrome" style="width: 20px; height: 20px;"></i>
-              Continue with Google
-            </button>
-            <button type="button" class="social-btn" onclick="handleSocialLogin('facebook')">
-              <i data-lucide="facebook" style="width: 20px; height: 20px;"></i>
-              Continue with Facebook
-            </button>
-            <button type="button" class="social-btn" onclick="handleSocialLogin('linkedin')">
-              <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
-              Continue with LinkedIn
-            </button>
-          </div>
-        </form>
-        
-        <!-- Signup Form -->
-        <form class="auth-form" id="signupForm" onsubmit="handleSignup(event)">
-          <div class="form-group">
-            <label for="signupEmail">Email</label>
-            <input type="email" id="signupEmail" required>
-          </div>
-          <div class="form-group">
-            <label for="signupPassword">Password</label>
-            <div class="password-field">
-              <input type="password" id="signupPassword" required minlength="8">
-              <button type="button" class="password-toggle" onclick="togglePasswordVisibility('signupPassword')">
-                <i data-lucide="eye" style="width: 20px; height: 20px;"></i>
-              </button>
-            </div>
-            <button type="button" class="generate-password-btn" onclick="generatePassword()">
-              <i data-lucide="key" style="width: 16px; height: 16px; display: inline-block; margin-right: 0.5rem;"></i>
-              Generate Strong Password
-            </button>
-          </div>
-          <div class="form-group">
-            <label for="confirmPassword">Confirm Password</label>
-            <div class="password-field">
-              <input type="password" id="confirmPassword" required minlength="8">
-              <button type="button" class="password-toggle" onclick="togglePasswordVisibility('confirmPassword')">
-                <i data-lucide="eye" style="width: 20px; height: 20px;"></i>
-              </button>
-            </div>
-          </div>
-          <div class="checkbox-group">
-            <input type="checkbox" id="acceptTerms" required>
-            <label for="acceptTerms">
-              I accept the <a href="terms-of-service.html" target="_blank">Terms of Service</a> and <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
-            </label>
-          </div>
-          <button type="submit" class="auth-submit">Create Account</button>
-          
-          <div class="auth-divider">or continue with</div>
-          
-          <div class="social-auth">
-            <button type="button" class="social-btn" onclick="handleSocialLogin('google')">
-              <i data-lucide="chrome" style="width: 20px; height: 20px;"></i>
-              Continue with Google
-            </button>
-            <button type="button" class="social-btn" onclick="handleSocialLogin('facebook')">
-              <i data-lucide="facebook" style="width: 20px; height: 20px;"></i>
-              Continue with Facebook
-            </button>
-            <button type="button" class="social-btn" onclick="handleSocialLogin('linkedin')">
-              <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
-              Continue with LinkedIn
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 
-  <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-    
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-      const toggle = document.querySelector('.mobile-menu-toggle');
-      const menu = document.getElementById('mobileMenu');
-      toggle.classList.toggle('active');
-      menu.classList.toggle('active');
-      
-      // Prevent body scroll when menu is open
-      if (menu.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-      }
-    }
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const toggle = document.querySelector('.mobile-menu-toggle');
-      const menu = document.getElementById('mobileMenu');
-      const isClickInside = toggle.contains(event.target) || menu.contains(event.target);
-      
-      if (!isClickInside && menu.classList.contains('active')) {
-        toggle.classList.remove('active');
-        menu.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-    
-    // Billing Toggle
-    let isYearly = false;
-    
-    function toggleBilling() {
-      isYearly = !isYearly;
-      const toggle = document.getElementById('billingToggle');
-      const monthlyLabel = document.getElementById('monthlyLabel');
-      const yearlyLabel = document.getElementById('yearlyLabel');
-      const saveBadge = document.getElementById('saveBadge');
-      
-      if (isYearly) {
-        toggle.classList.add('active');
-        monthlyLabel.classList.remove('active');
-        yearlyLabel.classList.add('active');
-        saveBadge.style.display = 'inline-block';
-        
-        // Update prices
-        document.getElementById('starter-price').textContent = '39';
-        document.getElementById('growth-price').textContent = '159';
-        document.getElementById('scale-price').textContent = '399';
-        
-        // Show billed text
-        document.getElementById('starter-billed').style.display = 'block';
-        document.getElementById('growth-billed').style.display = 'block';
-        document.getElementById('scale-billed').style.display = 'block';
-      } else {
-        toggle.classList.remove('active');
-        monthlyLabel.classList.add('active');
-        yearlyLabel.classList.remove('active');
-        saveBadge.style.display = 'none';
-        
-        // Update prices
-        document.getElementById('starter-price').textContent = '49';
-        document.getElementById('growth-price').textContent = '199';
-        document.getElementById('scale-price').textContent = '499';
-        
-        // Hide billed text
-        document.getElementById('starter-billed').style.display = 'none';
-        document.getElementById('growth-billed').style.display = 'none';
-        document.getElementById('scale-billed').style.display = 'none';
-      }
-      
-      // Reinitialize icons after content change
-      lucide.createIcons();
-    }
-    
-    // Auth Modal Functions
-    function openAuthModal(tab = 'login') {
-      document.getElementById('authModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
-      switchAuthTab(tab);
-      lucide.createIcons();
-    }
-    
-    function closeAuthModal() {
-      document.getElementById('authModal').classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    
-    function switchAuthTab(tab) {
-      const tabs = document.querySelectorAll('.auth-tab');
-      const forms = document.querySelectorAll('.auth-form');
-      
-      tabs.forEach(t => t.classList.remove('active'));
-      forms.forEach(f => f.classList.remove('active'));
-      
-      if (tab === 'login') {
-        tabs[0].classList.add('active');
-        document.getElementById('loginForm').classList.add('active');
-      } else {
-        tabs[1].classList.add('active');
-        document.getElementById('signupForm').classList.add('active');
-      }
-      
-      lucide.createIcons();
-    }
-    
-    function togglePasswordVisibility(inputId) {
-      const input = document.getElementById(inputId);
-      const button = input.nextElementSibling;
-      
-      if (input.type === 'password') {
-        input.type = 'text';
-      } else {
-        input.type = 'password';
-      }
-      
-      lucide.createIcons();
-    }
-    
-    function generatePassword() {
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
-      let password = '';
-      for (let i = 0; i < 16; i++) {
-        password += chars.charAt(Math.floor(Math.random() * chars.length));
-      }
-      
-      const passwordInput = document.getElementById('signupPassword');
-      const confirmInput = document.getElementById('confirmPassword');
-      passwordInput.value = password;
-      confirmInput.value = password;
-      
-      // Show password temporarily
-      passwordInput.type = 'text';
-      confirmInput.type = 'text';
-      
-      alert('Strong password generated! Make sure to save it securely.');
-    }
-    
-    function handleLogin(event) {
-      event.preventDefault();
-      const email = document.getElementById('loginEmail').value;
-      console.log('Login attempt:', email);
-      alert('Login functionality would be implemented here with backend integration');
-    }
-    
-    function handleSignup(event) {
-      event.preventDefault();
-      const email = document.getElementById('signupEmail').value;
-      const password = document.getElementById('signupPassword').value;
-      const confirmPassword = document.getElementById('confirmPassword').value;
-      
-      if (password !== confirmPassword) {
-        alert('Passwords do not match!');
-        return;
-      }
-      
-      console.log('Signup attempt:', email);
-      alert('Signup functionality would be implemented here with backend integration');
-    }
-    
-    function handleSocialLogin(provider) {
-      console.log('Social login with:', provider);
-      alert(`${provider.charAt(0).toUpperCase() + provider.slice(1)} login would be implemented here`);
-    }
-    
-    // Close modal when clicking outside
-    document.getElementById('authModal').addEventListener('click', function(event) {
-      if (event.target === this) {
-        closeAuthModal();
-      }
-    });
-  </script>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="/product" class="nav-link py-2">Product</a>
+                <a href="/pricing" class="nav-link py-2">Pricing</a>
+                <a href="/about" class="nav-link py-2">About Us</a>
+                <a href="/contact" class="nav-link py-2">Contact</a>
+                <div class="pt-3 space-y-3">
+                    <button class="btn-outline w-full" style="border-color: #b4b7f0; color: #b4b7f0;">Login</button>
+                    <a href="/signup" class="btn-primary w-full">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 lg:py-32" style="background: linear-gradient(135deg, hsl(var(--brand-light)) 0%, hsl(var(--background)) 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="text-center lg:text-left">
+                    <img src="../src/assets/webliveview-logo.png" alt="WebLiveView" class="w-[400px] h-auto mb-8 mx-auto lg:mx-0">
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6 leading-tight">
+                        Your Sales Team,<br>
+                        <span class="text-secondary">On-Demand</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Connect with customers through live video, demonstrate your products in real-time, and close deals faster. WebLiveView turns your website into a live showroom.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
+                        <a href="/signup" class="btn-primary">Start Free Trial</a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-outline flex items-center gap-2">
+                            <i data-lucide="play" width="16" height="16"></i>
+                            See How It Works
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div>
+                    <img src="../src/assets/webliveview-product-screens.png" alt="WebLiveView product interface" class="w-full h-auto rounded-2xl shadow-large">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16 md:py-24 bg-muted" style="background-color: hsl(var(--muted) / 0.3);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="mx-auto max-w-4xl">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+                        Watch WebLiveView in Action
+                    </h2>
+                    <p class="text-lg text-muted-foreground">
+                        See how kitchen retailers are selling more online — no showrooms required.
+                    </p>
+                </div>
+                
+                <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                    <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+                        <div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                            <div class="wistia_embed wistia_async_qnl49c0ilh videoFoam=true" style="height:100%;position:relative;width:100%">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="/signup" class="btn-primary">Start Free Trial</a>
+                        <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn-outline">Book a Demo</a>
+                    </div>
+                    <p class="text-sm text-muted-foreground mt-4">
+                        55 seconds • Real customer demo
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+                    Everything your sales team needs — in one app
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    From first login to live customer calls, WebLiveView keeps your team connected and in control.
+                </p>
+            </div>
+            
+            <div class="flex justify-center">
+                <img 
+                    src="../src/assets/webliveview-features.png" 
+                    alt="WebLiveView product features section showing 3 iPhone screens for Login, Live Call, and Dashboard, each with descriptive text"
+                    class="w-full max-w-5xl h-auto"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white text-brand-navy">
+        <div class="max-w-5xl mx-auto px-6 text-center space-y-6">
+            <h2 class="text-3xl md:text-4xl font-bold">Why Choose WebLiveView?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6 text-left">
+                <!-- Benefit 1: Skip the Showroom -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col items-start">
+                    <div class="w-14 h-14 mb-5 bg-brand-light/20 rounded-lg flex items-center justify-center">
+                        <i data-lucide="home" class="w-8 h-8 text-pink-500"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-brand-navy">Skip the Showroom</h3>
+                    <p class="text-muted-foreground text-sm">No more weekend trips — let your customers explore products face-to-face from home.</p>
+                </div>
+
+                <!-- Benefit 2: Sell Smarter -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col items-start">
+                    <div class="w-14 h-14 mb-5 bg-brand-light/20 rounded-lg flex items-center justify-center">
+                        <i data-lucide="shopping-cart" class="w-8 h-8 text-pink-500"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-brand-navy">Sell Smarter</h3>
+                    <p class="text-muted-foreground text-sm">Use video calls to answer questions, reduce returns, and close more high-value orders.</p>
+                </div>
+
+                <!-- Benefit 3: Increase Trust -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col items-start">
+                    <div class="w-14 h-14 mb-5 bg-brand-light/20 rounded-lg flex items-center justify-center">
+                        <i data-lucide="shield" class="w-8 h-8 text-pink-500"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-brand-navy">Increase Trust</h3>
+                    <p class="text-muted-foreground text-sm">Build confidence and reduce friction with live, human interaction — no app downloads needed.</p>
+                </div>
+            </div>
+            
+            <p class="text-lg font-medium text-brand-navy pt-6">
+                Fewer abandoned carts. Faster sales. Happier customers.
+            </p>
+        </div>
+    </section>
+
+    <!-- Who Uses Section -->
+    <section class="py-16 md:py-24 bg-muted" style="background-color: hsl(var(--muted) / 0.3);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+                    Perfect for high-value sales
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    When products need explanation, when customers need reassurance, WebLiveView bridges the gap between online browsing and in-person buying.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 max-w-4xl mx-auto">
+                <!-- Industry 1: Kitchens -->
+                <div class="text-center p-6 rounded-xl" style="background: hsl(var(--card)); border: 1px solid hsl(var(--border));">
+                    <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full" style="background: hsl(var(--secondary) / 0.1); color: hsl(var(--secondary));">
+                        <i data-lucide="utensils" width="32" height="32"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-brand-navy">Kitchens</h3>
+                </div>
+
+                <!-- Industry 2: Furniture -->
+                <div class="text-center p-6 rounded-xl" style="background: hsl(var(--card)); border: 1px solid hsl(var(--border));">
+                    <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full" style="background: hsl(var(--secondary) / 0.1); color: hsl(var(--secondary));">
+                        <i data-lucide="sofa" width="32" height="32"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-brand-navy">Furniture</h3>
+                </div>
+
+                <!-- Industry 3: Electronics -->
+                <div class="text-center p-6 rounded-xl" style="background: hsl(var(--card)); border: 1px solid hsl(var(--border));">
+                    <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full" style="background: hsl(var(--secondary) / 0.1); color: hsl(var(--secondary));">
+                        <i data-lucide="tv" width="32" height="32"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-brand-navy">Electronics</h3>
+                </div>
+
+                <!-- Industry 4: Fashion -->
+                <div class="text-center p-6 rounded-xl" style="background: hsl(var(--card)); border: 1px solid hsl(var(--border));">
+                    <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full" style="background: hsl(var(--secondary) / 0.1); color: hsl(var(--secondary));">
+                        <i data-lucide="shirt" width="32" height="32"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-brand-navy">Fashion</h3>
+                </div>
+
+                <!-- Industry 5: Jewelry -->
+                <div class="text-center p-6 rounded-xl" style="background: hsl(var(--card)); border: 1px solid hsl(var(--border));">
+                    <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full" style="background: hsl(var(--secondary) / 0.1); color: hsl(var(--secondary));">
+                        <i data-lucide="gem" width="32" height="32"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-brand-navy">Jewelry</h3>
+                </div>
+
+                <!-- Industry 6: Home Improvement -->
+                <div class="text-center p-6 rounded-xl" style="background: hsl(var(--card)); border: 1px solid hsl(var(--border));">
+                    <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full" style="background: hsl(var(--secondary) / 0.1); color: hsl(var(--secondary));">
+                        <i data-lucide="wrench" width="32" height="32"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-brand-navy">DIY & Tools</h3>
+                </div>
+
+                <!-- Industry 7: Beauty -->
+                <div class="text-center p-6 rounded-xl" style="background: hsl(var(--card)); border: 1px solid hsl(var(--border));">
+                    <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full" style="background: hsl(var(--secondary) / 0.1); color: hsl(var(--secondary));">
+                        <i data-lucide="sparkles" width="32" height="32"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-brand-navy">Beauty</h3>
+                </div>
+
+                <!-- Industry 8: Sports -->
+                <div class="text-center p-6 rounded-xl" style="background: hsl(var(--card)); border: 1px solid hsl(var(--border));">
+                    <div class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full" style="background: hsl(var(--secondary) / 0.1); color: hsl(var(--secondary));">
+                        <i data-lucide="dumbbell" width="32" height="32"></i>
+                    </div>
+                    <h3 class="text-sm font-semibold text-brand-navy">Sports</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why WebLiveView Section -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+                    Why WebLiveView?
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Built specifically for online retail, designed to boost conversion and customer satisfaction.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reason 1 -->
+                <div class="rounded-2xl border p-8 transition-all hover:shadow-lg" style="border-color: hsl(var(--border)); background: hsl(var(--card));">
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl" style="background: hsl(var(--primary) / 0.1); color: hsl(var(--primary));">
+                        <i data-lucide="zap" width="24" height="24"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-brand-navy">Instant Connection</h3>
+                    <p class="text-muted-foreground">No downloads, no hassle. Customers click a button and they're face-to-face with your team in seconds.</p>
+                </div>
+
+                <!-- Reason 2 -->
+                <div class="rounded-2xl border p-8 transition-all hover:shadow-lg" style="border-color: hsl(var(--border)); background: hsl(var(--card));">
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl" style="background: hsl(var(--primary) / 0.1); color: hsl(var(--primary));">
+                        <i data-lucide="users" width="24" height="24"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-brand-navy">Personal Touch</h3>
+                    <p class="text-muted-foreground">Build relationships and trust through face-to-face interactions, just like in-store shopping.</p>
+                </div>
+
+                <!-- Reason 3 -->
+                <div class="rounded-2xl border p-8 transition-all hover:shadow-lg" style="border-color: hsl(var(--border)); background: hsl(var(--card));">
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl" style="background: hsl(var(--primary) / 0.1); color: hsl(var(--primary));">
+                        <i data-lucide="trending-up" width="24" height="24"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-brand-navy">Higher Conversions</h3>
+                    <p class="text-muted-foreground">Turn curious browsers into confident buyers with real-time product demonstrations and answers.</p>
+                </div>
+
+                <!-- Reason 4 -->
+                <div class="rounded-2xl border p-8 transition-all hover:shadow-lg" style="border-color: hsl(var(--border)); background: hsl(var(--card));">
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl" style="background: hsl(var(--primary) / 0.1); color: hsl(var(--primary));">
+                        <i data-lucide="rotate-ccw" width="24" height="24"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-brand-navy">Fewer Returns</h3>
+                    <p class="text-muted-foreground">When customers see exactly what they're buying, returns drop significantly.</p>
+                </div>
+
+                <!-- Reason 5 -->
+                <div class="rounded-2xl border p-8 transition-all hover:shadow-lg" style="border-color: hsl(var(--border)); background: hsl(var(--card));">
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl" style="background: hsl(var(--primary) / 0.1); color: hsl(var(--primary));">
+                        <i data-lucide="smartphone" width="24" height="24"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-brand-navy">Works Everywhere</h3>
+                    <p class="text-muted-foreground">Desktop, tablet, or mobile — your customers can connect from any device, anywhere.</p>
+                </div>
+
+                <!-- Reason 6 -->
+                <div class="rounded-2xl border p-8 transition-all hover:shadow-lg" style="border-color: hsl(var(--border)); background: hsl(var(--card));">
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl" style="background: hsl(var(--primary) / 0.1); color: hsl(var(--primary));">
+                        <i data-lucide="bar-chart" width="24" height="24"></i>
+                    </div>
+                    <h3 class="mb-2 text-xl font-semibold text-brand-navy">Smart Analytics</h3>
+                    <p class="text-muted-foreground">Track performance, optimize your sales process, and grow your business with actionable insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 md:py-24 bg-muted" style="background-color: hsl(var(--muted) / 0.3);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+                    Simple, Transparent Pricing
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Choose the plan that fits your business. All plans include 14-day free trial.
+                </p>
+            </div>
+
+            <div class="flex justify-center items-center gap-4 mb-12">
+                <span id="monthly-label" style="color: hsl(var(--foreground)); font-weight: 500;">Monthly</span>
+                <button id="billing-toggle" onclick="toggleBilling()" style="width: 3rem; height: 1.75rem; border-radius: 9999px; background-color: hsl(var(--muted)); position: relative; transition: background-color 0.2s; cursor: pointer; border: none; padding: 0;">
+                    <span id="billing-slider" style="display: block; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transform: translateX(0.25rem); transition: transform 0.2s;"></span>
+                </button>
+                <span id="yearly-label" class="text-muted-foreground">Yearly</span>
+                <span id="save-badge" style="display: none; background: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--brand-pink))); color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;">Save 20%</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="rounded-2xl border p-8" style="border-color: hsl(var(--border)); background: hsl(var(--card));">
+                    <h3 class="text-2xl font-bold text-brand-navy mb-2">Starter</h3>
+                    <p class="text-muted-foreground mb-6">Perfect for small teams getting started</p>
+                    <div class="mb-6">
+                        <span id="starter-price" class="text-4xl font-bold text-brand-navy">€49</span>
+                        <span class="text-muted-foreground">/month</span>
+                        <div id="starter-yearly" style="display: none; font-size: 0.875rem; color: hsl(var(--muted-foreground)); margin-top: 0.25rem;">€468 billed yearly</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Up to 3 team members</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>100 video calls/month</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Basic analytics</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Email support</span>
+                        </li>
+                    </ul>
+                    <a href="/signup" class="btn-outline w-full">Start Free Trial</a>
+                </div>
+
+                <!-- Growth Plan (Featured) -->
+                <div class="rounded-2xl border-2 p-8 relative" style="border-color: hsl(var(--secondary)); background: hsl(var(--card));">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</div>
+                    <h3 class="text-2xl font-bold text-brand-navy mb-2">Growth</h3>
+                    <p class="text-muted-foreground mb-6">For growing businesses</p>
+                    <div class="mb-6">
+                        <span id="growth-price" class="text-4xl font-bold text-brand-navy">€199</span>
+                        <span class="text-muted-foreground">/month</span>
+                        <div id="growth-yearly" style="display: none; font-size: 0.875rem; color: hsl(var(--muted-foreground)); margin-top: 0.25rem;">€1,908 billed yearly</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Up to 10 team members</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Unlimited video calls</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Advanced analytics</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Priority support</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Custom branding</span>
+                        </li>
+                    </ul>
+                    <a href="/signup" class="btn-primary w-full">Start Free Trial</a>
+                </div>
+
+                <!-- Scale Plan -->
+                <div class="rounded-2xl border p-8" style="border-color: hsl(var(--border)); background: hsl(var(--card));">
+                    <h3 class="text-2xl font-bold text-brand-navy mb-2">Scale</h3>
+                    <p class="text-muted-foreground mb-6">For established enterprises</p>
+                    <div class="mb-6">
+                        <span id="scale-price" class="text-4xl font-bold text-brand-navy">€499</span>
+                        <span class="text-muted-foreground">/month</span>
+                        <div id="scale-yearly" style="display: none; font-size: 0.875rem; color: hsl(var(--muted-foreground)); margin-top: 0.25rem;">€4,788 billed yearly</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Unlimited team members</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Unlimited video calls</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Enterprise analytics</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>24/7 dedicated support</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>API access</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" width="20" height="20" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                            <span>Custom integrations</span>
+                        </li>
+                    </ul>
+                    <a href="/signup" class="btn-outline w-full">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 md:py-24" style="background: linear-gradient(to right, hsl(var(--secondary)), hsl(var(--brand-pink)), hsl(var(--secondary)));">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center text-white">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                    Ready to Transform Your Online Sales?
+                </h2>
+                <p class="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+                    Don't let potential customers click away — turn conversations into conversions today.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn-primary" style="background: white; color: hsl(var(--brand-navy));">
+                        Book Your Free Demo Now
+                        <i data-lucide="arrow-right" width="20" height="20" style="margin-left: 0.5rem;"></i>
+                    </a>
+                    <button class="btn-outline" style="border-color: white; color: white; background: transparent;" onmouseover="this.style.backgroundColor='white'; this.style.color='hsl(var(--brand-navy))'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'">
+                        <i data-lucide="play" width="20" height="20" style="margin-right: 0.5rem;"></i>
+                        Watch Demo
+                    </button>
+                </div>
+                
+                <p class="mt-6 text-sm opacity-75">
+                    No setup fees • 14-day free trial • Cancel anytime
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 md:py-20" style="background: linear-gradient(to bottom, hsl(var(--brand-navy)), hsl(214 72% 10%)); color: white;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- Main CTA Section -->
+                <div class="text-center mb-16 pb-16 border-b border-white/20">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        Start Converting More Customers Today
+                    </h2>
+                    <p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+                        Join retailers using WebLiveView to boost conversions and deliver exceptional customer experiences.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="/signup" class="btn-primary">Start Free Trial</a>
+                        <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="btn-outline" style="border-color: white; color: white; background: transparent;" onmouseover="this.style.backgroundColor='white'; this.style.color='hsl(var(--brand-navy))'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'">
+                            Book Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Content -->
+                <div class="text-center space-y-6">
+                    <!-- Contact Info -->
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center justify-center space-x-2">
+                            <i data-lucide="mail" width="16" height="16" class="text-secondary flex-shrink-0"></i>
+                            <span>info@webliveview.com</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2">
+                            <i data-lucide="phone" width="16" height="16" class="text-secondary flex-shrink-0"></i>
+                            <span>+353 1 4412618</span>
+                        </div>
+                        <div class="flex flex-col items-center mt-3">
+                            <div class="flex items-start space-x-2">
+                                <i data-lucide="map-pin" width="16" height="16" class="text-secondary mt-0.5 flex-shrink-0"></i>
+                                <div>
+                                    <div>Webliveview Ltd</div>
+                                    <div>13 Upper Baggot Street</div>
+                                    <div>2nd Floor</div>
+                                    <div>Dublin 4, D04 W7K5</div>
+                                    <div>Ireland</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media Icons -->
+                        <div class="flex items-center space-x-4 justify-center mt-4">
+                            <a href="https://www.linkedin.com/company/9435525/" target="_blank" class="text-white hover:text-brand-pink transition-colors duration-200">
+                                <i data-lucide="linkedin" width="24" height="24"></i>
+                            </a>
+                            <a href="https://www.facebook.com/webliveview" target="_blank" class="text-white hover:text-brand-pink transition-colors duration-200">
+                                <i data-lucide="facebook" width="24" height="24"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- App Store Badges -->
+                        <div class="mt-6 flex flex-wrap gap-4 items-center justify-center">
+                            <a href="https://play.google.com/store/apps/details?id=your.app.id" target="_blank">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="h-10 hover:opacity-90 transition-opacity duration-200">
+                            </a>
+                            <a href="https://apps.apple.com/app/id000000000" target="_blank">
+                                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-10 hover:opacity-90 transition-opacity duration-200">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="text-sm text-white/70">
+                        <p>© 2025 WebLiveView Ltd. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="auth-modal" style="display: none;">
+        <div class="auth-modal-content">
+            <!-- Header -->
+            <div class="auth-modal-header">
+                <h2 id="authModalTitle" class="text-2xl font-bold text-brand-navy">Login to WebLiveView</h2>
+                <button onclick="closeAuthModal()" class="auth-close-btn" aria-label="Close modal">
+                    <i data-lucide="x" width="24" height="24"></i>
+                </button>
+            </div>
+
+            <!-- Tabs -->
+            <div class="auth-tabs">
+                <button id="loginTab" class="auth-tab active" onclick="switchAuthTab('login')">Login</button>
+                <button id="signupTab" class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-form-container">
+                <form onsubmit="handleLogin(event)" class="space-y-4">
+                    <div>
+                        <label for="login-email" class="auth-label">Email</label>
+                        <input id="login-email" type="email" placeholder="your@email.com" required class="auth-input">
+                    </div>
+
+                    <div>
+                        <label for="login-password" class="auth-label">Password</label>
+                        <div class="password-input-wrapper">
+                            <input id="login-password" type="password" placeholder="••••••••" required class="auth-input">
+                            <button type="button" onclick="togglePasswordVisibility('login-password', 'login-eye')" class="password-toggle">
+                                <i id="login-eye" data-lucide="eye" width="16" height="16"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <a href="#" class="auth-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="auth-btn auth-btn-primary">Login</button>
+
+                    <div class="auth-divider">
+                        <span>or login with</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <button type="button" class="auth-btn auth-btn-social" onclick="handleSocialLogin('google')">
+                            <img src="https://www.google.com/favicon.ico" alt="" class="w-5 h-5">
+                            Continue with Google
+                        </button>
+                        <button type="button" class="auth-btn auth-btn-social" onclick="handleSocialLogin('linkedin')">
+                            <img src="https://www.linkedin.com/favicon.ico" alt="" class="w-5 h-5">
+                            Continue with LinkedIn
+                        </button>
+                        <button type="button" class="auth-btn auth-btn-social" onclick="handleSocialLogin('facebook')">
+                            <img src="https://www.facebook.com/favicon.ico" alt="" class="w-5 h-5">
+                            Continue with Facebook
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupForm" class="auth-form-container" style="display: none;">
+                <form onsubmit="handleSignup(event)" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="first-name" class="auth-label">First Name</label>
+                            <input id="first-name" type="text" placeholder="John" required class="auth-input">
+                        </div>
+                        <div>
+                            <label for="last-name" class="auth-label">Last Name</label>
+                            <input id="last-name" type="text" placeholder="Doe" required class="auth-input">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="signup-email" class="auth-label">Email</label>
+                        <input id="signup-email" type="email" placeholder="your@email.com" required class="auth-input">
+                    </div>
+
+                    <div>
+                        <label for="signup-password" class="auth-label">Password</label>
+                        <div class="password-input-wrapper">
+                            <input id="signup-password" type="password" placeholder="••••••••" required class="auth-input">
+                            <button type="button" onclick="togglePasswordVisibility('signup-password', 'signup-eye')" class="password-toggle">
+                                <i id="signup-eye" data-lucide="eye" width="16" height="16"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="confirm-password" class="auth-label">Confirm Password</label>
+                        <div class="password-input-wrapper">
+                            <input id="confirm-password" type="password" placeholder="••••••••" required class="auth-input">
+                            <button type="button" onclick="togglePasswordVisibility('confirm-password', 'confirm-eye')" class="password-toggle">
+                                <i id="confirm-eye" data-lucide="eye" width="16" height="16"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="auth-btn auth-btn-outline" onclick="generatePassword()">
+                        Generate Strong Password
+                    </button>
+
+                    <div class="flex items-start space-x-2">
+                        <input type="checkbox" id="terms" class="auth-checkbox">
+                        <label for="terms" class="text-sm text-gray-600 leading-tight">
+                            I accept the <a href="/terms-of-service" class="auth-link">Terms & Conditions</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="auth-btn auth-btn-secondary" id="signupBtn">Let's Go!</button>
+
+                    <div class="auth-divider">
+                        <span>or sign up with</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <button type="button" class="auth-btn auth-btn-social" onclick="handleSocialLogin('google')">
+                            <img src="https://www.google.com/favicon.ico" alt="" class="w-5 h-5">
+                            Sign up with Google
+                        </button>
+                        <button type="button" class="auth-btn auth-btn-social" onclick="handleSocialLogin('linkedin')">
+                            <img src="https://www.linkedin.com/favicon.ico" alt="" class="w-5 h-5">
+                            Sign up with LinkedIn
+                        </button>
+                        <button type="button" class="auth-btn auth-btn-social" onclick="handleSocialLogin('facebook')">
+                            <img src="https://www.facebook.com/favicon.ico" alt="" class="w-5 h-5">
+                            Sign up with Facebook
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Auth Modal Styles */
+        .auth-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .auth-modal-content {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.35);
+            width: 100%;
+            max-width: 28rem;
+            margin: 1rem;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: scaleIn 0.3s ease-out;
+        }
+
+        .auth-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .auth-close-btn {
+            color: #9ca3af;
+            transition: color 0.2s;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .auth-close-btn:hover {
+            color: #4b5563;
+        }
+
+        .auth-tabs {
+            display: flex;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 0.75rem;
+            text-align: center;
+            font-weight: 500;
+            color: #6b7280;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .auth-tab:hover {
+            color: #374151;
+        }
+
+        .auth-tab.active {
+            color: #b4b7f0;
+            border-bottom-color: #b4b7f0;
+        }
+
+        .auth-form-container {
+            padding: 1.5rem;
+        }
+
+        .auth-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: hsl(var(--foreground));
+        }
+
+        .auth-input {
+            width: 100%;
+            height: 3rem;
+            padding: 0.75rem;
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .auth-input:focus {
+            outline: none;
+            border-color: #b4b7f0;
+            box-shadow: 0 0 0 3px rgba(180, 183, 240, 0.1);
+        }
+
+        .password-input-wrapper {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .password-toggle:hover {
+            color: #374151;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .auth-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .auth-btn-primary {
+            background-color: #b4b7f0;
+            color: white;
+        }
+
+        .auth-btn-primary:hover:not(:disabled) {
+            background-color: #9fa2e8;
+        }
+
+        .auth-btn-secondary {
+            background-color: #F45B69;
+            color: white;
+        }
+
+        .auth-btn-secondary:hover:not(:disabled) {
+            background-color: #e04958;
+        }
+
+        .auth-btn-outline {
+            background-color: white;
+            color: hsl(var(--foreground));
+            border: 1px solid hsl(var(--border));
+        }
+
+        .auth-btn-outline:hover {
+            background-color: hsl(var(--muted));
+        }
+
+        .auth-btn-social {
+            background-color: white;
+            color: hsl(var(--foreground));
+            border: 1px solid hsl(var(--border));
+        }
+
+        .auth-btn-social:hover {
+            background-color: hsl(var(--muted));
+        }
+
+        .auth-link {
+            font-size: 0.875rem;
+            color: #b4b7f0;
+            text-decoration: none;
+        }
+
+        .auth-link:hover {
+            text-decoration: underline;
+        }
+
+        .auth-divider {
+            position: relative;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .auth-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background-color: hsl(var(--border));
+        }
+
+        .auth-divider span {
+            position: relative;
+            background-color: white;
+            padding: 0 0.5rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .auth-checkbox {
+            width: 1rem;
+            height: 1rem;
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.25rem;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+
+        .space-y-3 > * + * {
+            margin-top: 0.75rem;
+        }
+
+        .space-y-4 > * + * {
+            margin-top: 1rem;
+        }
+
+        .grid-cols-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script>
+        // Auth Modal Functions
+        function openAuthModal() {
+            document.getElementById('authModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function switchAuthTab(tab) {
+            const loginTab = document.getElementById('loginTab');
+            const signupTab = document.getElementById('signupTab');
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const modalTitle = document.getElementById('authModalTitle');
+
+            if (tab === 'login') {
+                loginTab.classList.add('active');
+                signupTab.classList.remove('active');
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                modalTitle.textContent = 'Login to WebLiveView';
+            } else {
+                signupTab.classList.add('active');
+                loginTab.classList.remove('active');
+                signupForm.style.display = 'block';
+                loginForm.style.display = 'none';
+                modalTitle.textContent = 'Start your free trial';
+            }
+            
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+
+        function togglePasswordVisibility(inputId, eyeId) {
+            const input = document.getElementById(inputId);
+            const eye = document.getElementById(eyeId);
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                eye.setAttribute('data-lucide', 'eye-off');
+            } else {
+                input.type = 'password';
+                eye.setAttribute('data-lucide', 'eye');
+            }
+            
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+
+        function generatePassword() {
+            const length = 16;
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+            let password = "";
+            for (let i = 0; i < length; i++) {
+                password += charset.charAt(Math.floor(Math.random() * charset.length));
+            }
+            document.getElementById('signup-password').value = password;
+            document.getElementById('confirm-password').value = password;
+            alert('A strong password has been generated for you!');
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            console.log('Login attempt:', { email });
+            alert('Login functionality would authenticate here. Email: ' + email);
+            closeAuthModal();
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const terms = document.getElementById('terms').checked;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            if (!terms) {
+                alert('Please accept the Terms & Conditions');
+                return;
+            }
+
+            console.log('Signup attempt:', { firstName, lastName, email });
+            alert('Account would be created here. Welcome ' + firstName + '!');
+            closeAuthModal();
+        }
+
+        function handleSocialLogin(provider) {
+            console.log('Social login with:', provider);
+            alert('Social login with ' + provider + ' would be handled here.');
+        }
+
+        // Update Login buttons to open modal
+        document.addEventListener('DOMContentLoaded', function() {
+            // Desktop login button
+            const desktopLoginBtn = document.querySelector('.desktop-nav + div button');
+            if (desktopLoginBtn) {
+                desktopLoginBtn.onclick = openAuthModal;
+            }
+
+            // Mobile login button
+            const mobileLoginBtn = document.querySelector('#mobile-menu button');
+            if (mobileLoginBtn) {
+                mobileLoginBtn.onclick = function() {
+                    openAuthModal();
+                    toggleMobileMenu();
+                };
+            }
+
+            // Close modal when clicking outside
+            document.getElementById('authModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeAuthModal();
+                }
+            });
+
+            // Update signup button state based on terms checkbox
+            document.getElementById('terms').addEventListener('change', function() {
+                document.getElementById('signupBtn').disabled = !this.checked;
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+            
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+
+        // Billing toggle
+        let isYearly = false;
+        function toggleBilling() {
+            isYearly = !isYearly;
+            const toggle = document.getElementById('billing-toggle');
+            const slider = document.getElementById('billing-slider');
+            const monthlyLabel = document.getElementById('monthly-label');
+            const yearlyLabel = document.getElementById('yearly-label');
+            const saveBadge = document.getElementById('save-badge');
+            
+            if (isYearly) {
+                toggle.style.backgroundColor = 'hsl(var(--secondary))';
+                slider.style.transform = 'translateX(1.5rem)';
+                monthlyLabel.style.color = 'hsl(var(--muted-foreground))';
+                monthlyLabel.style.fontWeight = '400';
+                yearlyLabel.style.color = 'hsl(var(--foreground))';
+                yearlyLabel.style.fontWeight = '500';
+                saveBadge.style.display = 'inline';
+                
+                // Update prices
+                document.getElementById('starter-price').textContent = '€39';
+                document.getElementById('growth-price').textContent = '€159';
+                document.getElementById('scale-price').textContent = '€399';
+                document.getElementById('starter-yearly').style.display = 'block';
+                document.getElementById('growth-yearly').style.display = 'block';
+                document.getElementById('scale-yearly').style.display = 'block';
+            } else {
+                toggle.style.backgroundColor = 'hsl(var(--muted))';
+                slider.style.transform = 'translateX(0.25rem)';
+                monthlyLabel.style.color = 'hsl(var(--foreground))';
+                monthlyLabel.style.fontWeight = '500';
+                yearlyLabel.style.color = 'hsl(var(--muted-foreground))';
+                yearlyLabel.style.fontWeight = '400';
+                saveBadge.style.display = 'none';
+                
+                // Update prices
+                document.getElementById('starter-price').textContent = '€49';
+                document.getElementById('growth-price').textContent = '€199';
+                document.getElementById('scale-price').textContent = '€499';
+                document.getElementById('starter-yearly').style.display = 'none';
+                document.getElementById('growth-yearly').style.display = 'none';
+                document.getElementById('scale-yearly').style.display = 'none';
+            }
+        }
+    </script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+
 </body>
 </html>
