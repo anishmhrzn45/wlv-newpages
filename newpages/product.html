@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WebLiveView Product - Everything your sales team needs to connect with customers through live video shopping. Features include video chat, smart routing, scheduling, and analytics.">
+  <meta name="keywords" content="live video shopping, product features, video chat platform, sales tools, customer engagement">
+  <title>Product - WebLiveView | Live Video Shopping Platform</title>
+  
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    :root {
+      --brand-navy: hsl(214, 72%, 14%);
+      --brand-pink: hsl(339, 89%, 55%);
+      --brand-light: hsl(220, 50%, 98%);
+      --brand-gray: hsl(0, 0%, 29%);
+      --border-color: hsl(220, 13%, 91%);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: var(--brand-gray);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    /* Header Styles */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(15, 40, 71, 0.08);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav a {
+      color: var(--brand-navy);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav a:hover {
+      color: var(--brand-pink);
+    }
+    
+    .btn-login {
+      padding: 0.65rem 1.5rem;
+      border: 2px solid var(--brand-navy);
+      color: white;
+      border-radius: 8px;
+      background: var(--brand-navy);
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    
+    .btn-login:hover {
+      background: transparent;
+      color: var(--brand-navy);
+    }
+    
+    .btn-trial {
+      padding: 0.65rem 1.5rem;
+      background: var(--brand-pink);
+      color: white;
+      border-radius: 8px;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-trial:hover {
+      background: hsl(339, 89%, 45%);
+    }
+    
+    /* Mobile Menu Toggle */
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    
+    .mobile-menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--brand-navy);
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      background: white;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .mobile-menu.active {
+      display: flex;
+    }
+    
+    .mobile-menu a {
+      color: var(--brand-navy);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    
+    .mobile-menu a:hover {
+      background: var(--brand-light);
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, var(--brand-light), white);
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--brand-navy);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-content h1 .highlight {
+      color: var(--brand-pink);
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      color: var(--brand-gray);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      background: var(--brand-pink);
+      color: white;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary:hover {
+      background: hsl(339, 89%, 45%);
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      background: transparent;
+      color: var(--brand-navy);
+      border: 2px solid var(--brand-navy);
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    
+    .btn-secondary:hover {
+      background: var(--brand-navy);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .hero-image img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+    }
+    
+    /* Section Styles */
+    section {
+      padding: 5rem 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--brand-navy);
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      font-size: 1.15rem;
+      color: var(--brand-gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Video Section */
+    .video-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(15, 40, 71, 0.2);
+    }
+    
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(15, 40, 71, 0.08);
+    }
+    
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--brand-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-icon.pink-bg {
+      background: hsl(339, 89%, 95%);
+    }
+    
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--brand-navy);
+      margin-bottom: 0.75rem;
+    }
+    
+    .feature-card p {
+      color: var(--brand-gray);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    
+    /* Pricing Section */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .pricing-card {
+      background: white;
+      border: 2px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .pricing-card.popular {
+      border-color: var(--brand-pink);
+      box-shadow: 0 20px 60px rgba(15, 40, 71, 0.15);
+      transform: scale(1.05);
+    }
+    
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--brand-pink);
+      color: white;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .pricing-header h3 {
+      font-size: 1.5rem;
+      color: var(--brand-navy);
+      margin-bottom: 0.5rem;
+    }
+    
+    .pricing-header p {
+      font-size: 0.9rem;
+      color: var(--brand-gray);
+      line-height: 1.5;
+    }
+    
+    .pricing-price {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .pricing-price .amount {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--brand-navy);
+    }
+    
+    .pricing-price .period {
+      color: var(--brand-gray);
+      font-size: 1rem;
+    }
+    
+    .pricing-price .billed {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--brand-pink);
+      margin-top: 0.5rem;
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+    
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    
+    .pricing-features li i {
+      color: var(--brand-pink);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .pricing-cta {
+      width: 100%;
+    }
+    
+    .billing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 48px;
+      height: 28px;
+      background: var(--border-color);
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .toggle-switch.active {
+      background: var(--brand-pink);
+    }
+    
+    .toggle-switch-handle {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    
+    .toggle-switch.active .toggle-switch-handle {
+      transform: translateX(20px);
+    }
+    
+    .toggle-label {
+      font-size: 0.9rem;
+      color: var(--brand-gray);
+    }
+    
+    .toggle-label.active {
+      color: var(--brand-navy);
+      font-weight: 600;
+    }
+    
+    .save-badge {
+      background: var(--brand-pink);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--brand-pink), hsl(339, 89%, 45%));
+      color: white;
+      text-align: center;
+    }
+    
+    .cta-section h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-section p {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-white {
+      background: white;
+      color: var(--brand-navy);
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      border: 2px solid white;
+    }
+    
+    .btn-white:hover {
+      background: transparent;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline-white {
+      background: transparent;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 2px solid white;
+      transition: all 0.2s;
+    }
+    
+    .btn-outline-white:hover {
+      background: white;
+      color: var(--brand-navy);
+      transform: translateY(-2px);
+    }
+    
+    .cta-note {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--brand-navy);
+      color: white;
+      padding: 3rem 0 2rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-section h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .footer-section a:hover {
+      color: white;
+    }
+    
+    .footer-contact {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-contact i {
+      color: var(--brand-pink);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+    
+    .social-links a:hover {
+      background: var(--brand-pink);
+      transform: translateY(-2px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+    
+    /* Auth Modal Styles */
+    .auth-modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .auth-modal-overlay.active {
+      display: flex;
+    }
+    
+    .auth-modal {
+      background: white;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 480px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.3s ease;
+    }
+    
+    .auth-modal-header {
+      padding: 2rem 2rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+    
+    .auth-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--brand-gray);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+    
+    .auth-close:hover {
+      background: var(--brand-light);
+    }
+    
+    .auth-tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .auth-tab {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      background: none;
+      border: none;
+      color: var(--brand-gray);
+      font-weight: 500;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    
+    .auth-tab.active {
+      color: var(--brand-navy);
+      border-bottom-color: var(--brand-pink);
+    }
+    
+    .auth-modal-content {
+      padding: 2rem;
+    }
+    
+    .auth-form {
+      display: none;
+    }
+    
+    .auth-form.active {
+      display: block;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--brand-navy);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+    
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--brand-pink);
+    }
+    
+    .password-field {
+      position: relative;
+    }
+    
+    .password-toggle {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--brand-gray);
+    }
+    
+    .auth-submit {
+      width: 100%;
+      padding: 0.875rem 1.5rem;
+      background: var(--brand-pink);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .auth-submit:hover {
+      background: hsl(339, 89%, 45%);
+    }
+    
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      color: var(--brand-gray);
+      font-size: 0.9rem;
+    }
+    
+    .auth-divider::before,
+    .auth-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+    
+    .social-auth {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      background: white;
+      color: var(--brand-navy);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .social-btn:hover {
+      border-color: var(--brand-navy);
+      background: var(--brand-light);
+    }
+    
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .checkbox-group input {
+      margin-top: 0.25rem;
+      cursor: pointer;
+    }
+    
+    .checkbox-group label {
+      font-size: 0.875rem;
+      color: var(--brand-gray);
+      line-height: 1.5;
+    }
+    
+    .checkbox-group a {
+      color: var(--brand-pink);
+      text-decoration: none;
+    }
+    
+    .checkbox-group a:hover {
+      text-decoration: underline;
+    }
+    
+    .forgot-password {
+      text-align: right;
+      margin-top: 0.5rem;
+    }
+    
+    .forgot-password a {
+      color: var(--brand-pink);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+    
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+    
+    .generate-password-btn {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--brand-light);
+      color: var(--brand-navy);
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .generate-password-btn:hover {
+      border-color: var(--brand-navy);
+      background: white;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .features-grid,
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .pricing-card.popular {
+        transform: scale(1);
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+      
+      .mobile-menu-toggle {
+        display: flex;
+      }
+      
+      .hero-grid,
+      .features-grid,
+      .pricing-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      
+      .hero-content p {
+        font-size: 1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+      }
+      
+      .hero-buttons a {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      section {
+        padding: 3rem 0;
+      }
+      
+      .container {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <img src="webliveview-logo-new.png" alt="WebLiveView">
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav">
+          <a href="product.html">Product</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <button class="btn-login" onclick="openAuthModal('login')">Login</button>
+          <a href="signup.html" class="btn-trial">Start Free Trial</a>
+        </nav>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="product.html">Product</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <button class="btn-login" onclick="openAuthModal('login')" style="width: 100%; text-align: center;">Login</button>
+        <a href="signup.html" style="background: var(--brand-pink); color: white; text-align: center;">Start Free Trial</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>Your Sales Team, <span class="highlight">On-Demand</span></h1>
+          <p>Bring the in-store experience online with live video shopping, guided selling, and real-time product support — all inside one simple app.</p>
+          <div class="hero-buttons">
+            <a href="signup.html" class="btn-primary">Start Free Trial</a>
+            <a href="https://www.youtube.com/watch?v=EiaEVoGldGg" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="play" style="width: 20px; height: 20px;"></i>
+              See How It Works
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="webliveview-product-screens.png" alt="WebLiveView product showing 3 iPhone screens for Login, Live Call, and Dashboard features">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section style="background: white;">
+    <div class="container">
+      <div class="section-header">
+        <h2>See WebLiveView in Action</h2>
+        <p>Watch how retailers boost conversions with live video shopping</p>
+      </div>
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe 
+            src="https://fast.wistia.net/embed/iframe/ob1oqmqgye?videoFoam=true" 
+            allowfullscreen 
+            title="WebLiveView Product Demo"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section style="background: var(--brand-light);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Everything your sales team needs — in one app</h2>
+        <p>From first login to live customer calls, WebLiveView keeps your team connected and in control.</p>
+      </div>
+      <div style="text-align: center;">
+        <img src="webliveview-features.png" alt="WebLiveView product features section showing 3 iPhone screens for Login, Live Call, and Dashboard, each with descriptive text" style="width: 100%; max-width: 1100px; height: auto;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section style="background: white;">
+    <div class="container" style="max-width: 1000px;">
+      <div class="section-header">
+        <h2>Why Choose WebLiveView?</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="home" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Skip the Showroom</h3>
+          <p>No more weekend trips — let your customers explore products face-to-face from home.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="shopping-cart" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Sell Smarter</h3>
+          <p>Use video calls to answer questions, reduce returns, and close more high-value orders.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="shield" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Increase Trust</h3>
+          <p>Build confidence and reduce friction with live, human interaction — no app downloads needed.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="font-size: 1.2rem; font-weight: 600; color: var(--brand-navy);">Fewer abandoned carts. Faster sales. Happier customers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Uses Section -->
+  <section style="background: var(--brand-light);">
+    <div class="container" style="max-width: 1000px;">
+      <div class="section-header">
+        <h2>Who Uses WebLiveView?</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon pink-bg">
+            <i data-lucide="sofa" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Furniture Retailers</h3>
+          <p>Demo sofas, show materials, and answer questions live from your showroom team.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon pink-bg">
+            <i data-lucide="chef-hat" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Kitchen & Bathroom Brands</h3>
+          <p>Help customers design their dream spaces without stepping foot in store.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon pink-bg">
+            <i data-lucide="shopping-cart" style="color: var(--brand-pink); width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Ecommerce Sales Teams</h3>
+          <p>Recover carts, assist in real time, and boost revenue with guided selling tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why WebLiveView Section -->
+  <section style="background: white;">
+    <div class="container" style="max-width: 1000px;">
+      <div class="section-header">
+        <h2>Why Choose WebLiveView</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="home" style="color: var(--brand-navy); width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Skip the Showroom</h3>
+          <p>No more weekend trips — let your customers explore products face-to-face from home.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="shopping-cart" style="color: var(--brand-navy); width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Sell Smarter</h3>
+          <p>Use video calls to answer questions, reduce returns, and close more high-value orders.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="shield" style="color: var(--brand-navy); width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Increase Trust</h3>
+          <p>Build confidence and reduce friction with live, human interaction — no app downloads needed.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="font-size: 1.2rem; font-weight: 600; color: var(--brand-navy);">Fewer abandoned carts. Faster sales. Happier customers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section style="background: var(--brand-light);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Simple, Flexible Pricing for Every Team</h2>
+        <p>Start free. No credit card required. Plans from just €49/month.</p>
+      </div>
+      
+      <!-- Billing Toggle -->
+      <div class="billing-toggle">
+        <span class="toggle-label" id="monthlyLabel">Monthly</span>
+        <div class="toggle-switch" id="billingToggle" onclick="toggleBilling()">
+          <div class="toggle-switch-handle"></div>
+        </div>
+        <span class="toggle-label" id="yearlyLabel">Yearly</span>
+        <span class="save-badge" id="saveBadge" style="display: none;">Save 20%</span>
+      </div>
+      
+      <div class="pricing-grid">
+        <!-- Starter Plan -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Starter</h3>
+            <p>Perfect for small teams getting started with live video shopping</p>
+          </div>
+          <div class="pricing-price">
+            <span class="amount">€<span id="starter-price">49</span></span>
+            <span class="period">/month</span>
+            <span class="billed" id="starter-billed" style="display: none;">Billed annually</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>3 video chat hours per month</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Unlimited live chat sessions</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Up to 2 sales people</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Basic performance reporting</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Web & mobile access</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Custom branding</span></li>
+          </ul>
+          <a href="signup.html" class="btn-secondary pricing-cta">Start Free Trial</a>
+        </div>
+        
+        <!-- Growth Plan -->
+        <div class="pricing-card popular">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-header">
+            <h3>Growth</h3>
+            <p>Give your team the tools to engage, book, and convert at scale</p>
+          </div>
+          <div class="pricing-price">
+            <span class="amount">€<span id="growth-price">199</span></span>
+            <span class="period">/month</span>
+            <span class="billed" id="growth-billed" style="display: none;">Billed annually</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>20 video chat hours per month</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Unlimited live chat sessions</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Up to 5 sales people</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Advanced analytics & reporting</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Calendar integrations</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Team performance insights</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Priority support</span></li>
+          </ul>
+          <a href="signup.html" class="btn-primary pricing-cta">Start Free Trial</a>
+        </div>
+        
+        <!-- Scale Plan -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Scale</h3>
+            <p>Enterprise-grade solution for large sales teams and multiple locations</p>
+          </div>
+          <div class="pricing-price">
+            <span class="amount">€<span id="scale-price">499</span></span>
+            <span class="period">/month</span>
+            <span class="billed" id="scale-billed" style="display: none;">Billed annually</span>
+          </div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Unlimited video chat hours</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Unlimited users & locations</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Advanced CRM integrations</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Custom onboarding & training</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Dedicated account manager</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>White-label options</span></li>
+            <li><i data-lucide="check" style="width: 16px; height: 16px;"></i> <span>Advanced security & compliance</span></li>
+          </ul>
+          <a href="https://calendly.com/barry-mc-kenna/new-meeting" class="btn-secondary pricing-cta" target="_blank" rel="noopener noreferrer">Contact Sales</a>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="font-size: 0.95rem; color: var(--brand-gray);">All plans include 14-day free trial • No setup fees • Cancel anytime</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Transform Your Online Sales?</h2>
+      <p>Don't let potential customers click away — turn conversations into conversions today.</p>
+      <div class="cta-buttons">
+        <a href="https://calendly.com/barry-mc-kenna/new-meeting" class="btn-white" target="_blank" rel="noopener noreferrer">
+          Book Your Free Demo Now
+          <i data-lucide="arrow-right" style="width: 20px; height: 20px;"></i>
+        </a>
+        <a href="https://www.youtube.com/watch?v=EiaEVoGldGg" class="btn-outline-white" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="play" style="width: 20px; height: 20px;"></i>
+          Watch Demo
+        </a>
+      </div>
+      <p class="cta-note">No setup fees • 14-day free trial • Cancel anytime</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Company Info -->
+        <div class="footer-section">
+          <h4>WebLiveView</h4>
+          <div class="footer-contact">
+            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
+            <span>hello@webliveview.com</span>
+          </div>
+          <div class="footer-contact">
+            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
+            <span>+353 86 069 0519</span>
+          </div>
+          <div class="footer-contact">
+            <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i>
+            <span>Galway, Ireland</span>
+          </div>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/company/webliveview" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+            </a>
+            <a href="https://www.facebook.com/webliveview" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i data-lucide="facebook" style="width: 20px; height: 20px;"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Product Links -->
+        <div class="footer-section">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="product.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="use-cases.html">Use Cases</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company Links -->
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 WebLiveView. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth Modal -->
+  <div class="auth-modal-overlay" id="authModal">
+    <div class="auth-modal">
+      <div class="auth-modal-header">
+        <button class="auth-close" onclick="closeAuthModal()" aria-label="Close modal">×</button>
+        <div class="auth-tabs">
+          <button class="auth-tab active" onclick="switchAuthTab('login')">Login</button>
+          <button class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</button>
+        </div>
+      </div>
+      
+      <div class="auth-modal-content">
+        <!-- Login Form -->
+        <form class="auth-form active" id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <div class="password-field">
+              <input type="password" id="loginPassword" required>
+              <button type="button" class="password-toggle" onclick="togglePasswordVisibility('loginPassword')">
+                <i data-lucide="eye" style="width: 20px; height: 20px;"></i>
+              </button>
+            </div>
+            <div class="forgot-password">
+              <a href="#" onclick="alert('Password reset functionality would be implemented here'); return false;">Forgot password?</a>
+            </div>
+          </div>
+          <button type="submit" class="auth-submit">Login</button>
+          
+          <div class="auth-divider">or continue with</div>
+          
+          <div class="social-auth">
+            <button type="button" class="social-btn" onclick="handleSocialLogin('google')">
+              <i data-lucide="chrome" style="width: 20px; height: 20px;"></i>
+              Continue with Google
+            </button>
+            <button type="button" class="social-btn" onclick="handleSocialLogin('facebook')">
+              <i data-lucide="facebook" style="width: 20px; height: 20px;"></i>
+              Continue with Facebook
+            </button>
+            <button type="button" class="social-btn" onclick="handleSocialLogin('linkedin')">
+              <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+              Continue with LinkedIn
+            </button>
+          </div>
+        </form>
+        
+        <!-- Signup Form -->
+        <form class="auth-form" id="signupForm" onsubmit="handleSignup(event)">
+          <div class="form-group">
+            <label for="signupEmail">Email</label>
+            <input type="email" id="signupEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <div class="password-field">
+              <input type="password" id="signupPassword" required minlength="8">
+              <button type="button" class="password-toggle" onclick="togglePasswordVisibility('signupPassword')">
+                <i data-lucide="eye" style="width: 20px; height: 20px;"></i>
+              </button>
+            </div>
+            <button type="button" class="generate-password-btn" onclick="generatePassword()">
+              <i data-lucide="key" style="width: 16px; height: 16px; display: inline-block; margin-right: 0.5rem;"></i>
+              Generate Strong Password
+            </button>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="password-field">
+              <input type="password" id="confirmPassword" required minlength="8">
+              <button type="button" class="password-toggle" onclick="togglePasswordVisibility('confirmPassword')">
+                <i data-lucide="eye" style="width: 20px; height: 20px;"></i>
+              </button>
+            </div>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="acceptTerms" required>
+            <label for="acceptTerms">
+              I accept the <a href="terms-of-service.html" target="_blank">Terms of Service</a> and <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+            </label>
+          </div>
+          <button type="submit" class="auth-submit">Create Account</button>
+          
+          <div class="auth-divider">or continue with</div>
+          
+          <div class="social-auth">
+            <button type="button" class="social-btn" onclick="handleSocialLogin('google')">
+              <i data-lucide="chrome" style="width: 20px; height: 20px;"></i>
+              Continue with Google
+            </button>
+            <button type="button" class="social-btn" onclick="handleSocialLogin('facebook')">
+              <i data-lucide="facebook" style="width: 20px; height: 20px;"></i>
+              Continue with Facebook
+            </button>
+            <button type="button" class="social-btn" onclick="handleSocialLogin('linkedin')">
+              <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
+              Continue with LinkedIn
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      const menu = document.getElementById('mobileMenu');
+      toggle.classList.toggle('active');
+      menu.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (menu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      const menu = document.getElementById('mobileMenu');
+      const isClickInside = toggle.contains(event.target) || menu.contains(event.target);
+      
+      if (!isClickInside && menu.classList.contains('active')) {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Billing Toggle
+    let isYearly = false;
+    
+    function toggleBilling() {
+      isYearly = !isYearly;
+      const toggle = document.getElementById('billingToggle');
+      const monthlyLabel = document.getElementById('monthlyLabel');
+      const yearlyLabel = document.getElementById('yearlyLabel');
+      const saveBadge = document.getElementById('saveBadge');
+      
+      if (isYearly) {
+        toggle.classList.add('active');
+        monthlyLabel.classList.remove('active');
+        yearlyLabel.classList.add('active');
+        saveBadge.style.display = 'inline-block';
+        
+        // Update prices
+        document.getElementById('starter-price').textContent = '39';
+        document.getElementById('growth-price').textContent = '159';
+        document.getElementById('scale-price').textContent = '399';
+        
+        // Show billed text
+        document.getElementById('starter-billed').style.display = 'block';
+        document.getElementById('growth-billed').style.display = 'block';
+        document.getElementById('scale-billed').style.display = 'block';
+      } else {
+        toggle.classList.remove('active');
+        monthlyLabel.classList.add('active');
+        yearlyLabel.classList.remove('active');
+        saveBadge.style.display = 'none';
+        
+        // Update prices
+        document.getElementById('starter-price').textContent = '49';
+        document.getElementById('growth-price').textContent = '199';
+        document.getElementById('scale-price').textContent = '499';
+        
+        // Hide billed text
+        document.getElementById('starter-billed').style.display = 'none';
+        document.getElementById('growth-billed').style.display = 'none';
+        document.getElementById('scale-billed').style.display = 'none';
+      }
+      
+      // Reinitialize icons after content change
+      lucide.createIcons();
+    }
+    
+    // Auth Modal Functions
+    function openAuthModal(tab = 'login') {
+      document.getElementById('authModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      switchAuthTab(tab);
+      lucide.createIcons();
+    }
+    
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    function switchAuthTab(tab) {
+      const tabs = document.querySelectorAll('.auth-tab');
+      const forms = document.querySelectorAll('.auth-form');
+      
+      tabs.forEach(t => t.classList.remove('active'));
+      forms.forEach(f => f.classList.remove('active'));
+      
+      if (tab === 'login') {
+        tabs[0].classList.add('active');
+        document.getElementById('loginForm').classList.add('active');
+      } else {
+        tabs[1].classList.add('active');
+        document.getElementById('signupForm').classList.add('active');
+      }
+      
+      lucide.createIcons();
+    }
+    
+    function togglePasswordVisibility(inputId) {
+      const input = document.getElementById(inputId);
+      const button = input.nextElementSibling;
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+      } else {
+        input.type = 'password';
+      }
+      
+      lucide.createIcons();
+    }
+    
+    function generatePassword() {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+      let password = '';
+      for (let i = 0; i < 16; i++) {
+        password += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      
+      const passwordInput = document.getElementById('signupPassword');
+      const confirmInput = document.getElementById('confirmPassword');
+      passwordInput.value = password;
+      confirmInput.value = password;
+      
+      // Show password temporarily
+      passwordInput.type = 'text';
+      confirmInput.type = 'text';
+      
+      alert('Strong password generated! Make sure to save it securely.');
+    }
+    
+    function handleLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      console.log('Login attempt:', email);
+      alert('Login functionality would be implemented here with backend integration');
+    }
+    
+    function handleSignup(event) {
+      event.preventDefault();
+      const email = document.getElementById('signupEmail').value;
+      const password = document.getElementById('signupPassword').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+      
+      console.log('Signup attempt:', email);
+      alert('Signup functionality would be implemented here with backend integration');
+    }
+    
+    function handleSocialLogin(provider) {
+      console.log('Social login with:', provider);
+      alert(`${provider.charAt(0).toUpperCase() + provider.slice(1)} login would be implemented here`);
+    }
+    
+    // Close modal when clicking outside
+    document.getElementById('authModal').addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeAuthModal();
+      }
+    });
+  </script>
+</body>
+</html>
