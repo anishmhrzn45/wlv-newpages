@@ -6,194 +6,165 @@
     <title>About WebLiveView - From Showroom to Screen</title>
     <meta name="description" content="Learn about WebLiveView's mission to bring back the human touch to online shopping with live video consultations.">
     
-    <!-- Favicon -->
-    <link rel="icon" href="../public/pages/webliveview-logo-new.png" type="image/png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="About WebLiveView - From Showroom to Screen">
+    <meta property="og:description" content="Learn about WebLiveView's mission to bring back the human touch to online shopping.">
+    <meta property="og:type" content="website">
     
-    <!-- Preconnect for fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-navy': 'hsl(214, 72%, 14%)',
-                        'brand-navy-dark': 'hsl(214, 47%, 16%)',
-                        'brand-pink': 'hsl(339, 89%, 55%)',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Auth Modal CSS -->
-    <link rel="stylesheet" href="../public/pages/auth-modal.css">
-    
     <style>
-        * {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        /* Custom Design System Variables */
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 0 0% 29%;
+            --card: 0 0% 100%;
+            --card-foreground: 0 0% 29%;
+            --primary: 214 72% 14%;
+            --primary-foreground: 0 0% 100%;
+            --secondary: 339 89% 55%;
+            --secondary-foreground: 0 0% 100%;
+            --muted: 220 13% 96%;
+            --muted-foreground: 0 0% 29%;
+            --accent: 217 56% 72%;
+            --border: 220 13% 91%;
+            --brand-navy: 214 72% 14%;
+            --brand-pink: 339 89% 55%;
+            --brand-light: 220 50% 98%;
         }
         
+        /* Tailwind Config Extension */
         body {
-            margin: 0;
-            padding: 0;
-            background: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
         }
-
-        /* Mobile Menu Styles */
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
+        
+        .text-brand-navy { color: hsl(var(--brand-navy)); }
+        .bg-brand-navy { background-color: hsl(var(--brand-navy)); }
+        .text-secondary { color: hsl(var(--secondary)); }
+        .bg-secondary { background-color: hsl(var(--secondary)); }
+        .text-brand-pink { color: hsl(var(--brand-pink)); }
+        .bg-brand-pink { background-color: hsl(var(--brand-pink)); }
+        .bg-brand-light { background-color: hsl(var(--brand-light)); }
+        .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+        .bg-muted { background-color: hsl(var(--muted)); }
+        .border-secondary { border-color: hsl(var(--secondary)); }
+        .border-brand-navy { border-color: hsl(var(--brand-navy)); }
+        
+        .shadow-soft { box-shadow: 0 4px 20px -8px hsl(var(--brand-navy) / 0.15); }
+        .shadow-medium { box-shadow: 0 8px 30px -12px hsl(var(--brand-navy) / 0.25); }
+        .shadow-large { box-shadow: 0 20px 60px -12px hsl(var(--brand-navy) / 0.35); }
+        
+        .btn-primary {
+            background: hsl(var(--secondary));
+            color: hsl(var(--secondary-foreground));
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            min-width: 200px;
         }
-
-        .mobile-menu-toggle span {
-            width: 24px;
-            height: 2px;
-            background: white;
-            transition: all 0.3s;
+        .btn-primary:hover { opacity: 0.9; }
+        
+        .btn-outline {
+            background: transparent;
+            color: hsl(var(--brand-navy));
+            border: 2px solid hsl(var(--brand-navy));
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            min-width: 200px;
         }
-
+        .btn-outline:hover {
+            background: hsl(var(--brand-navy));
+            color: white;
+        }
+        
+        .nav-link {
+            color: hsl(var(--brand-navy));
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: hsl(var(--brand-pink)); }
+        
+        /* Mobile menu */
         .mobile-menu {
             display: none;
-            position: fixed;
-            top: 80px;
+            position: absolute;
+            top: 100%;
             left: 0;
             right: 0;
             background: white;
+            border-top: 1px solid hsl(var(--border));
             padding: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            z-index: 50;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.75rem;
         }
-
-        .mobile-menu.active {
-            display: flex;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-
+        .mobile-menu.active { display: flex; }
+        
         @media (max-width: 768px) {
-            .nav {
-                display: none !important;
-            }
-            .mobile-menu-toggle {
-                display: flex !important;
-            }
+            .desktop-nav { display: none; }
+            .mobile-menu-btn { display: block; }
         }
+        @media (min-width: 769px) {
+            .mobile-menu-btn { display: none; }
+        }
+        
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
-    <!-- Auth Modal (loaded from separate file) -->
-    <div id="authModal" class="auth-modal">
-        <div class="auth-modal-content">
-            <button class="auth-modal-close" onclick="closeAuthModal()">&times;</button>
-            
-            <div class="auth-tabs">
-                <button class="auth-tab active" data-tab="login">Login</button>
-                <button class="auth-tab" data-tab="signup">Sign Up</button>
-            </div>
 
-            <!-- Login Form -->
-            <div class="auth-form" id="loginForm">
-                <h2>Welcome Back</h2>
-                <form onsubmit="handleLogin(event)">
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Password" required>
-                    <button type="submit" class="auth-submit-btn">Login</button>
-                </form>
-                <div class="auth-divider">or continue with</div>
-                <div class="auth-social-buttons">
-                    <button class="auth-social-btn" onclick="handleSocialLogin('google')">
-                        <i data-lucide="chrome" style="width: 20px; height: 20px;"></i>
-                        Google
-                    </button>
-                </div>
-            </div>
-
-            <!-- Signup Form -->
-            <div class="auth-form" id="signupForm" style="display: none;">
-                <h2>Create Account</h2>
-                <form onsubmit="handleSignup(event)">
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Password" required>
-                    <input type="password" placeholder="Confirm Password" required>
-                    <label style="display: flex; align-items: center; gap: 8px; font-size: 14px;">
-                        <input type="checkbox" required>
-                        I agree to the Terms of Service
-                    </label>
-                    <button type="submit" class="auth-submit-btn">Sign Up</button>
-                </form>
-                <div class="auth-divider">or continue with</div>
-                <div class="auth-social-buttons">
-                    <button class="auth-social-btn" onclick="handleSocialLogin('google')">
-                        <i data-lucide="chrome" style="width: 20px; height: 20px;"></i>
-                        Google
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Header -->
-    <header class="bg-brand-navy py-4 sticky top-0 z-50 border-b-0">
-        <div class="container mx-auto px-6 max-w-7xl">
-            <div class="flex justify-between items-center">
-                <a href="index.html">
-                    <img src="../public/pages/webliveview-logo-white.png" alt="WebLiveView Logo" class="h-12">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full bg-white border-b" style="border-color: hsl(var(--border));">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="../src/assets/webliveview-logo-new.png" alt="WebLiveView" class="h-10 sm:h-12 md:h-14 w-auto">
                 </a>
-                <nav class="nav flex items-center gap-8">
-                    <a href="product.html" class="text-white hover:text-brand-pink transition-colors font-medium">Product</a>
-                    <a href="pricing.html" class="text-white hover:text-brand-pink transition-colors font-medium">Pricing</a>
-                    <a href="about.html" class="text-white hover:text-brand-pink transition-colors font-medium">About Us</a>
-                    <a href="contact.html" class="text-white hover:text-brand-pink transition-colors font-medium">Contact</a>
-                    <button onclick="openAuthModal('login')" class="text-white hover:text-brand-pink transition-colors font-medium">Login</button>
-                    <a href="signup.html" class="bg-brand-pink text-white px-6 py-2.5 rounded-full font-semibold hover:opacity-90 transition-opacity">Start Free Trial</a>
-                </nav>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="product.html" class="nav-link">Product</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="#" onclick="openAuthModal('login'); return false;" class="nav-link">Login</a>
+                    <a href="/signup" class="btn-primary">Start Free Trial</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn md:hidden" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6 text-brand-navy"></i>
                 </button>
             </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="product.html" class="nav-link py-2">Product</a>
+                <a href="pricing.html" class="nav-link py-2">Pricing</a>
+                <a href="about.html" class="nav-link py-2">About Us</a>
+                <a href="#" onclick="openAuthModal('login'); return false;" class="nav-link py-2">Login</a>
+                <a href="/signup" class="btn-primary text-center">Start Free Trial</a>
+            </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-menu">
-            <a href="product.html" class="text-brand-navy hover:text-brand-pink transition-colors font-medium">Product</a>
-            <a href="pricing.html" class="text-brand-navy hover:text-brand-pink transition-colors font-medium">Pricing</a>
-            <a href="about.html" class="text-brand-navy hover:text-brand-pink transition-colors font-medium">About Us</a>
-            <a href="contact.html" class="text-brand-navy hover:text-brand-pink transition-colors font-medium">Contact</a>
-            <button onclick="openAuthModal('login')" class="text-brand-navy hover:text-brand-pink transition-colors font-medium text-left">Login</button>
-            <a href="signup.html" class="bg-brand-pink text-white px-6 py-3 rounded-full font-semibold text-center hover:opacity-90 transition-opacity">Start Free Trial</a>
-        </div>
-    </header>
+    </nav>
 
     <!-- Main Content -->
     <main class="pt-16 sm:pt-20">
@@ -207,21 +178,21 @@
         </section>
 
         <!-- From Showroom to Screen -->
-        <section class="py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <section class="py-8 sm:py-12 lg:py-16 bg-muted/30">
             <div class="container px-4 sm:px-6 mx-auto max-w-4xl">
                 <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-6">
                     From Showroom to Screen
                 </h2>
                 <div class="prose prose-lg max-w-none">
-                    <p class="text-lg text-gray-700 mb-4">
+                    <p class="text-lg text-muted-foreground mb-4">
                         Online shopping is fast — but often impersonal.
                         Shoppers click, scroll, and leave because no one is there to guide them.
                     </p>
-                    <p class="text-lg text-gray-700 mb-4">
+                    <p class="text-lg text-muted-foreground mb-4">
                         Our founder, Barry McKenna, saw this firsthand while working with retailers in Dublin. Again and again, one frustration came up:
                         <span class="block italic mt-2">"We can't bring the showroom experience to the screen."</span>
                     </p>
-                    <p class="text-lg text-gray-700">
+                    <p class="text-lg text-muted-foreground">
                         So Barry built WebLiveView — a platform that blends years of retail and software experience to solve that problem once and for all.
                     </p>
                 </div>
@@ -234,13 +205,13 @@
                 <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-6">
                     Bringing Back the Human Touch
                 </h2>
-                <p class="text-lg text-gray-700 mb-6">
+                <p class="text-lg text-muted-foreground mb-6">
                     Our mission is simple: make online shopping feel as personal as walking into a store.
                 </p>
-                <p class="text-lg text-gray-700 mb-4">
+                <p class="text-lg text-muted-foreground mb-4">
                     With WebLiveView, your sales team can:
                 </p>
-                <ul class="space-y-3 text-lg text-gray-700 ml-6">
+                <ul class="space-y-3 text-lg text-muted-foreground ml-6">
                     <li class="flex items-start">
                         <span class="text-brand-pink mr-3">•</span>
                         <span>Meet customers face-to-face</span>
@@ -262,7 +233,7 @@
         </section>
 
         <!-- What Drives Us -->
-        <section class="py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <section class="py-8 sm:py-12 lg:py-16 bg-muted/30">
             <div class="container px-4 sm:px-6 mx-auto max-w-4xl">
                 <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-6">
                     What Drives Us
@@ -270,19 +241,19 @@
                 <div class="space-y-4">
                     <div>
                         <h3 class="text-xl font-semibold text-brand-navy mb-2">People First</h3>
-                        <p class="text-lg text-gray-700">Real conversations build real trust.</p>
+                        <p class="text-lg text-muted-foreground">Real conversations build real trust.</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-brand-navy mb-2">Confidence Matters</h3>
-                        <p class="text-lg text-gray-700">Seeing live beats guessing every time.</p>
+                        <p class="text-lg text-muted-foreground">Seeing live beats guessing every time.</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-brand-navy mb-2">Innovation with Purpose</h3>
-                        <p class="text-lg text-gray-700">Tools should make selling easier, not harder.</p>
+                        <p class="text-lg text-muted-foreground">Tools should make selling easier, not harder.</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-brand-navy mb-2">Growing Together</h3>
-                        <p class="text-lg text-gray-700">When you win, we win.</p>
+                        <p class="text-lg text-muted-foreground">When you win, we win.</p>
                     </div>
                 </div>
             </div>
@@ -297,48 +268,48 @@
                 <div class="space-y-4">
                     <div>
                         <h3 class="text-xl font-semibold text-brand-navy mb-2">Built by Retailers, for Retailers</h3>
-                        <p class="text-lg text-gray-700">We've been on the shop floor. We know the pressure.</p>
+                        <p class="text-lg text-muted-foreground">We've been on the shop floor. We know the pressure.</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-brand-navy mb-2">Backed by Experience</h3>
-                        <p class="text-lg text-gray-700">7 years of development, trusted by eCommerce brands.</p>
+                        <p class="text-lg text-muted-foreground">7 years of development, trusted by eCommerce brands.</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-brand-navy mb-2">Solving Real Problems</h3>
-                        <p class="text-lg text-gray-700">From abandoned carts to hesitant buyers, we fix the gaps in online selling.</p>
+                        <p class="text-lg text-muted-foreground">From abandoned carts to hesitant buyers, we fix the gaps in online selling.</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold text-brand-navy mb-2">Proven Across Sectors</h3>
-                        <p class="text-lg text-gray-700">Used in furniture, electrical, pharmacy, and motor retail.</p>
+                        <p class="text-lg text-muted-foreground">Used in furniture, electrical, pharmacy, and motor retail.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- What's Next -->
-        <section class="py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <section class="py-8 sm:py-12 lg:py-16 bg-muted/30">
             <div class="container px-4 sm:px-6 mx-auto max-w-4xl">
                 <h2 class="text-3xl sm:text-4xl font-bold text-brand-navy mb-6">
                     What's Next
                 </h2>
-                <p class="text-lg text-gray-700 mb-4">
+                <p class="text-lg text-muted-foreground mb-4">
                     We're just getting started.
                 </p>
-                <p class="text-lg text-gray-700 mb-4">
+                <p class="text-lg text-muted-foreground mb-4">
                     Our roadmap includes smarter tools, deeper analytics, and new ways for sales teams to connect — so every online interaction feels human again.
                 </p>
-                <p class="text-lg text-gray-700 mb-4">
+                <p class="text-lg text-muted-foreground mb-4">
                     Because shopping shouldn't feel like guesswork.
                     <span class="block mt-2 font-semibold">It should feel personal.</span>
                 </p>
-                <p class="text-lg text-gray-700 italic mt-6">
+                <p class="text-lg text-muted-foreground italic mt-6">
                     — The WebLiveView Team
                 </p>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-brand-navy to-brand-navy-dark">
+        <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-brand-navy to-brand-navy" style="background: linear-gradient(135deg, hsl(var(--brand-navy)), hsl(214, 47%, 16%));">
             <div class="container px-4 sm:px-6 mx-auto max-w-4xl text-center">
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
                     Your Virtual Showroom. Ready in Minutes.
@@ -347,10 +318,10 @@
                     Start converting more visitors into buyers today.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="signup.html" class="bg-brand-pink text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity inline-block">
+                    <a href="/signup" class="btn-primary text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6">
                         Start Free Trial
                     </a>
-                    <a href="https://calendly.com/info-7ip2/webliveview-demo" target="_blank" rel="noopener noreferrer" class="bg-white text-brand-navy px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors inline-block">
+                    <a href="https://calendly.com/info-7ip2/webliveview-demo" target="_blank" rel="noopener noreferrer" class="btn-outline border-white text-white hover:bg-white hover:text-brand-navy text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6">
                         Book Demo
                     </a>
                 </div>
@@ -361,20 +332,21 @@
     <!-- Footer -->
     <footer class="bg-brand-navy text-white py-16">
         <div class="container mx-auto px-6 max-w-7xl">
-            <!-- CTA Section -->
+            <!-- Top CTA Section -->
             <div class="text-center mb-12 pb-12 border-b border-white/10">
                 <h2 class="text-white text-3xl font-bold mb-4">Ready to Get Started?</h2>
                 <p class="text-white/80 text-lg mb-8">Start your free trial or book a personalized demo.</p>
                 <div class="flex flex-wrap gap-4 justify-center">
-                    <a href="signup.html" class="bg-brand-pink text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity inline-block min-w-[160px] text-center">Start Free Trial</a>
-                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="bg-white text-brand-navy px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block min-w-[160px] text-center">Book Demo</a>
+                    <a href="/signup" class="btn-primary">Start Free Trial</a>
+                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" class="bg-white text-brand-navy px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-content-center min-w-[160px]">Book Demo</a>
                 </div>
             </div>
 
+            <!-- Footer Links Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <!-- Company Info -->
                 <div class="lg:col-span-2">
-                    <img src="../public/pages/webliveview-logo-white.png" alt="WebLiveView" class="h-10 mb-6">
+                    <img src="../src/assets/webliveview-logo-white.png" alt="WebLiveView" class="h-10 mb-6">
                     <div class="space-y-4 text-white/80">
                         <div class="flex items-start gap-3">
                             <i data-lucide="map-pin" class="w-5 h-5 mt-1 flex-shrink-0"></i>
@@ -417,7 +389,7 @@
                     <ul class="space-y-3 text-white/80">
                         <li><a href="product.html" class="hover:text-brand-pink transition-colors">Features</a></li>
                         <li><a href="pricing.html" class="hover:text-brand-pink transition-colors">Pricing</a></li>
-                        <li><a href="use-cases.html" class="hover:text-brand-pink transition-colors">Use Cases</a></li>
+                        <li><a href="/use-cases" class="hover:text-brand-pink transition-colors">Use Cases</a></li>
                     </ul>
                 </div>
 
@@ -426,9 +398,9 @@
                     <h3 class="font-semibold text-lg mb-4">Company</h3>
                     <ul class="space-y-3 text-white/80">
                         <li><a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a></li>
-                        <li><a href="contact.html" class="hover:text-brand-pink transition-colors">Contact</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-brand-pink transition-colors">Terms of Service</a></li>
+                        <li><a href="/contact" class="hover:text-brand-pink transition-colors">Contact</a></li>
+                        <li><a href="/privacy-policy" class="hover:text-brand-pink transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service" class="hover:text-brand-pink transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
@@ -440,14 +412,37 @@
         </div>
     </footer>
 
-    <!-- Auth Modal Script -->
-    <script src="../public/pages/auth-modal.js"></script>
-    
-    <!-- Mobile Menu Script -->
-    <script src="../public/pages/mobile-menu.js"></script>
+    <!-- Auth Modal (Simple Implementation) -->
+    <div id="authModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50" onclick="closeAuthModal(event)">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4" onclick="event.stopPropagation()">
+            <h2 class="text-2xl font-bold text-brand-navy mb-4">Login</h2>
+            <p class="text-muted-foreground mb-4">Please visit the main site to login.</p>
+            <button onclick="closeAuthModal()" class="btn-primary w-full">Close</button>
+        </div>
+    </div>
 
-    <!-- Initialize Lucide Icons -->
     <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Auth modal
+        function openAuthModal(tab) {
+            const modal = document.getElementById('authModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeAuthModal(event) {
+            if (event && event.target.id !== 'authModal') return;
+            const modal = document.getElementById('authModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Initialize Lucide icons
         lucide.createIcons();
     </script>
 </body>
