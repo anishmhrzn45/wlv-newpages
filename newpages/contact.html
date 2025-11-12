@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - WebLiveView</title>
+    <meta name="description" content="Contact WebLiveView today and start converting more customers with live video shopping. Get in touch with our team for support or inquiries.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Us - WebLiveView">
+    <meta property="og:description" content="Contact WebLiveView today and start converting more customers with live video shopping.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://webliveview.com/contact">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Custom Design System Variables */
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 0 0% 29%;
+            --card: 0 0% 100%;
+            --card-foreground: 0 0% 29%;
+            --primary: 214 72% 14%;
+            --primary-foreground: 0 0% 100%;
+            --secondary: 339 89% 55%;
+            --secondary-foreground: 0 0% 100%;
+            --muted: 220 13% 96%;
+            --muted-foreground: 0 0% 29%;
+            --accent: 217 56% 72%;
+            --border: 220 13% 91%;
+            --brand-navy: 214 72% 14%;
+            --brand-pink: 339 89% 55%;
+            --brand-light: 220 50% 98%;
+        }
+        
+        /* Tailwind Config Extension */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+        
+        .text-brand-navy { color: hsl(var(--brand-navy)); }
+        .bg-brand-navy { background-color: hsl(var(--brand-navy)); }
+        .text-secondary { color: hsl(var(--secondary)); }
+        .bg-secondary { background-color: hsl(var(--secondary)); }
+        .text-brand-pink { color: hsl(var(--brand-pink)); }
+        .bg-brand-pink { background-color: hsl(var(--brand-pink)); }
+        .bg-brand-light { background-color: hsl(var(--brand-light)); }
+        .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+        .bg-muted { background-color: hsl(var(--muted)); }
+        .border-secondary { border-color: hsl(var(--secondary)); }
+        .border-brand-navy { border-color: hsl(var(--brand-navy)); }
+        
+        .shadow-soft { box-shadow: 0 4px 20px -8px hsl(var(--brand-navy) / 0.15); }
+        .shadow-medium { box-shadow: 0 8px 30px -12px hsl(var(--brand-navy) / 0.25); }
+        .shadow-large { box-shadow: 0 20px 60px -12px hsl(var(--brand-navy) / 0.35); }
+        
+        .btn-primary {
+            background: hsl(var(--secondary));
+            color: hsl(var(--secondary-foreground));
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            min-width: 200px;
+        }
+        .btn-primary:hover { opacity: 0.9; }
+        
+        .btn-outline {
+            background: transparent;
+            color: hsl(var(--brand-navy));
+            border: 2px solid hsl(var(--brand-navy));
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            min-width: 200px;
+        }
+        .btn-outline:hover {
+            background: hsl(var(--brand-navy));
+            color: white;
+        }
+        
+        .nav-link {
+            color: hsl(var(--brand-navy));
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: hsl(var(--brand-pink)); }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid hsl(var(--border));
+            padding: 1rem;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .mobile-menu.active { display: flex; }
+        
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+        @media (min-width: 769px) {
+            .mobile-menu-btn { display: none; }
+        }
+        
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            border: 1px solid hsl(var(--border));
+        }
+        
+        .input-field {
+            width: 100%;
+            height: 3rem;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: hsl(var(--secondary));
+            box-shadow: 0 0 0 2px hsl(var(--secondary) / 0.1);
+        }
+        
+        .textarea-field {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            resize: none;
+        }
+        .textarea-field:focus {
+            outline: none;
+            border-color: hsl(var(--secondary));
+            box-shadow: 0 0 0 2px hsl(var(--secondary) / 0.1);
+        }
+        
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full bg-white border-b" style="border-color: hsl(var(--border));">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="../src/assets/webliveview-logo-new.png" alt="WebLiveView" class="h-10 sm:h-12 md:h-14 w-auto">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="product.html" class="nav-link">Product</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- Desktop Auth Buttons -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button class="btn-outline" style="border-color: #b4b7f0; color: #b4b7f0;" onmouseover="this.style.backgroundColor='#b4b7f0'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#b4b7f0'" onclick="openAuthModal('login')">Login</button>
+                    <a href="#signup" class="btn-primary" onclick="event.preventDefault(); openAuthModal('signup')">Start Free Trial</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn md:hidden p-2" onclick="toggleMobileMenu()">
+                    <i id="menu-icon" data-lucide="menu" width="24" height="24"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu">
+                <a href="product.html" class="nav-link py-2">Product</a>
+                <a href="pricing.html" class="nav-link py-2">Pricing</a>
+                <a href="about.html" class="nav-link py-2">About Us</a>
+                <a href="contact.html" class="nav-link py-2">Contact</a>
+                <div class="pt-3 space-y-3">
+                    <button class="btn-outline w-full" style="border-color: #b4b7f0; color: #b4b7f0;" onclick="openAuthModal('login')">Login</button>
+                    <a href="#signup" class="btn-primary w-full" onclick="event.preventDefault(); openAuthModal('signup')">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16 sm:pt-20">
+        <!-- Hero Section -->
+        <section class="py-16 sm:py-20 md:py-24 lg:py-28" style="background: linear-gradient(to bottom right, hsl(var(--primary)), hsl(var(--primary) / 0.9));">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto text-center space-y-6">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold" style="color: white;">
+                        Your Virtual Showroom. <span class="text-secondary">Ready in Minutes.</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl max-w-3xl mx-auto" style="color: rgba(255, 255, 255, 0.9);">
+                        Start converting more visitors into buyers today with live video shopping that works.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center items-center pt-2">
+                        <a href="#signup" class="btn-primary" onclick="event.preventDefault(); openAuthModal('signup')" style="height: 3rem;">Start Free Trial</a>
+                        <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-outline" style="height: 3rem; background: hsl(var(--primary)); border-color: white; color: white;" onmouseover="this.style.backgroundColor='white'; this.style.color='hsl(var(--primary))'" onmouseout="this.style.backgroundColor='hsl(var(--primary))'; this.style.color='white'">Book Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 sm:py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12 sm:mb-16">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy mb-4">
+                            Ready to Get Started?
+                        </h2>
+                        <p class="text-base sm:text-lg text-muted-foreground">
+                            Contact us today and start converting more customers with live video shopping.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+                        <!-- Contact Form -->
+                        <div class="card shadow-soft">
+                            <div class="p-6">
+                                <h3 class="text-xl sm:text-2xl text-brand-navy font-semibold mb-6">Send us a message</h3>
+                                <form class="space-y-6">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="space-y-2">
+                                            <label for="firstName" class="block text-sm font-medium text-brand-navy">First Name</label>
+                                            <input type="text" id="firstName" placeholder="John" class="input-field">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label for="lastName" class="block text-sm font-medium text-brand-navy">Last Name</label>
+                                            <input type="text" id="lastName" placeholder="Smith" class="input-field">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="space-y-2">
+                                        <label for="email" class="block text-sm font-medium text-brand-navy">Email</label>
+                                        <input type="email" id="email" placeholder="john@company.com" class="input-field">
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label for="company" class="block text-sm font-medium text-brand-navy">Company</label>
+                                        <input type="text" id="company" placeholder="Your Company Name" class="input-field">
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label for="message" class="block text-sm font-medium text-brand-navy">Message</label>
+                                        <textarea id="message" placeholder="Tell us about your business and how we can help..." rows="5" class="textarea-field"></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn-primary w-full" style="height: 3rem;">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Contact Info & CTA -->
+                        <div class="space-y-6 sm:space-y-8">
+                            <!-- Contact Details -->
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-semibold text-brand-navy mb-4 sm:mb-6">Get Started Today</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-center space-x-3">
+                                        <i data-lucide="mail" class="flex-shrink-0" style="color: hsl(var(--secondary)); width: 20px; height: 20px;"></i>
+                                        <span style="color: hsl(var(--foreground));" class="break-all">info@webliveview.com</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i data-lucide="phone" class="flex-shrink-0" style="color: hsl(var(--secondary)); width: 20px; height: 20px;"></i>
+                                        <span style="color: hsl(var(--foreground));">+353 1 4412618</span>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <i data-lucide="map-pin" class="flex-shrink-0 mt-1" style="color: hsl(var(--secondary)); width: 20px; height: 20px;"></i>
+                                        <div style="color: hsl(var(--foreground));">
+                                            <div>Webliveview Ltd</div>
+                                            <div>13 Upper Baggot Street</div>
+                                            <div>2nd Floor</div>
+                                            <div>Dublin 4, D04 W7K5</div>
+                                            <div>Ireland</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTA Cards -->
+                            <div class="space-y-4">
+                                <div class="card p-4 sm:p-6 shadow-soft" style="background: linear-gradient(to bottom right, hsl(var(--secondary) / 0.1), transparent); border-color: hsl(var(--secondary) / 0.2);">
+                                    <h4 class="font-semibold text-brand-navy mb-2">Start Your Free Trial</h4>
+                                    <p class="text-sm text-muted-foreground mb-4">
+                                        No credit card required. Get started in less than 5 minutes.
+                                    </p>
+                                    <a href="#signup" class="btn-primary w-full" style="height: 3rem;" onclick="event.preventDefault(); openAuthModal('signup')">
+                                        Start Free Trial
+                                    </a>
+                                </div>
+
+                                <div class="card p-4 sm:p-6 shadow-soft" style="background: linear-gradient(to bottom right, hsl(var(--primary) / 0.1), transparent); border-color: hsl(var(--primary) / 0.2);">
+                                    <h4 class="font-semibold text-brand-navy mb-2">Book a Personal Demo</h4>
+                                    <p class="text-sm text-muted-foreground mb-4">
+                                        See WebLiveView in action with a personalized demonstration.
+                                    </p>
+                                    <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-primary w-full" style="height: 3rem; background: hsl(var(--primary)); border-color: hsl(var(--primary));">
+                                        Book Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <img src="../src/assets/webliveview-logo-white.png" alt="WebLiveView" class="h-10 mb-4">
+                    <p class="text-sm opacity-90">Transform your website into a live showroom and connect with customers in real-time.</p>
+                </div>
+
+                <!-- Product Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="product.html" class="opacity-90 hover:opacity-100 hover:text-secondary transition-colors">Features</a></li>
+                        <li><a href="pricing.html" class="opacity-90 hover:opacity-100 hover:text-secondary transition-colors">Pricing</a></li>
+                        <li><a href="product.html#how-it-works" class="opacity-90 hover:opacity-100 hover:text-secondary transition-colors">How It Works</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="opacity-90 hover:opacity-100 hover:text-secondary transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="opacity-90 hover:opacity-100 hover:text-secondary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-secondary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="opacity-90 hover:opacity-100 hover:text-secondary transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-white/10 text-center text-sm opacity-75">
+                <p>&copy; 2024 WebLiveView. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6 relative">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i data-lucide="x" width="24" height="24"></i>
+            </button>
+            
+            <div id="authContent">
+                <!-- Login Form -->
+                <div id="loginForm">
+                    <h2 class="text-2xl font-bold text-brand-navy mb-6">Welcome Back</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-brand-navy mb-1">Email</label>
+                            <input type="email" class="input-field" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brand-navy mb-1">Password</label>
+                            <input type="password" class="input-field" placeholder="••••••••">
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Sign In</button>
+                        <p class="text-center text-sm text-muted-foreground">
+                            Don't have an account? 
+                            <button type="button" onclick="switchToSignup()" class="text-secondary font-medium hover:underline">Sign up</button>
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Signup Form -->
+                <div id="signupForm" style="display: none;">
+                    <h2 class="text-2xl font-bold text-brand-navy mb-6">Start Your Free Trial</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-brand-navy mb-1">Full Name</label>
+                            <input type="text" class="input-field" placeholder="John Smith">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brand-navy mb-1">Email</label>
+                            <input type="email" class="input-field" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-brand-navy mb-1">Password</label>
+                            <input type="password" class="input-field" placeholder="••••••••">
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Create Account</button>
+                        <p class="text-center text-sm text-muted-foreground">
+                            Already have an account? 
+                            <button type="button" onclick="switchToLogin()" class="text-secondary font-medium hover:underline">Sign in</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            mobileMenu.classList.toggle('active');
+            
+            if (mobileMenu.classList.contains('active')) {
+                menuIcon.setAttribute('data-lucide', 'x');
+            } else {
+                menuIcon.setAttribute('data-lucide', 'menu');
+            }
+            
+            lucide.createIcons();
+        }
+
+        // Auth Modal Functions
+        function openAuthModal(mode) {
+            const modal = document.getElementById('authModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            if (mode === 'signup') {
+                switchToSignup();
+            } else {
+                switchToLogin();
+            }
+            
+            lucide.createIcons();
+        }
+
+        function closeAuthModal() {
+            const modal = document.getElementById('authModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function switchToLogin() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('signupForm').style.display = 'none';
+        }
+
+        function switchToSignup() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+        }
+
+        // Close modal on outside click
+        document.getElementById('authModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAuthModal();
+            }
+        });
+
+        // Contact Form Submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const message = document.getElementById('message').value;
+            
+            // Basic validation
+            if (!firstName || !lastName || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Here you would typically send the form data to your backend
+            console.log('Form submitted:', { firstName, lastName, email, company, message });
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
