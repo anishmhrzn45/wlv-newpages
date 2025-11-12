@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - WebLiveView</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        /* Design System */
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 0 0% 29%;
+            --card: 0 0% 100%;
+            --card-foreground: 0 0% 29%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 0 0% 29%;
+            --primary: 214 72% 14%;
+            --primary-foreground: 0 0% 100%;
+            --secondary: 339 89% 55%;
+            --secondary-foreground: 0 0% 100%;
+            --muted: 220 13% 96%;
+            --muted-foreground: 0 0% 29%;
+            --accent: 217 56% 72%;
+            --accent-foreground: 0 0% 100%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 0 0% 100%;
+            --border: 220 13% 91%;
+            --input: 220 13% 91%;
+            --ring: 214 72% 14%;
+            --brand-navy: 214 72% 14%;
+            --brand-navy-secondary: 214 47% 16%;
+            --brand-pink: 339 89% 55%;
+            --brand-light: 220 50% 98%;
+            --brand-gray: 0 0% 29%;
+            --brand-accent-blue: 217 56% 72%;
+            --gradient-primary: linear-gradient(135deg, hsl(var(--brand-navy)), hsl(var(--brand-navy-secondary)));
+            --gradient-pink: linear-gradient(135deg, hsl(var(--brand-pink)), hsl(339 89% 65%));
+            --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--brand-light)));
+            --gradient-accent: linear-gradient(135deg, hsl(var(--brand-accent-blue)), hsl(217 56% 82%));
+            --shadow-soft: 0 4px 20px -8px hsl(var(--brand-navy) / 0.15);
+            --shadow-medium: 0 8px 30px -12px hsl(var(--brand-navy) / 0.25);
+            --shadow-large: 0 20px 60px -12px hsl(var(--brand-navy) / 0.35);
+            --radius: 0.5rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--brand-light)), hsl(var(--background)));
+            color: hsl(var(--foreground));
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .text-brand-navy { color: hsl(var(--brand-navy)); }
+        .text-brand-pink { color: hsl(var(--brand-pink)); }
+        .text-brand-gray { color: hsl(var(--brand-gray)); }
+        .text-muted-fg { color: hsl(var(--muted-foreground)); }
+        .bg-brand-light { background-color: hsl(var(--brand-light)); }
+        .bg-brand-navy { background-color: hsl(var(--brand-navy)); }
+        .bg-muted { background-color: hsl(var(--muted)); }
+        .bg-card { background-color: hsl(var(--card)); }
+        .border-accent { border-color: hsl(var(--accent)); }
+        .border-border { border-color: hsl(var(--border)); }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .container { padding: 0 1.5rem; }
+        }
+        
+        @media (min-width: 1024px) {
+            .container { padding: 0 2rem; }
+        }
+        
+        .btn-primary {
+            background: hsl(var(--secondary));
+            color: hsl(var(--secondary-foreground));
+            border-radius: 12px;
+            padding: 12px 18px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            width: 100%;
+        }
+        
+        .btn-primary:hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn-outline {
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+            border: 2px solid hsl(var(--border));
+            border-radius: 12px;
+            padding: 10px 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            width: 100%;
+        }
+        
+        .btn-outline:hover {
+            background: hsl(var(--muted));
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid hsl(var(--border));
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.2s ease-in-out;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: hsl(var(--brand-navy));
+            box-shadow: 0 0 0 3px hsl(var(--brand-navy) / 0.1);
+        }
+        
+        .shadow-large {
+            box-shadow: var(--shadow-large);
+        }
+        
+        .shadow-medium {
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+            z-index: 10;
+        }
+        
+        .back-link:hover {
+            color: hsl(var(--foreground));
+        }
+        
+        .checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.625rem;
+        }
+        
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-wrapper label {
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+            cursor: pointer;
+            line-height: 1.5;
+            flex: 1;
+        }
+        
+        .checkbox-wrapper label a {
+            color: hsl(var(--secondary));
+            text-decoration: none;
+        }
+        
+        .checkbox-wrapper label a:hover {
+            text-decoration: underline;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: hsl(var(--muted-foreground));
+            transition: color 0.2s;
+            padding: 4px;
+        }
+        
+        .password-toggle:hover {
+            color: hsl(var(--foreground));
+        }
+        
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .swiper-pagination-bullet {
+            background: hsl(var(--brand-navy));
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: hsl(var(--brand-pink));
+        }
+        
+        /* Auth Modal Styles */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .auth-modal.active {
+            display: flex;
+        }
+        
+        .auth-modal-content {
+            background: hsl(var(--card));
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 450px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-large);
+        }
+        
+        .auth-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid hsl(var(--border));
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 0.75rem;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: hsl(var(--muted-foreground));
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .auth-tab.active {
+            color: hsl(var(--brand-navy));
+            border-bottom-color: hsl(var(--brand-pink));
+        }
+        
+        .auth-tab-content {
+            display: none;
+        }
+        
+        .auth-tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Link -->
+    <a href="/" class="back-link">
+        ← Back to Home
+    </a>
+
+    <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div style="display: grid; gap: 2rem; align-items: center; max-width: 1280px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center;" id="signup-grid">
+                
+                <!-- Left Side - Marketing Content -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%;">
+                    <div style="text-align: center; width: 100%;" id="marketing-header">
+                        <h1 style="color: hsl(var(--primary)); font-size: 1.5rem; font-weight: 800; line-height: 1.2; word-wrap: break-word;">
+                            Increase your sales using our video shopping software
+                        </h1>
+                        <p style="color: hsl(var(--muted-foreground)); font-size: 1rem; margin-top: 0.75rem; word-wrap: break-word;">
+                            Try it today at <span style="color: hsl(var(--secondary)); font-weight: 500;">no cost for the first 14 days</span>.
+                        </p>
+                    </div>
+
+                    <!-- Why Sign Up Section -->
+                    <div style="display: flex; flex-direction: column; gap: 1rem; padding-top: 0.5rem; width: 100%;">
+                        <h2 style="font-size: 1.25rem; font-weight: 700; color: hsl(var(--primary)); text-align: center;" id="why-signup-title">
+                            Why sign up for WebLiveView?
+                        </h2>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;">
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; text-align: left; width: 100%;">
+                                <div style="flex-shrink: 0; width: 1.25rem; height: 1.25rem; display: flex; align-items: center; justify-content: center; margin-top: 0.125rem;">
+                                    <i data-lucide="check" style="width: 1rem; height: 1rem; color: #16a34a;"></i>
+                                </div>
+                                <span style="color: hsl(var(--foreground)); font-size: 0.875rem; word-wrap: break-word; flex: 1;">Talk to customers face-to-face with crystal-clear video</span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; text-align: left; width: 100%;">
+                                <div style="flex-shrink: 0; width: 1.25rem; height: 1.25rem; display: flex; align-items: center; justify-content: center; margin-top: 0.125rem;">
+                                    <i data-lucide="check" style="width: 1rem; height: 1rem; color: #16a34a;"></i>
+                                </div>
+                                <span style="color: hsl(var(--foreground)); font-size: 0.875rem; word-wrap: break-word; flex: 1;">Add live shopping to your site in minutes — no code needed</span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; text-align: left; width: 100%;">
+                                <div style="flex-shrink: 0; width: 1.25rem; height: 1.25rem; display: flex; align-items: center; justify-content: center; margin-top: 0.125rem;">
+                                    <i data-lucide="check" style="width: 1rem; height: 1rem; color: #16a34a;"></i>
+                                </div>
+                                <span style="color: hsl(var(--foreground)); font-size: 0.875rem; word-wrap: break-word; flex: 1;">Let customers book sales calls right from your page</span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; text-align: left; width: 100%;">
+                                <div style="flex-shrink: 0; width: 1.25rem; height: 1.25rem; display: flex; align-items: center; justify-content: center; margin-top: 0.125rem;">
+                                    <i data-lucide="check" style="width: 1rem; height: 1rem; color: #16a34a;"></i>
+                                </div>
+                                <span style="color: hsl(var(--foreground)); font-size: 0.875rem; word-wrap: break-word; flex: 1;">Instantly route chats to the right brand rep</span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; text-align: left; width: 100%;">
+                                <div style="flex-shrink: 0; width: 1.25rem; height: 1.25rem; display: flex; align-items: center; justify-content: center; margin-top: 0.125rem;">
+                                    <i data-lucide="check" style="width: 1rem; height: 1rem; color: #16a34a;"></i>
+                                </div>
+                                <span style="color: hsl(var(--foreground)); font-size: 0.875rem; word-wrap: break-word; flex: 1;">Save time with smart replies — video, images, and more</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Preview Carousel -->
+                    <div style="display: block; padding-top: 1.5rem; width: 100%;">
+                        <div style="width: 100%; max-width: 600px; height: 220px; margin: 0 auto;" id="carousel-wrapper">
+                            <div class="swiper" style="height: 100%; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-medium);">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center; background-color: hsl(var(--muted));">
+                                        <img src="/public/pages/electronics-demo.png" alt="Electronics Preview" style="height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center; background-color: hsl(var(--brand-light));">
+                                        <img src="/public/pages/furniture-demo.png" alt="Furniture Preview" style="height: 100%; object-fit: contain;" />
+                                    </div>
+                                    <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center; background-color: hsl(var(--background));">
+                                        <img src="/public/pages/kitchen-demo.png" alt="Kitchen Preview" style="height: 100%; object-fit: contain;" />
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem; text-align: center;">
+                            <p style="color: hsl(var(--foreground)); font-size: 0.875rem;">
+                                Complete few steps: specify your business details, customize your widget and add your teammates
+                            </p>
+                            <p style="font-size: 0.75rem; color: hsl(var(--muted-foreground)); font-weight: 500; margin-top: 0.5rem;">
+                                No credit card required for free trial period
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Sign Up Form -->
+                <div style="width: 100%; max-width: 28rem; margin: 0 auto;">
+                    <div class="bg-card shadow-large" style="border-radius: 16px; padding: 1.5rem;">
+                        <div style="margin-bottom: 1.25rem; text-align: center;">
+                            <h2 style="font-size: 1.5rem; font-weight: 700; color: hsl(var(--primary));">Start your free trial</h2>
+                            <p style="font-size: 0.875rem; color: hsl(var(--muted-foreground)); margin-top: 0.5rem;">
+                                Already have an account?
+                                <button onclick="openAuthModal('login')" style="color: hsl(var(--secondary)); font-weight: 500; cursor: pointer; background: none; border: none; text-decoration: none;">
+                                    Login
+                                </button>
+                            </p>
+                        </div>
+
+                        <!-- Manager Tip -->
+                        <div class="bg-muted border-accent" style="padding: 0.75rem 1rem; border: 1px solid; border-radius: 12px; font-size: 0.875rem; color: hsl(var(--foreground)); box-shadow: var(--shadow-soft); margin-bottom: 1.25rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                <span style="color: hsl(var(--accent)); font-size: 1rem;">💡</span>
+                                <p>
+                                    <span style="font-weight: 600; color: hsl(var(--primary));">Manager Tip:</span>
+                                    Get started in just 5 minutes with our 5-step setup. You can update your info anytime in account settings.
+                                </p>
+                            </div>
+                        </div>
+
+                        <form id="signupForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                                <input type="text" id="firstName" placeholder="First Name" required class="input-field" />
+                                <input type="text" id="lastName" placeholder="Last Name" required class="input-field" />
+                            </div>
+
+                            <input type="email" id="email" placeholder="Email" required class="input-field" />
+
+                            <div style="position: relative;">
+                                <input type="password" id="password" placeholder="Password" required class="input-field" style="padding-right: 2.5rem;" />
+                                <button type="button" class="password-toggle" onclick="togglePassword('password', 'passwordToggle')">
+                                    <i data-lucide="eye" id="passwordToggle" style="width: 1rem; height: 1rem;"></i>
+                                </button>
+                            </div>
+
+                            <div style="position: relative;">
+                                <input type="password" id="confirmPassword" placeholder="Confirm Password" required class="input-field" style="padding-right: 2.5rem;" />
+                                <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword', 'confirmPasswordToggle')">
+                                    <i data-lucide="eye" id="confirmPasswordToggle" style="width: 1rem; height: 1rem;"></i>
+                                </button>
+                            </div>
+
+                            <button type="button" class="btn-outline" onclick="generatePassword()">
+                                Generate Strong Password
+                            </button>
+
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="terms" required />
+                                <label for="terms">
+                                    I accept the
+                                    <a href="/terms-of-service">Terms & Conditions</a>
+                                    and
+                                    <a href="/privacy-policy">Privacy Policy</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="padding: 1.5rem 1rem; font-size: 1.125rem; font-weight: 600; box-shadow: var(--shadow-medium);">
+                                Let's Go!
+                            </button>
+
+                            <div style="position: relative; margin: 0.5rem 0;">
+                                <div style="position: absolute; inset: 0; display: flex; align-items: center;">
+                                    <span style="width: 100%; border-top: 1px solid hsl(var(--border));"></span>
+                                </div>
+                                <div style="position: relative; display: flex; justify-content: center; font-size: 0.75rem; text-transform: uppercase;">
+                                    <span style="background: hsl(var(--background)); padding: 0 0.5rem; color: hsl(var(--muted-foreground));">or sign up with</span>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+                                <button type="button" class="btn-outline" onclick="socialLogin('google')">
+                                    <svg style="width: 1.25rem; height: 1.25rem;" viewBox="0 0 24 24">
+                                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                                    </svg>
+                                </button>
+
+                                <button type="button" class="btn-outline" onclick="socialLogin('linkedin')">
+                                    <svg style="width: 1.25rem; height: 1.25rem;" fill="#0A66C2" viewBox="0 0 24 24">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg>
+                                </button>
+
+                                <button type="button" class="btn-outline" onclick="socialLogin('facebook')">
+                                    <svg style="width: 1.25rem; height: 1.25rem;" fill="#1877F2" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-modal-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2 style="font-size: 1.5rem; font-weight: 700; color: hsl(var(--primary));">Welcome Back</h2>
+                <button onclick="closeAuthModal()" style="background: none; border: none; cursor: pointer; padding: 0.25rem;">
+                    <i data-lucide="x" style="width: 1.5rem; height: 1.5rem; color: hsl(var(--muted-foreground));"></i>
+                </button>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchAuthTab('login')">Login</button>
+                <button class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginTab" class="auth-tab-content active">
+                <form id="loginForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <input type="email" placeholder="Email" required class="input-field" />
+                    <div style="position: relative;">
+                        <input type="password" id="loginPassword" placeholder="Password" required class="input-field" style="padding-right: 2.5rem;" />
+                        <button type="button" class="password-toggle" onclick="togglePassword('loginPassword', 'loginPasswordToggle')">
+                            <i data-lucide="eye" id="loginPasswordToggle" style="width: 1rem; height: 1rem;"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+            </div>
+
+            <!-- Signup Form in Modal -->
+            <div id="signupTab" class="auth-tab-content">
+                <form id="modalSignupForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <input type="email" placeholder="Email" required class="input-field" />
+                    <div style="position: relative;">
+                        <input type="password" id="modalPassword" placeholder="Password" required class="input-field" style="padding-right: 2.5rem;" />
+                        <button type="button" class="password-toggle" onclick="togglePassword('modalPassword', 'modalPasswordToggle')">
+                            <i data-lucide="eye" id="modalPasswordToggle" style="width: 1rem; height: 1rem;"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper', {
+            modules: [window.Swiper.Autoplay, window.Swiper.Pagination],
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // Responsive layout
+        function updateLayout() {
+            const grid = document.getElementById('signup-grid');
+            const header = document.getElementById('marketing-header');
+            const title = document.getElementById('why-signup-title');
+            const carouselWrapper = document.getElementById('carousel-wrapper');
+            
+            if (window.innerWidth >= 1024) {
+                grid.style.gridTemplateColumns = '1fr 1fr';
+                grid.style.gap = '3rem';
+                header.style.textAlign = 'left';
+                title.style.textAlign = 'left';
+                header.querySelector('h1').style.fontSize = '2.5rem';
+                carouselWrapper.style.height = '254px';
+            } else if (window.innerWidth >= 768) {
+                grid.style.gridTemplateColumns = '1fr';
+                grid.style.gap = '2rem';
+                header.style.textAlign = 'center';
+                title.style.textAlign = 'center';
+                header.querySelector('h1').style.fontSize = '2rem';
+                carouselWrapper.style.height = '240px';
+            } else {
+                grid.style.gridTemplateColumns = '1fr';
+                grid.style.gap = '1.5rem';
+                header.style.textAlign = 'center';
+                title.style.textAlign = 'center';
+                header.querySelector('h1').style.fontSize = '1.5rem';
+                carouselWrapper.style.height = '220px';
+            }
+        }
+
+        window.addEventListener('resize', updateLayout);
+        updateLayout();
+
+        // Password visibility toggle
+        function togglePassword(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.outerHTML = '<i data-lucide="eye-off" id="' + iconId + '" style="width: 1rem; height: 1rem;"></i>';
+            } else {
+                input.type = 'password';
+                icon.outerHTML = '<i data-lucide="eye" id="' + iconId + '" style="width: 1rem; height: 1rem;"></i>';
+            }
+            lucide.createIcons();
+        }
+
+        // Generate strong password
+        function generatePassword() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+            let pwd = '';
+            for (let i = 0; i < 16; i++) {
+                pwd += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('password').value = pwd;
+            document.getElementById('confirmPassword').value = pwd;
+            document.getElementById('password').type = 'text';
+            document.getElementById('confirmPassword').type = 'text';
+            
+            // Update icons
+            document.getElementById('passwordToggle').outerHTML = '<i data-lucide="eye-off" id="passwordToggle" style="width: 1rem; height: 1rem;"></i>';
+            document.getElementById('confirmPasswordToggle').outerHTML = '<i data-lucide="eye-off" id="confirmPasswordToggle" style="width: 1rem; height: 1rem;"></i>';
+            lucide.createIcons();
+        }
+
+        // Form submission
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const terms = document.getElementById('terms').checked;
+            
+            if (!terms) {
+                alert('Please accept the terms and conditions');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+            
+            alert(`Account created successfully!\n\nName: ${firstName} ${lastName}\nEmail: ${email}`);
+            // window.location.href = '/';
+        });
+
+        // Social login
+        function socialLogin(provider) {
+            console.log(`Logging in with ${provider}...`);
+            alert(`${provider.charAt(0).toUpperCase() + provider.slice(1)} login would be handled here`);
+        }
+
+        // Auth Modal Functions
+        function openAuthModal(tab = 'login') {
+            document.getElementById('authModal').classList.add('active');
+            switchAuthTab(tab);
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.remove('active');
+        }
+
+        function switchAuthTab(tab) {
+            const tabs = document.querySelectorAll('.auth-tab');
+            const contents = document.querySelectorAll('.auth-tab-content');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            if (tab === 'login') {
+                tabs[0].classList.add('active');
+                document.getElementById('loginTab').classList.add('active');
+            } else {
+                tabs[1].classList.add('active');
+                document.getElementById('signupTab').classList.add('active');
+            }
+        }
+
+        // Close modal on outside click
+        document.getElementById('authModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAuthModal();
+            }
+        });
+
+        // Login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login functionality would be handled here');
+            closeAuthModal();
+        });
+
+        // Modal signup form submission
+        document.getElementById('modalSignupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Signup functionality would be handled here');
+            closeAuthModal();
+        });
+    </script>
+</body>
+</html>
