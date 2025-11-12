@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - WebLiveView | Simple, Flexible Plans for Every Team</title>
+    <meta name="description" content="Choose the perfect WebLiveView plan for your business. Start with a 14-day free trial. No credit card required. Plans from just €49/month.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pricing - WebLiveView | Simple, Flexible Plans">
+    <meta property="og:description" content="Choose the perfect plan for your business. 14-day free trial, no credit card required.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Custom Design System Variables */
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 0 0% 29%;
+            --card: 0 0% 100%;
+            --card-foreground: 0 0% 29%;
+            --primary: 214 72% 14%;
+            --primary-foreground: 0 0% 100%;
+            --secondary: 339 89% 55%;
+            --secondary-foreground: 0 0% 100%;
+            --muted: 220 13% 96%;
+            --muted-foreground: 0 0% 29%;
+            --accent: 217 56% 72%;
+            --border: 220 13% 91%;
+            --brand-navy: 214 72% 14%;
+            --brand-pink: 339 89% 55%;
+            --brand-light: 220 50% 98%;
+        }
+        
+        /* Tailwind Config Extension */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+        
+        .text-brand-navy { color: hsl(var(--brand-navy)); }
+        .bg-brand-navy { background-color: hsl(var(--brand-navy)); }
+        .text-secondary { color: hsl(var(--secondary)); }
+        .bg-secondary { background-color: hsl(var(--secondary)); }
+        .text-brand-pink { color: hsl(var(--brand-pink)); }
+        .bg-brand-pink { background-color: hsl(var(--brand-pink)); }
+        .bg-brand-light { background-color: hsl(var(--brand-light)); }
+        .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+        .bg-muted { background-color: hsl(var(--muted)); }
+        .border-secondary { border-color: hsl(var(--secondary)); }
+        .border-brand-navy { border-color: hsl(var(--brand-navy)); }
+        
+        .shadow-soft { box-shadow: 0 4px 20px -8px hsl(var(--brand-navy) / 0.15); }
+        .shadow-medium { box-shadow: 0 8px 30px -12px hsl(var(--brand-navy) / 0.25); }
+        .shadow-large { box-shadow: 0 20px 60px -12px hsl(var(--brand-navy) / 0.35); }
+        
+        .btn-primary {
+            background: hsl(var(--secondary));
+            color: hsl(var(--secondary-foreground));
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            min-width: 200px;
+        }
+        .btn-primary:hover { opacity: 0.9; }
+        
+        .btn-outline {
+            background: transparent;
+            color: hsl(var(--brand-navy));
+            border: 2px solid hsl(var(--brand-navy));
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            min-width: 200px;
+        }
+        .btn-outline:hover {
+            background: hsl(var(--brand-navy));
+            color: white;
+        }
+        
+        /* Header Styles */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 4rem;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 40;
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: hsl(var(--brand-navy));
+            transition: all 0.3s;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            .desktop-nav {
+                display: none;
+            }
+        }
+        
+        /* Billing Toggle */
+        .toggle-switch {
+            position: relative;
+            display: inline-flex;
+            height: 28px;
+            width: 48px;
+            align-items: center;
+            border-radius: 9999px;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+        
+        .toggle-switch.active {
+            background-color: hsl(var(--secondary));
+        }
+        
+        .toggle-switch:not(.active) {
+            background-color: hsl(var(--muted));
+        }
+        
+        .toggle-knob {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border-radius: 9999px;
+            background: white;
+            transition: transform 0.2s;
+            transform: translateX(4px);
+        }
+        
+        .toggle-switch.active .toggle-knob {
+            transform: translateX(24px);
+        }
+        
+        /* Auth Modal Styles */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .auth-modal.active {
+            display: flex;
+        }
+        
+        .auth-modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 28rem;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .auth-tabs {
+            display: flex;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 1rem;
+            background: none;
+            border: none;
+            font-weight: 600;
+            color: hsl(var(--muted-foreground));
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .auth-tab.active {
+            color: hsl(var(--secondary));
+            border-bottom: 2px solid hsl(var(--secondary));
+        }
+        
+        .auth-form {
+            padding: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: hsl(var(--brand-navy));
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid hsl(var(--border));
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: hsl(var(--secondary));
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: hsl(var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            border: 1px solid hsl(var(--border));
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .social-btn:hover {
+            background: hsl(var(--muted));
+        }
+        
+        /* FAQ Accordion Styles */
+        .faq-item {
+            border-bottom: 1px solid hsl(var(--border));
+            padding: 1.5rem 0;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: hsl(var(--brand-navy));
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        
+        .faq-answer {
+            display: none;
+            margin-top: 1rem;
+            color: hsl(var(--foreground));
+            line-height: 1.6;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <img src="../public/pages/webliveview-logo-new.png" alt="WebLiveView Logo" class="h-8 sm:h-10">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav hidden md:flex items-center space-x-8">
+                    <a href="product.html" class="text-foreground hover:text-secondary font-medium transition-colors">Product</a>
+                    <a href="pricing.html" class="text-secondary font-medium transition-colors">Pricing</a>
+                    <a href="#" class="text-foreground hover:text-secondary font-medium transition-colors">About</a>
+                    <a href="#" class="text-foreground hover:text-secondary font-medium transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Desktop CTA -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="openAuthModal('login')" class="text-brand-navy hover:text-secondary font-medium transition-colors">
+                        Sign In
+                    </button>
+                    <button onclick="openAuthModal('signup')" class="btn-primary text-sm px-6 py-2">
+                        Start Free Trial
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="flex flex-col space-y-4">
+                <a href="product.html" class="text-foreground hover:text-secondary font-medium text-lg transition-colors">Product</a>
+                <a href="pricing.html" class="text-secondary font-medium text-lg transition-colors">Pricing</a>
+                <a href="#" class="text-foreground hover:text-secondary font-medium text-lg transition-colors">About</a>
+                <a href="#" class="text-foreground hover:text-secondary font-medium text-lg transition-colors">Contact</a>
+                <div class="pt-4 space-y-3">
+                    <button onclick="openAuthModal('login')" class="w-full btn-outline">Sign In</button>
+                    <button onclick="openAuthModal('signup')" class="w-full btn-primary">Start Free Trial</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16 sm:pt-20">
+        <!-- Hero Section -->
+        <section class="py-8 sm:py-10 lg:py-12">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-3xl mx-auto text-center mb-8 sm:mb-10 lg:mb-12">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-navy">
+                        Choose Your Plan
+                    </h1>
+                    <p class="mt-3 sm:mt-4 text-base sm:text-lg text-foreground">
+                        Start your free trial today. No credit card required.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-12 sm:py-16 md:py-24 bg-brand-light/30">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="max-w-4xl mx-auto text-center mb-12 sm:mb-16">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-navy">
+                        Simple, Flexible Pricing for Every Team
+                    </h2>
+                    <p class="mt-3 sm:mt-4 text-base sm:text-lg text-foreground">
+                        Start free. No credit card required. Plans from just €49/month.
+                    </p>
+                    
+                    <!-- Billing Toggle -->
+                    <div class="mt-6 sm:mt-8 flex items-center justify-center space-x-4">
+                        <span class="text-sm font-medium text-foreground" id="monthlyLabel">Monthly</span>
+                        <button class="toggle-switch" id="billingToggle" onclick="toggleBilling()">
+                            <span class="toggle-knob"></span>
+                        </button>
+                        <span class="text-sm text-muted-foreground" id="yearlyLabel">Yearly</span>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary text-white ml-2" id="saveBadge" style="display: none;">
+                            Save 20%
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- Starter Plan -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-soft p-6 flex flex-col h-full">
+                        <div class="text-center pb-2 flex-shrink-0">
+                            <h3 class="text-lg sm:text-xl text-brand-navy font-bold">Starter</h3>
+                            <p class="text-sm text-muted-foreground mt-2">Perfect for small teams getting started with live video shopping</p>
+                        </div>
+
+                        <div class="text-center flex-grow my-6">
+                            <div class="mb-6">
+                                <span class="text-3xl sm:text-4xl font-bold text-brand-navy">
+                                    €<span id="starter-price">49</span>
+                                </span>
+                                <span class="text-muted-foreground">/month</span>
+                                <div class="text-sm text-secondary mt-1" id="starter-billing" style="display: none;">
+                                    Billed annually
+                                </div>
+                            </div>
+
+                            <ul class="space-y-3 text-left text-sm">
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>3 video chat hours per month</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Unlimited live chat sessions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Up to 2 sales people</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Basic performance reporting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Web & mobile access</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Custom branding</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex-shrink-0 mt-6">
+                            <button onclick="openAuthModal('signup')" class="btn-outline w-full">
+                                Start Free Trial
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Growth Plan (Popular) -->
+                    <div class="bg-white rounded-lg border-2 border-secondary shadow-large p-6 flex flex-col h-full lg:scale-105 relative">
+                        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-secondary text-white px-3 py-1 rounded-full text-xs font-medium">
+                            Most Popular
+                        </span>
+                        
+                        <div class="text-center pb-2 flex-shrink-0">
+                            <h3 class="text-lg sm:text-xl text-brand-navy font-bold">Growth</h3>
+                            <p class="text-sm text-muted-foreground mt-2">Give your team the tools to engage, book, and convert at scale</p>
+                        </div>
+
+                        <div class="text-center flex-grow my-6">
+                            <div class="mb-6">
+                                <span class="text-3xl sm:text-4xl font-bold text-brand-navy">
+                                    €<span id="growth-price">199</span>
+                                </span>
+                                <span class="text-muted-foreground">/month</span>
+                                <div class="text-sm text-secondary mt-1" id="growth-billing" style="display: none;">
+                                    Billed annually
+                                </div>
+                            </div>
+
+                            <ul class="space-y-3 text-left text-sm">
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>20 video chat hours per month</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Unlimited live chat sessions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Up to 5 sales people</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Advanced analytics & reporting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Calendar integrations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Team performance insights</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Priority support</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex-shrink-0 mt-6">
+                            <button onclick="openAuthModal('signup')" class="btn-primary w-full">
+                                Start Free Trial
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Scale Plan -->
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-soft p-6 flex flex-col h-full">
+                        <div class="text-center pb-2 flex-shrink-0">
+                            <h3 class="text-lg sm:text-xl text-brand-navy font-bold">Scale</h3>
+                            <p class="text-sm text-muted-foreground mt-2">Enterprise-grade solution for large sales teams and multiple locations</p>
+                        </div>
+
+                        <div class="text-center flex-grow my-6">
+                            <div class="mb-6">
+                                <span class="text-3xl sm:text-4xl font-bold text-brand-navy">
+                                    €<span id="scale-price">499</span>
+                                </span>
+                                <span class="text-muted-foreground">/month</span>
+                                <div class="text-sm text-secondary mt-1" id="scale-billing" style="display: none;">
+                                    Billed annually
+                                </div>
+                            </div>
+
+                            <ul class="space-y-3 text-left text-sm">
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Unlimited video chat hours</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Unlimited users & locations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Advanced CRM integrations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Custom onboarding & training</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Dedicated account manager</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>White-label options</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="h-4 w-4 text-secondary mr-3 flex-shrink-0 mt-0.5"></i>
+                                    <span>Advanced security & compliance</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex-shrink-0 mt-6">
+                            <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer" class="btn-outline w-full">
+                                Contact Sales
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8 sm:mt-12">
+                    <p class="text-sm text-foreground px-4">
+                        All plans include 14-day free trial • No setup fees • Cancel anytime
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-background">
+            <div class="container mx-auto px-4 sm:px-6 max-w-4xl">
+                <div class="bg-[#f9f9ff] rounded-xl py-12 px-6 shadow-sm">
+                    <div class="text-center mb-8">
+                        <h2 class="text-2xl md:text-3xl font-extrabold text-brand-navy mb-4">
+                            Frequently Asked Questions
+                        </h2>
+                        <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+                            Get answers to the most common questions about our video shopping platform.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Is there a limit for how many sales support staff we can have using the apps?</span>
+                                <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+                            </button>
+                            <div class="faq-answer">
+                                There is no limit to how many staff you can have using our software and how many devices you use; our plans our based on your monthly usage
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What internet connection speed do we need for a good quality video/audio call?</span>
+                                <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+                            </button>
+                            <div class="faq-answer">
+                                We recommend you and your customers to have a minimum 15 mbs download speed (or greater)
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What type of training and support is available for our managers and staff?</span>
+                                <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+                            </button>
+                            <div class="faq-answer">
+                                We have different levels of support available to suit for each plan by email, chat, phone
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What is a chat?</span>
+                                <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+                            </button>
+                            <div class="faq-answer">
+                                A chat is an online conversation tool in the widget that creates connection between the customer and a sales support person
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>If we are using the webliveview software can we cancel the subscription plan?</span>
+                                <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+                            </button>
+                            <div class="faq-answer">
+                                Yes - a monthly subscription plan can be canceled anytime; you will be paid up until the next monthly renewal date only
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What happens if we need a different plan if we reach our monthly limit?</span>
+                                <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+                            </button>
+                            <div class="faq-answer">
+                                You will get an email notification when your at 90% of your monthly limit is used; you can then contact us about a new plan
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-16 md:py-24 bg-gradient-to-r from-secondary via-brand-pink to-secondary">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center text-white">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                        Ready to Transform Your Online Sales?
+                    </h2>
+                    <p class="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+                        Don't let potential customers click away — turn conversations into conversions today.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://calendly.com/barry-mc-kenna/new-meeting" target="_blank" rel="noopener noreferrer" class="bg-white text-brand-navy hover:bg-white/90 rounded-full px-8 py-4 text-lg font-semibold min-w-[200px] inline-flex items-center justify-center">
+                            Book Your Free Demo Now
+                            <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                        </a>
+                        <button class="border-2 border-white text-white hover:bg-white hover:text-brand-navy rounded-full px-8 py-4 text-lg font-semibold min-w-[200px] inline-flex items-center justify-center">
+                            <i data-lucide="play" class="mr-2 h-5 w-5"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+                    
+                    <p class="mt-6 text-sm opacity-75">
+                        No setup fees • 14-day free trial • Cancel anytime
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-brand-navy text-white py-16">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <!-- Company Info -->
+                    <div>
+                        <img src="../public/pages/webliveview-logo-white.png" alt="WebLiveView" class="h-8 mb-4">
+                        <p class="text-sm opacity-80 mb-4">Transform your website into a live showroom with video chat and real-time engagement.</p>
+                        
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="h-4 w-4 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>Rosslare Europort, Kilrane, Co. Wexford Y35 T6HT, Ireland</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="mail" class="h-4 w-4 mr-2 flex-shrink-0"></i>
+                                <a href="mailto:info@webliveview.com" class="hover:text-secondary">info@webliveview.com</a>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="phone" class="h-4 w-4 mr-2 flex-shrink-0"></i>
+                                <a href="tel:+353838662211" class="hover:text-secondary">+353 83 866 2211</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product -->
+                    <div>
+                        <h4 class="font-semibold mb-4">Product</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="product.html" class="opacity-80 hover:opacity-100 hover:text-secondary">Features</a></li>
+                            <li><a href="pricing.html" class="opacity-80 hover:opacity-100 hover:text-secondary">Pricing</a></li>
+                            <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-secondary">Use Cases</a></li>
+                            <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-secondary">Demo</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Company -->
+                    <div>
+                        <h4 class="font-semibold mb-4">Company</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-secondary">About Us</a></li>
+                            <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-secondary">Contact</a></li>
+                            <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-secondary">Privacy Policy</a></li>
+                            <li><a href="#" class="opacity-80 hover:opacity-100 hover:text-secondary">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Connect -->
+                    <div>
+                        <h4 class="font-semibold mb-4">Connect</h4>
+                        <div class="flex space-x-4 mb-6">
+                            <a href="https://www.linkedin.com/company/webliveview" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100 hover:text-secondary">
+                                <i data-lucide="linkedin" class="h-6 w-6"></i>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61566800606636" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100 hover:text-secondary">
+                                <i data-lucide="facebook" class="h-6 w-6"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <a href="#" class="block">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="h-10">
+                            </a>
+                            <a href="#" class="block">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" class="h-10">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-white/20 pt-8 text-center text-sm opacity-80">
+                    <p>&copy; 2024 WebLiveView. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-modal-content">
+            <!-- Close Button -->
+            <div class="flex justify-end p-4">
+                <button onclick="closeAuthModal()" class="text-gray-500 hover:text-gray-700">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="loginTab" onclick="switchAuthTab('login')">Log In</button>
+                <button class="auth-tab" id="signupTab" onclick="switchAuthTab('signup')">Sign Up</button>
+            </div>
+            
+            <!-- Login Form -->
+            <div class="auth-form" id="loginForm">
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-input" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+                
+                <div class="text-center my-4 text-sm text-muted-foreground">or continue with</div>
+                
+                <div class="social-login">
+                    <button class="social-btn" onclick="handleSocialLogin('google')">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn" onclick="handleSocialLogin('facebook')">
+                        <svg class="h-5 w-5" fill="#1877F2" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Continue with Facebook
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Signup Form -->
+            <div class="auth-form" id="signupForm" style="display: none;">
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-input" placeholder="Create a password" required minlength="8">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-input" placeholder="Confirm your password" required minlength="8">
+                    </div>
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                </form>
+                
+                <div class="text-center my-4 text-sm text-muted-foreground">or continue with</div>
+                
+                <div class="social-login">
+                    <button class="social-btn" onclick="handleSocialLogin('google')">
+                        <svg class="h-5 w-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn" onclick="handleSocialLogin('facebook')">
+                        <svg class="h-5 w-5" fill="#1877F2" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Continue with Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+        
+        // Auth Modal Functions
+        function openAuthModal(tab) {
+            const modal = document.getElementById('authModal');
+            modal.classList.add('active');
+            if (tab) {
+                switchAuthTab(tab);
+            }
+        }
+        
+        function closeAuthModal() {
+            const modal = document.getElementById('authModal');
+            modal.classList.remove('active');
+        }
+        
+        function switchAuthTab(tab) {
+            const loginTab = document.getElementById('loginTab');
+            const signupTab = document.getElementById('signupTab');
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            
+            if (tab === 'login') {
+                loginTab.classList.add('active');
+                signupTab.classList.remove('active');
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else {
+                signupTab.classList.add('active');
+                loginTab.classList.remove('active');
+                signupForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            }
+        }
+        
+        function handleLogin(e) {
+            e.preventDefault();
+            console.log('Login submitted');
+            // Add your login logic here
+        }
+        
+        function handleSignup(e) {
+            e.preventDefault();
+            console.log('Signup submitted');
+            // Add your signup logic here
+        }
+        
+        function handleSocialLogin(provider) {
+            console.log('Social login with:', provider);
+            // Add your social login logic here
+        }
+        
+        // Close modal on outside click
+        document.getElementById('authModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAuthModal();
+            }
+        });
+        
+        // Billing Toggle
+        let isYearly = false;
+        
+        function toggleBilling() {
+            isYearly = !isYearly;
+            const toggle = document.getElementById('billingToggle');
+            const monthlyLabel = document.getElementById('monthlyLabel');
+            const yearlyLabel = document.getElementById('yearlyLabel');
+            const saveBadge = document.getElementById('saveBadge');
+            
+            if (isYearly) {
+                toggle.classList.add('active');
+                monthlyLabel.classList.remove('font-medium', 'text-foreground');
+                monthlyLabel.classList.add('text-muted-foreground');
+                yearlyLabel.classList.add('font-medium', 'text-foreground');
+                yearlyLabel.classList.remove('text-muted-foreground');
+                saveBadge.style.display = 'inline-flex';
+                
+                // Update prices
+                document.getElementById('starter-price').textContent = '39';
+                document.getElementById('growth-price').textContent = '159';
+                document.getElementById('scale-price').textContent = '399';
+                
+                // Show billing text
+                document.getElementById('starter-billing').style.display = 'block';
+                document.getElementById('growth-billing').style.display = 'block';
+                document.getElementById('scale-billing').style.display = 'block';
+            } else {
+                toggle.classList.remove('active');
+                yearlyLabel.classList.remove('font-medium', 'text-foreground');
+                yearlyLabel.classList.add('text-muted-foreground');
+                monthlyLabel.classList.add('font-medium', 'text-foreground');
+                monthlyLabel.classList.remove('text-muted-foreground');
+                saveBadge.style.display = 'none';
+                
+                // Update prices
+                document.getElementById('starter-price').textContent = '49';
+                document.getElementById('growth-price').textContent = '199';
+                document.getElementById('scale-price').textContent = '499';
+                
+                // Hide billing text
+                document.getElementById('starter-billing').style.display = 'none';
+                document.getElementById('growth-billing').style.display = 'none';
+                document.getElementById('scale-billing').style.display = 'none';
+            }
+        }
+        
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const item = button.closest('.faq-item');
+            const wasActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+            
+            // Re-initialize icons after DOM change
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
