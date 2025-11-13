@@ -182,22 +182,25 @@
         .checkbox-wrapper input[type="checkbox"] {
             width: 18px;
             height: 18px;
+            min-width: 18px;
             margin-top: 2px;
             cursor: pointer;
             flex-shrink: 0;
+            accent-color: hsl(var(--brand-navy));
         }
         
         .checkbox-wrapper label {
             font-size: 0.875rem;
             color: hsl(var(--muted-foreground));
-            cursor: pointer;
             line-height: 1.5;
             flex: 1;
+            user-select: none;
         }
         
         .checkbox-wrapper label a {
             color: hsl(var(--secondary));
             text-decoration: none;
+            cursor: pointer;
         }
         
         .checkbox-wrapper label a:hover {
@@ -389,11 +392,11 @@
 
                         <div class="checkbox-wrapper">
                             <input type="checkbox" id="terms" required />
-                            <label for="terms">
+                            <label for="terms" style="cursor: pointer;">
                                 I accept the
-                                <a href="/terms-of-service">Terms & Conditions</a>
+                                <a href="/terms-of-service" onclick="event.stopPropagation();">Terms & Conditions</a>
                                 and
-                                <a href="/privacy-policy">Privacy Policy</a>
+                                <a href="/privacy-policy" onclick="event.stopPropagation();">Privacy Policy</a>
                             </label>
                         </div>
 
@@ -524,6 +527,16 @@
             document.getElementById('confirmPasswordToggle').outerHTML = '<i data-lucide="eye-off" id="confirmPasswordToggle" style="width: 1rem; height: 1rem;"></i>';
             lucide.createIcons();
         }
+
+        // Checkbox label click handling
+        document.querySelector('.checkbox-wrapper label').addEventListener('click', function(e) {
+            // If clicking on the label text (not a link), toggle checkbox
+            if (e.target.tagName !== 'A') {
+                e.preventDefault();
+                const checkbox = document.getElementById('terms');
+                checkbox.checked = !checkbox.checked;
+            }
+        });
 
         // Form submission
         document.getElementById('signupForm').addEventListener('submit', function(e) {
