@@ -101,7 +101,7 @@ const Navbar = () => {
                   variant="outline"
                   size="lg"
                   onClick={() => setIsAuthModalOpen(true)}
-                  className="rounded-full border-2 border-[#b4b7f0] text-[#b4b7f0] hover:bg-[#b4b7f0] hover:text-white transition-all duration-200"
+                  className="rounded-full bg-[#475f88] text-white hover:bg-[#5a73a3] border-[#475f88] transition-all duration-200 shadow-sm hover:shadow-md"
                 >
                   Login
                 </Button>
@@ -173,7 +173,7 @@ const Navbar = () => {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="w-full rounded-full border-2 border-[#b4b7f0] text-[#b4b7f0] hover:bg-[#b4b7f0] hover:text-white touch-manipulation"
+                      className="w-full rounded-full bg-[#475f88] text-white hover:bg-[#5a73a3] border-[#475f88] touch-manipulation shadow-sm hover:shadow-md"
                       onClick={() => {
                         setIsAuthModalOpen(true);
                         setIsMobileMenuOpen(false);
