@@ -37,9 +37,9 @@ const Footer = () => {
 
       {/* Footer Links */}
       <div className="container py-8 sm:py-12 px-4 sm:px-6">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl">
           {/* Company Information */}
-          <div>
+          <div className="text-left">
             <div className="mb-6">
               <p className="text-muted-foreground mb-4 max-w-md text-sm sm:text-base">
                 The leading live video shopping platform for furniture, kitchen, bathroom, and eCommerce retailers.
@@ -66,7 +66,7 @@ const Footer = () => {
                 </div>
                 
                 {/* Social Media Icons */}
-                <div className="flex items-center space-x-4 mt-4 sm:justify-start justify-center sm:ml-6">
+                <div className="flex items-center space-x-4 mt-4 sm:ml-6">
                   <a 
                     href="https://www.linkedin.com/company/9435525/" 
                     target="_blank" 
@@ -88,7 +88,7 @@ const Footer = () => {
                 </div>
                 
                 {/* App Store Badges */}
-                <div className="mt-6 flex flex-wrap gap-4 items-center sm:justify-start justify-center sm:ml-6">
+                <div className="mt-6 flex flex-wrap gap-4 items-center sm:ml-6">
                   <a 
                     href="https://play.google.com/store/apps/details?id=your.app.id" 
                     target="_blank" 
